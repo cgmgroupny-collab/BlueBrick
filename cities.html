@@ -16,7 +16,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -31,7 +31,7 @@
             --light-gray: #f0f2f5;
             --mid-gray: #6b7280;
             --dark-gray: #374151;
-            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-display: 'Bebas Neue', Impact, sans-serif;
             --font-body: 'Manrope', system-ui, sans-serif;
         }
 
@@ -204,9 +204,11 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
-        .page-hero h1 em { font-style: italic; color: var(--amber); }
+        .page-hero h1 em { font-style: normal; color: var(--amber); }
 
         .page-hero p {
             color: rgba(255, 255, 255, 0.65);
@@ -388,9 +390,11 @@
             font-weight: 400;
             color: var(--prussian);
             line-height: 1.2;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
-        .section-header h2 em { font-style: italic; color: var(--cerulean); }
+        .section-header h2 em { font-style: normal; color: var(--cerulean); }
 
         .section-header p {
             max-width: 560px;
@@ -472,9 +476,11 @@
             color: var(--white);
             margin-bottom: 1rem;
             position: relative;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
-        .cta-section h2 em { font-style: italic; color: var(--amber); }
+        .cta-section h2 em { font-style: normal; color: var(--amber); }
 
         .cta-section p {
             color: rgba(255, 255, 255, 0.6);
@@ -645,8 +651,10 @@
 
             .services-list { grid-template-columns: 1fr 1fr; }
 
-            .footer-inner { flex-direction: column; text-align: center; }
+            footer { padding: 2rem 1.5rem 1rem; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 1rem; }
             .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .footer-copy { padding-top: 1rem; margin-top: 0.5rem; }
 
             .cta-buttons { flex-direction: column; align-items: center; }
             .cta-btn-primary, .cta-btn-secondary { width: 100%; justify-content: center; }
