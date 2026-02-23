@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Brick — Luxury & Commercial Cleaning | Boston's Premier Cleaning Service</title>
-    <meta name="description" content="Blue Brick delivers luxury residential and commercial cleaning across Boston, East Boston, South Boston, Newton, Waltham, Brighton & Allston. White-glove service for discerning homes and businesses.">
-    <meta name="keywords" content="luxury cleaning Boston, commercial cleaning Newton, house cleaning South Boston, premium cleaning service Waltham, residential cleaning Brighton, office cleaning Allston, East Boston cleaning service, luxury home cleaning, deep cleaning Boston">
+    <title>Blue Brick — Post-Construction & Luxury Cleaning | Boston's #1 Construction Cleanup Service</title>
+    <meta name="description" content="Boston's premier post-construction cleaning company. Blue Brick delivers expert construction cleanup, luxury residential cleaning, and commercial property restoration across Greater Boston. Dust-free, move-in ready results guaranteed.">
+    <meta name="keywords" content="post construction cleaning Boston, construction cleanup Newton, new build cleaning South Boston, luxury cleaning after renovation, commercial post-construction Waltham, renovation cleanup Brighton, construction dust removal Allston, post-renovation cleaning Boston, new construction cleaning service, builder clean Boston MA">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Blue Brick Luxury and Commercial Cleaning">
     <link rel="canonical" href="https://bluebrickmass.com/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Blue Brick — Luxury & Commercial Cleaning | Boston">
-    <meta property="og:description" content="White-glove cleaning for luxury homes and commercial properties across Greater Boston. Request your free estimate today.">
+    <meta property="og:title" content="Blue Brick — Post-Construction & Luxury Cleaning | Boston">
+    <meta property="og:description" content="Expert post-construction cleanup and luxury cleaning for Boston's finest properties. From new builds to renovations — dust-free, move-in ready results.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bluebrickmass.com/">
     <meta property="og:locale" content="en_US">
@@ -20,8 +20,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blue Brick — Luxury & Commercial Cleaning | Boston">
-    <meta name="twitter:description" content="White-glove cleaning for luxury homes and commercial properties across Greater Boston.">
+    <meta name="twitter:title" content="Blue Brick — Post-Construction & Luxury Cleaning | Boston">
+    <meta name="twitter:description" content="Expert post-construction cleanup and luxury cleaning for Boston's finest properties.">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -29,7 +29,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Blue Brick Luxury and Commercial Cleaning",
-        "description": "Premium luxury residential and commercial cleaning services in the Greater Boston area.",
+        "description": "Boston's premier post-construction cleaning and luxury residential cleaning service. Expert construction cleanup, renovation dust removal, and white-glove property cleaning across Greater Boston.",
         "telephone": "+1-781-330-5604",
         "email": "bluebrickmass@gmail.com",
         "url": "https://bluebrickmass.com",
@@ -43,7 +43,7 @@
             {"@type": "City", "name": "Allston", "containedInPlace": {"@type": "State", "name": "Massachusetts"}}
         ],
         "priceRange": "$$$",
-        "serviceType": ["Luxury Residential Cleaning", "Commercial Cleaning", "Deep Cleaning", "Move-In/Move-Out Cleaning"],
+        "serviceType": ["Post-Construction Cleaning", "Luxury Residential Cleaning", "Commercial Cleaning", "Renovation Cleanup", "New Build Cleaning", "Deep Cleaning", "Move-In/Move-Out Cleaning"],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Boston",
@@ -68,25 +68,27 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
-           CSS VARIABLES — THE BRASS STANDARD PALETTE
+           CSS VARIABLES — BLUE BRICK BRAND PALETTE
            ============================================ */
         :root {
-            --navy-deep: #0a1628;
-            --navy-mid: #122240;
-            --navy-light: #1a3058;
-            --brass: #c9a96e;
-            --brass-light: #dfc395;
-            --brass-glow: rgba(201, 169, 110, 0.15);
-            --cream: #f8f5f0;
+            --prussian: #001D4A;
+            --yale: #27476E;
+            --cerulean: #006992;
+            --cream: #EAF8BF;
+            --amber: #ECA400;
+            --amber-light: #f4be3a;
+            --amber-glow: rgba(236, 164, 0, 0.15);
             --white: #ffffff;
-            --slate: #8a95a8;
-            --text-light: #c8cdd6;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'Outfit', system-ui, sans-serif;
+            --off-white: #f9fafb;
+            --light-gray: #f0f2f5;
+            --mid-gray: #6b7280;
+            --dark-gray: #374151;
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Manrope', system-ui, sans-serif;
         }
 
         /* ============================================
@@ -96,35 +98,23 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: 18px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         body {
             font-family: var(--font-body);
-            font-weight: 300;
-            color: var(--cream);
-            background: var(--navy-deep);
+            font-weight: 400;
+            color: var(--dark-gray);
+            background: var(--white);
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Grain overlay for texture */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            line-height: 1.7;
         }
 
         img { max-width: 100%; display: block; }
-        a { color: var(--brass); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--brass-light); }
+        a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--amber); }
 
         /* ============================================
            ANIMATIONS
@@ -149,24 +139,14 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        @keyframes brassShimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        @keyframes drawLine {
-            from { width: 0; }
-            to { width: 60px; }
-        }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.5; }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
 
         .reveal {
@@ -182,136 +162,149 @@
         }
 
         /* ============================================
-           HEADER — STICKY NAV
+           HEADER
            ============================================ */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 0 clamp(1.5rem, 4vw, 3rem);
-            height: 72px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10, 22, 40, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+            background: rgba(0, 29, 74, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s ease;
         }
 
         header.scrolled {
-            height: 60px;
-            background: rgba(10, 22, 40, 0.95);
-            border-bottom-color: rgba(201, 169, 110, 0.15);
+            height: 68px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 4px 30px rgba(0, 29, 74, 0.08);
+            border-bottom-color: rgba(0, 29, 74, 0.06);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.6rem;
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            border: 2px solid var(--brass);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .logo-icon::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: var(--brass);
+        .logo img {
+            height: 46px;
+            width: auto;
         }
 
         .logo-text {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.35rem;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            transition: color 0.4s;
+        }
+
+        header.scrolled .logo-text { color: var(--prussian); }
+
+        .logo-text span { color: var(--cerulean); }
+        header.scrolled .logo-text span { color: var(--cerulean); }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.78rem;
             font-weight: 600;
             letter-spacing: 0.08em;
-            color: var(--cream);
-        }
-
-        .logo-text span {
-            color: var(--brass);
-        }
-
-        .header-cta {
-            padding: 0.6rem 1.6rem;
-            background: transparent;
-            border: 1px solid var(--brass);
-            color: var(--brass);
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
             text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            transition: color 0.3s;
+        }
+
+        header.scrolled nav a { color: var(--dark-gray); }
+
+        nav a:hover { color: var(--amber); }
+
+        .nav-cta {
+            padding: 0.55rem 1.5rem;
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.1em;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-cta:hover {
+            background: var(--amber-light) !important;
+            color: var(--prussian) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(236, 164, 0, 0.35);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+            padding: 4px;
         }
 
-        .header-cta::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: var(--brass);
-            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 0;
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
         }
 
-        .header-cta:hover::before { left: 0; }
-        .header-cta:hover { color: var(--navy-deep); }
-        .header-cta span { position: relative; z-index: 1; }
+        header.scrolled .mobile-toggle span { background: var(--prussian); }
 
         /* ============================================
-           SECTION 1 — HERO
+           HERO SECTION
            ============================================ */
         .hero {
             min-height: 100vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            padding: 72px clamp(1.5rem, 5vw, 4rem) 0;
             position: relative;
             overflow: hidden;
         }
 
-        /* Decorative diagonal line */
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
-            top: -10%;
-            right: 45%;
-            width: 1px;
-            height: 120%;
-            background: linear-gradient(to bottom, transparent, rgba(201, 169, 110, 0.12), transparent);
-            transform: rotate(15deg);
-            pointer-events: none;
+            inset: 0;
+            z-index: 0;
         }
 
-        /* Brass glow orb */
-        .hero::after {
-            content: '';
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
             position: absolute;
-            top: 20%;
-            right: 10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
-            pointer-events: none;
-            animation: float 8s ease-in-out infinite;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                rgba(0, 29, 74, 0.92) 0%,
+                rgba(0, 29, 74, 0.80) 40%,
+                rgba(0, 105, 146, 0.50) 70%,
+                rgba(0, 105, 146, 0.30) 100%
+            );
+            z-index: 1;
         }
 
         .hero-content {
-            padding-right: clamp(2rem, 4vw, 5rem);
+            position: relative;
+            z-index: 2;
+            padding: 120px clamp(2rem, 5vw, 5rem) 80px;
             animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
@@ -319,31 +312,33 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-            color: var(--brass);
-            font-size: 0.7rem;
-            font-weight: 500;
+            padding: 0.45rem 1.1rem;
+            background: rgba(236, 164, 0, 0.12);
+            border: 1px solid rgba(236, 164, 0, 0.35);
+            border-radius: 2px;
+            color: var(--amber);
+            font-size: 0.72rem;
+            font-weight: 700;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
             animation: fadeIn 0.8s 0.3s both;
         }
 
         .hero-badge::before {
             content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--brass);
+            width: 7px;
+            height: 7px;
+            background: var(--amber);
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.8rem, 5vw, 4.5rem);
-            font-weight: 300;
-            line-height: 1.1;
+            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.12;
             color: var(--white);
             margin-bottom: 1.5rem;
             letter-spacing: -0.01em;
@@ -351,16 +346,16 @@
 
         .hero h1 em {
             font-style: italic;
-            color: var(--brass);
-            font-weight: 400;
+            color: var(--amber);
         }
 
         .hero-sub {
-            font-size: 1.05rem;
-            color: var(--slate);
-            max-width: 420px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 460px;
             margin-bottom: 2.5rem;
-            line-height: 1.7;
+            line-height: 1.75;
+            font-weight: 300;
             animation: fadeUp 0.8s 0.5s both;
         }
 
@@ -374,13 +369,14 @@
         .trust-item {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.65rem;
         }
 
         .trust-icon {
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(201, 169, 110, 0.25);
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(236, 164, 0, 0.3);
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -388,38 +384,42 @@
         }
 
         .trust-icon svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--brass);
+            width: 18px;
+            height: 18px;
+            stroke: var(--amber);
             fill: none;
             stroke-width: 1.5;
         }
 
         .trust-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-light);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.6);
             line-height: 1.3;
         }
 
         .trust-label strong {
             display: block;
             color: var(--white);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* ============================================
-           LEAD CAPTURE FORM
+           MULTI-STEP FORM
            ============================================ */
         .form-wrapper {
+            position: relative;
+            z-index: 2;
+            padding: 80px clamp(1.5rem, 3vw, 3rem) 80px clamp(1rem, 2vw, 2rem);
             animation: slideInRight 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         .lead-form {
-            background: linear-gradient(145deg, rgba(18, 34, 64, 0.9), rgba(26, 48, 88, 0.6));
-            border: 1px solid rgba(201, 169, 110, 0.15);
-            padding: clamp(2rem, 3vw, 2.8rem);
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-radius: 8px;
+            padding: clamp(1.8rem, 3vw, 2.5rem);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25), 0 4px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -429,41 +429,129 @@
             position: absolute;
             top: 0; left: 0;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--brass), transparent);
+            height: 4px;
+            background: linear-gradient(90deg, var(--cerulean), var(--amber), var(--cerulean));
+            background-size: 200% 100%;
+            animation: shimmer 4s ease-in-out infinite;
         }
 
         .form-title {
             font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--white);
-            margin-bottom: 0.4rem;
+            font-size: 1.55rem;
+            color: var(--prussian);
+            margin-bottom: 0.3rem;
         }
 
         .form-subtitle {
-            font-size: 0.85rem;
-            color: var(--slate);
+            font-size: 0.82rem;
+            color: var(--mid-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Progress bar */
+        .form-progress {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
             margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .progress-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-step .step-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: 2px solid #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--mid-gray);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .progress-step.active .step-dot {
+            background: var(--cerulean);
+            border-color: var(--cerulean);
+            color: white;
+            box-shadow: 0 0 0 4px rgba(0, 105, 146, 0.15);
+        }
+
+        .progress-step.completed .step-dot {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: var(--prussian);
+        }
+
+        .progress-step .step-label {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .progress-step.active .step-label,
+        .progress-step.completed .step-label { color: var(--prussian); }
+
+        .progress-line {
+            position: absolute;
+            top: 16px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 2px;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+
+        .progress-line-fill {
+            height: 100%;
+            background: var(--amber);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 0%;
+        }
+
+        /* Form steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeUp 0.4s ease;
         }
 
         .form-group {
             position: relative;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.9rem 1rem 0.9rem;
-            background: rgba(10, 22, 40, 0.6);
-            border: 1px solid rgba(201, 169, 110, 0.1);
-            color: var(--cream);
+            padding: 0.85rem 1rem;
+            background: var(--off-white);
+            border: 1.5px solid #e5e7eb;
+            border-radius: 6px;
+            color: var(--prussian);
             font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 300;
-            transition: all 0.4s ease;
+            font-size: 0.88rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
             outline: none;
             appearance: none;
             -webkit-appearance: none;
@@ -472,9 +560,9 @@
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            border-color: var(--brass);
-            box-shadow: 0 0 0 3px var(--brass-glow);
-            background: rgba(10, 22, 40, 0.8);
+            border-color: var(--cerulean);
+            box-shadow: 0 0 0 3px rgba(0, 105, 146, 0.1);
+            background: var(--white);
         }
 
         .form-group label {
@@ -483,14 +571,13 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 0.85rem;
-            color: var(--slate);
+            color: var(--mid-gray);
             pointer-events: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            letter-spacing: 0.03em;
         }
 
         .form-group textarea ~ label {
-            top: 1rem;
+            top: 0.85rem;
             transform: none;
         }
 
@@ -502,84 +589,76 @@
         .form-group textarea:not(:placeholder-shown) ~ label {
             top: -0.5rem;
             left: 0.75rem;
-            font-size: 0.65rem;
-            color: var(--brass);
-            letter-spacing: 0.12em;
+            font-size: 0.62rem;
+            color: var(--cerulean);
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            background: var(--navy-mid);
-            padding: 0 0.3rem;
+            font-weight: 600;
+            background: var(--white);
+            padding: 0 0.35rem;
         }
 
-        .form-group select {
-            cursor: pointer;
-            color: var(--slate);
-        }
-
-        .form-group select:valid { color: var(--cream); }
+        .form-group select { cursor: pointer; color: var(--mid-gray); }
+        .form-group select:valid { color: var(--prussian); }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
-        .form-row .form-group label {
-            font-size: 0.8rem;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--brass);
-            border: none;
-            color: var(--navy-deep);
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+        .form-nav {
+            display: flex;
+            gap: 0.8rem;
             margin-top: 0.5rem;
         }
 
-        .submit-btn::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 0; height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transition: all 0.6s ease;
-            transform: translate(-50%, -50%);
+        .btn-next, .btn-prev, .submit-btn {
+            flex: 1;
+            padding: 0.9rem;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .submit-btn:hover {
-            background: var(--brass-light);
+        .btn-next, .submit-btn {
+            background: var(--amber);
+            color: var(--prussian);
+        }
+
+        .btn-next:hover, .submit-btn:hover {
+            background: var(--amber-light);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+            box-shadow: 0 8px 25px rgba(236, 164, 0, 0.35);
         }
 
-        .submit-btn:hover::after {
-            width: 400px;
-            height: 400px;
+        .btn-prev {
+            background: transparent;
+            color: var(--mid-gray);
+            border: 1.5px solid #d1d5db;
+            flex: 0 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
 
-        .submit-btn:active {
-            transform: translateY(0);
+        .btn-prev:hover {
+            border-color: var(--cerulean);
+            color: var(--cerulean);
         }
 
         .form-note {
             text-align: center;
             font-size: 0.7rem;
-            color: var(--slate);
+            color: var(--mid-gray);
             margin-top: 1rem;
-            letter-spacing: 0.05em;
         }
 
-        /* Success state */
         .form-success {
             display: none;
             text-align: center;
@@ -591,49 +670,59 @@
             animation: fadeUp 0.6s ease;
         }
 
+        .form-success .check-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(0, 105, 146, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+        }
+
+        .form-success .check-circle svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--cerulean);
+            fill: none;
+            stroke-width: 2;
+        }
+
         .form-success h3 {
             font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--brass);
+            font-size: 1.6rem;
+            color: var(--prussian);
             margin-bottom: 0.5rem;
         }
 
         .form-success p {
-            color: var(--slate);
+            color: var(--mid-gray);
             font-size: 0.9rem;
         }
 
         /* ============================================
-           SECTION 2 — SERVICES & TRUST
+           WHITE SECTION — SERVICES
            ============================================ */
         .services {
-            padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+            padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+            background: var(--white);
             position: relative;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: clamp(3rem, 5vw, 4.5rem);
+            margin-bottom: clamp(3rem, 5vw, 5rem);
         }
 
         .section-tag {
             display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.25em;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--brass);
-            margin-bottom: 1rem;
+            color: var(--cerulean);
+            margin-bottom: 0.8rem;
             position: relative;
         }
 
@@ -642,181 +731,371 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 30px;
-            height: 1px;
-            background: var(--brass);
-            opacity: 0.4;
+            width: 28px;
+            height: 2px;
+            background: var(--amber);
         }
 
-        .section-tag::before { right: calc(100% + 12px); }
-        .section-tag::after { left: calc(100% + 12px); }
+        .section-tag::before { right: calc(100% + 14px); }
+        .section-tag::after { left: calc(100% + 14px); }
 
         .section-header h2 {
             font-family: var(--font-display);
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 300;
-            color: var(--white);
+            font-size: clamp(2.2rem, 3.5vw, 3rem);
+            font-weight: 400;
+            color: var(--prussian);
             line-height: 1.2;
         }
 
         .section-header h2 em {
             font-style: italic;
-            color: var(--brass);
+            color: var(--cerulean);
+        }
+
+        .section-header p {
+            max-width: 560px;
+            margin: 1rem auto 0;
+            color: var(--mid-gray);
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto 4rem;
+            max-width: 1140px;
+            margin: 0 auto;
         }
 
         .service-card {
-            padding: 2rem;
-            border: 1px solid rgba(201, 169, 110, 0.08);
-            background: linear-gradient(160deg, rgba(18, 34, 64, 0.5), rgba(10, 22, 40, 0.3));
+            padding: 2.2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: var(--white);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            overflow: hidden;
         }
 
         .service-card::before {
             content: '';
             position: absolute;
             bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: var(--brass);
+            width: 0; height: 3px;
+            background: linear-gradient(90deg, var(--cerulean), var(--amber));
             transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .service-card:hover {
-            border-color: rgba(201, 169, 110, 0.2);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 105, 146, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 29, 74, 0.1);
         }
 
         .service-card:hover::before { width: 100%; }
 
-        .service-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: rgba(201, 169, 110, 0.15);
-            line-height: 1;
-            margin-bottom: 1rem;
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(0, 105, 146, 0.08), rgba(0, 105, 146, 0.03));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.3rem;
+        }
+
+        .service-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--cerulean);
+            fill: none;
+            stroke-width: 1.5;
         }
 
         .service-card h3 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--white);
-            margin-bottom: 0.6rem;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--prussian);
+            margin-bottom: 0.7rem;
         }
 
         .service-card p {
-            font-size: 0.85rem;
-            color: var(--slate);
-            line-height: 1.6;
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            line-height: 1.7;
         }
 
-        /* Trust bar */
+        /* ============================================
+           DARK SECTION — STATS
+           ============================================ */
+        .trust-section {
+            padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+            background: var(--prussian);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 105, 146, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
         .trust-bar {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: rgba(201, 169, 110, 0.08);
         }
 
         .trust-stat {
-            background: var(--navy-deep);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            transition: background 0.4s ease;
-        }
-
-        .trust-stat:hover {
-            background: var(--navy-mid);
-        }
-
-        .trust-stat .number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--brass);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .trust-stat .label {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--slate);
-        }
-
-        /* ============================================
-           SECTION 3 — FOOTER
-           ============================================ */
-        footer {
-            padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
             position: relative;
         }
 
-        footer::before {
+        .trust-stat::after {
             content: '';
             position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .trust-stat:last-child::after { display: none; }
+
+        .trust-stat .number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--amber);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-stat .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ============================================
+           GALLERY — LUXURY PROPERTIES
+           ============================================ */
+        .gallery {
+            padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+            background: var(--off-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.2rem 1.2rem;
+            background: linear-gradient(to top, rgba(0, 29, 74, 0.85), transparent);
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            padding: clamp(5rem, 9vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+            background: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--prussian);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2 em { font-style: italic; color: var(--cerulean); }
+
+        .cta-section p {
+            color: var(--mid-gray);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.2rem;
+            background: var(--amber);
+            color: var(--prussian);
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--amber-light);
+            color: var(--prussian);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(236, 164, 0, 0.3);
+        }
+
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.2rem;
+            background: transparent;
+            color: var(--prussian);
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: 2px solid var(--prussian);
+            border-radius: 5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-btn-secondary:hover {
+            background: var(--prussian);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
+            background: var(--prussian);
+            color: rgba(255, 255, 255, 0.65);
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
             gap: clamp(2rem, 4vw, 4rem);
-            max-width: 1100px;
-            margin: 0 auto 3rem;
+            max-width: 1140px;
+            margin: 0 auto 3.5rem;
         }
 
-        .footer-brand h3 {
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-brand .footer-logo img {
+            height: 38px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand .footer-logo span {
             font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 400;
+            font-size: 1.3rem;
             color: var(--white);
-            margin-bottom: 1rem;
         }
-
-        .footer-brand h3 span { color: var(--brass); }
 
         .footer-brand p {
-            font-size: 0.9rem;
-            color: var(--slate);
-            line-height: 1.7;
+            font-size: 0.88rem;
+            line-height: 1.75;
             margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .contact-line {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
+            gap: 0.65rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.65);
             transition: color 0.3s;
         }
 
-        .contact-line:hover { color: var(--brass); }
+        .contact-line:hover { color: var(--amber); }
 
         .contact-line svg {
             width: 16px;
             height: 16px;
-            stroke: var(--brass);
+            stroke: var(--amber);
             fill: none;
             stroke-width: 1.5;
             flex-shrink: 0;
@@ -825,138 +1104,104 @@
         .footer-col h4 {
             font-family: var(--font-display);
             font-size: 1.1rem;
-            font-weight: 500;
             color: var(--white);
-            margin-bottom: 1.2rem;
-            position: relative;
+            margin-bottom: 1.3rem;
             padding-bottom: 0.8rem;
+            position: relative;
         }
 
         .footer-col h4::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0;
-            width: 30px; height: 1px;
-            background: var(--brass);
+            width: 28px;
+            height: 2px;
+            background: var(--amber);
         }
 
-        .area-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem 1rem;
-        }
-
-        .area-grid a {
-            font-size: 0.85rem;
-            color: var(--slate);
-            transition: all 0.3s;
-            padding: 0.2rem 0;
-            position: relative;
-        }
-
-        .area-grid a::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 1px;
-            background: var(--brass);
-            transition: width 0.3s;
-        }
-
-        .area-grid a:hover { color: var(--brass); }
-        .area-grid a:hover::before { width: 100%; }
-
-        .footer-services a {
+        .footer-col a {
             display: block;
             font-size: 0.85rem;
-            color: var(--slate);
+            color: rgba(255, 255, 255, 0.55);
             padding: 0.3rem 0;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
-        .footer-services a:hover { color: var(--brass); }
+        .footer-col a:hover {
+            color: var(--amber);
+            transform: translateX(4px);
+        }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(201, 169, 110, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .footer-bottom p {
             font-size: 0.75rem;
-            color: var(--slate);
-            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.35);
         }
 
         /* ============================================
-           MOBILE RESPONSIVE
+           RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
             .hero {
                 grid-template-columns: 1fr;
-                gap: 3rem;
-                padding-top: 100px;
-                padding-bottom: 3rem;
                 min-height: auto;
             }
 
             .hero-content {
-                padding-right: 0;
+                padding-bottom: 2rem;
                 text-align: center;
             }
 
             .hero-sub { margin-left: auto; margin-right: auto; }
-
             .trust-row { justify-content: center; }
+
+            .form-wrapper { padding: 0 clamp(1.5rem, 4vw, 3rem) 4rem; }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                max-width: 500px;
+                max-width: 540px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .trust-bar {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
+            .gallery-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
+                max-width: 540px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-            .area-grid { justify-items: center; }
-            .contact-line { justify-content: center; }
+            .gallery-item:first-child { grid-row: span 1; aspect-ratio: 4/3; }
+
+            .trust-bar { grid-template-columns: repeat(2, 1fr); }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+
+            nav { display: none; }
+            .mobile-toggle { display: flex; }
         }
 
         @media (max-width: 640px) {
+            html { font-size: 16px; }
+
             .hero h1 { font-size: 2.2rem; }
 
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
+            .form-row { grid-template-columns: 1fr; }
 
-            .trust-row { gap: 1rem; }
+            .trust-stat .number { font-size: 2.2rem; }
 
-            .trust-bar {
-                grid-template-columns: 1fr 1fr;
-            }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .contact-line { justify-content: center; }
 
-            .trust-stat { padding: 1.5rem 1rem; }
-            .trust-stat .number { font-size: 2rem; }
-
-            .header-cta span { font-size: 0.7rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-btn-primary, .cta-btn-secondary { width: 100%; justify-content: center; }
         }
-
-        /* ============================================
-           FORM FIELD ANIMATION STAGGER
-           ============================================ */
-        .form-group:nth-child(1) { animation: fadeUp 0.5s 0.4s both; }
-        .form-group:nth-child(2) { animation: fadeUp 0.5s 0.5s both; }
-        .form-group:nth-child(3) { animation: fadeUp 0.5s 0.6s both; }
-        .form-group:nth-child(4) { animation: fadeUp 0.5s 0.7s both; }
-        .form-group:nth-child(5) { animation: fadeUp 0.5s 0.8s both; }
-        .submit-btn { animation: fadeUp 0.5s 0.9s both; }
     </style>
 </head>
 <body>
@@ -966,23 +1211,37 @@
          ========================================== -->
     <header id="header" role="banner">
         <a href="/" class="logo" aria-label="Blue Brick Home">
-            <div class="logo-icon" aria-hidden="true"></div>
+            <img src="assets/images/Gerardo .svg" alt="Blue Brick Logo">
             <div class="logo-text">BLUE <span>BRICK</span></div>
         </a>
-        <a href="#quote" class="header-cta" role="button"><span>Get Free Estimate</span></a>
+        <nav aria-label="Main navigation">
+            <a href="#services">Services</a>
+            <a href="cities.html">Areas</a>
+            <a href="blog/">Blog</a>
+            <a href="tel:+17813305604">781-330-5604</a>
+            <a href="#quote" class="nav-cta">Free Estimate</a>
+        </nav>
+        <div class="mobile-toggle" id="mobileToggle" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
     </header>
 
     <main>
         <!-- ==========================================
-             SECTION 1 — HERO + LEAD FORM
+             HERO — POST-CONSTRUCTION CLEANING
              ========================================== -->
-        <section class="hero" id="quote" aria-label="Request a quote for luxury cleaning services in Boston">
+        <section class="hero" id="quote" aria-label="Boston's premier post-construction cleaning service">
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Modern Boston apartment building construction" loading="eager">
+                <div class="hero-overlay"></div>
+            </div>
+
             <div class="hero-content">
-                <div class="hero-badge" aria-label="Now accepting new clients">Accepting New Clients</div>
+                <div class="hero-badge">Now Booking Construction Cleanups</div>
 
-                <h1>The <em>Luxury</em> Clean<br>Boston Deserves</h1>
+                <h1>Post-Construction<br>Cleaning <em>Experts</em><br>in Boston</h1>
 
-                <p class="hero-sub">White-glove residential and commercial cleaning for discerning homes and businesses across Greater Boston. Meticulous care, every surface, every time.</p>
+                <p class="hero-sub">From new builds to full renovations — we transform construction sites into pristine, move-in ready properties. Trusted by Boston's top contractors and property developers.</p>
 
                 <div class="trust-row" role="list" aria-label="Trust indicators">
                     <div class="trust-item" role="listitem">
@@ -1007,92 +1266,196 @@
             </div>
 
             <div class="form-wrapper">
-                <form class="lead-form" id="leadForm" aria-label="Request a free cleaning estimate">
-                    <h2 class="form-title">Request Your Free Estimate</h2>
-                    <p class="form-subtitle">We respond within 2 hours during business hours.</p>
+                <form class="lead-form" id="leadForm" aria-label="Request a free post-construction cleaning estimate">
+                    <h2 class="form-title">Get Your Free Cleanup Estimate</h2>
+                    <p class="form-subtitle">Most quotes delivered within 2 hours.</p>
 
-                    <div class="form-group">
-                        <input type="text" id="fullName" name="name" placeholder=" " required autocomplete="name">
-                        <label for="fullName">Full Name</label>
+                    <div class="form-progress">
+                        <div class="progress-line"><div class="progress-line-fill" id="progressFill"></div></div>
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-dot">1</div>
+                            <div class="step-label">Contact</div>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-dot">2</div>
+                            <div class="step-label">Property</div>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-dot">3</div>
+                            <div class="step-label">Details</div>
+                        </div>
                     </div>
 
-                    <div class="form-row">
+                    <!-- Step 1: Contact -->
+                    <div class="form-step active" data-step="1">
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
-                            <label for="email">Email</label>
+                            <input type="text" id="fullName" name="name" placeholder=" " required autocomplete="name">
+                            <label for="fullName">Full Name</label>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" pattern="[0-9\-\(\)\s\+]*">
-                            <label for="phone">Phone</label>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" pattern="[0-9\-\(\)\s\+]*">
+                                <label for="phone">Phone</label>
+                            </div>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn-next" onclick="nextStep(1)">Continue</button>
                         </div>
                     </div>
 
-                    <div class="form-row">
+                    <!-- Step 2: Property -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select id="serviceType" name="service_type" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="post_construction">Post-Construction Cleanup</option>
+                                    <option value="renovation_cleanup">Renovation Cleanup</option>
+                                    <option value="new_build">New Build Final Clean</option>
+                                    <option value="luxury_residential">Luxury Residential</option>
+                                    <option value="commercial">Commercial Property</option>
+                                    <option value="move_in_out">Move-In / Move-Out</option>
+                                </select>
+                                <label for="serviceType">Service Needed</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="propertyType" name="property_type" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="apartment_condo">Apartment / Condo</option>
+                                    <option value="single_family">Single Family Home</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="commercial_office">Commercial Office</option>
+                                    <option value="retail">Retail Space</option>
+                                    <option value="multi_unit">Multi-Unit Building</option>
+                                </select>
+                                <label for="propertyType">Property Type</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="sqft" name="sqft" placeholder=" " autocomplete="off">
+                                <label for="sqft">Approx. Sq Ft</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" id="preferredDate" name="preferred_date" placeholder=" " required>
+                                <label for="preferredDate">Preferred Date</label>
+                            </div>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn-prev" onclick="prevStep(2)">Back</button>
+                            <button type="button" class="btn-next" onclick="nextStep(2)">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Details -->
+                    <div class="form-step" data-step="3">
                         <div class="form-group">
-                            <select id="propertyType" name="property_type" required>
+                            <select id="location" name="location" required>
                                 <option value="" disabled selected hidden></option>
-                                <option value="luxury_home">Luxury Home</option>
-                                <option value="apartment">Apartment / Condo</option>
-                                <option value="penthouse">Penthouse</option>
-                                <option value="commercial">Commercial Office</option>
-                                <option value="retail">Retail Space</option>
+                                <option value="boston">Boston</option>
+                                <option value="east_boston">East Boston</option>
+                                <option value="south_boston">South Boston</option>
+                                <option value="newton">Newton</option>
+                                <option value="waltham">Waltham</option>
+                                <option value="brighton">Brighton</option>
+                                <option value="allston">Allston</option>
                                 <option value="other">Other</option>
                             </select>
-                            <label for="propertyType">Property Type</label>
+                            <label for="location">Location / Neighborhood</label>
                         </div>
                         <div class="form-group">
-                            <input type="date" id="preferredDate" name="preferred_date" placeholder=" " required>
-                            <label for="preferredDate">Preferred Date</label>
+                            <textarea id="message" name="message" rows="3" placeholder=" "></textarea>
+                            <label for="message">Project details — scope, timeline, special needs (optional)</label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
+                            <button type="submit" class="submit-btn">Get My Free Estimate</button>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="3" placeholder=" " aria-label="Additional details about your property"></textarea>
-                        <label for="message">Tell us about your space (optional)</label>
-                    </div>
-
-                    <button type="submit" class="submit-btn" aria-label="Submit your free estimate request">Request My Free Estimate</button>
-
-                    <p class="form-note">No obligation. No spam. Just a custom quote for your property.</p>
+                    <p class="form-note">No obligation. No spam. Just a custom quote for your project.</p>
                 </form>
 
                 <div class="form-success" id="formSuccess">
-                    <h3>Thank You</h3>
-                    <p>We've received your request. A member of our team will reach out within 2 hours to discuss your property.</p>
+                    <div class="check-circle">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Estimate Request Received</h3>
+                    <p>Our team will reach out within 2 hours to discuss your project and provide a detailed quote.</p>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             SECTION 2 — SERVICES & TRUST
+             SERVICES — POST-CONSTRUCTION FOCUS
              ========================================== -->
-        <section class="services" id="services" aria-label="Our luxury cleaning services in Boston">
+        <section class="services" id="services" aria-label="Post-construction and luxury cleaning services in Boston">
             <div class="section-header reveal">
-                <span class="section-tag">What We Do</span>
-                <h2>Cleaning Elevated to an <em>Art Form</em></h2>
+                <span class="section-tag">Our Expertise</span>
+                <h2>Post-Construction Cleaning<br><em>Done Right</em>, Every Time</h2>
+                <p>We specialize in transforming active construction sites into immaculate, client-ready properties. Every nail, every dust particle, every surface — handled with precision.</p>
             </div>
 
             <div class="services-grid">
                 <article class="service-card reveal" style="transition-delay: 0.1s">
-                    <div class="service-number">01</div>
-                    <h3>Luxury Residential</h3>
-                    <p>Tailored cleaning programs for Boston's finest homes — from Back Bay brownstones to Newton estates. We treat every surface with the care it deserves.</p>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/><path d="M9 20v-6h6v6"/></svg>
+                    </div>
+                    <h3>Post-Construction Cleanup</h3>
+                    <p>Complete dust removal, debris cleanup, surface polishing, and deep sanitization after new builds and major renovations. Move-in ready results on schedule.</p>
                 </article>
 
                 <article class="service-card reveal" style="transition-delay: 0.2s">
-                    <div class="service-number">02</div>
-                    <h3>Commercial Spaces</h3>
-                    <p>Pristine offices, retail environments, and commercial properties across Greater Boston. First impressions matter — we make sure yours is immaculate.</p>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Renovation Restoration</h3>
+                    <p>Kitchen remodel? Full gut rehab? We handle the fine-detail cleaning — removing construction dust from HVAC systems, light fixtures, cabinetry, and every hidden crevice.</p>
                 </article>
 
                 <article class="service-card reveal" style="transition-delay: 0.3s">
-                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h3>Luxury Residential</h3>
+                    <p>Tailored cleaning programs for Boston's finest homes — from Back Bay brownstones to Newton estates. White-glove service that treats every surface with meticulous care.</p>
+                </article>
+
+                <article class="service-card reveal" style="transition-delay: 0.4s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3>Commercial Properties</h3>
+                    <p>Pristine offices, retail environments, and commercial spaces across Greater Boston. First impressions drive business — we make sure yours is immaculate.</p>
+                </article>
+
+                <article class="service-card reveal" style="transition-delay: 0.5s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h3>New Build Final Clean</h3>
+                    <p>The critical last step before handover. Builder-grade to client-grade results — window tracks, grout lines, appliance interiors, and every surface polished to perfection.</p>
+                </article>
+
+                <article class="service-card reveal" style="transition-delay: 0.6s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
                     <h3>Move-In / Move-Out</h3>
-                    <p>Comprehensive deep cleaning for property transitions. Whether you're welcoming new tenants in South Boston or preparing a Waltham listing — we handle every detail.</p>
+                    <p>Comprehensive deep cleaning for property transitions. Whether you're welcoming new tenants in South Boston or preparing a Waltham listing — every detail handled.</p>
                 </article>
             </div>
+        </section>
 
-            <div class="trust-bar reveal" role="list" aria-label="Company statistics">
+        <!-- ==========================================
+             TRUST STATS
+             ========================================== -->
+        <section class="trust-section" aria-label="Company statistics">
+            <div class="trust-bar reveal" role="list">
                 <div class="trust-stat" role="listitem">
                     <div class="number" data-count="500">0</div>
                     <div class="label">Properties Served</div>
@@ -1111,56 +1474,131 @@
                 </div>
             </div>
         </section>
+
+        <!-- ==========================================
+             GALLERY — LUXURY PROPERTIES
+             ========================================== -->
+        <section class="gallery" id="gallery" aria-label="Luxury property cleaning portfolio">
+            <div class="section-header reveal">
+                <span class="section-tag">Our Work</span>
+                <h2>From Construction Site to <em>Showroom Ready</em></h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury Boston home interior after post-construction cleaning" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Newton Estate</h4>
+                        <p>Post-renovation deep clean</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.1s">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Modern luxury apartment after renovation cleanup" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Back Bay Brownstone</h4>
+                        <p>New build final clean</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.2s">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Commercial office space cleaned after construction" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Waltham Office</h4>
+                        <p>Commercial post-construction</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.3s">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Luxury condo kitchen after renovation cleaning" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>South Boston Condo</h4>
+                        <p>Renovation restoration</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" style="transition-delay: 0.4s">
+                    <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&q=80" alt="Modern apartment building lobby after cleaning" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>East Boston Luxury</h4>
+                        <p>Move-in ready delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             CTA SECTION
+             ========================================== -->
+        <section class="cta-section reveal">
+            <h2>Ready for a <em>Spotless</em> Handover?</h2>
+            <p>Get Boston's most trusted post-construction cleaning team on your next project.</p>
+            <div class="cta-buttons">
+                <a href="#quote" class="cta-btn-primary">Get Your Free Estimate</a>
+                <a href="tel:+17813305604" class="cta-btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call (781) 330-5604
+                </a>
+            </div>
+        </section>
     </main>
 
     <!-- ==========================================
-         SECTION 3 — FOOTER
+         FOOTER
          ========================================== -->
     <footer role="contentinfo" aria-label="Blue Brick contact information and service areas">
         <div class="footer-grid">
             <div class="footer-brand reveal">
-                <h3>BLUE <span>BRICK</span></h3>
-                <p>Boston's trusted name in luxury residential and commercial cleaning. We bring white-glove service to every property we touch — from Brighton apartments to Newton estates.</p>
+                <div class="footer-logo">
+                    <img src="assets/images/Gerardo .svg" alt="Blue Brick">
+                    <span>BLUE BRICK</span>
+                </div>
+                <p>Boston's trusted name in post-construction cleaning and luxury property care. Precision and white-glove service on every project — from new builds in Brighton to estate renovations in Newton.</p>
 
                 <a href="tel:+17813305604" class="contact-line" aria-label="Call us at 781-330-5604">
                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     (781) 330-5604
                 </a>
-                <a href="mailto:bluebrickmass@gmail.com" class="contact-line" aria-label="Email us at bluebrickmass@gmail.com">
+                <a href="mailto:bluebrickmass@gmail.com" class="contact-line" aria-label="Email us">
                     <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     bluebrickmass@gmail.com
                 </a>
             </div>
 
             <div class="footer-col reveal" style="transition-delay: 0.1s">
-                <h4>Areas We Serve</h4>
-                <nav class="area-grid" aria-label="Service areas">
-                    <a href="#quote">Boston</a>
-                    <a href="#quote">East Boston</a>
-                    <a href="#quote">South Boston</a>
-                    <a href="#quote">Newton</a>
-                    <a href="#quote">Waltham</a>
-                    <a href="#quote">Brighton</a>
-                    <a href="#quote">Allston</a>
-                    <a href="#quote">Back Bay</a>
+                <h4>Service Areas</h4>
+                <nav aria-label="Service areas">
+                    <a href="cities.html">Boston</a>
+                    <a href="cities.html">East Boston</a>
+                    <a href="cities.html">South Boston</a>
+                    <a href="cities.html">Newton</a>
+                    <a href="cities.html">Waltham</a>
+                    <a href="cities.html">Brighton</a>
+                    <a href="cities.html">Allston</a>
                 </nav>
             </div>
 
             <div class="footer-col reveal" style="transition-delay: 0.2s">
                 <h4>Services</h4>
-                <nav class="footer-services" aria-label="Cleaning services">
-                    <a href="#quote">Luxury Home Cleaning</a>
+                <nav aria-label="Cleaning services">
+                    <a href="#quote">Post-Construction Cleaning</a>
+                    <a href="#quote">Renovation Cleanup</a>
+                    <a href="#quote">New Build Final Clean</a>
+                    <a href="#quote">Luxury Residential</a>
                     <a href="#quote">Commercial Cleaning</a>
-                    <a href="#quote">Deep Cleaning</a>
                     <a href="#quote">Move-In / Move-Out</a>
-                    <a href="#quote">Post-Construction</a>
-                    <a href="#quote">Office Maintenance</a>
+                </nav>
+            </div>
+
+            <div class="footer-col reveal" style="transition-delay: 0.3s">
+                <h4>Company</h4>
+                <nav aria-label="Company links">
+                    <a href="cities.html">Areas We Serve</a>
+                    <a href="blog/">Blog</a>
+                    <a href="#quote">Get a Quote</a>
+                    <a href="tel:+17813305604">Contact Us</a>
                 </nav>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Blue Brick Luxury and Commercial Cleaning. All rights reserved. Serving Greater Boston with pride.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved. Serving Greater Boston with pride.</p>
         </div>
     </footer>
 
@@ -1168,17 +1606,13 @@
          JAVASCRIPT
          ========================================== -->
     <script>
-        // ── Sticky Header Scroll Effect ──
+        // ── Header scroll behavior ──
         const header = document.getElementById('header');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            header.classList.toggle('scrolled', currentScroll > 50);
-            lastScroll = currentScroll;
+            header.classList.toggle('scrolled', window.pageYOffset > 50);
         }, { passive: true });
 
-        // ── Scroll Reveal (Intersection Observer) ──
+        // ── Scroll Reveal ──
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1187,14 +1621,10 @@
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
-        });
-
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // ── Animated Counter ──
+        // ── Animated Counters ──
         const counters = document.querySelectorAll('[data-count]');
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1205,91 +1635,151 @@
                 }
             });
         }, { threshold: 0.5 });
-
         counters.forEach(el => counterObserver.observe(el));
 
         function animateCounter(el, target) {
             const duration = 2000;
             const start = performance.now();
-
             function update(now) {
                 const elapsed = now - start;
                 const progress = Math.min(elapsed / duration, 1);
                 const eased = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(eased * target);
-
-                el.textContent = current.toLocaleString() + '+';
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
+                el.textContent = Math.floor(eased * target).toLocaleString() + '+';
+                if (progress < 1) requestAnimationFrame(update);
             }
-
             requestAnimationFrame(update);
         }
 
-        // ── Form Handling ──
-        const form = document.getElementById('leadForm');
-        const formSuccess = document.getElementById('formSuccess');
+        // ── Multi-Step Form ──
+        let currentStep = 1;
+        const totalSteps = 3;
 
-        // Dynamic floating label support for select
-        const selects = document.querySelectorAll('select');
-        selects.forEach(select => {
+        function updateProgress() {
+            const steps = document.querySelectorAll('.progress-step');
+            const fill = document.getElementById('progressFill');
+            steps.forEach((step, i) => {
+                const stepNum = i + 1;
+                step.classList.remove('active', 'completed');
+                if (stepNum === currentStep) step.classList.add('active');
+                if (stepNum < currentStep) step.classList.add('completed');
+            });
+            fill.style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            const target = document.querySelector(`.form-step[data-step="${step}"]`);
+            if (target) {
+                target.classList.add('active');
+                target.style.animation = 'none';
+                target.offsetHeight;
+                target.style.animation = 'fadeUp 0.4s ease';
+            }
+        }
+
+        function nextStep(from) {
+            const currentFields = document.querySelectorAll(`.form-step[data-step="${from}"] [required]`);
+            let valid = true;
+            currentFields.forEach(field => {
+                if (!field.value.trim()) {
+                    valid = false;
+                    field.style.borderColor = '#ef4444';
+                    field.addEventListener('input', function handler() {
+                        field.style.borderColor = '';
+                        field.removeEventListener('input', handler);
+                    }, { once: true });
+                }
+            });
+            if (!valid) return;
+            currentStep = from + 1;
+            showStep(currentStep);
+            updateProgress();
+        }
+
+        function prevStep(from) {
+            currentStep = from - 1;
+            showStep(currentStep);
+            updateProgress();
+        }
+
+        // ── Select floating labels ──
+        document.querySelectorAll('select').forEach(select => {
             select.addEventListener('change', function() {
                 if (this.value) {
                     this.setAttribute('value', this.value);
-                    this.style.color = 'var(--cream)';
+                    this.style.color = 'var(--prussian)';
                 }
             });
         });
 
-        // Phone formatting
+        // ── Phone formatting ──
         const phoneInput = document.getElementById('phone');
         phoneInput.addEventListener('input', function(e) {
             let val = e.target.value.replace(/\D/g, '');
             if (val.length > 0) {
-                if (val.length <= 3) {
-                    val = '(' + val;
-                } else if (val.length <= 6) {
-                    val = '(' + val.substring(0, 3) + ') ' + val.substring(3);
-                } else {
-                    val = '(' + val.substring(0, 3) + ') ' + val.substring(3, 6) + '-' + val.substring(6, 10);
-                }
+                if (val.length <= 3) val = '(' + val;
+                else if (val.length <= 6) val = '(' + val.substring(0, 3) + ') ' + val.substring(3);
+                else val = '(' + val.substring(0, 3) + ') ' + val.substring(3, 6) + '-' + val.substring(6, 10);
             }
             e.target.value = val;
         });
 
-        // Form submit
+        // ── Form submission ──
+        const form = document.getElementById('leadForm');
+        const formSuccess = document.getElementById('formSuccess');
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-
             const btn = form.querySelector('.submit-btn');
             btn.textContent = 'Sending...';
             btn.disabled = true;
-
-            // Collect form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-
-            // Simulate submission (replace with actual endpoint)
             setTimeout(() => {
                 form.style.display = 'none';
                 formSuccess.classList.add('active');
-
-                // Optional: Send to email service, Netlify Forms, Formspree, etc.
                 console.log('Lead captured:', data);
             }, 1200);
         });
 
-        // ── Smooth scroll for anchor links ──
+        // ── Smooth scroll ──
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
+        });
+
+        // ── Mobile nav toggle ──
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mainNav = document.querySelector('nav');
+        let navOpen = false;
+        mobileToggle.addEventListener('click', () => {
+            navOpen = !navOpen;
+            if (navOpen) {
+                mainNav.style.display = 'flex';
+                mainNav.style.position = 'absolute';
+                mainNav.style.top = '80px';
+                mainNav.style.left = '0';
+                mainNav.style.right = '0';
+                mainNav.style.flexDirection = 'column';
+                mainNav.style.background = 'white';
+                mainNav.style.padding = '1.5rem';
+                mainNav.style.boxShadow = '0 10px 40px rgba(0,0,0,0.1)';
+                mainNav.querySelectorAll('a').forEach(a => a.style.color = 'var(--prussian)');
+            } else {
+                mainNav.style.display = '';
+                mainNav.style.position = '';
+                mainNav.style.top = '';
+                mainNav.style.left = '';
+                mainNav.style.right = '';
+                mainNav.style.flexDirection = '';
+                mainNav.style.background = '';
+                mainNav.style.padding = '';
+                mainNav.style.boxShadow = '';
+                mainNav.querySelectorAll('a').forEach(a => a.style.color = '');
+            }
         });
     </script>
 
