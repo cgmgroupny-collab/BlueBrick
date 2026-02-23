@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Brick — Luxury & Commercial Cleaning | Boston's Premier Cleaning Service</title>
+    <meta name="description" content="Blue Brick delivers luxury residential and commercial cleaning across Boston, East Boston, South Boston, Newton, Waltham, Brighton & Allston. White-glove service for discerning homes and businesses.">
+    <meta name="keywords" content="luxury cleaning Boston, commercial cleaning Newton, house cleaning South Boston, premium cleaning service Waltham, residential cleaning Brighton, office cleaning Allston, East Boston cleaning service, luxury home cleaning, deep cleaning Boston">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Blue Brick Luxury and Commercial Cleaning">
+    <link rel="canonical" href="https://bluebrickmass.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blue Brick — Luxury & Commercial Cleaning | Boston">
+    <meta property="og:description" content="White-glove cleaning for luxury homes and commercial properties across Greater Boston. Request your free estimate today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bluebrickmass.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Blue Brick Cleaning">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blue Brick — Luxury & Commercial Cleaning | Boston">
+    <meta name="twitter:description" content="White-glove cleaning for luxury homes and commercial properties across Greater Boston.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Blue Brick Luxury and Commercial Cleaning",
+        "description": "Premium luxury residential and commercial cleaning services in the Greater Boston area.",
+        "telephone": "+1-781-330-5604",
+        "email": "bluebrickmass@gmail.com",
+        "url": "https://bluebrickmass.com",
+        "areaServed": [
+            {"@type": "City", "name": "Boston", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "East Boston", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "South Boston", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "Newton", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "Waltham", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "Brighton", "containedInPlace": {"@type": "State", "name": "Massachusetts"}},
+            {"@type": "City", "name": "Allston", "containedInPlace": {"@type": "State", "name": "Massachusetts"}}
+        ],
+        "priceRange": "$$$",
+        "serviceType": ["Luxury Residential Cleaning", "Commercial Cleaning", "Deep Cleaning", "Move-In/Move-Out Cleaning"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Boston",
+            "addressRegion": "MA",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "42.3601",
+            "longitude": "-71.0589"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "07:00",
+            "closes": "19:00"
+        },
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS VARIABLES — THE BRASS STANDARD PALETTE
+           ============================================ */
+        :root {
+            --navy-deep: #0a1628;
+            --navy-mid: #122240;
+            --navy-light: #1a3058;
+            --brass: #c9a96e;
+            --brass-light: #dfc395;
+            --brass-glow: rgba(201, 169, 110, 0.15);
+            --cream: #f8f5f0;
+            --white: #ffffff;
+            --slate: #8a95a8;
+            --text-light: #c8cdd6;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--cream);
+            background: var(--navy-deep);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Grain overlay for texture */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: var(--brass); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--brass-light); }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes brassShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes drawLine {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           HEADER — STICKY NAV
+           ============================================ */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 clamp(1.5rem, 4vw, 3rem);
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            height: 60px;
+            background: rgba(10, 22, 40, 0.95);
+            border-bottom-color: rgba(201, 169, 110, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border: 2px solid var(--brass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--brass);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--cream);
+        }
+
+        .logo-text span {
+            color: var(--brass);
+        }
+
+        .header-cta {
+            padding: 0.6rem 1.6rem;
+            background: transparent;
+            border: 1px solid var(--brass);
+            color: var(--brass);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--brass);
+            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 0;
+        }
+
+        .header-cta:hover::before { left: 0; }
+        .header-cta:hover { color: var(--navy-deep); }
+        .header-cta span { position: relative; z-index: 1; }
+
+        /* ============================================
+           SECTION 1 — HERO
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 72px clamp(1.5rem, 5vw, 4rem) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative diagonal line */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: 45%;
+            width: 1px;
+            height: 120%;
+            background: linear-gradient(to bottom, transparent, rgba(201, 169, 110, 0.12), transparent);
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        /* Brass glow orb */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            padding-right: clamp(2rem, 4vw, 5rem);
+            animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            color: var(--brass);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s 0.3s both;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--brass);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--brass);
+            font-weight: 400;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: var(--slate);
+            max-width: 420px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: fadeUp 0.8s 0.5s both;
+        }
+
+        .trust-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s 0.7s both;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .trust-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--brass);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .trust-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .trust-label strong {
+            display: block;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           LEAD CAPTURE FORM
+           ============================================ */
+        .form-wrapper {
+            animation: slideInRight 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .lead-form {
+            background: linear-gradient(145deg, rgba(18, 34, 64, 0.9), rgba(26, 48, 88, 0.6));
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            padding: clamp(2rem, 3vw, 2.8rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lead-form::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--brass), transparent);
+        }
+
+        .form-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-subtitle {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.4rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem 0.9rem;
+            background: rgba(10, 22, 40, 0.6);
+            border: 1px solid rgba(201, 169, 110, 0.1);
+            color: var(--cream);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: all 0.4s ease;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--brass);
+            box-shadow: 0 0 0 3px var(--brass-glow);
+            background: rgba(10, 22, 40, 0.8);
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.85rem;
+            color: var(--slate);
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.03em;
+        }
+
+        .form-group textarea ~ label {
+            top: 1rem;
+            transform: none;
+        }
+
+        .form-group input:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label,
+        .form-group select:focus ~ label,
+        .form-group select:not([value=""]) ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group textarea:not(:placeholder-shown) ~ label {
+            top: -0.5rem;
+            left: 0.75rem;
+            font-size: 0.65rem;
+            color: var(--brass);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--navy-mid);
+            padding: 0 0.3rem;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            color: var(--slate);
+        }
+
+        .form-group select:valid { color: var(--cream); }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-row .form-group label {
+            font-size: 0.8rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--brass);
+            border: none;
+            color: var(--navy-deep);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .submit-btn:hover {
+            background: var(--brass-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+        }
+
+        .submit-btn:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--slate);
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .form-success.active {
+            display: block;
+            animation: fadeUp 0.6s ease;
+        }
+
+        .form-success h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--brass);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           SECTION 2 — SERVICES & TRUST
+           ============================================ */
+        .services {
+            padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: clamp(3rem, 5vw, 4.5rem);
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: var(--brass);
+            opacity: 0.4;
+        }
+
+        .section-tag::before { right: calc(100% + 12px); }
+        .section-tag::after { left: calc(100% + 12px); }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .section-header h2 em {
+            font-style: italic;
+            color: var(--brass);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto 4rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            background: linear-gradient(160deg, rgba(18, 34, 64, 0.5), rgba(10, 22, 40, 0.3));
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--brass);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover {
+            border-color: rgba(201, 169, 110, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before { width: 100%; }
+
+        .service-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: rgba(201, 169, 110, 0.15);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--slate);
+            line-height: 1.6;
+        }
+
+        /* Trust bar */
+        .trust-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(201, 169, 110, 0.08);
+        }
+
+        .trust-stat {
+            background: var(--navy-deep);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: background 0.4s ease;
+        }
+
+        .trust-stat:hover {
+            background: var(--navy-mid);
+        }
+
+        .trust-stat .number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--brass);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .trust-stat .label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--slate);
+        }
+
+        /* ============================================
+           SECTION 3 — FOOTER
+           ============================================ */
+        footer {
+            padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: clamp(2rem, 4vw, 4rem);
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 span { color: var(--brass); }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-line:hover { color: var(--brass); }
+
+        .contact-line svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--brass);
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 30px; height: 1px;
+            background: var(--brass);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 1rem;
+        }
+
+        .area-grid a {
+            font-size: 0.85rem;
+            color: var(--slate);
+            transition: all 0.3s;
+            padding: 0.2rem 0;
+            position: relative;
+        }
+
+        .area-grid a::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--brass);
+            transition: width 0.3s;
+        }
+
+        .area-grid a:hover { color: var(--brass); }
+        .area-grid a:hover::before { width: 100%; }
+
+        .footer-services a {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--slate);
+            padding: 0.3rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-services a:hover { color: var(--brass); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.06);
+        }
+
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: var(--slate);
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding-top: 100px;
+                padding-bottom: 3rem;
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .hero-sub { margin-left: auto; margin-right: auto; }
+
+            .trust-row { justify-content: center; }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .trust-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .area-grid { justify-items: center; }
+            .contact-line { justify-content: center; }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.2rem; }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .trust-row { gap: 1rem; }
+
+            .trust-bar {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-stat { padding: 1.5rem 1rem; }
+            .trust-stat .number { font-size: 2rem; }
+
+            .header-cta span { font-size: 0.7rem; }
+        }
+
+        /* ============================================
+           FORM FIELD ANIMATION STAGGER
+           ============================================ */
+        .form-group:nth-child(1) { animation: fadeUp 0.5s 0.4s both; }
+        .form-group:nth-child(2) { animation: fadeUp 0.5s 0.5s both; }
+        .form-group:nth-child(3) { animation: fadeUp 0.5s 0.6s both; }
+        .form-group:nth-child(4) { animation: fadeUp 0.5s 0.7s both; }
+        .form-group:nth-child(5) { animation: fadeUp 0.5s 0.8s both; }
+        .submit-btn { animation: fadeUp 0.5s 0.9s both; }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <header id="header" role="banner">
+        <a href="/" class="logo" aria-label="Blue Brick Home">
+            <div class="logo-icon" aria-hidden="true"></div>
+            <div class="logo-text">BLUE <span>BRICK</span></div>
+        </a>
+        <a href="#quote" class="header-cta" role="button"><span>Get Free Estimate</span></a>
+    </header>
+
+    <main>
+        <!-- ==========================================
+             SECTION 1 — HERO + LEAD FORM
+             ========================================== -->
+        <section class="hero" id="quote" aria-label="Request a quote for luxury cleaning services in Boston">
+            <div class="hero-content">
+                <div class="hero-badge" aria-label="Now accepting new clients">Accepting New Clients</div>
+
+                <h1>The <em>Luxury</em> Clean<br>Boston Deserves</h1>
+
+                <p class="hero-sub">White-glove residential and commercial cleaning for discerning homes and businesses across Greater Boston. Meticulous care, every surface, every time.</p>
+
+                <div class="trust-row" role="list" aria-label="Trust indicators">
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="trust-label"><strong>Insured & Bonded</strong>Full Coverage</div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="trust-label"><strong>100% Satisfaction</strong>Guaranteed</div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <div class="trust-label"><strong>5-Star Rated</strong>Premium Service</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-wrapper">
+                <form class="lead-form" id="leadForm" aria-label="Request a free cleaning estimate">
+                    <h2 class="form-title">Request Your Free Estimate</h2>
+                    <p class="form-subtitle">We respond within 2 hours during business hours.</p>
+
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="name" placeholder=" " required autocomplete="name">
+                        <label for="fullName">Full Name</label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" pattern="[0-9\-\(\)\s\+]*">
+                            <label for="phone">Phone</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select id="propertyType" name="property_type" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="luxury_home">Luxury Home</option>
+                                <option value="apartment">Apartment / Condo</option>
+                                <option value="penthouse">Penthouse</option>
+                                <option value="commercial">Commercial Office</option>
+                                <option value="retail">Retail Space</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="propertyType">Property Type</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="preferredDate" name="preferred_date" placeholder=" " required>
+                            <label for="preferredDate">Preferred Date</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="3" placeholder=" " aria-label="Additional details about your property"></textarea>
+                        <label for="message">Tell us about your space (optional)</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" aria-label="Submit your free estimate request">Request My Free Estimate</button>
+
+                    <p class="form-note">No obligation. No spam. Just a custom quote for your property.</p>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <h3>Thank You</h3>
+                    <p>We've received your request. A member of our team will reach out within 2 hours to discuss your property.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 2 — SERVICES & TRUST
+             ========================================== -->
+        <section class="services" id="services" aria-label="Our luxury cleaning services in Boston">
+            <div class="section-header reveal">
+                <span class="section-tag">What We Do</span>
+                <h2>Cleaning Elevated to an <em>Art Form</em></h2>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card reveal" style="transition-delay: 0.1s">
+                    <div class="service-number">01</div>
+                    <h3>Luxury Residential</h3>
+                    <p>Tailored cleaning programs for Boston's finest homes — from Back Bay brownstones to Newton estates. We treat every surface with the care it deserves.</p>
+                </article>
+
+                <article class="service-card reveal" style="transition-delay: 0.2s">
+                    <div class="service-number">02</div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Pristine offices, retail environments, and commercial properties across Greater Boston. First impressions matter — we make sure yours is immaculate.</p>
+                </article>
+
+                <article class="service-card reveal" style="transition-delay: 0.3s">
+                    <div class="service-number">03</div>
+                    <h3>Move-In / Move-Out</h3>
+                    <p>Comprehensive deep cleaning for property transitions. Whether you're welcoming new tenants in South Boston or preparing a Waltham listing — we handle every detail.</p>
+                </article>
+            </div>
+
+            <div class="trust-bar reveal" role="list" aria-label="Company statistics">
+                <div class="trust-stat" role="listitem">
+                    <div class="number" data-count="500">0</div>
+                    <div class="label">Properties Served</div>
+                </div>
+                <div class="trust-stat" role="listitem">
+                    <div class="number" data-count="100">0</div>
+                    <div class="label">5-Star Reviews</div>
+                </div>
+                <div class="trust-stat" role="listitem">
+                    <div class="number">7+</div>
+                    <div class="label">Areas Covered</div>
+                </div>
+                <div class="trust-stat" role="listitem">
+                    <div class="number">24h</div>
+                    <div class="label">Response Time</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         SECTION 3 — FOOTER
+         ========================================== -->
+    <footer role="contentinfo" aria-label="Blue Brick contact information and service areas">
+        <div class="footer-grid">
+            <div class="footer-brand reveal">
+                <h3>BLUE <span>BRICK</span></h3>
+                <p>Boston's trusted name in luxury residential and commercial cleaning. We bring white-glove service to every property we touch — from Brighton apartments to Newton estates.</p>
+
+                <a href="tel:+17813305604" class="contact-line" aria-label="Call us at 781-330-5604">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (781) 330-5604
+                </a>
+                <a href="mailto:bluebrickmass@gmail.com" class="contact-line" aria-label="Email us at bluebrickmass@gmail.com">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    bluebrickmass@gmail.com
+                </a>
+            </div>
+
+            <div class="footer-col reveal" style="transition-delay: 0.1s">
+                <h4>Areas We Serve</h4>
+                <nav class="area-grid" aria-label="Service areas">
+                    <a href="#quote">Boston</a>
+                    <a href="#quote">East Boston</a>
+                    <a href="#quote">South Boston</a>
+                    <a href="#quote">Newton</a>
+                    <a href="#quote">Waltham</a>
+                    <a href="#quote">Brighton</a>
+                    <a href="#quote">Allston</a>
+                    <a href="#quote">Back Bay</a>
+                </nav>
+            </div>
+
+            <div class="footer-col reveal" style="transition-delay: 0.2s">
+                <h4>Services</h4>
+                <nav class="footer-services" aria-label="Cleaning services">
+                    <a href="#quote">Luxury Home Cleaning</a>
+                    <a href="#quote">Commercial Cleaning</a>
+                    <a href="#quote">Deep Cleaning</a>
+                    <a href="#quote">Move-In / Move-Out</a>
+                    <a href="#quote">Post-Construction</a>
+                    <a href="#quote">Office Maintenance</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Blue Brick Luxury and Commercial Cleaning. All rights reserved. Serving Greater Boston with pride.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+    <script>
+        // ── Sticky Header Scroll Effect ──
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            header.classList.toggle('scrolled', currentScroll > 50);
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // ── Scroll Reveal (Intersection Observer) ──
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ── Animated Counter ──
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'));
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(el => counterObserver.observe(el));
+
+        function animateCounter(el, target) {
+            const duration = 2000;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+
+                el.textContent = current.toLocaleString() + '+';
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // ── Form Handling ──
+        const form = document.getElementById('leadForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        // Dynamic floating label support for select
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    this.setAttribute('value', this.value);
+                    this.style.color = 'var(--cream)';
+                }
+            });
+        });
+
+        // Phone formatting
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let val = e.target.value.replace(/\D/g, '');
+            if (val.length > 0) {
+                if (val.length <= 3) {
+                    val = '(' + val;
+                } else if (val.length <= 6) {
+                    val = '(' + val.substring(0, 3) + ') ' + val.substring(3);
+                } else {
+                    val = '(' + val.substring(0, 3) + ') ' + val.substring(3, 6) + '-' + val.substring(6, 10);
+                }
+            }
+            e.target.value = val;
+        });
+
+        // Form submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = form.querySelector('.submit-btn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Simulate submission (replace with actual endpoint)
+            setTimeout(() => {
+                form.style.display = 'none';
+                formSuccess.classList.add('active');
+
+                // Optional: Send to email service, Netlify Forms, Formspree, etc.
+                console.log('Lead captured:', data);
+            }, 1200);
+        });
+
+        // ── Smooth scroll for anchor links ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-filesystem",
+        "/Users/gado/Documents/BlueBrick"
+      ]
+    },
+    "web-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-web-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": ""
+      }
+    }
+  }
+}
