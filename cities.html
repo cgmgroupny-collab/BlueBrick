@@ -101,10 +101,8 @@
         }
 
         .logo img {
-            width: 280px;
-            height: 100px;
-            object-fit: contain;
-            object-position: left center;
+            width: 220px;
+            height: auto;
             filter: brightness(0) invert(1);
             transition: all 0.4s;
         }
@@ -246,9 +244,8 @@
         }
 
         .city-card:first-child {
-            grid-column: span 2;
-            grid-row: span 2;
-            aspect-ratio: auto;
+            grid-column: span 3;
+            aspect-ratio: 21/9;
         }
 
         .city-card:hover {
@@ -318,6 +315,12 @@
 
         .city-card:first-child .city-content h2 {
             font-size: 2.2rem;
+        }
+
+        .city-card:first-child .city-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .city-content p {
@@ -600,8 +603,7 @@
             header { height: 100px; }
 
             .logo img {
-                width: 220px;
-                height: 80px;
+                width: 180px;
             }
 
             .cities-grid {
@@ -610,7 +612,6 @@
 
             .city-card:first-child {
                 grid-column: span 2;
-                grid-row: span 1;
                 aspect-ratio: 16/9;
             }
 
@@ -628,8 +629,7 @@
             header { height: 80px; }
 
             .logo img {
-                width: 180px;
-                height: 60px;
+                width: 140px;
             }
 
             .cities-grid {
@@ -833,7 +833,7 @@
     <footer role="contentinfo">
         <div class="footer-inner">
             <div class="footer-brand">
-                <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: 300px; height: auto; filter: brightness(0) invert(1);">
+                <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: 160px; height: auto; filter: brightness(0) invert(1);">
             </div>
             <div class="footer-links">
                 <a href="/">Home</a>
