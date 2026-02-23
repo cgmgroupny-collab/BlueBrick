@@ -65,8 +65,6 @@
     }
     </script>
 
-    <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1549,7 +1547,12 @@
             </div>
 
             <div class="form-wrapper">
-                <form class="lead-form" id="leadForm" aria-label="Request a free post-construction cleaning estimate">
+                <form class="lead-form" id="leadForm" action="https://api.web3forms.com/submit" method="POST" aria-label="Request a free post-construction cleaning estimate">
+                    <input type="hidden" name="access_key" value="5a56c460-a20c-41d4-8cca-6664191b627a">
+                    <input type="hidden" name="subject" value="New Cleaning Estimate Request — Blue Brick">
+                    <input type="hidden" name="from_name" value="Blue Brick Website">
+                    <input type="hidden" name="redirect" value="https://bluebrickmass.com/?submitted=true">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
                     <h2 class="form-title">Get Your Free Cleanup Estimate</h2>
                     <p class="form-subtitle">Most quotes delivered within 2 hours.</p>
 
@@ -1654,7 +1657,6 @@
                             <textarea id="message" name="message" rows="3" placeholder=" "></textarea>
                             <label for="message">Project details — scope, timeline, special needs (optional)</label>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" style="margin-bottom: 1rem; transform: scale(0.9); transform-origin: left top;"></div>
                         <div class="form-nav">
                             <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
                             <button type="submit" class="submit-btn">Get My Free Estimate</button>
@@ -1988,7 +1990,7 @@
             e.target.value = val;
         });
 
-        // ── Form submission ──
+        // ── Form submission via Web3Forms ──
         const form = document.getElementById('leadForm');
         const formSuccess = document.getElementById('formSuccess');
 
@@ -1997,13 +1999,27 @@
             const btn = form.querySelector('.submit-btn');
             btn.textContent = 'Sending...';
             btn.disabled = true;
+
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            setTimeout(() => {
-                form.style.display = 'none';
-                formSuccess.classList.add('active');
-                console.log('Lead captured:', data);
-            }, 1200);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    form.style.display = 'none';
+                    formSuccess.classList.add('active');
+                } else {
+                    btn.textContent = 'Something went wrong. Try again.';
+                    btn.disabled = false;
+                }
+            })
+            .catch(() => {
+                btn.textContent = 'Network error. Try again.';
+                btn.disabled = false;
+            });
         });
 
         // ── Smooth scroll ──
