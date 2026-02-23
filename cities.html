@@ -82,25 +82,16 @@
            HEADER
            ============================================ */
         header {
-            position: fixed;
+            position: absolute;
             top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 0 clamp(1.5rem, 4vw, 3rem);
-            height: 80px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(0, 29, 74, 0.06);
-            box-shadow: 0 4px 30px rgba(0, 29, 74, 0.05);
+            background: transparent;
             transition: all 0.4s ease;
-        }
-
-        header.scrolled {
-            height: 68px;
-            box-shadow: 0 4px 30px rgba(0, 29, 74, 0.08);
         }
 
         .logo {
@@ -110,18 +101,13 @@
         }
 
         .logo img {
-            height: 46px;
-            width: auto;
+            width: 280px;
+            height: 100px;
+            object-fit: contain;
+            object-position: left center;
+            filter: brightness(0) invert(1);
+            transition: all 0.4s;
         }
-
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            letter-spacing: 0.04em;
-            color: var(--prussian);
-        }
-
-        .logo-text span { color: var(--cerulean); }
 
         nav {
             display: flex;
@@ -134,7 +120,7 @@
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--dark-gray);
+            color: rgba(255, 255, 255, 0.85);
             transition: color 0.3s;
         }
 
@@ -175,7 +161,7 @@
            PAGE HERO
            ============================================ */
         .page-hero {
-            padding: 160px clamp(1.5rem, 5vw, 4rem) 80px;
+            padding: 180px clamp(1.5rem, 5vw, 4rem) 80px;
             text-align: center;
             background: var(--prussian);
             position: relative;
@@ -186,7 +172,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1920&q=80') center/cover no-repeat;
+            background: url('assets/images/city images/boston condo.png') center/cover no-repeat;
             opacity: 0.15;
         }
 
@@ -575,15 +561,8 @@
         }
 
         .footer-brand img {
-            height: 32px;
+            height: 50px;
             width: auto;
-            filter: brightness(0) invert(1);
-        }
-
-        .footer-brand span {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            color: var(--white);
         }
 
         .footer-links {
@@ -618,6 +597,13 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
+            header { height: 100px; }
+
+            .logo img {
+                width: 220px;
+                height: 80px;
+            }
+
             .cities-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -638,6 +624,13 @@
 
         @media (max-width: 640px) {
             html { font-size: 16px; }
+
+            header { height: 80px; }
+
+            .logo img {
+                width: 180px;
+                height: 60px;
+            }
 
             .cities-grid {
                 grid-template-columns: 1fr;
@@ -667,8 +660,7 @@
          ========================================== -->
     <header id="header" role="banner">
         <a href="/" class="logo" aria-label="Blue Brick Home">
-            <img src="assets/images/Gerardo .svg" alt="Blue Brick Logo">
-            <div class="logo-text">BLUE <span>BRICK</span></div>
+            <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning">
         </a>
         <nav aria-label="Main navigation">
             <a href="/#services">Services</a>
@@ -700,7 +692,7 @@
 
                 <!-- Boston — Featured -->
                 <a href="/#quote" class="city-card reveal">
-                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&q=80" alt="Boston skyline and waterfront" loading="lazy">
+                    <img src="assets/images/city images/boston condo.png" alt="Luxury Boston high-rise condo with city skyline views" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Featured Area</div>
@@ -712,7 +704,7 @@
 
                 <!-- East Boston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.1s">
-                    <img src="https://images.unsplash.com/photo-1574958269340-fa927503f3dd?w=800&q=80" alt="East Boston waterfront condos and harbor view" loading="lazy">
+                    <img src="assets/images/city images/east boston rental propety.png" alt="East Boston multi-family rental property" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Waterfront</div>
@@ -724,7 +716,7 @@
 
                 <!-- South Boston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="South Boston modern apartment buildings" loading="lazy">
+                    <img src="assets/images/city images/south boston kichen.png" alt="Modern renovated South Boston kitchen with marble island" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Seaport District</div>
@@ -736,7 +728,7 @@
 
                 <!-- Newton -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.15s">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury Newton estate home exterior" loading="lazy">
+                    <img src="assets/images/city images/newton home.png" alt="Luxury Newton home living room with coffered ceiling and fireplace" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Luxury Estates</div>
@@ -748,7 +740,7 @@
 
                 <!-- Waltham -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.25s">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Modern commercial office building in Waltham" loading="lazy">
+                    <img src="assets/images/city images/waltham office.png" alt="Commercial office space cleaned in Waltham" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Commercial Hub</div>
@@ -760,7 +752,7 @@
 
                 <!-- Brighton -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Brighton residential apartment buildings" loading="lazy">
+                    <img src="assets/images/city images/brighton apartment.png" alt="Clean Brighton apartment with kitchen and living area" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Residential</div>
@@ -772,7 +764,7 @@
 
                 <!-- Allston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.3s">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Modern Allston apartment interior" loading="lazy">
+                    <img src="assets/images/city images/alston finished apartment.png" alt="Finished Allston apartment with exposed brick and kitchen" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Urban Living</div>
@@ -841,8 +833,7 @@
     <footer role="contentinfo">
         <div class="footer-inner">
             <div class="footer-brand">
-                <img src="assets/images/Gerardo .svg" alt="Blue Brick">
-                <span>BLUE BRICK</span>
+                <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: 300px; height: auto; filter: brightness(0) invert(1);">
             </div>
             <div class="footer-links">
                 <a href="/">Home</a>
@@ -858,12 +849,6 @@
     </footer>
 
     <script>
-        // ── Header scroll ──
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.pageYOffset > 50);
-        }, { passive: true });
-
         // ── Scroll Reveal ──
         const revealElements = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
@@ -885,7 +870,7 @@
             if (navOpen) {
                 mainNav.style.display = 'flex';
                 mainNav.style.position = 'absolute';
-                mainNav.style.top = '80px';
+                mainNav.style.top = '120px';
                 mainNav.style.left = '0';
                 mainNav.style.right = '0';
                 mainNav.style.flexDirection = 'column';

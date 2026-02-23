@@ -74,16 +74,15 @@
 
         /* Header */
         header {
-            position: fixed;
+            position: absolute;
             top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 0 clamp(1.5rem, 4vw, 3rem);
-            height: 72px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10, 22, 40, 0.9);
-            backdrop-filter: blur(20px);
+            background: transparent;
             border-bottom: 1px solid rgba(201, 169, 110, 0.08);
         }
 
@@ -102,14 +101,6 @@
         }
         .logo-icon::before { content: ''; width: 12px; height: 12px; background: var(--brass); }
 
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            color: var(--cream);
-        }
-        .logo-text span { color: var(--brass); }
 
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a {
@@ -125,7 +116,7 @@
 
         /* Blog Hero */
         .blog-hero {
-            padding: 140px clamp(1.5rem, 5vw, 4rem) 60px;
+            padding: 180px clamp(1.5rem, 5vw, 4rem) 60px;
             text-align: center;
             position: relative;
         }
@@ -301,8 +292,7 @@
 
     <header>
         <a href="/" class="logo">
-            <div class="logo-icon"></div>
-            <div class="logo-text">BLUE <span>BRICK</span></div>
+            <img src="../assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: 280px; height: 100px; object-fit: contain; object-position: left center; filter: brightness(0) invert(1);">
         </a>
         <nav class="nav-links">
             <a href="/">Home</a>
