@@ -13,7 +13,6 @@ Thumbs.db
 # Temp files
 .tmp/
 *.log
-responder_state.json
 
 # Credentials
 credentials.json
