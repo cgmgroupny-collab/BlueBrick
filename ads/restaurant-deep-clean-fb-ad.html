@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Restaurant Deep Cleaning Facebook Ads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --prussian: #001D4A;
+    --prussian-mid: #0a2d5e;
+    --yale: #27476E;
+    --cerulean: #006992;
+    --amber: #ECA400;
+    --amber-light: #f4be3a;
+    --cream: #EAF8BF;
+    --white: #ffffff;
+    --off-white: #f0f2f5;
+    --dark-gray: #374151;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: #0d1117;
+    color: var(--white);
+    padding: 40px 20px;
+  }
+
+  .page-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+
+  .page-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    color: #8b949e;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .ad-section {
+    max-width: 1080px;
+    margin: 0 auto 80px;
+  }
+
+  .ad-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: var(--amber);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ad-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--amber);
+  }
+
+  /* =========================================
+     AD CREATIVE — 1080x1080 screenshot zone
+     ========================================= */
+  .ad-frame {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  /* ——————— AD 1: GREASE PROBLEM ——————— */
+  .ad-1 {
+    background: var(--prussian);
+    background-image:
+      radial-gradient(ellipse at 20% 80%, rgba(0,105,146,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(39,71,110,0.25) 0%, transparent 50%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 53px,
+        rgba(255,255,255,0.015) 53px,
+        rgba(255,255,255,0.015) 54px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 53px,
+        rgba(255,255,255,0.015) 53px,
+        rgba(255,255,255,0.015) 54px
+      );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    gap: 0;
+  }
+
+  .ad-1 .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    right: 80px;
+  }
+
+  .ad-1 .logo-area img {
+    height: 72px;
+    filter: brightness(0) invert(1);
+  }
+
+  .ad-1 .tag {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(236,164,0,0.1);
+    border: 1px solid rgba(236,164,0,0.3);
+    padding: 8px 20px;
+    border-radius: 3px;
+  }
+
+  .ad-1 .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  .ad-1 .hero-text .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cerulean);
+    margin-bottom: 20px;
+  }
+
+  .ad-1 .hero-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 112px;
+    line-height: 0.92;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .ad-1 .hero-text h2 span {
+    color: var(--amber);
+  }
+
+  .ad-1 .hero-text .subtext {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    max-width: 680px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+
+  .ad-1 .service-grid {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .ad-1 .service-grid .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.5px;
+  }
+
+  .ad-1 .service-grid .item .check-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(236,164,0,0.15);
+    color: var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .ad-1 .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+  }
+
+  .ad-1 .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--amber);
+    color: var(--prussian);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    padding: 20px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 8px 40px rgba(236,164,0,0.3);
+  }
+
+  .ad-1 .cta-btn .arrow {
+    font-size: 28px;
+    transition: transform 0.2s;
+  }
+
+  .ad-1 .phone {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .ad-1 .divider-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber), var(--cerulean), transparent);
+    margin-top: 40px;
+    margin-bottom: 0;
+    border-radius: 2px;
+  }
+
+  /* Decorative grunge overlay */
+  .ad-1::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ad-1 > * { position: relative; z-index: 1; }
+
+  /* ——————— AD 2: HEALTH INSPECTION ——————— */
+  .ad-2 {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .ad-2 .top-stripe {
+    height: 8px;
+    background: linear-gradient(90deg, var(--prussian), var(--cerulean), var(--amber));
+  }
+
+  .ad-2 .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 80px 56px;
+  }
+
+  .ad-2 .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ad-2 .logo-area img {
+    height: 64px;
+  }
+
+  .ad-2 .badge {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0392b;
+    background: rgba(192,57,43,0.08);
+    border: 2px solid rgba(192,57,43,0.2);
+    padding: 10px 24px;
+    border-radius: 4px;
+  }
+
+  .ad-2 .center-block {
+    text-align: center;
+    padding: 0 40px;
+  }
+
+  .ad-2 .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 0.85;
+    color: var(--prussian);
+    letter-spacing: -4px;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .ad-2 .stat-number .pct {
+    font-size: 100px;
+    color: var(--amber);
+    vertical-align: super;
+    letter-spacing: 0;
+  }
+
+  .ad-2 .stat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--cerulean);
+    margin-bottom: 28px;
+  }
+
+  .ad-2 .main-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 0.95;
+    color: var(--prussian);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .ad-2 .main-headline span {
+    color: var(--amber);
+  }
+
+  .ad-2 .sub-copy {
+    font-size: 20px;
+    font-weight: 500;
+    color: #6b7280;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .ad-2 .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .ad-2 .cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ad-2 .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--prussian);
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 20px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .ad-2 .cta-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 1px;
+  }
+
+  .ad-2 .phone-block {
+    text-align: right;
+  }
+
+  .ad-2 .phone-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+  }
+
+  .ad-2 .phone-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 2px;
+    color: var(--prussian);
+  }
+
+  /* ——————— AD 3: THIS WEEK ONLY ——————— */
+  .ad-3 {
+    background: var(--prussian);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad-3 .amber-band {
+    background: var(--amber);
+    padding: 18px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ad-3 .amber-band .left {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: var(--prussian);
+  }
+
+  .ad-3 .amber-band .right {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--prussian);
+    opacity: 0.7;
+  }
+
+  .ad-3 .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 80px 64px;
+  }
+
+  .ad-3 .logo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .ad-3 .logo-row img {
+    height: 68px;
+    filter: brightness(0) invert(1);
+  }
+
+  .ad-3 .week-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .ad-3 .week-badge .dot {
+    width: 10px;
+    height: 10px;
+    background: var(--amber);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .ad-3 .center-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .ad-3 .offer-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 24px;
+  }
+
+  .ad-3 .big-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 96px;
+    line-height: 0.92;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .ad-3 .big-headline span {
+    color: var(--amber);
+  }
+
+  .ad-3 .offer-details {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+
+  .ad-3 .offer-item {
+    text-align: center;
+  }
+
+  .ad-3 .offer-item .icon-text {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .ad-3 .offer-item .label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .ad-3 .cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .ad-3 .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--amber);
+    color: var(--prussian);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+    padding: 22px 56px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 8px 40px rgba(236,164,0,0.25);
+  }
+
+  .ad-3 .or-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad-3 .phone-cta {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 2px;
+  }
+
+  .ad-3 .bottom-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .ad-3 .bottom-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ad-3 .bottom-item .check {
+    color: var(--amber);
+    font-weight: 800;
+  }
+
+  /* Diagonal accent */
+  .ad-3::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgba(236,164,0,0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .ad-3::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid rgba(0,105,146,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .ad-3 > * { position: relative; z-index: 1; }
+
+  /* =========================================
+     CAPTION SECTIONS
+     ========================================= */
+  .caption-block {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .caption-block h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  .caption-block pre {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c9d1d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .copy-hint {
+    font-size: 12px;
+    color: #484f58;
+    margin-bottom: 60px;
+    font-style: italic;
+  }
+
+  /* =========================================
+     INSTRUCTIONS
+     ========================================= */
+  .instructions {
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding-top: 60px;
+    border-top: 1px solid #21262d;
+  }
+
+  .instructions h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--amber);
+    margin-bottom: 24px;
+  }
+
+  .instructions ol {
+    list-style: none;
+    counter-reset: steps;
+  }
+
+  .instructions ol li {
+    counter-increment: steps;
+    font-size: 15px;
+    color: #8b949e;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 36px;
+    position: relative;
+  }
+
+  .instructions ol li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 22px;
+    height: 22px;
+    background: rgba(236,164,0,0.15);
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Restaurant Deep Cleaning Ads</h1>
+  <p>3 high-converting Facebook ad creatives for Blue Brick. Screenshot each 1080&times;1080 ad below and pair it with the ready-to-post caption.</p>
+</div>
+
+<!-- ==========================================
+     AD 1 — GREASE PROBLEM (Pain Point)
+     ========================================== -->
+<div class="ad-section">
+  <div class="ad-label">Ad 1 — Pain Point Attack</div>
+
+  <div class="ad-frame ad-1">
+    <div class="top-bar">
+      <div class="logo-area">
+        <img src="../assets/images/IMG_9670.png" alt="Blue Brick">
+      </div>
+      <div class="tag">Commercial Deep Clean</div>
+    </div>
+
+    <div class="hero-text">
+      <div class="eyebrow">Restaurant &amp; Kitchen Specialists</div>
+      <h2>GREASE DOESN'T<br>STAND A <span>CHANCE.</span></h2>
+      <div class="subtext">Hoods. Fryers. Floors. Walls. We deep clean every surface your kitchen throws at us — so you can focus on what you do best.</div>
+      <div class="service-grid">
+        <div class="item"><span class="check-icon">&#10003;</span> Hood &amp; Exhaust</div>
+        <div class="item"><span class="check-icon">&#10003;</span> Fryers &amp; Grills</div>
+        <div class="item"><span class="check-icon">&#10003;</span> Floors &amp; Walls</div>
+        <div class="item"><span class="check-icon">&#10003;</span> Walk-In Coolers</div>
+      </div>
+    </div>
+
+    <div class="divider-line"></div>
+    <div class="bottom-bar">
+      <div class="cta-btn">
+        BOOK YOUR DEEP CLEAN
+        <span class="arrow">&rarr;</span>
+      </div>
+      <div class="phone">(781) 330-5604</div>
+    </div>
+  </div>
+
+  <div class="caption-block">
+    <h4>Facebook Caption — Copy &amp; Paste</h4>
+    <pre>Restaurant owners in Boston 👋
+
+Let's be real — that built-up grease isn't cleaning itself.
+
+We're Blue Brick, and we specialize in commercial deep cleaning that actually gets the job done:
+
+🔥 Hood &amp; exhaust systems
+🔥 Fryers, grills &amp; flat tops
+🔥 Grease-caked floors &amp; walls
+🔥 Walk-in coolers &amp; storage areas
+
+We've helped kitchens across Greater Boston go from grimy to gleaming — and we can do the same for yours.
+
+📲 DM us or call (781) 330-5604 to get on the schedule this week.
+
+Serving Boston, East Boston, South Boston, Newton, Waltham, Brighton, Allston &amp; surrounding areas.
+
+#BostonRestaurants #CommercialCleaning #DeepCleaning #RestaurantCleaning #KitchenCleaning #BostonFood #GreaseCleaning #BlueBrick #BostonSmallBusiness #RestaurantOwners #CommercialKitchen #GreaserBoston</pre>
+  </div>
+  <div class="copy-hint">Select all text above and paste directly into your Facebook post.</div>
+</div>
+
+<!-- ==========================================
+     AD 2 — HEALTH INSPECTION (Fear/Urgency)
+     ========================================== -->
+<div class="ad-section">
+  <div class="ad-label">Ad 2 — Health Inspection Urgency</div>
+
+  <div class="ad-frame ad-2">
+    <div class="top-stripe"></div>
+    <div class="content">
+      <div class="header-row">
+        <div class="logo-area">
+          <img src="../assets/images/IMG_9670.png" alt="Blue Brick">
+        </div>
+        <div class="badge">Don't Get Caught Off Guard</div>
+      </div>
+
+      <div class="center-block">
+        <div class="stat-number">1<span class="pct">ST</span></div>
+        <div class="stat-label">Impression Matters</div>
+        <div class="main-headline">IS YOUR KITCHEN<br><span>INSPECTION-READY</span><br>RIGHT NOW?</div>
+        <div class="sub-copy">One failed inspection can cost you thousands — or your reputation. Blue Brick's commercial deep cleaning gets every surface spotless before the inspector walks in.</div>
+      </div>
+
+      <div class="footer-row">
+        <div class="cta-block">
+          <div class="cta-btn">
+            SCHEDULE THIS WEEK
+            <span>&rarr;</span>
+          </div>
+          <div class="cta-sub">Same-week availability for Boston area restaurants</div>
+        </div>
+        <div class="phone-block">
+          <div class="phone-label">Call or Text</div>
+          <div class="phone-number">(781) 330-5604</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption-block">
+    <h4>Facebook Caption — Copy &amp; Paste</h4>
+    <pre>Quick question for Boston restaurant owners:
+
+If a health inspector walked in RIGHT NOW — would your kitchen pass?
+
+Be honest. 😬
+
+Grease buildup on hoods. Grime behind equipment. Floors that haven't seen a real scrub in months.
+
+We get it — you're busy running a business.
+
+That's why Blue Brick exists. We handle the deep cleaning so you don't have to stress about surprise inspections.
+
+✅ Certified commercial deep cleaning
+✅ Same-week scheduling available
+✅ Serving all Greater Boston
+
+Don't wait for a violation. Get ahead of it.
+
+📞 (781) 330-5604
+📩 DM us to book
+
+#HealthInspection #RestaurantCleaning #BostonRestaurants #CommercialCleaning #KitchenDeepClean #FoodSafety #RestaurantOwner #BlueBrick #BostonBusiness #CleanKitchen #InspectionReady #GreaterBoston</pre>
+  </div>
+  <div class="copy-hint">Select all text above and paste directly into your Facebook post.</div>
+</div>
+
+<!-- ==========================================
+     AD 3 — THIS WEEK ONLY (Scarcity/Deal)
+     ========================================== -->
+<div class="ad-section">
+  <div class="ad-label">Ad 3 — Limited-Time Offer</div>
+
+  <div class="ad-frame ad-3">
+    <div class="amber-band">
+      <div class="left">LIMITED AVAILABILITY — THIS WEEK ONLY</div>
+      <div class="right">Greater Boston Area</div>
+    </div>
+
+    <div class="main-content">
+      <div class="logo-row">
+        <img src="../assets/images/IMG_9670.png" alt="Blue Brick">
+        <div class="week-badge">
+          <span class="dot"></span>
+          Booking Now
+        </div>
+      </div>
+
+      <div class="center-content">
+        <div class="offer-eyebrow">Restaurant &amp; Commercial Kitchens</div>
+        <div class="big-headline">DEEP CLEAN<br>YOUR KITCHEN<br><span>THIS WEEK.</span></div>
+
+        <div class="offer-details">
+          <div class="offer-item">
+            <div class="icon-text">🔥</div>
+            <div class="label">Hoods &amp; Vents</div>
+          </div>
+          <div class="offer-item">
+            <div class="icon-text">🍳</div>
+            <div class="label">Fryers &amp; Grills</div>
+          </div>
+          <div class="offer-item">
+            <div class="icon-text">🧱</div>
+            <div class="label">Floors &amp; Walls</div>
+          </div>
+          <div class="offer-item">
+            <div class="icon-text">❄️</div>
+            <div class="label">Walk-In Coolers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <div class="cta-btn">
+          BOOK NOW
+          <span>&rarr;</span>
+        </div>
+        <div class="or-text">or call</div>
+        <a href="tel:7813305604" class="phone-cta">(781) 330-5604</a>
+      </div>
+
+      <div class="bottom-row">
+        <div class="bottom-item"><span class="check">&#10003;</span> Licensed &amp; Insured</div>
+        <div class="bottom-item"><span class="check">&#10003;</span> Same-Week Availability</div>
+        <div class="bottom-item"><span class="check">&#10003;</span> 100% Satisfaction Guaranteed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption-block">
+    <h4>Facebook Caption — Copy &amp; Paste</h4>
+    <pre>🚨 Boston Restaurant Owners — We have openings THIS WEEK.
+
+If your kitchen needs a serious deep clean, now's the time.
+
+Blue Brick Commercial Deep Cleaning handles the jobs your regular crew can't:
+
+➡️ Grease-packed hoods &amp; exhaust systems
+➡️ Burnt-on buildup on fryers &amp; grills
+➡️ Floors, walls &amp; hard-to-reach surfaces
+➡️ Walk-in coolers &amp; storage areas
+
+We only have a few slots left this week — once they're filled, they're gone.
+
+📲 Call or text (781) 330-5604
+💬 Or DM us right now to lock in your spot
+
+Licensed. Insured. Satisfaction guaranteed.
+
+Boston | East Boston | South Boston | Newton | Waltham | Brighton | Allston
+
+#BostonRestaurants #DeepCleaning #CommercialKitchen #RestaurantCleaning #KitchenCleaning #BlueBrick #BostonSmallBusiness #RestaurantOwners #GreaseCleaning #BostonFood #CleanKitchen #ThisWeekOnly #BookNow</pre>
+  </div>
+  <div class="copy-hint">Select all text above and paste directly into your Facebook post.</div>
+</div>
+
+<!-- ==========================================
+     HOW TO USE INSTRUCTIONS
+     ========================================== -->
+<div class="instructions">
+  <h3>How to Use These Ads</h3>
+  <ol>
+    <li>Scroll to an ad creative above (the 1080&times;1080 square image).</li>
+    <li>Take a screenshot of just the ad square. On Mac: <strong>Cmd + Shift + 4</strong>, then drag to select. On Windows: use Snipping Tool.</li>
+    <li>Copy the Facebook caption text below the ad.</li>
+    <li>Create a new Facebook post in your target group — paste the caption, attach the screenshot image.</li>
+    <li>Post across all your Boston-area restaurant and business Facebook groups.</li>
+    <li>Repeat with different ad variants to test which one gets the most engagement.</li>
+  </ol>
+</div>
+
+</body>
+</html>

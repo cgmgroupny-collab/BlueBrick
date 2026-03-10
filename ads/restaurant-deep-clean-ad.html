@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Restaurant Deep Cleaning Ad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .ad {
+    width: 1080px;
+    height: 1080px;
+    background: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Canvas background for the hood illustration */
+  #hoodCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1080px;
+    z-index: 1;
+  }
+
+  /* Dark overlay gradient for text readability */
+  .overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 280px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 60%, transparent 100%);
+    z-index: 5;
+  }
+
+  .overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 480px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.5) 70%, transparent 100%);
+    z-index: 5;
+  }
+
+  /* Top warning bar */
+  .warning-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ECA400, #ff6b35, #ECA400);
+    z-index: 20;
+  }
+
+  /* Pain point headline */
+  .pain-point {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    z-index: 20;
+    text-align: center;
+  }
+
+  .pain-point .alert-label {
+    display: inline-block;
+    background: rgba(236,164,0,0.15);
+    border: 1px solid rgba(236,164,0,0.4);
+    padding: 6px 20px;
+    border-radius: 2px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #ECA400;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .pain-point h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 62px;
+    line-height: 0.95;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+
+  .pain-point h1 span {
+    color: #ECA400;
+  }
+
+  /* Center label on the image */
+  .image-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .image-label .this-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: #ECA400;
+    line-height: 1;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.6);
+    letter-spacing: 8px;
+    opacity: 0.15;
+  }
+
+  /* Main message */
+  .main-message {
+    position: absolute;
+    bottom: 260px;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    z-index: 20;
+  }
+
+  .main-message h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 68px;
+    line-height: 0.92;
+    letter-spacing: 5px;
+    color: #ffffff;
+  }
+
+  .main-message h2 .amp {
+    color: #ECA400;
+  }
+
+  .main-message .subline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+
+  /* Thin gold separator */
+  .sep {
+    position: absolute;
+    bottom: 235px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #ECA400;
+    z-index: 20;
+  }
+
+  /* Offer block */
+  .offer {
+    position: absolute;
+    bottom: 130px;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    z-index: 20;
+  }
+
+  .offer .free {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 8px;
+    color: #ECA400;
+  }
+
+  .offer .book {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+    letter-spacing: 2px;
+  }
+
+  /* CTA bar */
+  .cta-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95px;
+    background: #ECA400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 20;
+  }
+
+  .cta-bar .cta-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #001D4A;
+  }
+
+  .cta-bar .divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(0,29,74,0.3);
+  }
+
+  .cta-bar .brand-small {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: #001D4A;
+    opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="ad">
+  <!-- Canvas renders the realistic greasy hood -->
+  <canvas id="hoodCanvas" width="1080" height="1080"></canvas>
+
+  <!-- Overlays for text readability -->
+  <div class="overlay-top"></div>
+  <div class="overlay-bottom"></div>
+
+  <!-- Warning bar -->
+  <div class="warning-bar"></div>
+
+  <!-- Pain point headline -->
+  <div class="pain-point">
+    <div class="alert-label">&#9888; Health Code Warning</div>
+    <h1>GREASE BUILDUP<br><span>COSTING YOU INSPECTIONS?</span></h1>
+  </div>
+
+  <!-- Main message -->
+  <div class="main-message">
+    <h2>RESTAURANT<br>DEEP CLEANING<br><span class="amp">&</span> GREASE REMOVAL</h2>
+    <div class="subline">Commercial Kitchens &bull; Hoods &bull; Exhaust Systems</div>
+  </div>
+
+  <!-- Separator -->
+  <div class="sep"></div>
+
+  <!-- Offer -->
+  <div class="offer">
+    <div class="free">FREE CONSULTATION</div>
+    <div class="book">Book your inspection today</div>
+  </div>
+
+  <!-- CTA Bar -->
+  <div class="cta-bar">
+    <span class="cta-text">CALL 781-330-5604</span>
+    <span class="divider"></span>
+    <span class="brand-small">BLUE BRICK</span>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('hoodCanvas');
+const ctx = canvas.getContext('2d');
+const W = 1080;
+const H = 1080;
+
+// Seeded random for consistent output
+let seed = 42;
+function rand() {
+  seed = (seed * 16807 + 0) % 2147483647;
+  return (seed - 1) / 2147483646;
+}
+
+// Perlin-like noise
+function noise2D(x, y) {
+  const n = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+  return n - Math.floor(n);
+}
+
+function smoothNoise(x, y, scale) {
+  const sx = x / scale;
+  const sy = y / scale;
+  const ix = Math.floor(sx);
+  const iy = Math.floor(sy);
+  const fx = sx - ix;
+  const fy = sy - iy;
+  const a = noise2D(ix, iy);
+  const b = noise2D(ix + 1, iy);
+  const c = noise2D(ix, iy + 1);
+  const d = noise2D(ix + 1, iy + 1);
+  const u = fx * fx * (3 - 2 * fx);
+  const v = fy * fy * (3 - 2 * fy);
+  return a * (1 - u) * (1 - v) + b * u * (1 - v) + c * (1 - u) * v + d * u * v;
+}
+
+function fbm(x, y, octaves, scale) {
+  let val = 0, amp = 1, freq = 1, max = 0;
+  for (let i = 0; i < octaves; i++) {
+    val += smoothNoise(x * freq, y * freq, scale) * amp;
+    max += amp;
+    amp *= 0.5;
+    freq *= 2;
+  }
+  return val / max;
+}
+
+// Draw the commercial kitchen hood with heavy grease
+function drawHood() {
+  // === BACKGROUND: Dark industrial wall ===
+  const wallGrad = ctx.createLinearGradient(0, 0, 0, H);
+  wallGrad.addColorStop(0, '#1a1a1a');
+  wallGrad.addColorStop(0.3, '#141414');
+  wallGrad.addColorStop(0.7, '#0f0f0f');
+  wallGrad.addColorStop(1, '#080808');
+  ctx.fillStyle = wallGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Wall texture (tile-like grid)
+  ctx.strokeStyle = 'rgba(255,255,255,0.015)';
+  ctx.lineWidth = 1;
+  for (let y = 0; y < H; y += 60) {
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(W, y);
+    ctx.stroke();
+  }
+  for (let x = 0; x < W; x += 60) {
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H);
+    ctx.stroke();
+  }
+
+  // === HOOD STRUCTURE ===
+  const hoodTop = 220;
+  const hoodBottom = 620;
+  const hoodLeft = 90;
+  const hoodRight = 990;
+  const hoodHeight = hoodBottom - hoodTop;
+
+  // Hood shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.6)';
+  ctx.beginPath();
+  ctx.moveTo(hoodLeft - 20, hoodBottom + 10);
+  ctx.lineTo(hoodRight + 20, hoodBottom + 10);
+  ctx.lineTo(hoodRight + 40, hoodBottom + 80);
+  ctx.lineTo(hoodLeft - 40, hoodBottom + 80);
+  ctx.closePath();
+  ctx.fill();
+
+  // Hood main body — stainless steel base
+  const metalGrad = ctx.createLinearGradient(0, hoodTop, 0, hoodBottom);
+  metalGrad.addColorStop(0, '#6a6a6a');
+  metalGrad.addColorStop(0.15, '#585858');
+  metalGrad.addColorStop(0.3, '#4a4a4a');
+  metalGrad.addColorStop(0.5, '#555555');
+  metalGrad.addColorStop(0.7, '#4a4a4a');
+  metalGrad.addColorStop(0.85, '#3d3d3d');
+  metalGrad.addColorStop(1, '#353535');
+  ctx.fillStyle = metalGrad;
+  ctx.beginPath();
+  ctx.moveTo(hoodLeft + 30, hoodTop);
+  ctx.lineTo(hoodRight - 30, hoodTop);
+  ctx.lineTo(hoodRight, hoodTop + 40);
+  ctx.lineTo(hoodRight, hoodBottom);
+  ctx.lineTo(hoodLeft, hoodBottom);
+  ctx.lineTo(hoodLeft, hoodTop + 40);
+  ctx.closePath();
+  ctx.fill();
+
+  // Top trapezoid (chimney)
+  const chimneyGrad = ctx.createLinearGradient(0, hoodTop - 80, 0, hoodTop);
+  chimneyGrad.addColorStop(0, '#4a4a4a');
+  chimneyGrad.addColorStop(1, '#5a5a5a');
+  ctx.fillStyle = chimneyGrad;
+  ctx.beginPath();
+  ctx.moveTo(340, hoodTop - 80);
+  ctx.lineTo(740, hoodTop - 80);
+  ctx.lineTo(hoodRight - 30, hoodTop);
+  ctx.lineTo(hoodLeft + 30, hoodTop);
+  ctx.closePath();
+  ctx.fill();
+
+  // Brushed metal horizontal lines
+  for (let y = hoodTop; y < hoodBottom; y += 2) {
+    const brightness = 0.02 + 0.015 * Math.sin(y * 0.3);
+    ctx.strokeStyle = `rgba(255,255,255,${brightness})`;
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(hoodLeft, y);
+    ctx.lineTo(hoodRight, y);
+    ctx.stroke();
+  }
+
+  // === GREASE FILTER PANELS (3 panels) ===
+  const panelY = hoodTop + 60;
+  const panelH = hoodHeight - 120;
+  const panelGap = 15;
+  const panelW = (hoodRight - hoodLeft - 60 - panelGap * 2) / 3;
+
+  for (let p = 0; p < 3; p++) {
+    const px = hoodLeft + 30 + p * (panelW + panelGap);
+
+    // Panel frame
+    ctx.fillStyle = '#3a3a3a';
+    ctx.fillRect(px, panelY, panelW, panelH);
+
+    // Panel inner (slightly recessed)
+    const panelInnerGrad = ctx.createLinearGradient(0, panelY, 0, panelY + panelH);
+    panelInnerGrad.addColorStop(0, '#444');
+    panelInnerGrad.addColorStop(0.5, '#3a3a3a');
+    panelInnerGrad.addColorStop(1, '#333');
+    ctx.fillStyle = panelInnerGrad;
+    ctx.fillRect(px + 4, panelY + 4, panelW - 8, panelH - 8);
+
+    // Baffle slats (diagonal lines)
+    ctx.strokeStyle = 'rgba(80,80,80,0.8)';
+    ctx.lineWidth = 3;
+    for (let s = 0; s < panelH + panelW; s += 14) {
+      ctx.beginPath();
+      ctx.moveTo(px + 4 + Math.min(s, panelW - 8), panelY + 4 + Math.max(0, s - panelW + 8));
+      ctx.lineTo(px + 4 + Math.max(0, s - panelH + 8), panelY + 4 + Math.min(s, panelH - 8));
+      ctx.stroke();
+    }
+
+    // Reverse slats for cross-hatch
+    ctx.strokeStyle = 'rgba(70,70,70,0.5)';
+    ctx.lineWidth = 2;
+    for (let s = 0; s < panelH + panelW; s += 14) {
+      ctx.beginPath();
+      ctx.moveTo(px + panelW - 4 - Math.min(s, panelW - 8), panelY + 4 + Math.max(0, s - panelW + 8));
+      ctx.lineTo(px + panelW - 4 - Math.max(0, s - panelH + 8), panelY + 4 + Math.min(s, panelH - 8));
+      ctx.stroke();
+    }
+  }
+
+  // === HEAVY GREASE BUILDUP ===
+  // Layered grease on the hood surface
+  const imgData = ctx.getImageData(0, 0, W, H);
+  const data = imgData.data;
+
+  for (let y = hoodTop - 80; y < hoodBottom + 60; y++) {
+    for (let x = hoodLeft - 10; x < hoodRight + 10; x++) {
+      if (x < 0 || x >= W || y < 0 || y >= H) continue;
+
+      const idx = (y * W + x) * 4;
+      const nx = x / W;
+      const ny = (y - hoodTop) / hoodHeight;
+
+      // Multiple noise layers for grease texture
+      const n1 = fbm(x, y, 6, 40);
+      const n2 = fbm(x + 500, y + 300, 4, 80);
+      const n3 = fbm(x * 2, y * 2, 3, 20);
+
+      // Grease is heavier at bottom, around edges, and near filter seams
+      let greaseIntensity = 0;
+
+      // Bottom accumulation
+      greaseIntensity += Math.pow(ny, 1.5) * 0.4;
+
+      // Around filter panel edges
+      for (let p = 0; p < 3; p++) {
+        const px = hoodLeft + 30 + p * (panelW + panelGap);
+        const distToEdge = Math.min(Math.abs(x - px), Math.abs(x - px - panelW));
+        if (distToEdge < 20) {
+          greaseIntensity += (1 - distToEdge / 20) * 0.5;
+        }
+      }
+
+      // General grease coverage
+      greaseIntensity += n1 * 0.35;
+      greaseIntensity += (n2 > 0.6 ? (n2 - 0.6) * 2.5 : 0) * 0.3;
+
+      // Thick spots
+      if (n1 > 0.55 && n2 > 0.45) {
+        greaseIntensity += 0.4;
+      }
+
+      greaseIntensity = Math.min(greaseIntensity, 1.0);
+
+      if (greaseIntensity > 0.1) {
+        // Grease color: dark amber-brown, varies with noise
+        const gr = Math.floor(40 + n3 * 30 + greaseIntensity * 20);
+        const gg = Math.floor(25 + n3 * 15 + greaseIntensity * 8);
+        const gb = Math.floor(5 + n3 * 8);
+
+        const alpha = greaseIntensity * 0.7;
+        // Blend
+        data[idx] = Math.floor(data[idx] * (1 - alpha) + gr * alpha);
+        data[idx + 1] = Math.floor(data[idx + 1] * (1 - alpha) + gg * alpha);
+        data[idx + 2] = Math.floor(data[idx + 2] * (1 - alpha) + gb * alpha);
+      }
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+
+  // === THICK GREASE DRIPS ===
+  seed = 77;
+  for (let d = 0; d < 35; d++) {
+    const dx = hoodLeft + 40 + rand() * (hoodRight - hoodLeft - 80);
+    const dy = hoodBottom - 40 + rand() * 30;
+    const dripLen = 30 + rand() * 120;
+    const dripW = 3 + rand() * 10;
+    const wobble = rand() * 8 - 4;
+
+    const dripGrad = ctx.createLinearGradient(0, dy, 0, dy + dripLen);
+    const dripAlpha = 0.4 + rand() * 0.4;
+    dripGrad.addColorStop(0, `rgba(60,35,10,${dripAlpha})`);
+    dripGrad.addColorStop(0.7, `rgba(45,25,5,${dripAlpha * 0.6})`);
+    dripGrad.addColorStop(1, `rgba(30,18,3,0)`);
+
+    ctx.beginPath();
+    ctx.moveTo(dx, dy);
+    ctx.quadraticCurveTo(dx + wobble, dy + dripLen * 0.5, dx + wobble * 0.5, dy + dripLen);
+    ctx.lineWidth = dripW;
+    ctx.strokeStyle = dripGrad;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Drip blob at tip
+    if (rand() > 0.4) {
+      ctx.beginPath();
+      ctx.arc(dx + wobble * 0.5, dy + dripLen, dripW * 0.7, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(50,30,8,${dripAlpha * 0.5})`;
+      ctx.fill();
+    }
+  }
+
+  // === GLISTENING/WET GREASE HIGHLIGHTS ===
+  seed = 200;
+  for (let i = 0; i < 60; i++) {
+    const gx = hoodLeft + rand() * (hoodRight - hoodLeft);
+    const gy = hoodTop + rand() * hoodHeight;
+    const gr = 2 + rand() * 6;
+    const ga = 0.03 + rand() * 0.08;
+
+    ctx.beginPath();
+    ctx.arc(gx, gy, gr, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,200,80,${ga})`;
+    ctx.fill();
+  }
+
+  // === HOOD LIP / BOTTOM EDGE ===
+  ctx.fillStyle = '#2a2a2a';
+  ctx.fillRect(hoodLeft, hoodBottom - 8, hoodRight - hoodLeft, 16);
+
+  const lipGrad = ctx.createLinearGradient(0, hoodBottom - 8, 0, hoodBottom + 8);
+  lipGrad.addColorStop(0, '#4a4a4a');
+  lipGrad.addColorStop(0.5, '#333');
+  lipGrad.addColorStop(1, '#222');
+  ctx.fillStyle = lipGrad;
+  ctx.fillRect(hoodLeft, hoodBottom - 4, hoodRight - hoodLeft, 12);
+
+  // Grease on the lip edge
+  for (let x = hoodLeft; x < hoodRight; x += 1) {
+    const n = fbm(x, hoodBottom, 4, 30);
+    if (n > 0.4) {
+      const alpha = (n - 0.4) * 1.5;
+      ctx.fillStyle = `rgba(50,30,8,${Math.min(alpha, 0.8)})`;
+      ctx.fillRect(x, hoodBottom - 2, 1, 8);
+    }
+  }
+
+  // === RIVETS ===
+  const rivetPositions = [
+    [hoodLeft + 15, hoodTop + 20], [hoodRight - 15, hoodTop + 20],
+    [hoodLeft + 15, hoodBottom - 20], [hoodRight - 15, hoodBottom - 20],
+    [hoodLeft + 15, hoodTop + hoodHeight / 2], [hoodRight - 15, hoodTop + hoodHeight / 2],
+  ];
+
+  rivetPositions.forEach(([rx, ry]) => {
+    // Rivet shadow
+    ctx.beginPath();
+    ctx.arc(rx, ry + 1, 5, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,0,0,0.4)';
+    ctx.fill();
+    // Rivet body
+    const rivGrad = ctx.createRadialGradient(rx - 1, ry - 1, 0, rx, ry, 5);
+    rivGrad.addColorStop(0, '#666');
+    rivGrad.addColorStop(0.7, '#444');
+    rivGrad.addColorStop(1, '#333');
+    ctx.beginPath();
+    ctx.arc(rx, ry, 4, 0, Math.PI * 2);
+    ctx.fillStyle = rivGrad;
+    ctx.fill();
+  });
+
+  // === DRAMATIC LIGHTING ===
+  // Warm overhead light hitting the grease
+  const lightGrad = ctx.createRadialGradient(W / 2, hoodTop - 100, 50, W / 2, hoodTop + 150, 500);
+  lightGrad.addColorStop(0, 'rgba(255,180,80,0.08)');
+  lightGrad.addColorStop(0.5, 'rgba(255,150,50,0.03)');
+  lightGrad.addColorStop(1, 'transparent');
+  ctx.fillStyle = lightGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Edge vignette
+  const vigGrad = ctx.createRadialGradient(W / 2, H / 2, 300, W / 2, H / 2, 700);
+  vigGrad.addColorStop(0, 'transparent');
+  vigGrad.addColorStop(1, 'rgba(0,0,0,0.5)');
+  ctx.fillStyle = vigGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // === STOVE/BURNERS BELOW (subtle, in shadow) ===
+  const stoveTop = hoodBottom + 40;
+  ctx.fillStyle = '#0e0e0e';
+  ctx.fillRect(hoodLeft + 20, stoveTop, hoodRight - hoodLeft - 40, 200);
+
+  // Burner grates
+  ctx.strokeStyle = 'rgba(40,40,40,0.6)';
+  ctx.lineWidth = 4;
+  for (let b = 0; b < 4; b++) {
+    const bx = hoodLeft + 80 + b * 220;
+    const by = stoveTop + 30;
+    // Grate lines
+    for (let g = 0; g < 5; g++) {
+      ctx.beginPath();
+      ctx.moveTo(bx + g * 30, by);
+      ctx.lineTo(bx + g * 30, by + 80);
+      ctx.stroke();
+    }
+    ctx.beginPath();
+    ctx.moveTo(bx, by + 20);
+    ctx.lineTo(bx + 120, by + 20);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(bx, by + 60);
+    ctx.lineTo(bx + 120, by + 60);
+    ctx.stroke();
+
+    // Faint blue flame glow
+    if (b === 1 || b === 2) {
+      const flameGrad = ctx.createRadialGradient(bx + 60, by + 40, 5, bx + 60, by + 40, 40);
+      flameGrad.addColorStop(0, 'rgba(50,100,255,0.06)');
+      flameGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = flameGrad;
+      ctx.fillRect(bx, by, 120, 80);
+    }
+  }
+
+  // Grease splatter on the wall above hood
+  seed = 500;
+  for (let s = 0; s < 20; s++) {
+    const sx = hoodLeft + rand() * (hoodRight - hoodLeft);
+    const sy = hoodTop - 80 + rand() * 60;
+    const sr = 2 + rand() * 8;
+    ctx.beginPath();
+    ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(40,25,8,${0.1 + rand() * 0.2})`;
+    ctx.fill();
+  }
+
+  // Grease splatter below hood on wall
+  seed = 600;
+  for (let s = 0; s < 15; s++) {
+    const sx = hoodLeft + rand() * (hoodRight - hoodLeft);
+    const sy = hoodBottom + 10 + rand() * 30;
+    const sr = 1 + rand() * 5;
+    ctx.beginPath();
+    ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(45,28,8,${0.15 + rand() * 0.25})`;
+    ctx.fill();
+  }
+
+  // Film grain overlay
+  const grainData = ctx.getImageData(0, 0, W, H);
+  const gd = grainData.data;
+  seed = 999;
+  for (let i = 0; i < gd.length; i += 4) {
+    const grain = (rand() - 0.5) * 12;
+    gd[i] = Math.max(0, Math.min(255, gd[i] + grain));
+    gd[i + 1] = Math.max(0, Math.min(255, gd[i + 1] + grain));
+    gd[i + 2] = Math.max(0, Math.min(255, gd[i + 2] + grain));
+  }
+  ctx.putImageData(grainData, 0, 0);
+}
+
+drawHood();
+</script>
+
+</body>
+</html>
