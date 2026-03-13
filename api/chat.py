@@ -31,27 +31,30 @@ class handler(BaseHTTPRequestHandler):
             message = body.get('message', '').strip()
             page = body.get('page', 'Unknown page')
             timestamp = body.get('timestamp', datetime.utcnow().isoformat())
+            step = body.get('step', '')
+            data = body.get('data', {})
 
             if not message:
                 self._respond(400, {'error': 'No message provided'})
                 return
 
             # Sanitize inputs (prevent injection)
-            message = message[:1000]  # Cap at 1000 chars
+            message = message[:1000]
             page = page[:200]
+            step = str(step)[:50]
 
             results = {}
 
             # Send email notification
             try:
-                self._send_email(message, page, timestamp)
+                self._send_email(message, page, timestamp, step, data)
                 results['email'] = 'sent'
             except Exception as e:
                 results['email'] = f'failed: {str(e)}'
 
             # Send Telegram notification
             try:
-                self._send_telegram(message, page, timestamp)
+                self._send_telegram(message, page, timestamp, step, data)
                 results['telegram'] = 'sent'
             except Exception as e:
                 results['telegram'] = f'failed: {str(e)}'
@@ -89,48 +92,65 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
 
-    def _send_email(self, message, page, timestamp):
+    def _send_email(self, message, page, timestamp, step='', data=None):
         gmail_user = os.environ.get('GMAIL_USER', 'bluebrickmass@gmail.com')
         gmail_pass = os.environ.get('GMAIL_APP_PASSWORD', '')
         notify_email = os.environ.get('NOTIFY_EMAIL', gmail_user)
+        data = data or {}
 
         if not gmail_pass:
             raise Exception('GMAIL_APP_PASSWORD not set')
 
-        # Build email
+        # Determine notification type and priority
+        is_lead = step in ('collect_phone', 'collect_email', 'quote_done')
+        service = data.get('service', '')
+        size = data.get('size', '')
+        contact = data.get('contact', '')
+        contact_method = data.get('contactMethod', '')
+
+        if is_lead:
+            subject = f'🔥 NEW LEAD: {service} — {message}'
+            priority = 'HIGH'
+        elif step in ('quote_type', 'quote_size', 'book'):
+            subject = f'👀 Active Quote: {service or message}'
+            priority = 'MEDIUM'
+        else:
+            subject = f'💬 Chat: {message[:50]}'
+            priority = 'LOW'
+
         msg = MIMEMultipart('alternative')
-        msg['Subject'] = f'💬 New Chat: "{message[:50]}..."' if len(message) > 50 else f'💬 New Chat: "{message}"'
+        msg['Subject'] = subject
         msg['From'] = f'Blue Brick Chat <{gmail_user}>'
         msg['To'] = notify_email
 
-        # Plain text
-        plain = f"""New chat message from your website:
+        # Build context section
+        details_rows = f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Message:</td><td style="color:#1a202c;">{message}</td></tr>'
+        if service:
+            details_rows += f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Service:</td><td style="color:#1a202c;">{service}</td></tr>'
+        if size:
+            details_rows += f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Size:</td><td style="color:#1a202c;">{size}</td></tr>'
+        if contact_method:
+            details_rows += f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Wants:</td><td style="color:#1a202c;">{contact_method}</td></tr>'
+        details_rows += f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Page:</td><td>{page}</td></tr>'
+        details_rows += f'<tr><td style="padding:3px 10px 3px 0;font-weight:600;color:#64748b;">Time:</td><td>{timestamp}</td></tr>'
 
-Message: {message}
-Page: {page}
-Time: {timestamp}
+        banner_color = '#dc2626' if is_lead else '#001D4A'
+        banner_label = '🔥 NEW LEAD' if is_lead else '💬 Chat Message'
 
-Reply via text (781) 330-5604 or email."""
-
-        # HTML version
         html = f"""
-<div style="font-family: -apple-system, sans-serif; max-width: 500px; margin: 0 auto;">
-    <div style="background: #001D4A; padding: 16px 20px; border-radius: 12px 12px 0 0;">
-        <h2 style="color: #fff; margin: 0; font-size: 16px;">💬 New Chat Message</h2>
+<div style="font-family:-apple-system,sans-serif;max-width:500px;margin:0 auto;">
+    <div style="background:{banner_color};padding:16px 20px;border-radius:12px 12px 0 0;">
+        <h2 style="color:#fff;margin:0;font-size:16px;">{banner_label}</h2>
     </div>
-    <div style="background: #f8f9fa; padding: 20px; border: 1px solid #e2e8f0;">
-        <div style="background: #fff; padding: 14px 16px; border-radius: 10px; border-left: 3px solid #ECA400; margin-bottom: 12px;">
-            <p style="margin: 0; font-size: 15px; color: #1a202c; line-height: 1.5;">{message}</p>
-        </div>
-        <table style="font-size: 13px; color: #64748b;">
-            <tr><td style="padding: 2px 8px 2px 0; font-weight: 600;">Page:</td><td>{page}</td></tr>
-            <tr><td style="padding: 2px 8px 2px 0; font-weight: 600;">Time:</td><td>{timestamp}</td></tr>
-        </table>
+    <div style="background:#f8f9fa;padding:20px;border:1px solid #e2e8f0;">
+        <table style="font-size:14px;width:100%;">{details_rows}</table>
     </div>
-    <div style="background: #001D4A; padding: 12px 20px; border-radius: 0 0 12px 12px; text-align: center;">
-        <a href="sms:+17813305604" style="color: #ECA400; text-decoration: none; font-size: 13px; font-weight: 600;">Reply via Text →</a>
+    <div style="background:{banner_color};padding:12px 20px;border-radius:0 0 12px 12px;text-align:center;">
+        <a href="sms:+17813305604" style="color:#ECA400;text-decoration:none;font-size:13px;font-weight:600;">Reply via Text →</a>
     </div>
 </div>"""
+
+        plain = f"{banner_label}\n\nMessage: {message}\nService: {service}\nSize: {size}\nPage: {page}\nTime: {timestamp}"
 
         msg.attach(MIMEText(plain, 'plain'))
         msg.attach(MIMEText(html, 'html'))
@@ -139,19 +159,46 @@ Reply via text (781) 330-5604 or email."""
             smtp.login(gmail_user, gmail_pass)
             smtp.send_message(msg)
 
-    def _send_telegram(self, message, page, timestamp):
+    def _send_telegram(self, message, page, timestamp, step='', data=None):
         token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
         chat_id = os.environ.get('TELEGRAM_CHAT_ID', '')
+        data = data or {}
 
         if not token or not chat_id:
             raise Exception('TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set')
 
-        text = (
-            f"💬 *New Chat Message*\n\n"
-            f"📝 {message}\n\n"
-            f"📄 Page: `{page}`\n"
-            f"🕐 {timestamp}"
-        )
+        is_lead = step in ('collect_phone', 'collect_email', 'quote_done')
+        service = data.get('service', '')
+        size = data.get('size', '')
+        contact_method = data.get('contactMethod', '')
+
+        if is_lead:
+            text = (
+                f"🔥🔥 *NEW LEAD* 🔥🔥\n\n"
+                f"📝 *{message}*\n"
+            )
+            if service:
+                text += f"🧹 Service: {service}\n"
+            if size:
+                text += f"📐 Size: {size}\n"
+            if contact_method:
+                text += f"📱 Wants: {contact_method}\n"
+            text += f"\n📄 `{page}`\n🕐 {timestamp}"
+        elif step in ('quote_type', 'quote_size', 'book', 'book_contact'):
+            text = (
+                f"👀 *Active Quote*\n\n"
+                f"Selected: *{message}*\n"
+            )
+            if service:
+                text += f"Service: {service}\n"
+            if size:
+                text += f"Size: {size}\n"
+            text += f"\n📄 `{page}` | 🕐 {timestamp}"
+        else:
+            text = (
+                f"💬 `{message}`\n"
+                f"📄 {page} | 🕐 {timestamp}"
+            )
 
         payload = json.dumps({
             'chat_id': chat_id,
