@@ -1,672 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Areas We Serve — Blue Brick | Post-Construction & Luxury Cleaning Across Greater Boston</title>
-    <meta name="description" content="Blue Brick provides post-construction cleaning, luxury residential cleaning, and commercial property services across Boston, East Boston, South Boston, Newton, Waltham, Brighton, and Allston. Find your neighborhood.">
-    <meta name="keywords" content="cleaning service Boston, post construction cleaning Newton, luxury cleaning South Boston, commercial cleaning Waltham, house cleaning Brighton, cleaning company Allston, East Boston cleaning service, Greater Boston cleaning">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://bluebrickmass.com/cities.html">
-
-    <meta property="og:title" content="Areas We Serve — Blue Brick Cleaning | Greater Boston">
-    <meta property="og:description" content="Post-construction cleanup and luxury cleaning across 7+ Greater Boston neighborhoods.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bluebrickmass.com/cities.html">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --prussian: #001D4A;
-            --yale: #27476E;
-            --cerulean: #006992;
-            --cream: #EAF8BF;
-            --amber: #ECA400;
-            --amber-light: #f4be3a;
-            --white: #ffffff;
-            --off-white: #f9fafb;
-            --light-gray: #f0f2f5;
-            --mid-gray: #6b7280;
-            --dark-gray: #374151;
-            --font-display: 'Bebas Neue', Impact, sans-serif;
-            --font-body: 'Manrope', system-ui, sans-serif;
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 18px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            font-family: var(--font-body);
-            font-weight: 400;
-            color: var(--dark-gray);
-            background: var(--white);
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
-
-        img { max-width: 100%; display: block; }
-        a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--amber); }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        header {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 0 clamp(1.5rem, 4vw, 3rem);
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: transparent;
-            transition: all 0.4s ease;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .logo img {
-            width: 220px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            transition: all 0.4s;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85);
-            transition: color 0.3s;
-        }
-
-        nav a:hover { color: var(--amber); }
-
-        .nav-cta {
-            padding: 0.55rem 1.5rem;
-            background: var(--amber);
-            color: var(--prussian) !important;
-            font-weight: 700 !important;
-            border-radius: 4px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .nav-cta:hover {
-            background: var(--amber-light) !important;
-            color: var(--prussian) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(236, 164, 0, 0.35);
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .mobile-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--prussian);
-            transition: all 0.3s;
-        }
-
-        /* ============================================
-           PAGE HERO
-           ============================================ */
-        .page-hero {
-            padding: 180px clamp(1.5rem, 5vw, 4rem) 80px;
-            text-align: center;
-            background: var(--prussian);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('assets/images/city images/boston condo.png') center/cover no-repeat;
-            opacity: 0.15;
-        }
-
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(236, 164, 0, 0.3), transparent);
-        }
-
-        .page-hero .section-tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--amber);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 400;
-            color: var(--white);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
-
-        .page-hero h1 em { font-style: normal; color: var(--amber); }
-
-        .page-hero p {
-            color: rgba(255, 255, 255, 0.65);
-            max-width: 560px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================
-           CITIES GRID
-           ============================================ */
-        .cities-section {
-            padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
-            background: var(--white);
-        }
-
-        .cities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .city-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 3/4;
-            cursor: pointer;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .city-card:first-child {
-            grid-column: span 3;
-            aspect-ratio: 21/9;
-        }
-
-        .city-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0, 29, 74, 0.18);
-        }
-
-        .city-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .city-card:hover img {
-            transform: scale(1.06);
-        }
-
-        .city-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(0, 29, 74, 0.9) 0%,
-                rgba(0, 29, 74, 0.4) 40%,
-                rgba(0, 29, 74, 0.1) 100%
-            );
-            transition: background 0.4s;
-        }
-
-        .city-card:hover .city-overlay {
-            background: linear-gradient(
-                to top,
-                rgba(0, 29, 74, 0.95) 0%,
-                rgba(0, 105, 146, 0.3) 50%,
-                rgba(0, 29, 74, 0.05) 100%
-            );
-        }
-
-        .city-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem 1.5rem;
-            z-index: 2;
-        }
-
-        .city-tag {
-            display: inline-block;
-            font-size: 0.62rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--amber);
-            margin-bottom: 0.5rem;
-        }
-
-        .city-content h2 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--white);
-            margin-bottom: 0.4rem;
-            line-height: 1.2;
-        }
-
-        .city-card:first-child .city-content h2 {
-            font-size: 2.2rem;
-        }
-
-        .city-card:first-child .city-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .city-content p {
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.65);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            max-width: 380px;
-        }
-
-        .city-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--amber);
-            transition: gap 0.3s;
-        }
-
-        .city-cta:hover { gap: 0.8rem; color: var(--amber); }
-
-        /* ============================================
-           MAP / COVERAGE SECTION
-           ============================================ */
-        .coverage-section {
-            padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
-            background: var(--off-white);
-            text-align: center;
-        }
-
-        .section-header {
-            margin-bottom: clamp(2.5rem, 4vw, 4rem);
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--cerulean);
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
-
-        .section-tag::before,
-        .section-tag::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 28px;
-            height: 2px;
-            background: var(--amber);
-        }
-
-        .section-tag::before { right: calc(100% + 14px); }
-        .section-tag::after { left: calc(100% + 14px); }
-
-        .section-header h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 400;
-            color: var(--prussian);
-            line-height: 1.2;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
-
-        .section-header h2 em { font-style: normal; color: var(--cerulean); }
-
-        .section-header p {
-            max-width: 560px;
-            margin: 1rem auto 0;
-            color: var(--mid-gray);
-            font-size: 1rem;
-        }
-
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .service-pill {
-            padding: 1.2rem 1rem;
-            background: var(--white);
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .service-pill:hover {
-            border-color: var(--cerulean);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 29, 74, 0.08);
-        }
-
-        .service-pill svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--cerulean);
-            fill: none;
-            stroke-width: 1.5;
-            margin: 0 auto 0.6rem;
-        }
-
-        .service-pill h4 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--prussian);
-            margin-bottom: 0.2rem;
-        }
-
-        .service-pill p {
-            font-size: 0.72rem;
-            color: var(--mid-gray);
-        }
-
-        /* ============================================
-           CTA SECTION
-           ============================================ */
-        .cta-section {
-            padding: clamp(5rem, 9vw, 7rem) clamp(1.5rem, 5vw, 4rem);
-            background: var(--prussian);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 105, 146, 0.12), transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-section h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            color: var(--white);
-            margin-bottom: 1rem;
-            position: relative;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
-
-        .cta-section h2 em { font-style: normal; color: var(--amber); }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1.05rem;
-            max-width: 480px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .cta-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.2rem;
-            background: var(--amber);
-            color: var(--prussian);
-            font-family: var(--font-body);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border-radius: 5px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .cta-btn-primary:hover {
-            background: var(--amber-light);
-            color: var(--prussian);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(236, 164, 0, 0.3);
-        }
-
-        .cta-btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.2rem;
-            background: transparent;
-            color: var(--white);
-            font-family: var(--font-body);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .cta-btn-secondary:hover {
-            border-color: var(--white);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
-            background: var(--prussian);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .footer-inner {
-            max-width: 1140px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-brand img {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: rgba(255, 255, 255, 0.5);
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover { color: var(--amber); }
-
-        .footer-copy {
-            width: 100%;
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 1rem;
-        }
-
-        .footer-copy p {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 1024px) {
-            header { height: 100px; }
-
-            .logo img {
-                width: 180px;
-            }
-
-            .cities-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .city-card:first-child {
-                grid-column: span 2;
-                aspect-ratio: 16/9;
-            }
-
-            .services-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            nav { display: none; }
-            .mobile-toggle { display: flex; }
-        }
-
-        @media (max-width: 640px) {
-            html { font-size: 16px; }
-            body { font-size: 1.05rem; line-height: 1.8; }
-
-            header { height: 80px; }
-
-            .logo img {
-                width: 140px;
-            }
-
-            .page-hero p { font-size: 1.05rem; }
-            .city-content p { font-size: 0.95rem; }
-            .section-header p { font-size: 1.05rem; }
-            .cta-section p { font-size: 1.05rem; }
-
-            .cities-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .city-card:first-child {
-                grid-column: span 1;
-                aspect-ratio: 4/3;
-            }
-
-            .city-card { aspect-ratio: 16/10; }
-
-            .services-list { grid-template-columns: 1fr 1fr; }
-
-            footer { padding: 2rem 1.5rem 1rem; }
-            .footer-inner { flex-direction: column; text-align: center; gap: 1rem; }
-            .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-            .footer-links a { font-size: 0.9rem; }
-            .footer-copy { padding-top: 1rem; margin-top: 0.5rem; }
-
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .cta-btn-primary, .cta-btn-secondary { width: 100%; justify-content: center; }
-        }
-    
+#!/usr/bin/env python3
+"""
+Add tubelight navbar, chat widget, contact FAB, and back-to-top button
+to all non-blog pages: index.html, blog/index.html, cities.html, tools/quote-calculator.html
+"""
+
+import os
+import re
+
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+
+# ── Shared CSS for all components ──
+SHARED_CSS = """
         /* ============================================
            TUBELIGHT NAVBAR
            ============================================ */
@@ -1351,24 +695,28 @@
         @media (max-width: 640px) {
             .back-to-top { bottom: 1.5rem; right: 1.5rem; width: 40px; height: 40px; }
         }
+"""
 
-    </style>
-</head>
-<body>
-    <div class="tube-nav" id="tubeNav">
+# ── Tubelight Navbar HTML ──
+def get_navbar_html(logo_path, active_page):
+    """Generate navbar HTML with correct logo path and active page."""
+    def active(page):
+        return ' active' if page == active_page else ''
+
+    return f'''    <div class="tube-nav" id="tubeNav">
         <div class="tube-nav-inner">
             <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-                <img src="assets/images/IMG_9670.png" alt="Blue Brick">
+                <img src="{logo_path}" alt="Blue Brick">
             </a>
-            <a href="/#services" class="tube-nav-link">
+            <a href="/#services" class="tube-nav-link{active('services')}">
                 <span class="nav-label">Services</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
             </a>
-            <a href="/cities.html" class="tube-nav-link active">
+            <a href="/cities.html" class="tube-nav-link{active('areas')}">
                 <span class="nav-label">Areas</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             </a>
-            <a href="/blog/" class="tube-nav-link">
+            <a href="/blog/" class="tube-nav-link{active('blog')}">
                 <span class="nav-label">Blog</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
             </a>
@@ -1382,198 +730,10 @@
             </a>
         </div>
     </div>
+'''
 
-
-    <main>
-        <!-- ==========================================
-             PAGE HERO
-             ========================================== -->
-        <section class="page-hero">
-            <span class="section-tag">Greater Boston Coverage</span>
-            <h1>Areas We <em>Serve</em></h1>
-            <p>From downtown Boston to the suburban homes of Newton — Blue Brick delivers post-construction cleanup and luxury cleaning wherever you need us.</p>
-        </section>
-
-        <!-- ==========================================
-             CITIES GRID
-             ========================================== -->
-        <section class="cities-section">
-            <div class="cities-grid">
-
-                <!-- Boston — Featured -->
-                <a href="/#quote" class="city-card reveal">
-                    <img src="assets/images/city images/boston condo.png" alt="Luxury Boston high-rise condo with city skyline views" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Featured Area</div>
-                        <h2>Boston</h2>
-                        <p>Our home base. From Back Bay brownstones to Seaport high-rises, we handle post-construction cleanups and luxury residential cleaning across every Boston neighborhood.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- East Boston -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.1s">
-                    <img src="assets/images/city images/east boston rental propety.png" alt="East Boston multi-family rental property" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Waterfront</div>
-                        <h2>East Boston</h2>
-                        <p>New condo developments and waterfront properties. We specialize in post-construction cleaning for Eastie's booming real estate market.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- South Boston -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="assets/images/city images/south boston kichen.png" alt="Modern renovated South Boston kitchen with marble island" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Seaport District</div>
-                        <h2>South Boston</h2>
-                        <p>From Southie row houses to the Seaport's luxury towers — renovation cleanups and move-in ready services for one of Boston's hottest markets.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- Newton -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.15s">
-                    <img src="assets/images/city images/newton home.png" alt="Luxury Newton home living room with coffered ceiling and fireplace" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Luxury Estates</div>
-                        <h2>Newton</h2>
-                        <p>Premium estate cleaning and post-renovation services for Newton's prestigious neighborhoods. White-glove care for the most discerning homeowners.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- Waltham -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.25s">
-                    <img src="assets/images/city images/waltham office.png" alt="Commercial office space cleaned in Waltham" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Commercial Hub</div>
-                        <h2>Waltham</h2>
-                        <p>Commercial office cleaning, tech campus maintenance, and residential post-construction services across Waltham's growing business district.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- Brighton -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="assets/images/city images/brighton apartment.png" alt="Clean Brighton apartment with kitchen and living area" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Residential</div>
-                        <h2>Brighton</h2>
-                        <p>Apartment turnovers, renovation cleanups, and deep cleaning for Brighton's vibrant rental market. Fast turnarounds for property managers.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-                <!-- Allston -->
-                <a href="/#quote" class="city-card reveal" style="transition-delay: 0.3s">
-                    <img src="assets/images/city images/alston finished apartment.png" alt="Finished Allston apartment with exposed brick and kitchen" loading="lazy">
-                    <div class="city-overlay"></div>
-                    <div class="city-content">
-                        <div class="city-tag">Urban Living</div>
-                        <h2>Allston</h2>
-                        <p>Move-in/move-out cleaning, post-renovation services, and regular maintenance for Allston's dynamic neighborhood of apartments and condos.</p>
-                        <span class="city-cta">Get a Quote &rarr;</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- ==========================================
-             SERVICES AVAILABLE IN ALL AREAS
-             ========================================== -->
-        <section class="coverage-section">
-            <div class="section-header reveal">
-                <span class="section-tag">Available Everywhere</span>
-                <h2>Every Service, in <em>Every</em> Neighborhood</h2>
-                <p>No matter where you are in Greater Boston, Blue Brick brings the full range of our cleaning expertise to your property.</p>
-            </div>
-
-            <div class="services-list">
-                <div class="service-pill reveal">
-                    <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/><path d="M9 20v-6h6v6"/></svg>
-                    <h4>Post-Construction</h4>
-                    <p>New build & renovation cleanup</p>
-                </div>
-                <div class="service-pill reveal" style="transition-delay: 0.1s">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <h4>Luxury Residential</h4>
-                    <p>White-glove home cleaning</p>
-                </div>
-                <div class="service-pill reveal" style="transition-delay: 0.2s">
-                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    <h4>Commercial</h4>
-                    <p>Offices, retail & facilities</p>
-                </div>
-                <div class="service-pill reveal" style="transition-delay: 0.3s">
-                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <h4>Move-In / Move-Out</h4>
-                    <p>Property transition cleaning</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             CTA
-             ========================================== -->
-        <section class="cta-section reveal">
-            <h2>Your Neighborhood, <em>Our Expertise</em></h2>
-            <p>Get a free, no-obligation estimate for your property — anywhere in Greater Boston.</p>
-            <div class="cta-buttons">
-                <a href="/#quote" class="cta-btn-primary">Get Your Free Estimate</a>
-                <a href="tel:+17813305604" class="cta-btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Call (781) 330-5604
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer role="contentinfo">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: 160px; height: auto; filter: brightness(0) invert(1);">
-            </div>
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/#services">Services</a>
-                <a href="cities.html">Areas</a>
-                <a href="blog/">Blog</a>
-                <a href="/#quote">Get Estimate</a>
-            </div>
-            <div class="footer-copy">
-                <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved. Serving Greater Boston with pride.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // ── Scroll Reveal ──
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        revealElements.forEach(el => observer.observe(el));
-
-    </script>
-
-
+# ── Chat Widget HTML ──
+CHAT_HTML = """
     <!-- Expandable Chat Widget -->
     <div class="chat-widget" id="chatWidget">
         <div class="chat-panel">
@@ -1606,7 +766,10 @@
             <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
     </div>
+"""
 
+# ── Contact FAB HTML ──
+CONTACT_FAB_HTML = """
     <!-- Floating Contact FAB -->
     <div class="contact-fab" id="contactFab">
         <div class="contact-fab-menu">
@@ -1633,12 +796,18 @@
             <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </button>
     </div>
+"""
 
+# ── Back to Top HTML ──
+BACK_TO_TOP_HTML = """
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
+"""
 
+# ── Shared JS for all widgets ──
+SHARED_JS = """
     <script>
         // -- Tubelight Navbar --
         var tubeNav = document.getElementById('tubeNav');
@@ -1780,6 +949,121 @@
             });
         }
     </script>
+"""
 
-</body>
-</html>
+
+def process_file(filepath, logo_path, active_page):
+    """Add all components to a single file."""
+    with open(filepath, 'r') as f:
+        content = f.read()
+
+    original = content
+    basename = os.path.basename(filepath)
+
+    # Skip if already has tube-nav
+    if 'tube-nav' in content and 'id="tubeNav"' in content:
+        print(f'  SKIP (already has tube-nav): {filepath}')
+        return False
+
+    # 1. Add CSS before </style>
+    style_close_idx = content.rfind('</style>')
+    if style_close_idx != -1:
+        content = content[:style_close_idx] + SHARED_CSS + '\n    </style>' + content[style_close_idx + len('</style>'):]
+    else:
+        print(f'  ERROR: No </style> found in {filepath}')
+        return False
+
+    # 2. Replace old header with tubelight navbar
+    navbar_html = get_navbar_html(logo_path, active_page)
+
+    # Try different header patterns
+    # Pattern A: <header id="header" ...>...</header> (homepage, cities)
+    header_match = re.search(
+        r'\s*(?:<!-- ={3,}.*?HEADER.*?={3,} -->\s*)?<header[^>]*>.*?</header>',
+        content,
+        re.DOTALL
+    )
+    if header_match:
+        content = content[:header_match.start()] + '\n' + navbar_html + content[header_match.end():]
+        print(f'    Replaced header with tube-nav')
+    else:
+        # Pattern B: quote-calculator has <div class="header"> not <header>
+        header_div_match = re.search(r'<div class="header">.*?</div>\s*\n', content, re.DOTALL)
+        if header_div_match:
+            # Insert tube-nav before the header div (keep header div for calculator)
+            insert_idx = header_div_match.start()
+            content = content[:insert_idx] + navbar_html + '\n' + content[insert_idx:]
+            print(f'    Added tube-nav before calculator header')
+        else:
+            # Just insert after <body>
+            body_match = re.search(r'<body[^>]*>', content)
+            if body_match:
+                insert_idx = body_match.end()
+                content = content[:insert_idx] + '\n' + navbar_html + content[insert_idx:]
+                print(f'    Added tube-nav after <body>')
+
+    # 3. Remove old mobile toggle JS (won't work with new navbar)
+    content = re.sub(
+        r"\s*//\s*──?\s*Mobile nav.*?(?=\s*</script>|\s*//\s*──)",
+        '\n',
+        content,
+        flags=re.DOTALL
+    )
+
+    # 4. Add floating widgets HTML before </body>
+    body_close_idx = content.rfind('</body>')
+    if body_close_idx != -1:
+        widgets = CHAT_HTML + CONTACT_FAB_HTML + BACK_TO_TOP_HTML + SHARED_JS + '\n'
+        content = content[:body_close_idx] + widgets + content[body_close_idx:]
+        print(f'    Added chat widget, contact FAB, back-to-top, and JS')
+
+    if content != original:
+        with open(filepath, 'w') as f:
+            f.write(content)
+        print(f'  OK: {filepath}')
+        return True
+    else:
+        print(f'  NO CHANGES: {filepath}')
+        return False
+
+
+def main():
+    files = [
+        {
+            'path': os.path.join(BASE_DIR, 'index.html'),
+            'logo': 'assets/images/IMG_9670.png',
+            'active': 'home',
+        },
+        {
+            'path': os.path.join(BASE_DIR, 'blog', 'index.html'),
+            'logo': '../assets/images/IMG_9670.png',
+            'active': 'blog',
+        },
+        {
+            'path': os.path.join(BASE_DIR, 'cities.html'),
+            'logo': 'assets/images/IMG_9670.png',
+            'active': 'areas',
+        },
+        {
+            'path': os.path.join(BASE_DIR, 'tools', 'quote-calculator.html'),
+            'logo': '../assets/images/IMG_9670.png',
+            'active': '',  # No active link for calculator
+        },
+    ]
+
+    updated = 0
+    for f in files:
+        filepath = os.path.abspath(f['path'])
+        if not os.path.exists(filepath):
+            print(f'  NOT FOUND: {filepath}')
+            continue
+
+        print(f'\nProcessing: {filepath}')
+        if process_file(filepath, f['logo'], f['active']):
+            updated += 1
+
+    print(f'\n\nUpdated {updated} files')
+
+
+if __name__ == '__main__':
+    main()
