@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bluebrickcleaning.com/sitemap.xml
+
+Disallow: /tools/outreach/
+Disallow: /tools/fix_*
+Disallow: /tools/generate_*
+Disallow: /tools/responder*
+Disallow: /tools/facebook/
+Disallow: /ads/
+Disallow: /invoices/
+Disallow: /.tmp/
+Disallow: /workflows/
