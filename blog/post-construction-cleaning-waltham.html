@@ -2282,6 +2282,90 @@
                 }
             });
         }
+
+        // -- Expandable Chat Widget --
+        var chatWidget2 = document.getElementById('chatWidget');
+        var chatToggle2 = document.getElementById('chatToggle');
+        var chatInput2 = document.getElementById('chatInput');
+        var chatSendBtn2 = document.getElementById('chatSendBtn');
+        var chatBody2 = document.getElementById('chatBody');
+
+        if (chatToggle2 && chatWidget2) {
+            chatToggle2.addEventListener('click', function(e) {
+                e.stopPropagation();
+                chatWidget2.classList.toggle('open');
+                if (chatWidget2.classList.contains('open') && chatInput2) {
+                    setTimeout(function() { chatInput2.focus(); }, 300);
+                }
+            });
+
+            var chatResponses = {
+                quote: "Great! For a quick estimate, try our <a href='/tools/quote-calculator.html' target='_blank' style='color:#ECA400;font-weight:600'>Quote Calculator</a> or text us at <a href='sms:+17813305604' style='color:#ECA400;font-weight:600'>(781) 330-5604</a> with your address and sqft!",
+                services: "We offer: Deep Cleaning, Post-Construction Cleanup, Move-In/Move-Out, Luxury Residential, Commercial Cleaning, and Spring Cleaning. Which interests you?",
+                areas: "We serve 15 cities: Boston, Cambridge, Newton, Waltham, Brookline, Somerville, Brighton, Watertown, Allston, East Boston, South Boston, Lexington, Needham, Wellesley, and Weston!",
+                price: "Pricing depends on square footage and service type. Use our <a href='/tools/quote-calculator.html' target='_blank' style='color:#ECA400;font-weight:600'>Quote Calculator</a> for an instant estimate!",
+                book: "To book, text us at <a href='sms:+17813305604' style='color:#ECA400;font-weight:600'>(781) 330-5604</a> or email <a href='mailto:bluebrickmass@gmail.com' style='color:#ECA400;font-weight:600'>bluebrickmass@gmail.com</a>. We respond within 2 hours!",
+                fallback: "Thanks for your message! For the fastest response, text us at <a href='sms:+17813305604' style='color:#ECA400;font-weight:600'>(781) 330-5604</a> or email <a href='mailto:bluebrickmass@gmail.com' style='color:#ECA400;font-weight:600'>bluebrickmass@gmail.com</a>."
+            };
+
+            function chatAddMsg(text, isSent) {
+                var msg = document.createElement('div');
+                msg.className = 'chat-msg' + (isSent ? ' sent' : '');
+                msg.innerHTML = '<div class="chat-msg-avatar">' + (isSent ? 'You' : 'BB') + '</div><div class="chat-msg-bubble">' + text + '</div>';
+                chatBody2.appendChild(msg);
+                chatBody2.scrollTop = chatBody2.scrollHeight;
+            }
+
+            function chatAddLoading() {
+                var loader = document.createElement('div');
+                loader.className = 'chat-msg';
+                loader.id = 'chatLoader';
+                loader.innerHTML = '<div class="chat-msg-avatar">BB</div><div class="chat-loading"><span></span><span></span><span></span></div>';
+                chatBody2.appendChild(loader);
+                chatBody2.scrollTop = chatBody2.scrollHeight;
+            }
+
+            function chatGetResponse(text) {
+                var t = text.toLowerCase();
+                if (t.indexOf('quote') > -1 || t.indexOf('estimate') > -1 || t.indexOf('cost') > -1) return chatResponses.quote;
+                if (t.indexOf('service') > -1 || t.indexOf('offer') > -1 || t.indexOf('clean') > -1) return chatResponses.services;
+                if (t.indexOf('area') > -1 || t.indexOf('city') > -1 || t.indexOf('where') > -1 || t.indexOf('cover') > -1) return chatResponses.areas;
+                if (t.indexOf('price') > -1 || t.indexOf('how much') > -1 || t.indexOf('rate') > -1) return chatResponses.price;
+                if (t.indexOf('book') > -1 || t.indexOf('schedule') > -1 || t.indexOf('appointment') > -1) return chatResponses.book;
+                return chatResponses.fallback;
+            }
+
+            function chatHandleSend() {
+                var text = chatInput2.value.trim();
+                if (!text) return;
+                chatAddMsg(text, true);
+                chatInput2.value = '';
+                chatAddLoading();
+                setTimeout(function() {
+                    var loader = document.getElementById('chatLoader');
+                    if (loader) loader.remove();
+                    chatAddMsg(chatGetResponse(text), false);
+                }, 800 + Math.random() * 600);
+            }
+
+            chatSendBtn2.addEventListener('click', chatHandleSend);
+            chatInput2.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') { e.preventDefault(); chatHandleSend(); }
+            });
+
+            document.querySelectorAll('.chat-quick-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    chatInput2.value = btn.getAttribute('data-msg');
+                    chatHandleSend();
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!chatWidget2.contains(e.target) && chatWidget2.classList.contains('open')) {
+                    chatWidget2.classList.remove('open');
+                }
+            });
+        }
     </script>
 
 
