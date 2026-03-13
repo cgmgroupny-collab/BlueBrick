@@ -93,13 +93,14 @@ def log_sent(lead: dict, subject: str):
         })
 
 
-def send_email(to_email: str, subject: str, body: str, dry_run: bool = False) -> bool:
-    """Send a single email via Gmail SMTP."""
+def send_email(to_email: str, subject: str, body: str, html: str = None, dry_run: bool = False) -> bool:
+    """Send a single email via Gmail SMTP with plain text + HTML banner."""
     if dry_run:
         print(f"\n  --- DRY RUN ---")
         print(f"  To: {to_email}")
         print(f"  Subject: {subject}")
         print(f"  Body preview: {body[:150]}...")
+        print(f"  HTML banner: {'Yes' if html else 'No'}")
         print(f"  --- END DRY RUN ---")
         return True
 
@@ -116,10 +117,7 @@ def send_email(to_email: str, subject: str, body: str, dry_run: bool = False) ->
     msg["Subject"] = subject
     msg["Reply-To"] = GMAIL_USER
 
-    # Plain text version
-    msg.attach(MIMEText(body, "plain"))
-
-    # CAN-SPAM footer
+    # CAN-SPAM footer for plain text fallback
     footer = (
         f"\n\n---\n"
         f"{BRAND['name']}\n"
@@ -127,8 +125,13 @@ def send_email(to_email: str, subject: str, body: str, dry_run: bool = False) ->
         f"To stop receiving emails, reply with \"unsubscribe\"."
     )
     body_with_footer = body + footer
-    msg.detach_payload()
+
+    # Plain text version (fallback)
     msg.attach(MIMEText(body_with_footer, "plain"))
+
+    # HTML version with branded banner + CTA (preferred by email clients)
+    if html:
+        msg.attach(MIMEText(html, "html"))
 
     try:
         context = ssl.create_default_context()
@@ -174,6 +177,7 @@ def run_sender(category: str = None, dry_run: bool = False, limit: int = None):
             to_email=lead["email"],
             subject=personalized["subject"],
             body=personalized["body"],
+            html=personalized.get("html"),
             dry_run=dry_run,
         )
 

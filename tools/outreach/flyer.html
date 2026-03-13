@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Luxury & Commercial Cleaning</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Manrope', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+  }
+
+  .flyer {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    background: #001D4A;
+    padding: 40px 40px 35px;
+    text-align: center;
+  }
+
+  .logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  .logo-accent {
+    color: #ECA400;
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: #8aa8c7;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* Gold bar */
+  .gold-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #ECA400, #f4be3a, #ECA400);
+  }
+
+  /* Hero message */
+  .hero {
+    padding: 35px 40px;
+    background: linear-gradient(135deg, #001D4A 0%, #003366 100%);
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #ECA400;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: #c5d5e5;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Services */
+  .services {
+    padding: 35px 40px;
+  }
+
+  .services h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #001D4A;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .service-item {
+    background: #f8f9fb;
+    border-left: 3px solid #ECA400;
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .service-item strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #001D4A;
+    margin-bottom: 3px;
+  }
+
+  .service-item span {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  /* Stats bar */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #001D4A;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #ECA400;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #8aa8c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* Areas */
+  .areas {
+    padding: 30px 40px;
+    text-align: center;
+  }
+
+  .areas h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #001D4A;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .area-tag {
+    background: #f0f4f8;
+    border: 1px solid #d8e2ec;
+    color: #001D4A;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* CTA */
+  .cta {
+    background: #ECA400;
+    padding: 30px 40px;
+    text-align: center;
+  }
+
+  .cta h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: #001D4A;
+    margin-bottom: 6px;
+  }
+
+  .cta p {
+    font-size: 14px;
+    color: #001D4A;
+    opacity: 0.8;
+    margin-bottom: 16px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #001D4A;
+    color: #ffffff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 12px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* Footer */
+  .footer {
+    background: #001D4A;
+    padding: 25px 40px;
+    text-align: center;
+  }
+
+  .footer-contact {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .footer-contact a {
+    color: #ECA400;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-sub {
+    font-size: 11px;
+    color: #5a7a9a;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-text">BLUE <span class="logo-accent">BRICK</span></div>
+    <div class="tagline">Luxury & Commercial Cleaning</div>
+  </div>
+
+  <div class="gold-bar"></div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h2>Premium Cleaning for Premium Properties</h2>
+    <p>We handle post-construction cleanup, renovation detailing, luxury residential, and commercial cleaning across the Greater Boston area.</p>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="services">
+    <h3>What We Do</h3>
+    <div class="service-grid">
+      <div class="service-item">
+        <strong>Post-Construction</strong>
+        <span>Full cleanup after new builds and major renovations</span>
+      </div>
+      <div class="service-item">
+        <strong>Renovation Cleanup</strong>
+        <span>Dust, debris, and detail work after remodels</span>
+      </div>
+      <div class="service-item">
+        <strong>Luxury Residential</strong>
+        <span>White-glove cleaning for high-end homes</span>
+      </div>
+      <div class="service-item">
+        <strong>Commercial</strong>
+        <span>Offices, retail, daycares, and facilities</span>
+      </div>
+      <div class="service-item">
+        <strong>Move-In / Move-Out</strong>
+        <span>Spotless handoffs for tenants and buyers</span>
+      </div>
+      <div class="service-item">
+        <strong>Final Clean</strong>
+        <span>The last step before keys are handed over</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div>
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div>
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div>
+      <div class="stat-number">99%</div>
+      <div class="stat-label">Satisfaction</div>
+    </div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="areas">
+    <h3>Service Areas</h3>
+    <div class="area-tags">
+      <span class="area-tag">Boston</span>
+      <span class="area-tag">East Boston</span>
+      <span class="area-tag">South Boston</span>
+      <span class="area-tag">Newton</span>
+      <span class="area-tag">Waltham</span>
+      <span class="area-tag">Brighton</span>
+      <span class="area-tag">Allston</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>Get a Free Estimate</h3>
+    <p>Call or email us — we'll walk your property and send a same-day quote.</p>
+    <a href="tel:7813305604" class="cta-button">CALL 781-330-5604</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-contact">
+      <a href="tel:7813305604">781-330-5604</a> &nbsp;|&nbsp;
+      <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a>
+    </div>
+    <div class="footer-sub">
+      Insured &bull; Reliable &bull; Detail-Oriented
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

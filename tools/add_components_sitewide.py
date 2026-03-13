@@ -121,7 +121,7 @@ SHARED_CSS = """
         }
 
         .tube-nav-logo img {
-            height: 26px;
+            height: 36px;
             width: auto;
             filter: brightness(0) invert(1);
             transition: filter 0.3s;

@@ -19,7 +19,7 @@ What we handle for agents like you:
 • Post-renovation and construction cleanup
 • Ongoing maintenance for vacant properties
 
-We're based in Waltham and cover Boston, Newton, Brighton, South Boston, East Boston, and Allston. Our team is insured, reliable, and understands that presentation sells homes.
+We're based in Waltham and cover 15 cities across Greater Boston — Newton, Cambridge, Brookline, Somerville, Watertown, Lexington, Wellesley, and more. Our team is insured, reliable, and understands that presentation sells homes.
 
 If you ever need a fast turnaround clean before a showing — or a reliable partner for your listings — I'd love to connect.
 
@@ -48,7 +48,7 @@ What we do for design firms:
 • Window, fixture, and surface detailing
 • Ongoing maintenance for completed projects
 
-We cover the Greater Boston area — Waltham, Newton, Brighton, Boston, South Boston, East Boston, and Allston. Fully insured and detail-oriented.
+We cover 15 cities across Greater Boston — Waltham, Newton, Cambridge, Brookline, Wellesley, Lexington, and more. Fully insured and detail-oriented.
 
 If you'd like a cleaning partner who treats your projects with the same care you put into them — let's talk.
 
@@ -75,7 +75,7 @@ What we offer:
 • Floor care, window cleaning, and kitchen/break room cleaning
 • Flexible scheduling — evenings and weekends so we never disrupt your day
 
-We're based in Waltham and serve the surrounding area. Fully insured, background-checked team, and we use child-safe cleaning products.
+We're based in Waltham and serve 15 cities across Greater Boston — Newton, Cambridge, Brookline, Somerville, Watertown, Needham, Lexington, and more. Fully insured, background-checked team, and we use child-safe cleaning products.
 
 If you're open to a quick conversation — or want a free walkthrough and quote — I'd love to hear from you.
 
@@ -103,7 +103,7 @@ What we handle:
 • Floor scrubbing, grout cleaning, final detail work
 • Debris removal and haul-away coordination
 
-We've cleaned after new builds, gut renovations, and everything in between. Based in Waltham, covering Boston, Newton, Brighton, South Boston, East Boston, and Allston.
+We've cleaned after new builds, gut renovations, and everything in between. Based in Waltham, covering 15 cities across Greater Boston — Newton, Cambridge, Brookline, Somerville, Lexington, and more.
 
 If you've got a project wrapping up — or want to set up an ongoing partnership — let's connect. Happy to come see a job site.
 
@@ -131,7 +131,7 @@ What we do for property managers:
 • Post-renovation and construction cleanup
 • Recurring common area maintenance
 
-We're local, insured, and built for the kind of turnaround speed that April demands. We've worked with managers across Waltham, Newton, Watertown, Cambridge, and Brookline.
+We're local, insured, and built for the kind of turnaround speed that April demands. We've worked with managers across Waltham, Newton, Watertown, Cambridge, Brookline, Somerville, and 9 more Greater Boston cities.
 
 If you've got units turning over — or want to set up a standing partnership — text me anytime. Happy to walk a property and give you a same-day quote.
 
@@ -159,7 +159,7 @@ What we offer restaurants:
 • Pre-inspection and health code prep cleaning
 • One-time deep cleans or recurring weekly/monthly programs
 
-We're based in Waltham and serve Moody Street, Watertown, Newton, Cambridge, and beyond. Flexible scheduling — we work around your hours so there's zero disruption to service.
+We're based in Waltham and serve 15 cities across Greater Boston — Watertown, Newton, Cambridge, Brookline, Somerville, Brighton, and more. Flexible scheduling — we work around your hours so there's zero disruption to service.
 
 If you're looking for a reliable cleaning crew — or have an inspection coming up — text me and I'll come take a look.
 
@@ -187,7 +187,7 @@ What we handle:
 • Restocking essentials (if needed)
 • Consistent quality every single time
 
-We're based in Waltham and cover a 12-mile radius — Newton, Cambridge, Brookline, Watertown, Somerville, and more. Local means fast response when you get a last-minute booking.
+We're based in Waltham and cover 15 cities across Greater Boston — Newton, Cambridge, Brookline, Watertown, Somerville, Brighton, and more. Local means fast response when you get a last-minute booking.
 
 If you're managing rentals and need a reliable cleaning partner — or want to stop doing turnovers yourself — text me. Happy to do a trial clean.
 
@@ -206,6 +206,123 @@ def get_template(category: str) -> dict:
     return TEMPLATES.get(category, TEMPLATES["realtors"])
 
 
+# HTML email wrapper with branded banner and CTA
+def wrap_html(body_text: str) -> str:
+    """Wrap plain text email body in a branded HTML email with banner and CTA."""
+    # Convert plain text body to HTML paragraphs
+    lines = body_text.strip().split("\n")
+    html_lines = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            html_lines.append("")
+            continue
+        if line.startswith("•"):
+            html_lines.append(
+                f'<tr><td style="padding:2px 0 2px 8px;font-size:15px;color:#333333;">'
+                f'{line}</td></tr>'
+            )
+            continue
+        html_lines.append(
+            f'<p style="margin:0 0 10px;font-size:15px;line-height:1.6;color:#333333;">'
+            f'{line}</p>'
+        )
+
+    # Separate bullet items into a table
+    body_html_parts = []
+    in_bullets = False
+    for h in html_lines:
+        if "<tr>" in h:
+            if not in_bullets:
+                body_html_parts.append(
+                    '<table role="presentation" cellpadding="0" cellspacing="0" '
+                    'style="margin:8px 0 12px 12px;">'
+                )
+                in_bullets = True
+            body_html_parts.append(h)
+        else:
+            if in_bullets:
+                body_html_parts.append("</table>")
+                in_bullets = False
+            body_html_parts.append(h)
+    if in_bullets:
+        body_html_parts.append("</table>")
+
+    body_html = "\n".join(body_html_parts)
+
+    return f"""\
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:20px 10px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:4px;overflow:hidden;">
+
+  <!-- Banner Header -->
+  <tr>
+    <td style="background:#001D4A;padding:28px 32px 24px;text-align:center;">
+      <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:32px;font-weight:700;letter-spacing:3px;color:#ffffff;">
+        BLUE <span style="color:#ECA400;">BRICK</span>
+      </h1>
+      <p style="margin:6px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8aa8c7;">
+        Luxury &amp; Commercial Cleaning
+      </p>
+    </td>
+  </tr>
+
+  <!-- Gold accent bar -->
+  <tr>
+    <td style="height:4px;background:linear-gradient(90deg,#ECA400,#f4be3a,#ECA400);font-size:0;line-height:0;">&nbsp;</td>
+  </tr>
+
+  <!-- Email Body -->
+  <tr>
+    <td style="padding:32px 36px 24px;font-family:Arial,Helvetica,sans-serif;">
+      {body_html}
+    </td>
+  </tr>
+
+  <!-- CTA Button -->
+  <tr>
+    <td align="center" style="padding:8px 36px 32px;">
+      <table role="presentation" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="background:#ECA400;border-radius:4px;">
+            <a href="https://bluebrickmass.com/#estimate"
+               style="display:inline-block;padding:14px 36px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#001D4A;text-decoration:none;letter-spacing:1px;">
+              REQUEST A FREE ESTIMATE
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr>
+    <td style="background:#001D4A;padding:20px 32px;text-align:center;">
+      <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ffffff;">
+        <a href="tel:7813305604" style="color:#ECA400;text-decoration:none;font-weight:600;">781-330-5604</a>
+        &nbsp;&middot;&nbsp;
+        <a href="mailto:bluebrickmass@gmail.com" style="color:#ECA400;text-decoration:none;font-weight:600;">bluebrickmass@gmail.com</a>
+      </p>
+      <p style="margin:8px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#5a7a9a;">
+        Waltham, MA &middot; Insured &middot; 15 Cities Across Greater Boston
+      </p>
+      <p style="margin:10px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#3d5a7a;">
+        To stop receiving emails, reply with "unsubscribe".
+      </p>
+    </td>
+  </tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>"""
+
+
 def personalize(template: dict, lead: dict) -> dict:
     """Fill in placeholders from lead data."""
     first_name = lead.get("business_name", "").split()[0] if lead.get("business_name") else "there"
@@ -214,7 +331,10 @@ def personalize(template: dict, lead: dict) -> dict:
     if first_name.lower() in {"the", "a", "an", ""} or len(first_name) <= 1:
         first_name = "there"
 
+    body = template["body"].format(first_name=first_name)
+
     return {
         "subject": template["subject"].format(first_name=first_name),
-        "body": template["body"].format(first_name=first_name),
+        "body": body,
+        "html": wrap_html(body),
     }
