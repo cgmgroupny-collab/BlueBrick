@@ -1810,7 +1810,9 @@
             });
             backToTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+            });
+        }
+
         // -- Floating side CTA --
         const floatingCta = document.getElementById('floatingCta');
         if (floatingCta) {
@@ -1821,7 +1823,6 @@
                     floatingCta.classList.remove('visible');
                 }
             });
-        });
         }
     </script>
 
