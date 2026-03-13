@@ -265,6 +265,12 @@
             position: relative;
             overflow: hidden;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover .card-image {
+            transform: scale(1.05);
         }
 
         .card-image::before {
@@ -273,6 +279,11 @@
             inset: 0;
             background: linear-gradient(to bottom, rgba(10, 22, 40, 0.25), rgba(10, 22, 40, 0.6));
             z-index: 1;
+            transition: background 0.4s;
+        }
+
+        .blog-card:hover .card-image::before {
+            background: linear-gradient(to bottom, rgba(10, 22, 40, 0.1), rgba(10, 22, 40, 0.4));
         }
 
         .card-image span {
@@ -280,33 +291,36 @@
             z-index: 2;
         }
 
-        .card-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10, 22, 40, 0.25), rgba(10, 22, 40, 0.6));
-            z-index: 1;
+        /* Card link wrapper */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .card-image span {
-            position: relative;
-            z-index: 2;
+        .card-link:hover {
+            color: inherit;
         }
 
-        .card-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10, 22, 40, 0.25), rgba(10, 22, 40, 0.6));
-            z-index: 1;
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
-        .card-image span {
-            position: relative;
-            z-index: 2;
+        .card-body p {
+            flex: 1;
         }
 
-        .card-body { padding: 1.5rem; }
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-wrap {
+            overflow: hidden;
+        }
 
         .card-tag {
             font-size: 0.65rem;
@@ -335,16 +349,27 @@
 
         .read-more {
             font-size: 0.75rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--brass);
+            color: var(--navy-deep);
+            background: var(--brass);
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            transition: gap 0.3s;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.4rem;
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: auto;
         }
-        .read-more:hover { gap: 0.8rem; }
+        .read-more:hover {
+            background: var(--brass-light);
+            color: var(--navy-deep);
+            gap: 0.8rem;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(201, 169, 110, 0.3);
+        }
 
         /* Filter visibility */
         .category-group { display: none; }
@@ -448,152 +473,152 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div>
+                        <a href="deep-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Waltham</h2>
                             <p>Thorough house cleaning for Moody Street apartments, downtown condos, and Route 128 corridor homes. Kitchen degreasing, bathroom sanitization, and baseboard detailing.</p>
-                            <a href="deep-cleaning-waltham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-waltham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div>
+                        <a href="deep-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Newton</h2>
                             <p>Premium deep cleaning for Newton's luxury homes and estates. Comprehensive service for Chestnut Hill, Newton Centre, Waban, and West Newton residences.</p>
-                            <a href="deep-cleaning-newton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-newton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div>
+                        <a href="deep-cleaning-cambridge.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Cambridge</h2>
                             <p>Professional deep cleaning for Cambridge homes, condos, and apartments. Serving Harvard Square, Kendall Square, Central Square, and Porter Square neighborhoods.</p>
-                            <a href="deep-cleaning-cambridge.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-cambridge.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div>
+                        <a href="deep-cleaning-brookline.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Brookline</h2>
                             <p>Expert deep cleaning for Brookline's elegant Victorians, Coolidge Corner condos, and Beacon Street residences. Meticulous attention to detail.</p>
-                            <a href="deep-cleaning-brookline.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-brookline.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div>
+                        <a href="deep-cleaning-somerville.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Somerville</h2>
                             <p>Deep cleaning services for Somerville's diverse housing stock. From Davis Square lofts to Union Square triple-deckers and Assembly Row condos.</p>
-                            <a href="deep-cleaning-somerville.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-somerville.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div>
+                        <a href="deep-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Brighton</h2>
                             <p>Thorough deep cleaning for Brighton apartments, family homes, and rental units. Serving Cleveland Circle, Oak Square, and Brighton Center.</p>
-                            <a href="deep-cleaning-brighton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-brighton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div>
+                        <a href="deep-cleaning-watertown.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Watertown</h2>
                             <p>Professional deep cleaning for Watertown homes and condominiums. Detailed service for Watertown Square, East Watertown, and Coolidge Hill properties.</p>
-                            <a href="deep-cleaning-watertown.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-watertown.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div>
+                        <a href="deep-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Boston</h2>
                             <p>Professional deep cleaning across Back Bay, Beacon Hill, South End, North End, Fenway, and Seaport. Thorough house and apartment cleaning for city living.</p>
-                            <a href="deep-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div>
+                        <a href="deep-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in East Boston</h2>
                             <p>Deep cleaning for East Boston's waterfront condos and classic triple-deckers. Serving Jeffries Point, Maverick Square, and Orient Heights.</p>
-                            <a href="deep-cleaning-east-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-east-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div>
+                        <a href="deep-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in South Boston</h2>
                             <p>Expert deep cleaning for South Boston's luxury Seaport condos and historic row houses. Broadway, Andrew Square, City Point, and Fort Point.</p>
-                            <a href="deep-cleaning-south-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-south-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div>
+                        <a href="deep-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Allston</h2>
                             <p>Thorough deep cleaning for Allston apartments, rental units, and family homes. September 1st and April 1st turnover ready cleaning services.</p>
-                            <a href="deep-cleaning-allston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-allston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div>
+                        <a href="deep-cleaning-lexington.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Lexington</h2>
                             <p>Premium deep cleaning for Lexington's luxury homes and historic colonials. Follen Hill, Meriam Hill, Five Forks, and East Lexington.</p>
-                            <a href="deep-cleaning-lexington.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-lexington.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div>
+                        <a href="deep-cleaning-needham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Needham</h2>
                             <p>Professional deep cleaning for Needham's family homes and luxury properties. Needham Center, Needham Heights, and Charles River Village.</p>
-                            <a href="deep-cleaning-needham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-needham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div>
+                        <a href="deep-cleaning-wellesley.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Wellesley</h2>
                             <p>Luxury home deep cleaning for Wellesley Hills, Wellesley Square, Dana Hall area, and Cliff Estates. Premium materials handled with care.</p>
-                            <a href="deep-cleaning-wellesley.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-wellesley.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div>
+                        <a href="deep-cleaning-weston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Weston</h2>
                             <p>Elite deep cleaning for Weston's exclusive estates. Material-specific care for stone, hardwood, custom millwork, and luxury fixtures.</p>
-                            <a href="deep-cleaning-weston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="deep-cleaning-weston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
@@ -607,152 +632,152 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div>
+                        <a href="move-in-move-out-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Allston</h2>
                             <p>Turnover cleaning for Allston's fast-paced rental market. Get your security deposit back with thorough apartment and house move cleaning.</p>
-                            <a href="move-in-move-out-cleaning-allston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-allston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div>
+                        <a href="move-in-move-out-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Boston</h2>
                             <p>Professional move cleaning across Back Bay, Seaport, Beacon Hill, and South End. Thorough apartment and home turnover that gets your full deposit back.</p>
-                            <a href="move-in-move-out-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div>
+                        <a href="move-in-move-out-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Brighton</h2>
                             <p>Expert move cleaning for Brighton's busy rental season. September 1st ready apartments, triple-deckers, and condos cleaned to perfection.</p>
-                            <a href="move-in-move-out-cleaning-brighton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-brighton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div>
+                        <a href="move-in-move-out-cleaning-brookline.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Brookline</h2>
                             <p>Premium move cleaning for Brookline's high-end apartments and condos. Coolidge Corner, Beacon Street, and Washington Square units done right.</p>
-                            <a href="move-in-move-out-cleaning-brookline.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-brookline.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div>
+                        <a href="move-in-move-out-cleaning-cambridge.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Cambridge</h2>
                             <p>Thorough move cleaning for Cambridge apartments and homes. Serving Harvard Square, Kendall Square, Central Square, and Inman Square.</p>
-                            <a href="move-in-move-out-cleaning-cambridge.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-cambridge.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div>
+                        <a href="move-in-move-out-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in East Boston</h2>
                             <p>Move cleaning for East Boston's growing waterfront condos and classic triple-deckers. Jeffries Point, Maverick Square, and Orient Heights covered.</p>
-                            <a href="move-in-move-out-cleaning-east-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-east-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div>
+                        <a href="move-in-move-out-cleaning-lexington.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Lexington</h2>
                             <p>Premium move cleaning for Lexington's luxury homes and estates. Thorough turnover service for one of the region's most prestigious towns.</p>
-                            <a href="move-in-move-out-cleaning-lexington.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-lexington.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div>
+                        <a href="move-in-move-out-cleaning-needham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Needham</h2>
                             <p>Move cleaning services for Needham's family homes and luxury properties. Get move-in ready results for this sought-after suburban community.</p>
-                            <a href="move-in-move-out-cleaning-needham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-needham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div>
+                        <a href="move-in-move-out-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Newton</h2>
                             <p>Premium move cleaning for Newton's elegant homes. Comprehensive turnover service for Chestnut Hill, Newton Centre, Waban, and West Newton.</p>
-                            <a href="move-in-move-out-cleaning-newton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-newton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div>
+                        <a href="move-in-move-out-cleaning-somerville.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Somerville</h2>
                             <p>Move cleaning for Somerville's vibrant rental market. Davis Square, Union Square, and Assembly Row apartments cleaned for turnover day.</p>
-                            <a href="move-in-move-out-cleaning-somerville.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-somerville.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div>
+                        <a href="move-in-move-out-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in South Boston</h2>
                             <p>Professional move cleaning for South Boston's luxury condos and row houses. Seaport, West Broadway, and East Broadway units done to the highest standard.</p>
-                            <a href="move-in-move-out-cleaning-south-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-south-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div>
+                        <a href="move-in-move-out-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Waltham</h2>
                             <p>Reliable move cleaning for Waltham apartments, condos, and homes. Moody Street to Cedarwood, every unit cleaned for a smooth transition.</p>
-                            <a href="move-in-move-out-cleaning-waltham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-waltham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div>
+                        <a href="move-in-move-out-cleaning-watertown.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Watertown</h2>
                             <p>Thorough move cleaning for Watertown apartments and houses. Watertown Square, East Watertown, and Pleasant Street residences move-in ready.</p>
-                            <a href="move-in-move-out-cleaning-watertown.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-watertown.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div>
+                        <a href="move-in-move-out-cleaning-wellesley.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Wellesley</h2>
                             <p>Premium move cleaning for Wellesley's luxury homes and estates. Meticulous turnover cleaning for one of Massachusetts' most prestigious communities.</p>
-                            <a href="move-in-move-out-cleaning-wellesley.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-wellesley.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div>
+                        <a href="move-in-move-out-cleaning-weston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Weston</h2>
                             <p>Elite move cleaning for Weston's luxury estates and high-end properties. White-glove turnover service for the region's most exclusive community.</p>
-                            <a href="move-in-move-out-cleaning-weston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-in-move-out-cleaning-weston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
@@ -766,152 +791,152 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div>
+                        <a href="post-construction-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Allston</h2>
                             <p>From Harvard's massive development to triple-decker renovations — construction cleanup for Allston's dynamic, fast-moving neighborhood.</p>
-                            <a href="post-construction-cleaning-allston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-allston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div>
+                        <a href="post-construction-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Boston</h2>
                             <p>From Back Bay brownstones to Seaport high-rises — why Boston's construction boom demands professional post-construction cleanup.</p>
-                            <a href="post-construction-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div>
+                        <a href="post-construction-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Brighton</h2>
                             <p>Apartment turnovers, renovation cleanups, and the September 1st frenzy — fast, reliable post-construction cleaning for Brighton's vibrant rental market.</p>
-                            <a href="post-construction-cleaning-brighton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-brighton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div>
+                        <a href="post-construction-cleaning-brookline.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>BROOKLINE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Brookline</h2>
                             <p>Expert construction cleanup for Brookline's historic homes, luxury renovations, and new condominium builds across Coolidge Corner and Beacon Street.</p>
-                            <a href="post-construction-cleaning-brookline.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-brookline.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div>
+                        <a href="post-construction-cleaning-cambridge.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>CAMBRIDGE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Cambridge</h2>
                             <p>Professional construction cleanup for new builds, renovations, and remodels across Harvard Square, Kendall Square, Central Square, and Porter Square.</p>
-                            <a href="post-construction-cleaning-cambridge.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-cambridge.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div>
+                        <a href="post-construction-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in East Boston</h2>
                             <p>East Boston's waterfront development boom is transforming Jeffries Point, Maverick Square, and Orient Heights. Expert cleanup for Eastie's unique challenges.</p>
-                            <a href="post-construction-cleaning-east-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-east-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div>
+                        <a href="post-construction-cleaning-lexington.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-7031214.jpg')"><span>LEXINGTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Lexington</h2>
                             <p>Premium post-construction cleaning for Lexington's luxury new builds, historic restorations, and high-end kitchen and bath renovations.</p>
-                            <a href="post-construction-cleaning-lexington.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-lexington.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div>
+                        <a href="post-construction-cleaning-needham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>NEEDHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Needham</h2>
                             <p>Construction cleanup for Needham's growing residential development. New builds, additions, and whole-home renovations handled with care.</p>
-                            <a href="post-construction-cleaning-needham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-needham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div>
+                        <a href="post-construction-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Newton</h2>
                             <p>Premium estate cleaning and post-renovation services for Newton's prestigious neighborhoods — Chestnut Hill, Newton Centre, Waban, and beyond.</p>
-                            <a href="post-construction-cleaning-newton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-newton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div>
+                        <a href="post-construction-cleaning-somerville.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SOMERVILLE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Somerville</h2>
                             <p>Construction cleanup for Somerville's booming development scene. Assembly Row high-rises, Union Square projects, and triple-decker renovations.</p>
-                            <a href="post-construction-cleaning-somerville.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-somerville.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div>
+                        <a href="post-construction-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in South Boston</h2>
                             <p>From Seaport luxury towers to historic Southie row houses — professional construction cleanup for one of Boston's hottest real estate markets.</p>
-                            <a href="post-construction-cleaning-south-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-south-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div>
+                        <a href="post-construction-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Waltham</h2>
                             <p>Commercial office buildouts, tech campus cleaning, and residential post-construction services across Waltham's growing Route 128 corridor.</p>
-                            <a href="post-construction-cleaning-waltham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-waltham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div>
+                        <a href="post-construction-cleaning-watertown.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6758521.jpg')"><span>WATERTOWN</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Watertown</h2>
                             <p>Post-construction cleaning for Watertown's residential and commercial projects. Arsenal Yards, Watertown Square, and neighborhood renovations.</p>
-                            <a href="post-construction-cleaning-watertown.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-watertown.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div>
+                        <a href="post-construction-cleaning-wellesley.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg')"><span>WELLESLEY</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Wellesley</h2>
                             <p>Premium construction cleanup for Wellesley's luxury new builds, estate renovations, and high-end residential remodels.</p>
-                            <a href="post-construction-cleaning-wellesley.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-wellesley.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div>
+                        <a href="post-construction-cleaning-weston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/luxury residential .jpg')"><span>WESTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Weston</h2>
                             <p>Elite post-construction cleanup for Weston's luxury estates. New builds, major renovations, and additions cleaned to the highest standard.</p>
-                            <a href="post-construction-cleaning-weston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-weston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
@@ -925,102 +950,102 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div>
+                        <a href="office-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Commercial Cleaning</div>
                             <h2>Commercial Office Cleaning in Waltham</h2>
                             <p>Daily and weekly janitorial programs for tech companies, biotech firms, coworking spaces, and professional offices along the Route 128 corridor.</p>
-                            <a href="office-cleaning-waltham.html" class="read-more">Read Article &rarr;</a>
+                            <a href="office-cleaning-waltham.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>RESTAURANT</span></div>
+                        <a href="restaurant-deep-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg')"><span>RESTAURANT</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Commercial Cleaning</div>
                             <h2>Restaurant Deep Cleaning in Boston</h2>
                             <p>Commercial kitchen cleaning, hood and exhaust service, health inspection prep, and full-service restaurant sanitization across Greater Boston.</p>
-                            <a href="restaurant-deep-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="restaurant-deep-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/move in move out clean.jpg')"><span>LANDLORD</span></div>
+                        <a href="property-manager-cleaning-guide-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/move in move out clean.jpg')"><span>LANDLORD</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Property Management</div>
                             <h2>Property Manager's Guide to Turnover Cleaning</h2>
                             <p>Checklists, timelines, cost factors, and Massachusetts security deposit law for landlords managing apartment turnovers in Greater Boston.</p>
-                            <a href="property-manager-cleaning-guide-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="property-manager-cleaning-guide-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SPRING</span></div>
+                        <a href="spring-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6636314.jpg')"><span>SPRING</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Seasonal Cleaning</div>
                             <h2>Spring Cleaning in Boston: 2026 Guide</h2>
                             <p>Room-by-room spring cleaning checklist for Boston homeowners. Local tips for salt residue removal, pollen prep, and when to call a professional.</p>
-                            <a href="spring-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="spring-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>AIRBNB</span></div>
+                        <a href="airbnb-turnover-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-6492384.jpg')"><span>AIRBNB</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Short-Term Rentals</div>
                             <h2>Airbnb Turnover Cleaning in Greater Boston</h2>
                             <p>Guest-ready results for short-term rental hosts. Same-day turnovers, 5-star cleanliness standards, and reliable scheduling for busy hosts.</p>
-                            <a href="airbnb-turnover-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="airbnb-turnover-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>DAYCARE</span></div>
+                        <a href="daycare-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg')"><span>DAYCARE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Childcare Facilities</div>
                             <h2>Daycare & Childcare Center Cleaning</h2>
                             <p>Child-safe sanitization for daycare centers, preschools, and childcare facilities. Serving Waltham, Newton, Cambridge, Brookline, and Somerville.</p>
-                            <a href="daycare-cleaning-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="daycare-cleaning-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/New Build Final Clean.jpg')"><span>CONTRACTOR</span></div>
+                        <a href="post-construction-cleaning-guide-contractors.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/New Build Final Clean.jpg')"><span>CONTRACTOR</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Contractor Resources</div>
                             <h2>Contractor's Guide to Post-Construction Cleanup</h2>
                             <p>The 3 phases of construction cleanup, common mistakes to avoid, and why a dedicated cleaning partner protects your reputation and timeline.</p>
-                            <a href="post-construction-cleaning-guide-contractors.html" class="read-more">Read Article &rarr;</a>
+                            <a href="post-construction-cleaning-guide-contractors.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div>
+                        <a href="office-cleaning-cambridge.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Commercial Cleaning</div>
                             <h2>Commercial Office Cleaning in Cambridge</h2>
                             <p>Janitorial programs for Kendall Square biotech firms, Harvard Square offices, MIT-area startups, and coworking spaces across Cambridge.</p>
-                            <a href="office-cleaning-cambridge.html" class="read-more">Read Article &rarr;</a>
+                            <a href="office-cleaning-cambridge.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div>
+                        <a href="office-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/commercial properties.jpg')"><span>OFFICE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Commercial Cleaning</div>
                             <h2>Commercial Office Cleaning in Newton</h2>
                             <p>Professional office cleaning for Newton Centre, Needham Street corridor, Route 9, and Newton Corner. Law firms, medical offices, and multi-tenant buildings.</p>
-                            <a href="office-cleaning-newton.html" class="read-more">Read Article &rarr;</a>
+                            <a href="office-cleaning-newton.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
                     <article class="blog-card reveal">
-                        <div class="card-image" style="background-image: url('../assets/images/services images/move in move out clean.jpg')"><span>CHECKLIST</span></div>
+                        <a href="move-out-cleaning-checklist-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/services images/move in move out clean.jpg')"><span>CHECKLIST</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Renter Resources</div>
                             <h2>Move-Out Cleaning Checklist for Boston Renters</h2>
                             <p>Room-by-room move-out cleaning checklist, Massachusetts security deposit law, and when to hire a professional to get your full deposit back.</p>
-                            <a href="move-out-cleaning-checklist-boston.html" class="read-more">Read Article &rarr;</a>
+                            <a href="move-out-cleaning-checklist-boston.html" class="read-more">Read Now &rarr;</a>
                         </div>
                     </article>
 
