@@ -2281,6 +2281,20 @@
                 if (!text) return;
                 chatAddMsg(text, true);
                 chatInput2.value = '';
+
+                // Notify via email + Telegram (fire & forget)
+                try {
+                    fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            message: text,
+                            page: window.location.pathname,
+                            timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })
+                        })
+                    }).catch(function() {});
+                } catch(e) {}
+
                 setTimeout(function() {
                     chatAddMsg(chatGetResponse(text), false);
                 }, 800);
