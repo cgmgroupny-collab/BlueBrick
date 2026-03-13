@@ -1104,6 +1104,71 @@
             .chat-prompt { display: none; }
         }
 
+
+        /* ============================================
+           EMAIL SUBSCRIBER
+           ============================================ */
+        .subscribe-form {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .subscribe-input-wrap {
+            display: flex;
+            gap: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .subscribe-input-wrap input[type="email"] {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border: none;
+            font-size: 0.88rem;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.95);
+            color: #001D4A;
+            outline: none;
+            min-width: 0;
+        }
+
+        .subscribe-input-wrap input[type="email"]::placeholder {
+            color: #94a3b8;
+        }
+
+        .subscribe-btn {
+            background: linear-gradient(135deg, #ECA400, #d4940a);
+            color: #001D4A;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.3rem;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .subscribe-btn:hover {
+            background: linear-gradient(135deg, #f4be3a, #ECA400);
+        }
+
+        .subscribe-note {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4) !important;
+            margin: 0.5rem 0 0 !important;
+            text-align: center;
+        }
+
+        .subscribe-success {
+            color: #ECA400 !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.8rem !important;
+        }
+
         /* ============================================
            BACK TO TOP
            ============================================ */
@@ -1771,6 +1836,23 @@
             setInterval(rotateChatPrompt, 12000);
         }
 
+    
+        // -- Email subscriber form --
+        function handleSubscribe(e) {
+            e.preventDefault();
+            var email = document.getElementById('subEmail').value.trim();
+            if (!email) return false;
+            // Send to API
+            fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, page: window.location.pathname })
+            }).catch(function() {});
+            // Show success
+            document.getElementById('subscribeForm').style.display = 'none';
+            document.getElementById('subscribeSuccess').style.display = 'block';
+            return false;
+        }
     </script>
 
 </body>

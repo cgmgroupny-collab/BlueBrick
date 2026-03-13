@@ -520,6 +520,71 @@
         }
 
 
+
+        /* ============================================
+           EMAIL SUBSCRIBER
+           ============================================ */
+        .subscribe-form {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .subscribe-input-wrap {
+            display: flex;
+            gap: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .subscribe-input-wrap input[type="email"] {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border: none;
+            font-size: 0.88rem;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.95);
+            color: #001D4A;
+            outline: none;
+            min-width: 0;
+        }
+
+        .subscribe-input-wrap input[type="email"]::placeholder {
+            color: #94a3b8;
+        }
+
+        .subscribe-btn {
+            background: linear-gradient(135deg, #ECA400, #d4940a);
+            color: #001D4A;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.3rem;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .subscribe-btn:hover {
+            background: linear-gradient(135deg, #f4be3a, #ECA400);
+        }
+
+        .subscribe-note {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4) !important;
+            margin: 0.5rem 0 0 !important;
+            text-align: center;
+        }
+
+        .subscribe-success {
+            color: #ECA400 !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.8rem !important;
+        }
+
         /* ============================================
            TUBELIGHT NAVBAR
            ============================================ */
@@ -1465,7 +1530,7 @@
 
         .footer-top {
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
             gap: 2.5rem;
             max-width: 1140px;
             margin: 0 auto 1.5rem;
@@ -1575,6 +1640,7 @@
 
             .footer-top { grid-template-columns: 1fr 1fr; }
             .footer-brand { grid-column: span 2; }
+            .footer-col:last-child { grid-column: span 2; }
             .footer-cta h3 { font-size: 1.3rem; }
         }
 
@@ -2019,6 +2085,23 @@
 
     <footer role="contentinfo">
         <div class="footer-bg"></div>
+
+        <!-- Email Subscriber CTA -->
+        <div class="footer-cta">
+            <div class="footer-cta-inner">
+                <h3>Win a Free Cleaning Every Month</h3>
+                <p>Subscribe and get entered to win a complimentary home cleaning — one lucky winner each month.</p>
+                <form class="subscribe-form" id="subscribeForm" onsubmit="return handleSubscribe(event)">
+                    <div class="subscribe-input-wrap">
+                        <input type="email" id="subEmail" placeholder="Enter your email" required autocomplete="email">
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </div>
+                    <p class="subscribe-note">No spam, ever. Unsubscribe anytime.</p>
+                </form>
+                <p class="subscribe-success" id="subscribeSuccess" style="display:none;">You're in! Check your inbox for confirmation.</p>
+            </div>
+        </div>
+
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo">
@@ -2036,15 +2119,14 @@
             </div>
 
             <div class="footer-col">
-                <h4>Service Areas</h4>
-                <nav class="footer-links-list" aria-label="Service areas">
-                    <a href="/blog/deep-cleaning-boston.html">Boston</a>
-                    <a href="/blog/deep-cleaning-cambridge.html">Cambridge</a>
-                    <a href="/blog/deep-cleaning-newton.html">Newton</a>
-                    <a href="/blog/deep-cleaning-waltham.html">Waltham</a>
-                    <a href="/blog/deep-cleaning-brookline.html">Brookline</a>
-                    <a href="/blog/deep-cleaning-somerville.html">Somerville</a>
-                    <a href="/blog/deep-cleaning-brighton.html">Brighton</a>
+                <h4>Quick Links</h4>
+                <nav class="footer-links-list" aria-label="Quick links">
+                    <a href="/">Home</a>
+                    <a href="/cities.html">Service Areas</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/tools/quote-calculator.html">Quote Calculator</a>
+                    <a href="/#quote">Free Estimate</a>
+                    <a href="sms:+17813305604">Text Us</a>
                 </nav>
             </div>
 
@@ -2057,6 +2139,19 @@
                     <a href="/#quote">Luxury Residential</a>
                     <a href="/#quote">Commercial Cleaning</a>
                     <a href="/blog/spring-cleaning-boston.html">Spring Cleaning</a>
+                </nav>
+            </div>
+
+            <div class="footer-col">
+                <h4>Top Areas</h4>
+                <nav class="footer-links-list" aria-label="Service areas">
+                    <a href="/blog/deep-cleaning-boston.html">Boston</a>
+                    <a href="/blog/deep-cleaning-cambridge.html">Cambridge</a>
+                    <a href="/blog/deep-cleaning-newton.html">Newton</a>
+                    <a href="/blog/deep-cleaning-waltham.html">Waltham</a>
+                    <a href="/blog/deep-cleaning-brookline.html">Brookline</a>
+                    <a href="/blog/deep-cleaning-somerville.html">Somerville</a>
+                    <a href="/cities.html">All 15 Cities →</a>
                 </nav>
             </div>
         </div>
