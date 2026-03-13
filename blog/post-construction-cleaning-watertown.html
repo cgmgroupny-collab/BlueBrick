@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Watertown's Development Surge Creates Demand for Professional Cleanup</h2>
+                    <h2>⭐ ⭐ ⭐ Watertown's Development Surge Creates Demand for Professional Cleanup</h2>
 
                     <p>Watertown is in the middle of a transformation. What was once a quiet suburb west of Boston has become one of the most active development zones in the Greater Boston area. The Arsenal Yards project has converted the former Arsenal Mall into a sprawling mixed-use destination with residences, restaurants, retail, lab space, and a hotel. Along Arsenal Street and the Charles River corridor, new construction cranes have become a near-permanent part of the skyline. Residential developers are building condominiums and townhouses at a pace Watertown has not seen in decades.</p>
 
@@ -1004,7 +1144,7 @@
 
 
                 <div class="reveal">
-                    <h2>Understanding Watertown's Construction Landscape</h2>
+                    <h2>🏗️ Understanding Watertown's Construction Landscape</h2>
 
                     <p>Watertown occupies a unique position in the Greater Boston real estate market. Bordered by Cambridge, Boston (Brighton), Belmont, and Waltham, the town benefits from proximity to major employment centers while maintaining its own distinct identity. The result is a construction environment that blends several property types, each with its own post-construction cleaning requirements.</p>
 
@@ -1014,7 +1154,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Three-Phase Post-Construction Cleaning Process</h2>
+                    <h2>🏗️ Our Three-Phase Post-Construction Cleaning Process</h2>
 
                     <p>Professional post-construction cleaning is not a single pass with a mop and vacuum. It is a systematic, multi-phase process designed to progressively eliminate every trace of construction activity. Blue Brick follows a proven three-phase approach adapted to the specific demands of Watertown properties.</p>
 
@@ -1034,9 +1174,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's three-phase process ensures zero construction dust remains in HVAC systems, behind appliances, or in the hidden corners that most cleaning crews miss. We clean to the standard that survives a white-glove inspection and satisfies the most discerning property owners in Watertown.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Watertown Neighborhoods and Areas We Serve</h2>
+                    <h2>📍 Watertown Neighborhoods and Areas We Serve</h2>
 
                     <p>Watertown's construction activity spans the entire town, from the commercial corridors to the quiet residential streets. Blue Brick provides post-construction cleaning across every area.</p>
 
@@ -1055,7 +1199,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>What Makes Post-Construction Cleaning in Watertown Unique</h2>
+                    <h2>📋 What Makes Post-Construction Cleaning in Watertown Unique</h2>
 
                     <p>Post-construction cleaning in Watertown presents a set of challenges distinct from Boston proper and from more spread-out suburban communities. Understanding these factors is essential for delivering consistent, high-quality results.</p>
 
@@ -1069,7 +1213,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Types of Projects We Handle in Watertown</h2>
+                    <h2>✨ ✨ ✨ Types of Projects We Handle in Watertown</h2>
 
                     <p>Blue Brick's post-construction cleaning services cover the full range of project types active in Watertown today.</p>
 
@@ -1082,9 +1226,13 @@
                         <li><strong>Mixed-use developments.</strong> Projects that combine residential, commercial, and retail elements under one roof. We coordinate cleaning across multiple space types, often on staggered timelines as different components reach completion.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Why Professional Post-Construction Cleaning Matters</h2>
+                    <h2>💡 Why Professional Post-Construction Cleaning Matters</h2>
 
                     <p>Some property owners and contractors weigh the option of handling post-construction cleanup with their own labor crews or a general cleaning service. In Watertown's competitive real estate market, this approach carries real risks and hidden costs.</p>
 
@@ -1097,7 +1245,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Process: What to Expect</h2>
+                    <h2>📋 The Blue Brick Process: What to Expect</h2>
 
                     <p>When you contact Blue Brick for post-construction cleaning in Watertown, we follow a clear, transparent process from first call to final walkthrough.</p>
 
@@ -1112,7 +1260,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Serving Watertown's Diverse Community</h2>
+                    <h2>✨ ✨ ✨ Serving Watertown's Diverse Community</h2>
 
                     <p>Watertown has a character all its own. The town's strong Armenian-American community, its independent restaurants and shops, its tree-lined residential streets, and its position as a gateway between Boston, Cambridge, and the western suburbs make it a place where people want to live and invest. As the town evolves, with new development balanced against respect for its history and identity, the demand for high-quality construction services at every phase, including the final cleanup, continues to grow.</p>
 
@@ -1133,7 +1281,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1309,6 +1473,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

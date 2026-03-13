@@ -318,6 +318,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -594,39 +734,6 @@
             color: var(--yale);
             font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .faq-item h3 {
-            font-family: var(--font-body);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--prussian);
-            text-transform: none;
-            letter-spacing: 0;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: var(--mid-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1109,7 +1216,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Cambridge's Commercial Landscape</h2>
+            <h2 class="reveal">🏢 Cambridge's Commercial Landscape</h2>
 
             <div class="reveal">
                 <p>Cambridge is not a single office market — it is several distinct commercial districts, each with its own character, tenant mix, and cleaning requirements. Understanding these neighborhoods is central to delivering services that actually fit the way each building operates.</p>
@@ -1123,7 +1230,7 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Types of Offices We Clean in Cambridge</h2>
+            <h2 class="reveal">💼 Types of Offices We Clean in Cambridge</h2>
 
             <div class="reveal">
                 <p>Every office environment has distinct cleaning requirements. A Kendall Square biotech firm's administrative wing is not the same as a Harvard Square law practice's conference suite. Blue Brick tailors its cleaning programs to the specific demands of each workspace, ensuring that every client receives a service built around their facility — not a generic checklist.</p>
@@ -1131,20 +1238,24 @@
                 <h3>Biotech &amp; Life Sciences Offices</h3>
                 <p>Cambridge's biotech corridor houses some of the most important pharmaceutical and life sciences companies in the world, and their office spaces often sit adjacent to controlled laboratory environments. While Blue Brick focuses on the office, common area, and administrative portions of these facilities, we understand the heightened standards that biotech companies expect. Our crews use HEPA-filtered vacuums, low-residue cleaning solutions, and systematic top-down cleaning protocols to prevent cross-contamination between office areas and sensitive lab zones. We are experienced with badge-access buildings, security protocols, and the documentation requirements that many life sciences tenants mandate from their cleaning vendors.</p>
 
-                <h3>Technology Companies &amp; Startups</h3>
+                <h3>💻 Technology Companies &amp; Startups</h3>
                 <p>Cambridge's tech companies — from Google's Kendall Square campus to early-stage startups in Central Square — often operate in open-plan offices with collaborative spaces, huddle rooms, standing desks, large monitor setups, and communal kitchens that see heavy daily use. Our cleaning programs for tech offices include thorough breakroom and kitchen sanitization, desk and workstation dusting, monitor and screen-safe cleaning, whiteboard maintenance, and detailed attention to high-touch surfaces like shared keyboards, door handles, and conference room equipment. We understand that many tech companies have flexible schedules, and we adjust our cleaning times to avoid disrupting late-working engineering teams or early-morning standups.</p>
 
-                <h3>Coworking Spaces &amp; Shared Offices</h3>
+                <h3>👥 Coworking Spaces &amp; Shared Offices</h3>
                 <p>Cambridge is home to a growing number of coworking spaces — from national operators like WeWork and Regus to independent shared-office communities in Central Square and Kendall Square. These facilities face a unique challenge: high turnover, shared amenities, and a constant stream of new faces using the same desks, phone booths, and meeting rooms every day. Blue Brick provides daily and multi-daily cleaning programs that keep shared surfaces sanitized, common kitchens clean, and restrooms consistently fresh. We also handle the monthly or quarterly deep cleans that keep these spaces looking sharp for tours and new member sign-ups.</p>
 
                 <h3>University-Affiliated Offices</h3>
                 <p>Cambridge is defined by its universities. Beyond the classrooms and lecture halls, Harvard and MIT operate vast networks of administrative offices, research centers, departmental headquarters, and program offices spread across the city. These spaces often have unique scheduling requirements — academic calendars, event cycles, and seasonal fluctuations in occupancy — and need cleaning crews that can adapt to changing needs without missing a beat. Blue Brick works with university property managers and department administrators to deliver consistent cleaning on schedules that align with the rhythm of academic life.</p>
 
-                <h3>Law Firms &amp; Professional Services</h3>
+                <h3>⚖️ ⚖️ ⚖️ Law Firms &amp; Professional Services</h3>
                 <p>Law firms, financial advisors, consulting practices, and nonprofit headquarters in Harvard Square, Brattle Street, and along Mass Ave need an environment that communicates competence and attention to detail. Client-facing conference rooms, reception areas, private offices, and executive suites must be impeccable at all times. Blue Brick delivers the kind of white-glove cleaning that these environments demand — polished surfaces, streak-free glass, vacuumed carpets with visible track lines, and restrooms that are always fully stocked and spotless.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">What Our Commercial Office Cleaning Includes</h2>
+
+            <h2 class="reveal">📋 What Our Commercial Office Cleaning Includes</h2>
 
             <div class="reveal">
                 <p>Blue Brick's office cleaning programs are built around your facility's specific needs, but most commercial clients in Cambridge rely on a core set of services that we deliver with consistency and precision.</p>
@@ -1170,7 +1281,7 @@
                 <p><strong>Flexible Programs:</strong> Every Cambridge office is different. Blue Brick builds custom cleaning schedules — from one night per week to five nights plus weekend service — based on your square footage, headcount, and specific facility needs. No long-term contracts required.</p>
             </div>
 
-            <h2 class="reveal">After-Hours &amp; Weekend Cleaning</h2>
+            <h2 class="reveal">✨ ✨ ✨ After-Hours &amp; Weekend Cleaning</h2>
 
             <div class="reveal">
                 <p>Most commercial office cleaning in Cambridge happens outside of business hours. Blue Brick provides after-hours cleaning programs that begin after your team leaves for the day and are completed before the first employee arrives the next morning. For Kendall Square biotech offices and tech companies that operate on extended schedules, we adjust our start times accordingly — whether that means beginning at 7 PM, 9 PM, or later.</p>
@@ -1180,7 +1291,7 @@
                 <p>For offices that require daytime cleaning — lobbies, restrooms, or common areas in high-traffic buildings that need mid-day attention — we provide discreet daytime porter services. Our porters work quietly and professionally, maintaining high-traffic areas in Kendall Square office towers and Harvard Square professional buildings without disrupting meetings, phone calls, or focused work.</p>
             </div>
 
-            <h2 class="reveal">Why Choose a Local Cambridge Cleaner Over a National Chain</h2>
+            <h2 class="reveal">💡 Why Choose a Local Cambridge Cleaner Over a National Chain</h2>
 
             <div class="reveal">
                 <p>National janitorial franchises are everywhere, and they all promise the same thing: consistent service at a competitive price. The reality is often different. High turnover, subcontracted labor, and distant management create gaps in quality that become obvious within weeks.</p>
@@ -1195,8 +1306,12 @@
                     <li><strong>Investment in the Community</strong> — Blue Brick employs local workers, supports local businesses, and has a reputation to maintain in the communities we serve. Our success depends on the relationships we build right here in Cambridge.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Insured, Licensed &amp; Built for Commercial Work</h2>
+
+            <h2 class="reveal">🏢 Insured, Licensed &amp; Built for Commercial Work</h2>
 
             <div class="reveal">
                 <p>Choosing a commercial cleaning provider is a business decision that carries real risk. An uninsured or underqualified cleaning company can expose your business to liability, damage your property, or compromise your security. Blue Brick eliminates those concerns.</p>
@@ -1213,7 +1328,7 @@
                 <p><strong>Serving All of Cambridge:</strong> From Kendall Square biotech towers to Harvard Square professional offices, from MIT-area tech startups to Alewife commercial parks, from Central Square coworking spaces to university administrative buildings — Blue Brick delivers professional commercial office cleaning across every part of the city.</p>
             </div>
 
-            <h2 class="reveal">Frequently Asked Questions</h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked Questions</h2>
 
             <div class="reveal">
                 <div class="faq-item">
@@ -1247,7 +1362,7 @@
                 </div>
             </div>
 
-            <h2 class="reveal">Get a Free Office Cleaning Walkthrough</h2>
+            <h2 class="reveal">💼 Get a Free Office Cleaning Walkthrough</h2>
 
             <div class="reveal">
                 <p>The best way to get an accurate quote for commercial office cleaning in Cambridge is a walkthrough. We visit your facility, assess your square footage, discuss your cleaning priorities, and build a custom program that fits your schedule and budget. There is no cost and no obligation.</p>
@@ -1257,7 +1372,23 @@
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1441,5 +1572,21 @@
             });
         });
     </script>
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+    </script>
+
 </body>
 </html>

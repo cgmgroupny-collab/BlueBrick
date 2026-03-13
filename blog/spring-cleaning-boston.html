@@ -262,6 +262,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -1043,7 +1183,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Why Spring Cleaning Matters More in Boston</h2>
+            <h2 class="reveal">💡 Why Spring Cleaning Matters More in Boston</h2>
 
             <div class="reveal">
                 <p>Every region has its cleaning challenges, but Greater Boston presents a specific set of problems that make spring cleaning more than a nice-to-have. Understanding these local factors will help you prioritize the areas of your home that need the most attention.</p>
@@ -1057,14 +1197,14 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">The Complete Room-by-Room Spring Cleaning Checklist</h2>
+            <h2 class="reveal">🌸 The Complete Room-by-Room Spring Cleaning Checklist</h2>
 
             <div class="reveal">
                 <p>Use this checklist as your reference guide. It is organized by room so you can tackle your spring cleaning in manageable sections — one room per day, one floor per weekend, or all at once if you have the stamina. Bookmark this page and come back to it.</p>
             </div>
 
             <div class="checklist-box reveal">
-                <h3>Kitchen</h3>
+                <h3>🍳 Kitchen</h3>
                 <ul>
                     <li>Pull out refrigerator and stove — clean behind and underneath both appliances</li>
                     <li>Deep clean oven interior, racks, and range hood filter (degrease the hood vent)</li>
@@ -1078,7 +1218,7 @@
             </div>
 
             <div class="checklist-box reveal">
-                <h3>Bathrooms</h3>
+                <h3>🚿 Bathrooms</h3>
                 <ul>
                     <li>Scrub tile grout — winter moisture often leaves mildew in shower grout lines</li>
                     <li>Deep clean exhaust fan cover (remove, soak, and dry)</li>
@@ -1091,7 +1231,7 @@
             </div>
 
             <div class="checklist-box reveal">
-                <h3>Bedrooms</h3>
+                <h3>🛏️ Bedrooms</h3>
                 <ul>
                     <li>Flip or rotate mattresses</li>
                     <li>Wash all bedding, including pillows, mattress pad, and duvet cover</li>
@@ -1104,7 +1244,7 @@
             </div>
 
             <div class="checklist-box reveal">
-                <h3>Living Areas</h3>
+                <h3>🛋️ Living Areas</h3>
                 <ul>
                     <li>Move all furniture and vacuum underneath — get the salt residue and dust bunnies</li>
                     <li>Deep clean upholstery and throw pillows</li>
@@ -1128,7 +1268,7 @@
             </div>
 
             <div class="checklist-box reveal">
-                <h3>Windows, Exterior &amp; Outdoor Spaces</h3>
+                <h3>🪟 Windows, Exterior &amp; Outdoor Spaces</h3>
                 <ul>
                     <li>Clean all exterior windows — winter grime, salt spray, and construction dust</li>
                     <li>Remove storm windows and install screens</li>
@@ -1143,16 +1283,20 @@
             <div class="highlight-box reveal">
                 <p><strong>Pro Tip:</strong> Start with the rooms you use most — kitchen, bathrooms, and main living area. If you run out of time or energy, those three zones will give you the biggest impact. Save bedrooms and storage areas for the following weekend.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Boston-Specific Spring Cleaning Tips</h2>
+
+            <h2 class="reveal">🌸 Boston-Specific Spring Cleaning Tips</h2>
 
             <div class="reveal">
                 <p>Generic spring cleaning advice does not account for what New England winters do to a home. Here are the Boston-specific details that separate a thorough spring cleaning from a surface-level one.</p>
 
-                <h3>Removing Winter Salt Residue from Floors</h3>
+                <h3>🪣 Removing Winter Salt Residue from Floors</h3>
                 <p>Standard mopping spreads salt residue around rather than removing it. For hardwood floors, use a solution of one cup white vinegar per gallon of warm water — wring the mop almost dry and go with the grain. For tile and stone, use a pH-neutral cleaner specifically designed for natural stone to avoid etching. For carpets, a professional hot-water extraction cleaning is the most effective way to pull embedded salt from carpet fibers. This single step protects your flooring investment for years.</p>
 
-                <h3>Window Cleaning After Snow Season</h3>
+                <h3>🪟 Window Cleaning After Snow Season</h3>
                 <p>Boston's windows take a beating from November through March. Between salt spray from treated roads, condensation residue on interior glass, and the general grime that accumulates when windows stay shut for months, the difference before and after a proper cleaning is dramatic. Clean the glass, but do not forget the tracks — window tracks collect condensation, dead insects, and dust that can impede operation and promote mold growth. Use a stiff brush, vacuum the debris, then wipe with a disinfecting solution.</p>
 
                 <h3>Preparing for Pollen Season</h3>
@@ -1162,7 +1306,7 @@
                 <p>Freeze-thaw cycles and ice-melt products leave decks and patios looking worn by spring. Sweep away debris, then power-wash the surface to remove embedded grime. For wood decks, inspect for loose boards, popped nails, and splintering. This is the time to seal or re-stain if the wood is no longer repelling water. For composite decking, a soap and water scrub is usually sufficient. Get your outdoor space ready before the first warm weekend arrives — in Boston, those days come fast and disappear faster.</p>
             </div>
 
-            <h2 class="reveal">When to DIY vs. Hire a Professional</h2>
+            <h2 class="reveal">⭐ ⭐ ⭐ When to DIY vs. Hire a Professional</h2>
 
             <div class="reveal">
                 <p>Not every spring cleaning task requires a professional. But some tasks are significantly more effective — and safer — when handled by a trained team with commercial-grade equipment. Here is a practical breakdown.</p>
@@ -1190,8 +1334,12 @@
             <div class="highlight-box reveal">
                 <p><strong>The Blue Brick Approach:</strong> We use commercial-grade HEPA vacuums, professional steam cleaners, and eco-friendly products that are safe for children, pets, and sensitive surfaces. Every spring cleaning is customized — we focus on the areas that matter most for your specific home and situation.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Spring 2026 Move-Out Season in Greater Boston</h2>
+
+            <h2 class="reveal">🌸 Spring 2026 Move-Out Season in Greater Boston</h2>
 
             <div class="reveal">
                 <p>If you live in or near the Boston area, you know that spring is move-out season. Tens of thousands of leases turn over between March and June — and the September 1st cycle starts its planning phase in the spring as well. Whether you are a tenant preparing to move out, a landlord turning over a unit, or a property manager handling multiple turnovers, spring cleaning and move-out cleaning overlap significantly.</p>
@@ -1201,7 +1349,7 @@
                 <p><strong>Blue Brick</strong> handles both spring cleaning and move-in/move-out turnover cleaning across all of Greater Boston. If your spring cleaning coincides with a lease turnover, we can combine both services into a single, comprehensive appointment.</p>
             </div>
 
-            <h2 class="reveal">Service Areas Across Greater Boston</h2>
+            <h2 class="reveal">🗺️ Service Areas Across Greater Boston</h2>
 
             <div class="reveal">
                 <p><strong>Blue Brick Luxury and Commercial Cleaning</strong> provides professional spring cleaning services throughout the Greater Boston area. We serve homeowners, tenants, landlords, and property managers across all of our service areas:</p>
@@ -1221,7 +1369,7 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Why Greater Boston Trusts Blue Brick</h2>
+            <h2 class="reveal">💡 Why Greater Boston Trusts Blue Brick</h2>
 
             <div class="reveal">
                 <p>Spring cleaning is personal. You are inviting a team into your home to handle your belongings, clean your private spaces, and leave everything better than they found it. That requires trust — and trust is earned.</p>
@@ -1241,7 +1389,23 @@
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1425,6 +1589,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

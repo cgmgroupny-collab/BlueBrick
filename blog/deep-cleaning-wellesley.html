@@ -307,6 +307,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -571,25 +711,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 1.5rem;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .faq-item h3 {
-            margin-top: 0;
         }
 
         /* ============================================
@@ -1056,7 +1177,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Wellesley Homes Demand a Higher Standard of Clean</h2>
+                    <h2>💡 Why Wellesley Homes Demand a Higher Standard of Clean</h2>
 
                     <p>Wellesley is one of the most distinguished residential communities in Massachusetts. Known for its exceptional school system, tree-lined streets, and proximity to Boston, the town attracts discerning homeowners who invest heavily in their properties. From the stately Colonials and sprawling estates along Dover Road to the meticulously maintained Tudor revivals near Wellesley Square, the standard for property care here is simply higher than most towns.</p>
 
@@ -1072,27 +1193,27 @@
 
 
                 <div class="reveal">
-                    <h2>What Deep Cleaning Includes</h2>
+                    <h2>📋 What Deep Cleaning Includes</h2>
 
                     <p>Deep cleaning is a comprehensive, top-to-bottom service that goes far beyond what regular maintenance cleaning covers. It targets the buildup, grime, and neglected areas that accumulate over weeks and months of daily living. Here is what Blue Brick's deep cleaning covers in a Wellesley home.</p>
 
-                    <h3>Kitchen Deep Cleaning</h3>
+                    <h3>🍳 Kitchen Deep Cleaning</h3>
 
                     <p>The kitchen is the most demanding room in any deep clean. Our team degreases range hoods, exhaust fans, and backsplash areas. We clean inside and behind appliances, including refrigerators, ovens, dishwashers, and microwaves. All cabinet fronts and handles are wiped down. Countertops are sanitized using products appropriate for the specific stone or surface material. Sink basins and fixtures are descaled and polished. For Wellesley kitchens with luxury appliances like Sub-Zero, Wolf, or Miele units, we follow manufacturer-recommended cleaning approaches to protect warranties and finishes.</p>
 
-                    <h3>Bathroom Deep Cleaning</h3>
+                    <h3>🚿 Bathroom Deep Cleaning</h3>
 
                     <p>Every bathroom is sanitized from ceiling to floor. We scrub tile grout lines, descale shower glass and fixtures, clean inside medicine cabinets, polish mirrors, and disinfect all high-touch surfaces. Tub surrounds, vanity tops, and floor tiles receive focused attention. In Wellesley's master bathrooms, which often feature heated floors, frameless glass enclosures, freestanding soaking tubs, and natural stone tile, we use pH-neutral products that sanitize effectively without etching or dulling premium surfaces.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Dust accumulates in places most people never notice. We clean ceiling fans, light fixtures, crown molding, baseboards, window sills, and door frames throughout the home. Upholstered furniture is deep-vacuumed. Hardwood floors are carefully cleaned using appropriate methods for the finish type. Area rugs are vacuumed on both sides. Built-in shelving, mantels, and entertainment centers are dusted and wiped. In larger Wellesley homes with formal living rooms, libraries, or home offices, we ensure every room receives the same level of detail.</p>
 
-                    <h3>Floors, Baseboards, and Trim</h3>
+                    <h3>🪣 Floors, Baseboards, and Trim</h3>
 
                     <p>All hard flooring is mopped or cleaned according to material type. Baseboards and trim are wiped down throughout the entire home, removing the dust and scuff marks that regular cleaning misses. Staircase railings, newel posts, and baluster details are cleaned individually. For homes with extensive hardwood, we use products that clean without leaving residue or affecting the finish.</p>
 
-                    <h3>Windows, Vents, and Hidden Areas</h3>
+                    <h3>🪟 Windows, Vents, and Hidden Areas</h3>
 
                     <p>Interior windows and window tracks are cleaned. All air vents and registers are wiped to remove dust buildup that affects air quality. We clean behind furniture where possible, inside closets upon request, and address laundry rooms, mudrooms, and utility spaces. These often-overlooked areas are exactly where deep cleaning delivers the most noticeable improvement.</p>
                 </div>
@@ -1100,9 +1221,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's deep cleaning reaches every corner, every surface, and every detail that routine cleaning leaves behind. We clean to a standard that you can see, feel, and trust.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Wellesley Neighborhoods We Serve</h2>
+                    <h2>📍 Wellesley Neighborhoods We Serve</h2>
 
                     <p>Wellesley's neighborhoods each have their own character and property styles. We provide deep cleaning across every part of town.</p>
 
@@ -1129,7 +1254,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Wellesley Homeowners Choose Professional Deep Cleaning</h2>
+                    <h2>💡 Why Wellesley Homeowners Choose Professional Deep Cleaning</h2>
 
                     <ul>
                         <li><strong>Premium material protection.</strong> Wellesley homes feature marble, granite, quartzite, engineered hardwood, custom tile, and luxury fixtures that require material-specific cleaning. Using the wrong product on a natural stone countertop or a delicate wood finish leads to permanent damage. Blue Brick's team is trained on every surface type found in high-end residential properties.</li>
@@ -1139,9 +1264,13 @@
                         <li><strong>Seasonal maintenance.</strong> Wellesley homeowners frequently schedule deep cleans before holidays, after winter, before hosting guests, or when returning from travel. Regular deep cleaning maintains the condition of premium finishes and prevents the gradual decline that leads to costly restoration.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>The Blue Brick Deep Cleaning Process</h2>
+                    <h2>✨ ✨ ✨ The Blue Brick Deep Cleaning Process</h2>
 
                     <p>When you contact Blue Brick for a deep cleaning in Wellesley, the process is clear and straightforward.</p>
 
@@ -1158,7 +1287,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-item">
                         <h3>What does a deep cleaning include in Wellesley?</h3>
@@ -1196,7 +1325,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1372,6 +1517,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

@@ -315,6 +315,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -579,37 +719,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0 1.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-answer {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1076,7 +1185,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Needham Homes Need Professional Deep Cleaning</h2>
+                    <h2>💡 Why Needham Homes Need Professional Deep Cleaning</h2>
 
                     <p>Needham is one of the most desirable residential communities along the Route 128 corridor. Families move here for the top-rated schools, safe tree-lined streets, and the sense of community that defines neighborhoods from Needham Center to the Charles River Village. The homes match the town's reputation: well-maintained, spacious, and built with quality materials that deserve proper care.</p>
 
@@ -1092,19 +1201,19 @@
 
 
                 <div class="reveal">
-                    <h2>What Deep Cleaning Actually Includes</h2>
+                    <h2>📋 What Deep Cleaning Actually Includes</h2>
 
                     <p>Deep cleaning is not just a longer version of a standard clean. It is a fundamentally different scope of work. Every room receives focused attention on the areas that accumulate grime, dust, and bacteria over weeks and months of daily use.</p>
 
-                    <h3>Kitchen Deep Clean</h3>
+                    <h3>🍳 Kitchen Deep Clean</h3>
 
                     <p>The kitchen is typically the most labor-intensive room in a deep cleaning. Our teams degrease range hoods and exhaust filters, clean inside the oven and microwave, wipe down the interior and exterior of the refrigerator, scrub the sink basin and faucet hardware, detail cabinet fronts and handles, clean the dishwasher interior, and address backsplash grout and tile. Every countertop, drawer face, and light fixture is wiped and polished. In Needham's larger kitchens, this work alone can take well over an hour.</p>
 
-                    <h3>Bathroom Deep Clean</h3>
+                    <h3>🚿 Bathroom Deep Clean</h3>
 
                     <p>Bathrooms receive intensive scrubbing from ceiling to floor. We address tile grout, soap scum on glass enclosures, mineral deposits on fixtures, toilet bowl staining, vanity and mirror detailing, exhaust fan dust, and floor tile cleaning. Every hinge, handle, and towel bar is wiped down. Needham homes with multiple bathrooms, including finished basements with half-baths, receive the same level of attention in each one.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Deep cleaning in living spaces focuses on the details that standard cleaning overlooks. Baseboards and crown molding are wiped along their full length. Window sills and tracks are cleaned out. Light fixtures and ceiling fans are dusted. Furniture surfaces are detailed, including the undersides of shelves and the backs of entertainment centers. Door frames and switch plates are wiped. Carpet edges and corners are vacuumed with crevice tools. Hard floors are cleaned along walls and under furniture where dust collects.</p>
 
@@ -1123,9 +1232,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's deep cleaning goes beyond what you can see. We clean behind, beneath, and inside — the spaces where dust, grease, and allergens accumulate unnoticed. The result is a home that feels and smells genuinely clean.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Needham Neighborhoods We Serve</h2>
+                    <h2>📍 Needham Neighborhoods We Serve</h2>
 
                     <p>Needham's neighborhoods each have distinct character and housing stock, but they share a common standard of quality that our cleaning teams respect and maintain.</p>
 
@@ -1148,7 +1261,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>When to Schedule a Deep Cleaning</h2>
+                    <h2>📅 When to Schedule a Deep Cleaning</h2>
 
                     <p>Deep cleaning serves different purposes at different times. The most common triggers for Needham homeowners include:</p>
 
@@ -1160,9 +1273,13 @@
                         <li><strong>Allergy season preparation.</strong> For households sensitive to pollen, pet dander, or dust mites, a deep clean with HEPA-filtered vacuuming and thorough surface wiping significantly reduces indoor allergen levels.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Why Hire Blue Brick for Deep Cleaning in Needham</h2>
+                    <h2>💡 Why Hire Blue Brick for Deep Cleaning in Needham</h2>
 
                     <p>There is no shortage of cleaning services operating in the Greater Boston area. What distinguishes Blue Brick is our focus on quality, consistency, and the specific needs of high-value residential properties.</p>
 
@@ -1176,43 +1293,43 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
-                            <p class="faq-question">What is included in a deep cleaning in Needham?</p>
-                            <p class="faq-answer">A deep cleaning includes thorough scrubbing of kitchens and bathrooms, baseboard and trim detailing, interior window cleaning, appliance interior cleaning, grout and tile scrubbing, light fixture dusting, cabinet interior wipe-downs, and detailed vacuuming of all floors including under furniture and along edges. It goes far beyond a standard maintenance clean.</p>
+                            <div class="faq-question">What is included in a deep cleaning in Needham?</div>
+                            <div class="faq-answer"><p>A deep cleaning includes thorough scrubbing of kitchens and bathrooms, baseboard and trim detailing, interior window cleaning, appliance interior cleaning, grout and tile scrubbing, light fixture dusting, cabinet interior wipe-downs, and detailed vacuuming of all floors including under furniture and along edges. It goes far beyond a standard maintenance clean.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How often should I schedule a deep cleaning for my Needham home?</p>
-                            <p class="faq-answer">Most Needham homeowners benefit from a deep cleaning every three to six months, depending on household size, pets, and lifestyle. Homes with children or pets may need quarterly deep cleans, while smaller households can maintain quality with bi-annual service.</p>
+                            <div class="faq-question">How often should I schedule a deep cleaning for my Needham home?</div>
+                            <div class="faq-answer"><p>Most Needham homeowners benefit from a deep cleaning every three to six months, depending on household size, pets, and lifestyle. Homes with children or pets may need quarterly deep cleans, while smaller households can maintain quality with bi-annual service.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How long does a deep cleaning take for a typical Needham home?</p>
-                            <p class="faq-answer">For an average Needham home of 2,500 to 4,000 square feet, a deep cleaning typically takes between four and eight hours depending on the home's condition, number of bathrooms, and specific requirements. Larger estates in Needham Heights or Charles River Village may require a full day or a two-day schedule.</p>
+                            <div class="faq-question">How long does a deep cleaning take for a typical Needham home?</div>
+                            <div class="faq-answer"><p>For an average Needham home of 2,500 to 4,000 square feet, a deep cleaning typically takes between four and eight hours depending on the home's condition, number of bathrooms, and specific requirements. Larger estates in Needham Heights or Charles River Village may require a full day or a two-day schedule.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">What is the difference between deep cleaning and regular cleaning?</p>
-                            <p class="faq-answer">Regular cleaning covers surface-level tasks like vacuuming, mopping, and wiping countertops. Deep cleaning addresses the buildup that accumulates over time — inside appliances, behind furniture, in grout lines, along baseboards, inside cabinets, and in areas that routine cleaning does not reach. It resets your home to a like-new baseline.</p>
+                            <div class="faq-question">What is the difference between deep cleaning and regular cleaning?</div>
+                            <div class="faq-answer"><p>Regular cleaning covers surface-level tasks like vacuuming, mopping, and wiping countertops. Deep cleaning addresses the buildup that accumulates over time — inside appliances, behind furniture, in grout lines, along baseboards, inside cabinets, and in areas that routine cleaning does not reach. It resets your home to a like-new baseline.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">Do I need to be home during the deep cleaning?</p>
-                            <p class="faq-answer">No. Many Needham clients provide access instructions and let our team work while they are away. We are fully insured and bonded, and we follow strict security protocols. You will receive a summary when the cleaning is complete.</p>
+                            <div class="faq-question">Do I need to be home during the deep cleaning?</div>
+                            <div class="faq-answer"><p>No. Many Needham clients provide access instructions and let our team work while they are away. We are fully insured and bonded, and we follow strict security protocols. You will receive a summary when the cleaning is complete.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How do I get a quote for deep cleaning in Needham?</p>
-                            <p class="faq-answer">Text us at <a href="sms:+17813305604" style="color: var(--cerulean); font-weight: 700;">781-330-5604</a> or email <a href="mailto:bluebrickmass@gmail.com" style="color: var(--cerulean); font-weight: 700;">bluebrickmass@gmail.com</a> with your address, approximate square footage, and any specific concerns. We respond quickly and most quotes are delivered within two hours.</p>
+                            <div class="faq-question">How do I get a quote for deep cleaning in Needham?</div>
+                            <div class="faq-answer"><p>Text us at <a href="sms:+17813305604" style="color: var(--cerulean); font-weight: 700;">781-330-5604</a> or email <a href="mailto:bluebrickmass@gmail.com" style="color: var(--cerulean); font-weight: 700;">bluebrickmass@gmail.com</a> with your address, approximate square footage, and any specific concerns. We respond quickly and most quotes are delivered within two hours.</p></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="highlight-box reveal">
-                    <p>Ready to schedule your deep cleaning? Text us at <a href="sms:+17813305604" style="color: var(--cerulean); font-weight: 700;">781-330-5604</a> or email <a href="mailto:bluebrickmass@gmail.com" style="color: var(--cerulean); font-weight: 700;">bluebrickmass@gmail.com</a>. Most quotes are delivered within 2 hours.</p>
+                    <p>Ready to schedule your deep cleaning? Text us at <a href="sms:+17813305604" style="color: var(--cerulean); font-weight: 700;">781-330-5604</a> or email <a href="mailto:bluebrickmass@gmail.com" style="color: var(--cerulean); font-weight: 700;">bluebrickmass@gmail.com</a>. Most quotes are delivered within 2 hours.</p></div>
                 </div>
 
             </article>
@@ -1225,7 +1342,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1342,7 +1475,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1401,6 +1534,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

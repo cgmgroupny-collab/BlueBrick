@@ -315,6 +315,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -579,37 +719,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0 1.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-answer {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1076,7 +1185,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Lexington Homes Deserve More Than a Standard Cleaning</h2>
+                    <h2>📍 Why Lexington Homes Deserve More Than a Standard Cleaning</h2>
 
                     <p>Lexington, Massachusetts is a town defined by its commitment to quality. From the preserved colonial homes surrounding the Battle Green to the modern luxury estates nestled along wooded lots off Grove Street and Concord Avenue, the residential landscape here reflects a community that values craftsmanship, heritage, and meticulous upkeep. These are not homes that thrive on surface-level maintenance. They demand the kind of thorough, deliberate attention that only a professional deep cleaning can provide.</p>
 
@@ -1092,27 +1201,27 @@
 
 
                 <div class="reveal">
-                    <h2>What a Professional Deep Cleaning Actually Includes</h2>
+                    <h2>📋 What a Professional Deep Cleaning Actually Includes</h2>
 
                     <p>The term "deep cleaning" is used loosely across the cleaning industry. At Blue Brick, it refers to a specific, methodical process that goes well beyond what a routine maintenance cleaning covers. A deep cleaning addresses every surface in the home — visible and hidden — with the goal of eliminating accumulated grime, allergens, bacteria, and buildup that regular cleaning leaves behind.</p>
 
-                    <h3>Kitchen Deep Cleaning</h3>
+                    <h3>🍳 Kitchen Deep Cleaning</h3>
 
                     <p>The kitchen is where deep cleaning makes the most dramatic difference. Our process includes cleaning inside and behind all appliances — oven interiors, refrigerator shelves and drawers, dishwasher edges and door seals, range hood filters, and the areas behind and beneath the refrigerator and stove where grease, crumbs, and dust collect unnoticed for months. We degrease backsplashes, clean cabinet fronts and interiors, scrub grout lines on tile surfaces, sanitize countertops including the seams where counters meet backsplashes, and detail hardware and fixtures to remove water spots and fingerprint buildup. For Lexington homes with high-end kitchen installations — quartzite islands, custom lacquer cabinetry, integrated panel appliances — we use material-specific products that clean without damaging premium finishes.</p>
 
-                    <h3>Bathroom Deep Cleaning</h3>
+                    <h3>🚿 Bathroom Deep Cleaning</h3>
 
                     <p>Bathrooms receive a complete sanitization that addresses every surface from ceiling to floor. This includes scrubbing tile grout to remove mildew and soap scum discoloration, descaling showerheads and faucets, cleaning inside medicine cabinets and vanity drawers, sanitizing toilet bases and the areas behind toilets that routine cleaning often skips, detailing glass shower enclosures to remove hard water deposits, and cleaning exhaust fan covers. In Lexington's luxury bathrooms — where you find heated marble floors, frameless glass enclosures, freestanding soaking tubs, and brushed nickel or brass fixtures — we apply the correct cleaning agents for each material to restore every element to its intended finish.</p>
 
-                    <h3>Living Spaces and Bedrooms</h3>
+                    <h3>🛏️ Living Spaces and Bedrooms</h3>
 
                     <p>Throughout the home, deep cleaning addresses the surfaces that accumulate dust and allergens between routine cleanings. We wipe all baseboards and door frames, clean window sills and tracks, dust ceiling fans and light fixtures, clean behind and under furniture, vacuum upholstered pieces, wipe switch plates and outlet covers, detail built-in shelving and entertainment centers, and clean closet interiors including shelves and rods. For homes with fireplaces — a common feature in Lexington's colonials — we clean the hearth, mantel, and surrounding surfaces of soot residue and dust.</p>
 
-                    <h3>Flooring</h3>
+                    <h3>🪣 Flooring</h3>
 
                     <p>Lexington homes feature a range of flooring materials, each requiring specific deep cleaning techniques. Hardwood floors are vacuumed with soft-bristle attachments to avoid scratching, then cleaned with pH-neutral wood-safe solutions that lift embedded dirt without damaging the finish or leaving residue. Tile and stone floors receive grout scrubbing and surface cleaning with stone-safe products. Carpeted areas are deep-vacuumed using HEPA-filtered equipment with slow, overlapping passes that extract embedded allergens and particulate that standard vacuuming misses. Area rugs are vacuumed on both sides and spot-treated as needed.</p>
 
-                    <h3>Windows, Blinds, and Treatments</h3>
+                    <h3>🪟 Windows, Blinds, and Treatments</h3>
 
                     <p>Interior windows are cleaned on all accessible glass surfaces, including multi-pane colonial-style windows that are common throughout Lexington's historic housing stock. Window tracks and sills are vacuumed and wiped to remove accumulated dirt and dead insects. Blinds are dusted slat by slat, and window treatments are vacuumed with upholstery attachments to remove dust without the need for removal and dry cleaning.</p>
                 </div>
@@ -1122,7 +1231,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Seasonal Deep Cleaning for Lexington's Large Homes</h2>
+                    <h2>📅 Seasonal Deep Cleaning for Lexington's Large Homes</h2>
 
                     <p>New England's dramatic seasonal shifts create cleaning challenges that are unique to this region, and Lexington's large homes amplify every one of them. A deep cleaning timed to the seasonal transitions is one of the most effective things a homeowner can do to maintain indoor air quality, protect premium finishes, and keep a large home feeling fresh and well-maintained year-round.</p>
 
@@ -1138,9 +1247,13 @@
 
                     <p>Many of our Lexington clients schedule a targeted deep cleaning in the week before Thanksgiving or the first week of December, and another in early January after the holiday season wraps up. The pre-holiday cleaning ensures the home is immaculate for gatherings and overnight guests. The post-holiday cleaning addresses the aftermath — kitchen grease from extended cooking, increased foot traffic throughout the home, pine needle debris from live trees, wax drips from candles, and the general wear that weeks of entertaining impose on even the most well-maintained home.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Deep Cleaning for Lexington's Historic Colonials</h2>
+                    <h2>✨ ✨ ✨ Deep Cleaning for Lexington's Historic Colonials</h2>
 
                     <p>Lexington's historic homes present cleaning challenges that require specific expertise. These properties — many dating to the 18th and 19th centuries — feature materials and construction methods that standard cleaning approaches can damage. Wide-plank pine floors, hand-planed trim, original plaster walls, antique brick fireplaces, and period hardware all require careful handling during a deep cleaning.</p>
 
@@ -1150,7 +1263,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Deep Cleaning for Modern Luxury Estates</h2>
+                    <h2>✨ ✨ ✨ Deep Cleaning for Modern Luxury Estates</h2>
 
                     <p>At the other end of Lexington's housing spectrum are the modern luxury homes — the new builds and high-end renovations that feature open floor plans, floor-to-ceiling windows, chef's kitchens, spa-like primary bathrooms, and curated material palettes that include honed marble, wide-plank white oak, custom lacquer millwork, and architectural glass. These homes are designed to be visually striking, and that visual impact depends on every surface being immaculate.</p>
 
@@ -1160,7 +1273,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Lexington Neighborhoods We Serve</h2>
+                    <h2>📍 Lexington Neighborhoods We Serve</h2>
 
                     <p>Blue Brick provides deep cleaning services across every Lexington neighborhood. Each area has its own housing character, and we adapt our approach to meet the specific needs of the homes we serve.</p>
 
@@ -1185,9 +1298,13 @@
 
                     <p>Follen Hill is one of Lexington's most prestigious residential enclaves, featuring larger lots, mature landscaping, and homes that often exceed 4,000 square feet. Deep cleaning in Follen Hill means more rooms, more bathrooms, more built-in storage, and more premium finishes that require material-specific care. Our crews allocate additional time and personnel for Follen Hill properties to ensure the thoroughness that these homes demand.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Why Lexington Homeowners Choose Blue Brick for Deep Cleaning</h2>
+                    <h2>💡 Why Lexington Homeowners Choose Blue Brick for Deep Cleaning</h2>
 
                     <p>Lexington residents have options when it comes to cleaning services. The reasons they choose Blue Brick for their deep cleaning needs come down to the details that separate a premium service from an adequate one.</p>
 
@@ -1205,7 +1322,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Deep Cleaning Process</h2>
+                    <h2>✨ ✨ ✨ The Blue Brick Deep Cleaning Process</h2>
 
                     <p>When you contact Blue Brick for a deep cleaning in Lexington, the process is straightforward and transparent from start to finish.</p>
 
@@ -1227,37 +1344,37 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
-                            <p class="faq-question">What is included in a deep cleaning for a Lexington home?</p>
-                            <p class="faq-answer">A Blue Brick deep cleaning covers every surface in the home from top to bottom. This includes detailed kitchen cleaning (inside ovens, refrigerators, behind appliances), bathroom sanitization and grout scrubbing, baseboard and trim wiping, interior window cleaning, light fixture dusting, HVAC vent cleaning, closet and cabinet interior wipe-downs, and thorough floor care including hardwood conditioning and tile deep scrubbing. For Lexington's larger homes, we also address mudrooms, finished basements, and bonus rooms.</p>
+                            <div class="faq-question">What is included in a deep cleaning for a Lexington home?</div>
+                            <div class="faq-answer"><p>A Blue Brick deep cleaning covers every surface in the home from top to bottom. This includes detailed kitchen cleaning (inside ovens, refrigerators, behind appliances), bathroom sanitization and grout scrubbing, baseboard and trim wiping, interior window cleaning, light fixture dusting, HVAC vent cleaning, closet and cabinet interior wipe-downs, and thorough floor care including hardwood conditioning and tile deep scrubbing. For Lexington's larger homes, we also address mudrooms, finished basements, and bonus rooms.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How often should I schedule a deep cleaning for my Lexington home?</p>
-                            <p class="faq-answer">For most Lexington households, we recommend a deep cleaning at least twice per year — typically in spring and fall to address seasonal transitions. Homes with pets, young children, or heavy foot traffic benefit from quarterly deep cleanings. Many of our Lexington clients also schedule a deep cleaning before and after the holiday season when they are hosting guests.</p>
+                            <div class="faq-question">How often should I schedule a deep cleaning for my Lexington home?</div>
+                            <div class="faq-answer"><p>For most Lexington households, we recommend a deep cleaning at least twice per year — typically in spring and fall to address seasonal transitions. Homes with pets, young children, or heavy foot traffic benefit from quarterly deep cleanings. Many of our Lexington clients also schedule a deep cleaning before and after the holiday season when they are hosting guests.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How long does a deep cleaning take for a large Lexington home?</p>
-                            <p class="faq-answer">A deep cleaning for a typical 3,000 to 5,000 square foot Lexington home takes between 5 and 8 hours depending on the number of rooms, the level of buildup, and any special requests. Larger estates above 5,000 square feet or homes requiring extra attention to historic features may require a full day or a two-day schedule. We provide a time estimate during the initial consultation.</p>
+                            <div class="faq-question">How long does a deep cleaning take for a large Lexington home?</div>
+                            <div class="faq-answer"><p>A deep cleaning for a typical 3,000 to 5,000 square foot Lexington home takes between 5 and 8 hours depending on the number of rooms, the level of buildup, and any special requests. Larger estates above 5,000 square feet or homes requiring extra attention to historic features may require a full day or a two-day schedule. We provide a time estimate during the initial consultation.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">Do you use safe cleaning products on historic surfaces in Lexington homes?</p>
-                            <p class="faq-answer">Yes. Blue Brick uses pH-neutral, material-appropriate cleaning products that are safe for historic hardwood floors, original plaster, antique fixtures, and period millwork. We conduct a surface assessment before every deep cleaning to identify original materials and select the correct products and techniques for each. We never use abrasive chemicals, acidic cleaners, or high-heat steam on delicate historic surfaces.</p>
+                            <div class="faq-question">Do you use safe cleaning products on historic surfaces in Lexington homes?</div>
+                            <div class="faq-answer"><p>Yes. Blue Brick uses pH-neutral, material-appropriate cleaning products that are safe for historic hardwood floors, original plaster, antique fixtures, and period millwork. We conduct a surface assessment before every deep cleaning to identify original materials and select the correct products and techniques for each. We never use abrasive chemicals, acidic cleaners, or high-heat steam on delicate historic surfaces.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How do I schedule a deep cleaning in Lexington?</p>
-                            <p class="faq-answer">The easiest way to schedule is to text us at 781-330-5604 or email bluebrickmass@gmail.com. We will ask about your home's size, number of rooms, and any specific concerns. Most quotes are delivered within 2 hours, and we can typically schedule your deep cleaning within one week of your initial contact.</p>
+                            <div class="faq-question">How do I schedule a deep cleaning in Lexington?</div>
+                            <div class="faq-answer"><p>The easiest way to schedule is to text us at 781-330-5604 or email bluebrickmass@gmail.com. We will ask about your home's size, number of rooms, and any specific concerns. Most quotes are delivered within 2 hours, and we can typically schedule your deep cleaning within one week of your initial contact.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">What is the difference between a standard cleaning and a deep cleaning?</p>
-                            <p class="faq-answer">A standard cleaning covers routine maintenance tasks like vacuuming, mopping, surface wiping, and bathroom cleaning. A deep cleaning goes significantly further — it addresses areas that accumulate grime over time but are not part of a regular cleaning routine. This includes inside appliances, behind and under furniture, grout lines, baseboards, window tracks, light fixtures, cabinet interiors, and detailed sanitization of high-touch surfaces. A deep cleaning restores the home to a baseline level of cleanliness that regular maintenance can then sustain.</p>
+                            <div class="faq-question">What is the difference between a standard cleaning and a deep cleaning?</div>
+                            <div class="faq-answer"><p>A standard cleaning covers routine maintenance tasks like vacuuming, mopping, surface wiping, and bathroom cleaning. A deep cleaning goes significantly further — it addresses areas that accumulate grime over time but are not part of a regular cleaning routine. This includes inside appliances, behind and under furniture, grout lines, baseboards, window tracks, light fixtures, cabinet interiors, and detailed sanitization of high-touch surfaces. A deep cleaning restores the home to a baseline level of cleanliness that regular maintenance can then sustain.</p></div>
                         </div>
                     </div>
                 </div>
@@ -1272,7 +1389,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1389,7 +1522,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1448,6 +1581,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

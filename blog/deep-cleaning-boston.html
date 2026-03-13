@@ -309,6 +309,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -573,37 +713,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0 1.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-answer {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1070,7 +1179,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Boston Homes Need Professional Deep Cleaning</h2>
+                    <h2>💡 Why Boston Homes Need Professional Deep Cleaning</h2>
 
                     <p>Boston is a city of character. Its brownstones, triple-deckers, Victorian row houses, and modern high-rises form one of the most architecturally diverse residential landscapes in the country. But that character comes with cleaning challenges that standard maintenance simply cannot address. Between the soot and particulate matter that accumulates on surfaces from urban traffic, the salt residue tracked indoors during New England's brutal winters, and the moisture-related buildup that older buildings are prone to, Boston homes collect grime in ways that newer suburban construction does not.</p>
 
@@ -1086,23 +1195,23 @@
 
 
                 <div class="reveal">
-                    <h2>What Professional Deep Cleaning Includes</h2>
+                    <h2>📋 What Professional Deep Cleaning Includes</h2>
 
                     <p>A deep cleaning from Blue Brick is a systematic, room-by-room process that restores your home to a standard that regular cleaning cannot achieve. Here is what our service covers.</p>
 
-                    <h3>Kitchen Deep Cleaning</h3>
+                    <h3>🍳 Kitchen Deep Cleaning</h3>
 
                     <p>The kitchen accumulates grease, food residue, and bacteria faster than any other room. Our deep cleaning includes degreasing range hoods, stovetops, and backsplashes. We clean inside ovens and microwaves, removing baked-on residue. Refrigerator interiors and exteriors are wiped down and sanitized. Cabinet fronts and handles are degreased. Countertops are scrubbed and disinfected. We pull appliances away from walls to clean behind and beneath them, where crumbs, grease, and dust form a persistent layer that attracts pests and degrades air quality.</p>
 
-                    <h3>Bathroom Deep Cleaning</h3>
+                    <h3>🚿 Bathroom Deep Cleaning</h3>
 
                     <p>Bathrooms in Boston's older buildings are particularly susceptible to mold, mildew, and mineral deposits from hard water. Our deep cleaning includes scrubbing tile grout, removing soap scum from glass enclosures and tub surrounds, sanitizing toilets inside and out, cleaning vanity interiors, polishing fixtures and mirrors, and treating any visible mold or mildew with professional-grade solutions. We detail exhaust fan covers, light fixtures, and the often-neglected areas behind toilets and under sink cabinets.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Every living space receives thorough attention. We dust and wipe all surfaces including shelving, windowsills, door frames, light switches, and baseboards. Ceiling fans and light fixtures are cleaned. Interior windows are washed. Upholstered furniture is deep vacuumed, including under cushions. We move furniture to vacuum and mop beneath it, reaching the dust that accumulates out of sight over weeks and months. Closet interiors are wiped down, and all flooring is treated according to its material, whether hardwood, tile, carpet, or luxury vinyl.</p>
 
-                    <h3>Detail Work</h3>
+                    <h3>🔍 Detail Work</h3>
 
                     <p>The difference between a standard cleaning and a true deep clean is in the details. We clean inside window tracks and sills. Baseboards are hand-wiped along every wall. Door handles, switchplates, and outlet covers are sanitized. Air vents and registers are dusted. Blinds and shutters are wiped down individually. Cobwebs are removed from corners, ceilings, and stairwells. Laundry rooms receive attention including cleaning washer drums, dryer lint areas, and utility sink basins.</p>
                 </div>
@@ -1110,9 +1219,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's deep cleaning covers every surface in your home, including the spaces other cleaning services skip. We clean behind appliances, inside cabinets, under furniture, and along every baseboard so nothing is left untouched.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Boston Neighborhoods We Serve</h2>
+                    <h2>📍 Boston Neighborhoods We Serve</h2>
 
                     <p>Boston's residential neighborhoods each present unique deep cleaning considerations based on their housing stock, building age, and urban environment. Blue Brick provides professional deep cleaning across the city's most sought-after areas.</p>
 
@@ -1139,7 +1252,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Boston's Climate Makes Deep Cleaning Essential</h2>
+                    <h2>💡 Why Boston's Climate Makes Deep Cleaning Essential</h2>
 
                     <p>New England weather is hard on homes. Boston's climate cycle creates cleaning challenges that compound if left unaddressed, making periodic deep cleaning a necessity rather than an optional extra.</p>
 
@@ -1151,9 +1264,13 @@
                         <li><strong>City grime and traffic particulate.</strong> Urban living exposes homes to exhaust particles, brake dust, and construction debris that rural and suburban properties do not face. Windows, sills, and exterior-facing surfaces accumulate a fine layer of urban grime year-round that only systematic deep cleaning can fully address.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Spring Cleaning in Boston: Start the Season Right</h2>
+                    <h2>🌸 Spring Cleaning in Boston: Start the Season Right</h2>
 
                     <p>Spring cleaning is a New England tradition for good reason. After five months of closed windows, running heaters, and tracking salt through every room, Boston homes emerge from winter carrying a season's worth of accumulated grime. A professional spring deep cleaning resets your home for the warmer months ahead.</p>
 
@@ -1163,7 +1280,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Apartment Deep Cleaning for Boston Renters</h2>
+                    <h2>🏢 Apartment Deep Cleaning for Boston Renters</h2>
 
                     <p>Boston's rental market is one of the most active in the country, particularly around the September 1 lease turnover cycle that is unique to the city's college-driven housing market. Whether you are moving into a new apartment or preparing to hand one back to your landlord, a professional deep cleaning protects your investment and your security deposit.</p>
 
@@ -1183,32 +1300,32 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
-                            <p class="faq-question">How much does deep cleaning cost in Boston?</p>
-                            <p class="faq-answer">Deep cleaning costs in Boston vary based on square footage, number of rooms, and the condition of the property. A studio or one-bedroom apartment typically starts at a different rate than a multi-bedroom brownstone. Blue Brick provides free, transparent estimates with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a custom quote.</p>
+                            <div class="faq-question">How much does deep cleaning cost in Boston?</div>
+                            <div class="faq-answer"><p>Deep cleaning costs in Boston vary based on square footage, number of rooms, and the condition of the property. A studio or one-bedroom apartment typically starts at a different rate than a multi-bedroom brownstone. Blue Brick provides free, transparent estimates with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a custom quote.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">What is included in a deep cleaning service?</p>
-                            <p class="faq-answer">A professional deep cleaning goes far beyond standard maintenance cleaning. It includes scrubbing baseboards, cleaning inside ovens and refrigerators, degreasing range hoods and backsplashes, sanitizing bathrooms from floor to ceiling, washing interior windows, cleaning light fixtures and ceiling fans, detailing door frames and trim, deep vacuuming upholstery and under furniture, and removing built-up grime from tile grout.</p>
+                            <div class="faq-question">What is included in a deep cleaning service?</div>
+                            <div class="faq-answer"><p>A professional deep cleaning goes far beyond standard maintenance cleaning. It includes scrubbing baseboards, cleaning inside ovens and refrigerators, degreasing range hoods and backsplashes, sanitizing bathrooms from floor to ceiling, washing interior windows, cleaning light fixtures and ceiling fans, detailing door frames and trim, deep vacuuming upholstery and under furniture, and removing built-up grime from tile grout.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How often should I schedule a deep cleaning?</p>
-                            <p class="faq-answer">Most Boston homes benefit from a professional deep cleaning every three to six months, depending on household size, pets, and lifestyle. Homes in high-traffic urban neighborhoods or properties near construction zones may need quarterly deep cleaning. At minimum, scheduling a deep clean each spring and fall keeps your home in top condition year-round.</p>
+                            <div class="faq-question">How often should I schedule a deep cleaning?</div>
+                            <div class="faq-answer"><p>Most Boston homes benefit from a professional deep cleaning every three to six months, depending on household size, pets, and lifestyle. Homes in high-traffic urban neighborhoods or properties near construction zones may need quarterly deep cleaning. At minimum, scheduling a deep clean each spring and fall keeps your home in top condition year-round.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">Do you offer apartment deep cleaning for renters in Boston?</p>
-                            <p class="faq-answer">Yes. Blue Brick provides apartment deep cleaning for renters across Boston, including move-in and move-out cleans. We work with tenants, landlords, and property managers to ensure apartments meet lease-end standards and security deposit requirements. We serve apartments in Back Bay, Beacon Hill, Fenway, South End, North End, Seaport, and throughout Greater Boston.</p>
+                            <div class="faq-question">Do you offer apartment deep cleaning for renters in Boston?</div>
+                            <div class="faq-answer"><p>Yes. Blue Brick provides apartment deep cleaning for renters across Boston, including move-in and move-out cleans. We work with tenants, landlords, and property managers to ensure apartments meet lease-end standards and security deposit requirements. We serve apartments in Back Bay, Beacon Hill, Fenway, South End, North End, Seaport, and throughout Greater Boston.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How do I book a deep cleaning with Blue Brick?</p>
-                            <p class="faq-answer">The easiest way to book is to text us at 781-330-5604 or email bluebrickmass@gmail.com. Let us know your address, approximate square footage, and any specific concerns. We will respond with a custom quote, typically within two hours. You can also request a free estimate through our website.</p>
+                            <div class="faq-question">How do I book a deep cleaning with Blue Brick?</div>
+                            <div class="faq-answer"><p>The easiest way to book is to text us at 781-330-5604 or email bluebrickmass@gmail.com. Let us know your address, approximate square footage, and any specific concerns. We will respond with a custom quote, typically within two hours. You can also request a free estimate through our website.</p></div>
                         </div>
                     </div>
                 </div>
@@ -1223,7 +1340,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1340,7 +1473,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1399,6 +1532,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

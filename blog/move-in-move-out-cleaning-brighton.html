@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Brighton is Ground Zero for Move-In/Move-Out Cleaning</h2>
+                    <h2>💡 Why Brighton is Ground Zero for Move-In/Move-Out Cleaning</h2>
 
                     <p>Brighton is one of Boston's most active rental markets, and every year the September 1st lease turnover transforms the neighborhood into a frenzy of moving trucks, discarded furniture, and apartment turnovers. For tenants trying to recover security deposits and landlords preparing units for new occupants, professional move-in and move-out cleaning is not optional — it is essential.</p>
 
@@ -1004,7 +1144,7 @@
 
 
                 <div class="reveal">
-                    <h2>Why Move Cleaning Matters in Brighton</h2>
+                    <h2>💡 Why Move Cleaning Matters in Brighton</h2>
 
                     <ul>
                         <li><strong>September 1st volume.</strong> Brighton's concentrated lease cycle means thousands of units turn over in a single week. Professional cleaning companies that understand this rhythm — and reserve capacity for it — are invaluable.</li>
@@ -1018,9 +1158,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's move-in/move-out cleaning goes beyond surface cleaning. We detail every area that landlords and property managers inspect — inside appliances, behind fixtures, along baseboards, and throughout closets. No shortcuts.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Brighton Areas We Serve</h2>
+                    <h2>📍 Brighton Areas We Serve</h2>
 
                     <p>Blue Brick provides move-in and move-out cleaning across all of Brighton's neighborhoods.</p>
 
@@ -1035,13 +1179,13 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Move-In / Move-Out Cleaning Checklist</h2>
+                    <h2>📦 Our Move-In / Move-Out Cleaning Checklist</h2>
 
                     <p>Every Blue Brick move-in/move-out clean follows a comprehensive checklist designed to meet the standards that landlords, property managers, and new occupants expect.</p>
                 </div>
 
                 <div class="reveal">
-                    <h3>Kitchen</h3>
+                    <h3>🍳 Kitchen</h3>
                     <ul>
                         <li>Clean inside and outside all appliances — oven, refrigerator, dishwasher, microwave, range hood</li>
                         <li>Degrease stovetop, backsplash, and range hood filters</li>
@@ -1052,7 +1196,7 @@
                         <li>Mop and detail floor including edges and corners</li>
                     </ul>
 
-                    <h3>Bathrooms</h3>
+                    <h3>🚿 Bathrooms</h3>
                     <ul>
                         <li>Deep clean and sanitize toilet, including base and behind</li>
                         <li>Scrub shower/tub tile and grout</li>
@@ -1084,9 +1228,13 @@
                         <li>Vacuum and clean any storage spaces</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Move-Out vs. Move-In: What is the Difference?</h2>
+                    <h2>📋 Move-Out vs. Move-In: What is the Difference?</h2>
 
                     <p><strong>Move-out cleaning</strong> focuses on restoring the property to the condition it was in at the start of the lease or prior to the sale. The goal is to remove all traces of the previous occupant's use, satisfy landlord or buyer inspection requirements, and protect the tenant's or seller's financial interests.</p>
 
@@ -1096,7 +1244,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Approach: What to Expect</h2>
+                    <h2>📋 The Blue Brick Approach: What to Expect</h2>
 
                     <ol>
                         <li><strong>Quick assessment.</strong> Tell us the property size, type, and your timeline. We provide a transparent quote, typically within 2 hours.</li>
@@ -1120,7 +1268,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1289,6 +1453,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

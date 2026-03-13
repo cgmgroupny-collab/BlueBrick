@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Boston Airbnb Hosts Need Professional Turnover Cleaning</h2>
+                    <h2>💡 Why Boston Airbnb Hosts Need Professional Turnover Cleaning</h2>
 
                     <p>Greater Boston is one of the strongest short-term rental markets in the Northeast. Between the steady flow of university visitors, medical travelers, business professionals, and tourists exploring the Freedom Trail, Boston-area Airbnb hosts see consistent demand year-round. That demand comes with equally high expectations. Today's guests compare your listing against boutique hotels, and the first thing they judge is cleanliness.</p>
 
@@ -1006,15 +1146,15 @@
 
 
                 <div class="reveal">
-                    <h2>What a Professional Turnover Clean Includes</h2>
+                    <h2>📋 What a Professional Turnover Clean Includes</h2>
 
                     <p>A proper turnover clean goes well beyond a quick wipe-down and vacuum. Every surface a guest might see, touch, or open needs to be addressed. Blue Brick's turnover cleaning process covers every room systematically.</p>
 
-                    <h3>Kitchen Reset</h3>
+                    <h3>🍳 Kitchen Reset</h3>
 
                     <p>The kitchen is where guests notice shortcuts immediately. Our team cleans all countertops, sanitizes the sink and faucet, wipes down the exterior and interior of the microwave, cleans stovetop burners and drip pans, wipes the oven door, empties and sanitizes the refrigerator, runs and empties the dishwasher if needed, cleans the coffee maker, and ensures all dishes, utensils, and cookware are clean and properly stowed. We check for any items previous guests may have left behind and dispose of all trash, replacing liners in every bin.</p>
 
-                    <h3>Bathroom Sanitization</h3>
+                    <h3>🚿 Bathroom Sanitization</h3>
 
                     <p>Bathrooms receive a full sanitization. Toilets are cleaned inside and out, including the base and behind the tank. Showers and tubs are scrubbed, glass doors are squeegeed and polished, tile grout is checked for buildup, and vanities and mirrors are cleaned streak-free. We restock toilet paper, replace used towels with fresh linens, and arrange toiletries according to your staging preferences. Drains are checked for hair, and floors are mopped with a disinfecting solution.</p>
 
@@ -1022,7 +1162,7 @@
 
                     <p>All bed linens, pillowcases, and mattress protectors are stripped and replaced with freshly laundered sets. Beds are made to a hotel-standard presentation, with tight corners and neatly arranged pillows. If you provide linen service through Blue Brick, we handle the laundering as well. Throw blankets and decorative pillows are inspected for stains or pet hair and replaced or refreshed as needed.</p>
 
-                    <h3>Living Areas and Guest-Ready Details</h3>
+                    <h3>🛋️ Living Areas and Guest-Ready Details</h3>
 
                     <p>All hard surfaces are dusted and wiped. Upholstery is checked for debris and vacuumed. Floors are vacuumed and mopped throughout. Light switches, door handles, remote controls, and thermostats are sanitized. Windows are checked for fingerprints. We reset the space exactly as it should appear in your listing photos: blinds at the right angle, throw pillows in position, welcome materials set out, and the overall impression that no one has been there before.</p>
                 </div>
@@ -1030,9 +1170,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's turnover process follows a 40-point checklist customized to your property. Every clean is documented, so you never have to wonder whether something was missed.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>How to Maintain 5-Star Cleanliness Reviews</h2>
+                    <h2>🤔 How to Maintain 5-Star Cleanliness Reviews</h2>
 
                     <p>Consistently earning 5-star cleanliness ratings is not about one perfect clean. It is about building a reliable system that never drops below the standard. Here is what separates hosts who maintain a 5.0 cleanliness score from those who fluctuate.</p>
 
@@ -1046,7 +1190,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Between-Guest Cleaning Checklist</h2>
+                    <h2>✅ ✅ ✅ The Between-Guest Cleaning Checklist</h2>
 
                     <p>Whether you clean yourself or hire a professional team, every turnover should cover these essentials. Use this as a minimum standard.</p>
 
@@ -1066,7 +1210,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Same-Day Turnovers for Back-to-Back Bookings</h2>
+                    <h2>📞 Same-Day Turnovers for Back-to-Back Bookings</h2>
 
                     <p>In Greater Boston's peak seasons, hosts frequently have same-day turnovers where one guest checks out at 11:00 AM and the next arrives at 3:00 PM or even earlier. That leaves a window of three to four hours to fully reset the property. It is tight, and there is zero margin for error.</p>
 
@@ -1079,9 +1223,13 @@
                         <li><strong>Communication you can rely on.</strong> You receive a notification when the cleaner arrives and when the job is complete. If anything unusual comes up, such as guest damage, a maintenance issue, or a supply shortage, we alert you immediately with photos so you can handle it before the next guest arrives.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Service Areas Across Greater Boston</h2>
+                    <h2>🗺️ Service Areas Across Greater Boston</h2>
 
                     <p>Blue Brick provides Airbnb turnover cleaning across the most active short-term rental markets in Greater Boston. Whether you host in a Back Bay brownstone, a Cambridge triple-decker, or a Newton single-family, we cover your area.</p>
 
@@ -1100,7 +1248,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Pricing Factors for Airbnb Turnover Cleaning</h2>
+                    <h2>🏡 Pricing Factors for Airbnb Turnover Cleaning</h2>
 
                     <p>Turnover cleaning pricing depends on several variables. Understanding these factors helps you budget accurately and avoid surprises.</p>
 
@@ -1116,7 +1264,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Hosts Trust Blue Brick</h2>
+                    <h2>💡 Why Hosts Trust Blue Brick</h2>
 
                     <p>Handing the keys to your income-generating property to a cleaning service requires trust. Here is how Blue Brick earns it.</p>
 
@@ -1143,7 +1291,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1323,6 +1487,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

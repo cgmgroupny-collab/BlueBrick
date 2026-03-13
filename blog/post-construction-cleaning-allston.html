@@ -259,6 +259,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -986,7 +1126,7 @@
 
 
             <div class="reveal">
-                <h2>Why Allston Demands Specialized Construction Cleanup</h2>
+                <h2>💡 Why Allston Demands Specialized Construction Cleanup</h2>
 
                 <p>Allston sits at the intersection of institutional expansion, residential density, and commercial growth. Harvard University's multi-billion-dollar Enterprise Research Campus in North Allston is one of the largest active development projects in Greater Boston, bringing new lab buildings, housing, retail, and public spaces to the neighborhood. The ripple effect touches every block: older buildings are being renovated to keep pace, landlords are upgrading aging stock, and new mixed-use developments are rising along Western Avenue and Cambridge Street.</p>
 
@@ -994,7 +1134,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Allston Neighborhoods We Serve</h2>
+                <h2>📍 Allston Neighborhoods We Serve</h2>
 
                 <p>Blue Brick provides post-construction cleaning across every pocket of Allston, each with its own character and construction profile:</p>
 
@@ -1006,9 +1146,13 @@
                     <li><strong>North Allston</strong> — Ground zero for Harvard's expansion. New construction, adaptive reuse projects, and infrastructure improvements mean a constant flow of post-construction cleaning work as buildings prepare for occupancy.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>The Three Phases of Post-Construction Cleaning</h2>
+                <h2>🏗️ The Three Phases of Post-Construction Cleaning</h2>
 
                 <p>Professional post-construction cleaning is not a single pass with a mop. It is a phased process, and cutting corners at any stage compromises the final result. Here is how Blue Brick approaches every project in Allston:</p>
 
@@ -1027,7 +1171,7 @@
             </div>
 
             <div class="reveal">
-                <h2>September 1st Turnover Season</h2>
+                <h2>📅 September 1st Turnover Season</h2>
 
                 <p>If you manage rental properties in Allston, you know September 1st. Boston's infamous turnover day floods the neighborhood with moving trucks, and the weeks leading up to it are a sprint for landlords and property managers. Units need to be renovated, repaired, cleaned, and ready for new tenants, often within days of the previous occupants leaving.</p>
 
@@ -1035,9 +1179,13 @@
 
                 <p>Blue Brick runs dedicated turnover crews during peak season. We understand the deadlines. We have the capacity to handle multiple units in a single building on the same day. And we deliver the same standard of work whether you need one apartment cleaned or twenty. Our scheduling is built around your construction timeline, not the other way around.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Unique Challenges in Allston Construction Cleanup</h2>
+                <h2>🏗️ Unique Challenges in Allston Construction Cleanup</h2>
 
                 <p>Allston's building diversity creates specific challenges that a generalist cleaning company simply cannot address effectively:</p>
 
@@ -1051,7 +1199,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Why Property Managers and Developers Choose Blue Brick</h2>
+                <h2>💡 Why Property Managers and Developers Choose Blue Brick</h2>
 
                 <p>We have built our reputation in Allston and across Greater Boston on three principles: reliability, precision, and communication. When you hire Blue Brick for post-construction cleaning, you get a team that shows up on time, works to a defined scope, and communicates proactively if anything changes. We provide detailed estimates before work begins and walk through the finished space with you before we consider the job complete.</p>
 
@@ -1248,6 +1396,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

@@ -318,6 +318,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -594,38 +734,6 @@
             color: var(--yale);
             font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin-top: 2.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1108,7 +1216,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Why Waltham Homes Need a Deep Clean</h2>
+            <h2 class="reveal">💡 Why Waltham Homes Need a Deep Clean</h2>
 
             <div class="reveal">
                 <p>Every home accumulates grime differently depending on its layout, age, ventilation, and how it is used. But Waltham has a few patterns that make professional deep cleaning especially relevant here.</p>
@@ -1123,21 +1231,21 @@
                 <p>Waltham's newer condo and apartment developments near the Charles River and along the Riverwalk feature modern finishes — stainless steel appliances, quartz countertops, large-format tile showers, engineered hardwood floors. These materials look fantastic when maintained properly, but they show every fingerprint, water spot, and dust particle when they are not. Professional deep cleaning for these spaces focuses on streak-free stainless steel finishing, proper stone and quartz care (no acidic cleaners that etch the surface), shower glass restoration, and floor care that protects the finish rather than degrading it.</p>
             </div>
 
-            <h2 class="reveal">What a Professional Deep Clean Includes</h2>
+            <h2 class="reveal">📋 What a Professional Deep Clean Includes</h2>
 
             <div class="reveal">
                 <p>A deep cleaning is not a faster version of a regular cleaning. It is a fundamentally different scope of work. At Blue Brick, our deep cleaning service covers every room, every surface, and every detail that accumulates grime over time. Here is exactly what we do.</p>
 
-                <h3>Kitchen Degreasing</h3>
+                <h3>🍳 Kitchen Degreasing</h3>
                 <p>The kitchen is where the worst buildup hides. Our deep cleaning starts here with full degreasing of the stovetop, burner grates, drip pans, and oven interior. We clean the range hood and filter — not just a wipe-down, but an actual degrease that removes the sticky film that traps dust and turns yellow over time. The backsplash gets scrubbed, cabinet fronts are degreased and wiped, and the refrigerator exterior (including the top, which nobody ever cleans) is detailed. We clean inside the microwave, wipe down the dishwasher door and edges, and scrub the sink and faucet until they look new. For Waltham kitchens that see heavy use — and most of them do — this phase alone is worth the cost of the entire service.</p>
 
-                <h3>Bathroom Sanitization</h3>
+                <h3>🚿 Bathroom Sanitization</h3>
                 <p>Every bathroom in the home gets a full sanitization pass. This means scrubbing tile and grout lines on walls and floors, removing soap scum and hard water deposits from shower doors and fixtures, cleaning and disinfecting the toilet inside and out (including the base and behind the tank), wiping down vanity surfaces and mirrors, and cleaning inside medicine cabinets and under the sink. We pay special attention to the caulk lines around tubs and showers, exhaust fan covers, and the grout in floor tile — the areas where mold and mildew establish themselves first, especially in Waltham's older apartment bathrooms that lack proper ventilation.</p>
 
-                <h3>Baseboard and Fixture Detailing</h3>
+                <h3>🔍 Baseboard and Fixture Detailing</h3>
                 <p>Baseboards, door frames, window sills, light switch plates, outlet covers, light fixtures, ceiling fan blades, and vent covers all get hand-wiped during a deep clean. These are the surfaces that regular cleaning skips or rushes past, but they are also the surfaces that visitors and prospective buyers notice immediately. Dust-free baseboards and clean light fixtures signal that a home is genuinely well-maintained, not just surface-clean.</p>
 
-                <h3>Floor Care</h3>
+                <h3>🪣 Floor Care</h3>
                 <p>We do not just vacuum and run a mop over the floor. Our deep cleaning floor care involves moving furniture where practical to clean underneath, vacuuming along edges and in corners where dust bunnies accumulate, and then mopping with the appropriate solution for your floor type — hardwood, tile, laminate, or vinyl. For hardwood floors that have lost their luster, we use products that clean without stripping the finish. For tile, we scrub grout lines and ensure the surface is truly clean, not just wet.</p>
 
                 <h3>Dusting and Surface Work</h3>
@@ -1147,8 +1255,12 @@
             <div class="highlight-box reveal">
                 <p><strong>Spring 2026 Booking Note:</strong> With April 1 lease turnovers approaching across Greater Boston, deep cleaning demand in Waltham surges in mid-March through early April. We strongly recommend booking your deep clean at least two weeks in advance to secure your preferred date. Text <a href="sms:+17813305604">781-330-5604</a> now to reserve your spot.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Spring 2026: The Best Time for a Deep Clean in Waltham</h2>
+
+            <h2 class="reveal">🌸 Spring 2026: The Best Time for a Deep Clean in Waltham</h2>
 
             <div class="reveal">
                 <p>Spring in Greater Boston is not just about warmer weather. It is about transition. And in Waltham, that transition hits differently depending on where you live and what is happening in your home.</p>
@@ -1162,7 +1274,7 @@
                 <p><strong>Post-Winter Outdoor-to-Indoor Recovery.</strong> Salt, sand, and snowmelt tracked in from November through March takes a toll on entryways, mudrooms, and hallways. Spring is the right time to deep-clean these high-traffic zones and restore floors, mats, and surfaces that have absorbed months of winter abuse.</p>
             </div>
 
-            <h2 class="reveal">Waltham Neighborhoods We Serve</h2>
+            <h2 class="reveal">📍 Waltham Neighborhoods We Serve</h2>
 
             <div class="reveal">
                 <p>Blue Brick provides deep cleaning services across every neighborhood in Waltham. We know the housing stock, we know the building types, and we know what each area needs.</p>
@@ -1178,8 +1290,12 @@
 
                 <p>No matter where you are in Waltham, Blue Brick arrives on time, works efficiently, and leaves your home in a condition that you will notice every time you walk through the door.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Why Waltham Residents Choose Blue Brick</h2>
+
+            <h2 class="reveal">💡 Why Waltham Residents Choose Blue Brick</h2>
 
             <div class="reveal">
                 <p>There are dozens of cleaning services advertising in the Greater Boston area. Here is why Waltham homeowners, renters, and property managers trust Blue Brick for deep cleaning.</p>
@@ -1197,43 +1313,59 @@
                 <p><strong>Serving All of Waltham:</strong> From Moody Street apartments to Cedarwood colonials, from Riverwalk condos to Lakeview family homes — Blue Brick delivers professional deep cleaning across every neighborhood in the city. Text <a href="sms:+17813305604">781-330-5604</a> for your quote.</p>
             </div>
 
-            <h2 class="reveal">Frequently Asked Questions</h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked Questions</h2>
 
             <div class="faq-section reveal">
                 <div class="faq-item">
-                    <p class="faq-question">How much does a deep cleaning cost in Waltham, MA?</p>
-                    <p class="faq-answer">Deep cleaning pricing depends on the size of the home or apartment, its current condition, and the specific services required. A one-bedroom Moody Street apartment typically costs less than a four-bedroom home in Cedarwood. Blue Brick provides same-day text quotes — text <a href="sms:+17813305604">781-330-5604</a> with your address and a few photos for a fast, accurate estimate.</p>
+                    <div class="faq-question">How much does a deep cleaning cost in Waltham, MA?</div>
+                    <div class="faq-answer"><p>Deep cleaning pricing depends on the size of the home or apartment, its current condition, and the specific services required. A one-bedroom Moody Street apartment typically costs less than a four-bedroom home in Cedarwood. Blue Brick provides same-day text quotes — text <a href="sms:+17813305604">781-330-5604</a> with your address and a few photos for a fast, accurate estimate.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">What is included in a professional deep cleaning?</p>
-                    <p class="faq-answer">A professional deep cleaning from Blue Brick includes kitchen degreasing (stovetop, oven interior, range hood, backsplash), bathroom sanitization (tile, grout, fixtures, shower glass), baseboard and light fixture detailing, interior window sill cleaning, floor care (vacuuming, mopping, or polishing), cabinet exterior wipe-downs, and thorough dusting of all surfaces including vents and ceiling fans.</p>
+                    <div class="faq-question">What is included in a professional deep cleaning?</div>
+                    <div class="faq-answer"><p>A professional deep cleaning from Blue Brick includes kitchen degreasing (stovetop, oven interior, range hood, backsplash), bathroom sanitization (tile, grout, fixtures, shower glass), baseboard and light fixture detailing, interior window sill cleaning, floor care (vacuuming, mopping, or polishing), cabinet exterior wipe-downs, and thorough dusting of all surfaces including vents and ceiling fans.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How long does a deep cleaning take?</p>
-                    <p class="faq-answer">A deep cleaning for a typical Waltham apartment or condo (1-2 bedrooms) takes 3 to 5 hours. Larger homes in neighborhoods like Cedarwood, Warrendale, or Lakeview may require 5 to 8 hours depending on square footage and condition. Blue Brick sends a team sized to your property so the work is thorough without dragging on all day.</p>
+                    <div class="faq-question">How long does a deep cleaning take?</div>
+                    <div class="faq-answer"><p>A deep cleaning for a typical Waltham apartment or condo (1-2 bedrooms) takes 3 to 5 hours. Larger homes in neighborhoods like Cedarwood, Warrendale, or Lakeview may require 5 to 8 hours depending on square footage and condition. Blue Brick sends a team sized to your property so the work is thorough without dragging on all day.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Do you offer deep cleaning for April 1 lease turnovers in Waltham?</p>
-                    <p class="faq-answer">Yes. Blue Brick handles a high volume of lease turnover deep cleans around the April 1 and September 1 move dates that are common in the Greater Boston area. We recommend booking at least two weeks in advance for April turnover cleans, as demand is extremely high. Text <a href="sms:+17813305604">781-330-5604</a> to reserve your date.</p>
+                    <div class="faq-question">Do you offer deep cleaning for April 1 lease turnovers in Waltham?</div>
+                    <div class="faq-answer"><p>Yes. Blue Brick handles a high volume of lease turnover deep cleans around the April 1 and September 1 move dates that are common in the Greater Boston area. We recommend booking at least two weeks in advance for April turnover cleans, as demand is extremely high. Text <a href="sms:+17813305604">781-330-5604</a> to reserve your date.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Is Blue Brick insured for residential deep cleaning in Waltham?</p>
-                    <p class="faq-answer">Yes. Blue Brick carries comprehensive general liability insurance and worker's compensation coverage. We are a locally operated, fully insured cleaning company serving Waltham and the surrounding Greater Boston area.</p>
+                    <div class="faq-question">Is Blue Brick insured for residential deep cleaning in Waltham?</div>
+                    <div class="faq-answer"><p>Yes. Blue Brick carries comprehensive general liability insurance and worker's compensation coverage. We are a locally operated, fully insured cleaning company serving Waltham and the surrounding Greater Boston area.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How do I get a deep cleaning quote for my Waltham home?</p>
-                    <p class="faq-answer">The fastest way to get a quote is to text <a href="sms:+17813305604">781-330-5604</a> with your address, approximate square footage, and a few photos of the space. Blue Brick provides same-day quotes via text. You can also email <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a> with details about your property.</p>
+                    <div class="faq-question">How do I get a deep cleaning quote for my Waltham home?</div>
+                    <div class="faq-answer"><p>The fastest way to get a quote is to text <a href="sms:+17813305604">781-330-5604</a> with your address, approximate square footage, and a few photos of the space. Blue Brick provides same-day quotes via text. You can also email <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a> with details about your property.</p></div>
                 </div>
             </div>
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1358,7 +1490,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1418,5 +1550,21 @@
             });
         });
     </script>
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+    </script>
+
 </body>
 </html>

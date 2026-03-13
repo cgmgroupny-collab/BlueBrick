@@ -309,6 +309,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -573,40 +713,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0 1.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-of-type {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-item h3 {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            text-transform: none;
-            letter-spacing: normal;
-            margin: 0 0 0.6rem;
-            line-height: 1.5;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1073,7 +1179,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Somerville Homes Need Professional Deep Cleaning</h2>
+                    <h2>💡 Why Somerville Homes Need Professional Deep Cleaning</h2>
 
                     <p>Somerville is one of the most densely populated cities in New England, and its housing stock reflects over a century of continuous use. From the classic triple-deckers lining the streets of Winter Hill and Ball Square to the sleek new apartments rising along Assembly Row and Union Square, every property accumulates grime in places that routine cleaning never reaches. Dust settles in radiator fins, grease builds behind stove ranges, soap scum layers into tile grout, and allergens embed deep in carpet fibers and upholstery fabric.</p>
 
@@ -1089,23 +1195,23 @@
 
 
                 <div class="reveal">
-                    <h2>What Professional Deep Cleaning Includes</h2>
+                    <h2>📋 What Professional Deep Cleaning Includes</h2>
 
                     <p>Deep cleaning is not the same as regular maintenance cleaning. It is a comprehensive, top-to-bottom process that reaches the areas most people overlook week after week. Here is what Blue Brick's deep cleaning service covers in Somerville homes.</p>
 
-                    <h3>Kitchen Deep Cleaning</h3>
+                    <h3>🍳 Kitchen Deep Cleaning</h3>
 
                     <p>The kitchen is where grease, food residue, and bacteria accumulate fastest. Our deep cleaning covers the interior and exterior of all appliances — inside the oven, behind the refrigerator, underneath the microwave, and along the range hood and exhaust filter. We degrease backsplashes, scrub sink basins and faucets, clean inside cabinets and drawers, wipe down countertops and edges, and detail the areas around and behind appliances where crumbs and grime collect unnoticed. In Somerville's older kitchens, we pay particular attention to the tight spaces and dated layouts common in triple-decker units.</p>
 
-                    <h3>Bathroom Deep Cleaning</h3>
+                    <h3>🚿 Bathroom Deep Cleaning</h3>
 
                     <p>Bathrooms require aggressive sanitization. We scrub tile and grout lines, remove hard water deposits and soap scum from shower walls and glass doors, clean behind and around toilets, sanitize vanity surfaces, polish fixtures, and detail exhaust fan covers. Many Somerville apartments have original tile work that traps mildew in grout lines over the years. Our cleaning process targets that buildup specifically, restoring grout to a visibly cleaner state.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Deep cleaning in living spaces includes thorough dusting of all surfaces — shelving, window sills, door frames, baseboards, crown molding, ceiling fan blades, and light fixtures. We vacuum under and behind all furniture, clean interior windows and tracks, wipe down switchplates and door handles, and address cobwebs in ceiling corners. For hardwood floors, which are standard in most Somerville homes, we provide detailed mopping that cleans without damaging the finish.</p>
 
-                    <h3>Additional Details</h3>
+                    <h3>🔍 Additional Details</h3>
 
                     <ul>
                         <li><strong>Baseboard and trim wiping</strong> throughout the entire property</li>
@@ -1120,9 +1226,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's deep cleaning process is designed to reach every surface that routine cleaning misses. We clean to a standard you can see, smell, and feel the moment you walk through the door.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Somerville Neighborhoods We Serve</h2>
+                    <h2>📍 Somerville Neighborhoods We Serve</h2>
 
                     <p>Somerville's distinct squares and neighborhoods each have their own character — and their own cleaning challenges. We serve them all.</p>
 
@@ -1147,7 +1257,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Deep Cleaning for Somerville's Apartment Turnover</h2>
+                    <h2>🏢 Deep Cleaning for Somerville's Apartment Turnover</h2>
 
                     <p>Somerville has one of the highest apartment turnover rates in Greater Boston. The city's proximity to Harvard, MIT, and Tufts, combined with its strong public transit connections and vibrant neighborhood culture, keeps the rental market active year-round — with a massive surge every September 1st.</p>
 
@@ -1159,7 +1269,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Triple-Deckers: Somerville's Signature Cleaning Challenge</h2>
+                    <h2>✨ ✨ ✨ Triple-Deckers: Somerville's Signature Cleaning Challenge</h2>
 
                     <p>The triple-decker is Somerville's defining residential structure. These three-story, three-unit buildings were built throughout the early 1900s and remain the backbone of the city's housing stock. They present unique deep cleaning considerations.</p>
 
@@ -1177,9 +1287,13 @@
                 <div class="highlight-box reveal">
                     <p>Whether your Somerville home is a century-old triple-decker or a brand-new Assembly Row apartment, Blue Brick delivers deep cleaning calibrated to your property's specific materials and needs.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>When to Schedule a Deep Cleaning</h2>
+                    <h2>📅 When to Schedule a Deep Cleaning</h2>
 
                     <p>There is no wrong time to deep clean your Somerville home, but certain moments deliver the most value.</p>
 
@@ -1193,7 +1307,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Approach</h2>
+                    <h2>🎯 The Blue Brick Approach</h2>
 
                     <p>Booking a deep cleaning with Blue Brick in Somerville is straightforward.</p>
 
@@ -1210,7 +1324,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
@@ -1250,7 +1364,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1405,6 +1535,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

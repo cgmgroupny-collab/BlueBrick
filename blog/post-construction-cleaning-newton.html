@@ -198,6 +198,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -963,7 +1103,7 @@
 
 
             <div class="reveal">
-                <h2>Why Newton Demands a Higher Standard</h2>
+                <h2>💡 Why Newton Demands a Higher Standard</h2>
 
                 <p>Newton is not an ordinary suburb. It is home to some of the most affluent neighborhoods in Massachusetts, and the residential construction market here reflects that reality. Older colonial homes in <strong>Newton Centre</strong> are regularly gutted and transformed into modern masterpieces. Sprawling estates in <strong>Chestnut Hill</strong> undergo multi-million-dollar additions. Classic Victorians in <strong>Newton Highlands</strong> receive painstaking restorations that blend period character with contemporary luxury. And in neighborhoods like <strong>West Newton</strong>, <strong>Newtonville</strong>, and <strong>Waban</strong>, the steady cycle of tear-downs and new builds keeps contractors busy year-round.</p>
 
@@ -973,7 +1113,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Newton's Neighborhoods: Unique Properties, Unique Challenges</h2>
+                <h2>📍 Newton's Neighborhoods: Unique Properties, Unique Challenges</h2>
 
                 <div class="neighborhood-grid">
                     <div class="neighborhood-pill">Newton Centre</div>
@@ -990,9 +1130,13 @@
 
                 <p><strong>Waban</strong>, with its quiet streets and stately homes, is home to some of Newton's most meticulous homeowners. These are families who notice every detail. A fingerprint on a stainless appliance door, a speck of drywall dust on a window sill, a scuff mark on a freshly finished floor -- these are the things that separate a satisfactory cleaning from a Blue Brick cleaning.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>The Three Phases of Post-Construction Cleaning</h2>
+                <h2>🏗️ The Three Phases of Post-Construction Cleaning</h2>
 
                 <p>Professional post-construction cleaning is not a single event. It is a structured process designed to systematically bring a property from active construction zone to showcase-ready condition. At Blue Brick, we follow a proven three-phase methodology for every Newton project.</p>
 
@@ -1013,7 +1157,7 @@
             </div>
 
             <div class="reveal">
-                <h2>The Unique Challenges of Newton Properties</h2>
+                <h2>✨ ✨ ✨ The Unique Challenges of Newton Properties</h2>
 
                 <p>Cleaning a Newton luxury home after construction is fundamentally different from cleaning a standard residential property. Here is what makes it more complex -- and why hiring a specialized team is essential:</p>
 
@@ -1025,9 +1169,13 @@
                     <li><strong>Meticulous homeowners</strong> with exacting standards. Newton residents know quality when they see it, and they notice when it is absent. Our team is trained to deliver results that withstand the closest inspection.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why Newton Homeowners and Builders Choose Blue Brick</h2>
+                <h2>💡 Why Newton Homeowners and Builders Choose Blue Brick</h2>
 
                 <p>Newton's luxury market does not tolerate mediocre results. Builders stake their reputations on the condition of a home at final walk-through. Homeowners who have invested months -- sometimes years -- in a renovation expect to walk into a finished space that reflects the quality of every decision they made along the way.</p>
 
@@ -1041,7 +1189,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Get a Free Post-Construction Cleaning Estimate for Your Newton Property</h2>
+                <h2>🏗️ Get a Free Post-Construction Cleaning Estimate for Your Newton Property</h2>
 
                 <p>Whether you are managing a new build in Chestnut Hill, a gut renovation in Newton Centre, or a kitchen remodel in Waban, Blue Brick is ready to deliver the construction cleanup your project deserves. We provide free, no-obligation estimates and can typically respond within two hours.</p>
 
@@ -1246,6 +1394,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

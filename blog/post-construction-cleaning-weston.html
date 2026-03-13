@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Weston: Where Construction Means Craftsmanship</h2>
+                    <h2>🏗️ Weston: Where Construction Means Craftsmanship</h2>
 
                     <p>Weston, Massachusetts is not a typical suburb. With a median home price that consistently exceeds two million dollars, this quiet town west of Boston is home to some of the most extraordinary residential properties in New England. Sprawling estates on multi-acre lots. Custom-designed homes built with imported stone, hand-milled hardwoods, and architectural details that take months to execute. When construction happens in Weston, it is rarely modest, and the cleanup that follows cannot be either.</p>
 
@@ -1004,7 +1144,7 @@
 
 
                 <div class="reveal">
-                    <h2>Why Luxury Construction Cleanup Is a Specialized Discipline</h2>
+                    <h2>💡 Why Luxury Construction Cleanup Is a Specialized Discipline</h2>
 
                     <p>Post-construction cleaning for a luxury property is fundamentally different from cleaning a standard residential build. The materials involved are more expensive, more varied, and more vulnerable to damage from improper cleaning methods. The expectations of the client are significantly higher. And the consequences of a substandard cleanup — a scratched marble countertop, a haze left on hand-scraped walnut flooring, chemical damage to custom brass hardware — are measured in thousands of dollars of remediation costs and irreplaceable lost time.</p>
 
@@ -1026,7 +1166,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Multi-Phase Cleaning Process for Weston Properties</h2>
+                    <h2>⚙️ ⚙️ ⚙️ Our Multi-Phase Cleaning Process for Weston Properties</h2>
 
                     <p>Luxury post-construction cleaning is not accomplished in a single pass. Blue Brick employs a structured, multi-phase approach that progressively eliminates every trace of construction activity while protecting the premium finishes and materials that define Weston's finest homes.</p>
 
@@ -1036,7 +1176,7 @@
 
                     <p>During the rough clean, we also address HVAC system protection. Construction dust is the silent destroyer of heating and cooling systems. In Weston homes, where HVAC installations can represent six-figure investments in zoned climate control, radiant heating, and whole-house air purification, we ensure that supply and return vents are cleaned, ductwork openings are cleared of accumulated particulate, and temporary filters are addressed. This step alone saves homeowners thousands of dollars in future system maintenance and indoor air quality issues.</p>
 
-                    <h3>Phase 2: Detail Clean</h3>
+                    <h3>🔍 Phase 2: Detail Clean</h3>
 
                     <p>Once finish work is complete — final paint touch-ups done, hardware installed, appliances set — the detail clean begins. This is the most labor-intensive phase and the one where material expertise matters most. Every surface in the property receives attention.</p>
 
@@ -1058,7 +1198,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Weston Areas We Serve</h2>
+                    <h2>📍 Weston Areas We Serve</h2>
 
                     <p>Weston's neighborhoods each have their own character, lot sizes, and architectural traditions. Blue Brick provides post-construction cleaning across every corner of this prestigious town.</p>
 
@@ -1083,9 +1223,13 @@
 
                     <p><strong>The Boston Post Road corridor</strong> (Route 20) connects Weston to neighboring Waltham and Wayland, and properties along and near this historic route range from stately colonials to contemporary new builds. This area sees consistent construction activity, and our familiarity with the corridor's access points, lot configurations, and building styles allows us to plan and execute cleanups efficiently.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>What Makes Weston Construction Cleanup Different</h2>
+                    <h2>📋 What Makes Weston Construction Cleanup Different</h2>
 
                     <p>Every municipality presents its own cleaning challenges, but Weston's unique combination of wealth, property scale, building standards, and homeowner expectations creates a set of demands that only a specialized luxury cleaning team can meet.</p>
 
@@ -1104,7 +1248,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Types of Weston Projects We Handle</h2>
+                    <h2>✨ ✨ ✨ Types of Weston Projects We Handle</h2>
 
                     <p>Blue Brick's experience in Weston spans the full range of construction activity that occurs in this market. Each project type presents distinct cleaning requirements, and our approach adapts accordingly.</p>
 
@@ -1116,7 +1260,7 @@
 
                     <p>Weston's existing housing stock includes many mid-century and colonial-era estates that undergo comprehensive renovations to bring them up to contemporary luxury standards. These projects often involve gutting interiors to the studs, reconfiguring floor plans, installing entirely new mechanical systems, and refinishing with premium materials throughout. The cleaning challenges in a renovation can exceed those of new construction because existing elements — original flooring preserved in certain rooms, historic brick fireplaces, antique door hardware — must be carefully cleaned and protected while the construction debris from surrounding work is addressed.</p>
 
-                    <h3>Kitchen and Bathroom Renovations</h3>
+                    <h3>🍳 Kitchen and Bathroom Renovations</h3>
 
                     <p>High-end kitchen and bathroom renovations in Weston frequently involve imported natural stone, custom tile work, bespoke cabinetry, and premium appliance suites from brands like Sub-Zero, Wolf, Miele, and La Cornue. The confined spaces of these rooms concentrate construction dust, and the variety of delicate surfaces — stone countertops, glass tile backsplashes, integrated cabinet lighting, undermount sinks with specialty finishes — requires surface-by-surface attention with the correct products and techniques.</p>
 
@@ -1124,13 +1268,13 @@
 
                     <p>Growing families and evolving needs drive a steady stream of addition projects in Weston — new wings, expanded primary suites, dedicated home offices, indoor pools, and guest quarters. The unique challenge of additions is the interface between new construction and existing finished space. Dust migrates. Debris transfers. Existing rooms adjacent to the construction zone accumulate a film of fine particulate that standard dusting cannot remove. Our teams address both the new construction area and the impacted existing spaces to restore the entire home to pre-construction condition.</p>
 
-                    <h3>Outdoor Living and Accessory Structures</h3>
+                    <h3>🛋️ Outdoor Living and Accessory Structures</h3>
 
                     <p>Weston properties frequently include substantial outdoor living elements — pool houses, tennis pavilions, detached garages with finished living space above, and covered outdoor kitchens. These structures receive the same meticulous construction cleanup as the main residence. Stone patios, outdoor fireplaces, screened porches, and covered terraces are cleared of construction debris and detailed to the same standard as interior spaces.</p>
                 </div>
 
                 <div class="reveal">
-                    <h2>Working With Weston's Builders and Architects</h2>
+                    <h2>✨ ✨ ✨ Working With Weston's Builders and Architects</h2>
 
                     <p>The construction professionals who operate in Weston — firms like Woodmeister Master Builders, Kochman Reidt + Haigh Cabinetmakers, Patrick Ahearn Architect, and other premier New England builders and designers — hold themselves to exceptional standards. They select subcontractors and service partners who match their level of quality and professionalism. Blue Brick has earned the trust of Weston's building community by consistently delivering results that these firms are proud to present to their clients.</p>
 
@@ -1140,7 +1284,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Cost of Getting It Wrong</h2>
+                    <h2>💰 The Cost of Getting It Wrong</h2>
 
                     <p>In a market like Weston, the financial consequences of a poor post-construction cleanup extend far beyond the cost of re-cleaning. Consider what is at stake.</p>
 
@@ -1155,7 +1299,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Equipment and Methods</h2>
+                    <h2>⚙️ ⚙️ ⚙️ Our Equipment and Methods</h2>
 
                     <p>Cleaning a luxury Weston property after construction is not accomplished with consumer-grade tools. Blue Brick invests in commercial and industrial equipment specifically selected for post-construction environments.</p>
 
@@ -1167,9 +1311,13 @@
                         <li><strong>Detail tools.</strong> Grout brushes, crevice tools, soft-bristle detail brushes, steam cleaners for caulk line finishing, and precision scrapers for adhesive removal are standard in our kit. The difference between adequate cleaning and exceptional cleaning is measured in the details, and details require the right tools.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Scheduling and Logistics in Weston</h2>
+                    <h2>✨ ✨ ✨ Scheduling and Logistics in Weston</h2>
 
                     <p>Weston's residential character and the scale of its properties create specific logistical considerations that affect how post-construction cleaning is planned and executed.</p>
 
@@ -1183,7 +1331,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>What to Expect When You Contact Blue Brick</h2>
+                    <h2>📋 What to Expect When You Contact Blue Brick</h2>
 
                     <p>Our process for Weston post-construction cleaning engagements is designed to be straightforward, transparent, and respectful of your time.</p>
 
@@ -1201,7 +1349,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Protecting Your Investment</h2>
+                    <h2>✨ ✨ ✨ Protecting Your Investment</h2>
 
                     <p>A custom home or major renovation in Weston represents one of the largest financial commitments a homeowner will make. The construction budget for a new estate build in Silver Hill or Hastings can easily reach seven figures. The design process alone may span a year or more. Selecting a post-construction cleaning partner should not be an afterthought, and it should not be driven by the lowest bid.</p>
 
@@ -1211,7 +1359,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions About Weston Post-Construction Cleaning</h2>
+                    <h2>🏗️ Frequently Asked Questions About Weston Post-Construction Cleaning</h2>
 
                     <h3>How soon after construction is complete should cleanup begin?</h3>
 
@@ -1239,7 +1387,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Serving Weston and the Surrounding Communities</h2>
+                    <h2>✨ ✨ ✨ Serving Weston and the Surrounding Communities</h2>
 
                     <p>While this page focuses on our Weston post-construction cleaning services, Blue Brick serves luxury properties throughout the western suburbs and Greater Boston area. Our teams regularly clean properties in Newton, Wellesley, Waltham, Lincoln, Lexington, Natick, and Boston proper. If your project is in Weston or a neighboring community, we are positioned to serve you with the same level of expertise and professionalism.</p>
 
@@ -1256,7 +1404,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1432,6 +1596,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

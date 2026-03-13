@@ -198,6 +198,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -963,7 +1103,7 @@
 
 
             <div class="reveal">
-                <h2>Why Newton Homes Need Professional Deep Cleaning</h2>
+                <h2>💡 Why Newton Homes Need Professional Deep Cleaning</h2>
 
                 <p>Newton is unlike most suburbs. The homes here are larger, the finishes more refined, and the expectations considerably higher. The average Newton residence features premium materials -- natural stone countertops, hardwood flooring, custom millwork, and imported tile -- that require specialized knowledge to clean properly. A standard cleaning service might wipe down surfaces, but a professional deep clean addresses the hidden layers of buildup, allergens, and grime that accumulate in every home over time, regardless of how well-maintained it appears.</p>
 
@@ -973,7 +1113,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Newton's Neighborhoods: Unique Homes, Unique Needs</h2>
+                <h2>📍 Newton's Neighborhoods: Unique Homes, Unique Needs</h2>
 
                 <div class="neighborhood-grid">
                     <div class="neighborhood-pill">Chestnut Hill</div>
@@ -990,24 +1130,28 @@
 
                 <p><strong>West Newton</strong> and <strong>Newtonville</strong> feature a mix of classic New England homes and updated properties where families with young children need deep cleaning that is both thorough and safe -- non-toxic products, attention to high-touch surfaces, and meticulous cleaning of play areas and kitchens. In <strong>Newton Highlands</strong>, many homeowners invest in their properties continuously, and they expect a cleaning service that matches their own commitment to quality.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>What a Professional Deep Clean Includes</h2>
+                <h2>📋 What a Professional Deep Clean Includes</h2>
 
                 <p>A Blue Brick deep clean goes far beyond what most people picture when they hear the phrase "house cleaning." This is a comprehensive, multi-hour service that addresses every room, surface, and hidden area in your Newton home. Here is what our process covers:</p>
 
                 <div class="highlight-box">
-                    <h3>Kitchen Deep Clean</h3>
+                    <h3>🍳 Kitchen Deep Clean</h3>
                     <p>We degrease and sanitize all countertops, backsplashes, and range hoods. Cabinet fronts and handles are wiped down. Appliances are cleaned inside and out -- ovens, microwaves, refrigerators, and dishwashers. We address grout lines in tile flooring and backsplash, clean sink basins and fixtures to a polish, and ensure that every drawer, shelf, and surface is free of residue and buildup. For Newton's luxury kitchens with natural stone countertops, we use pH-neutral cleaners that protect the finish.</p>
                 </div>
 
                 <div class="highlight-box">
-                    <h3>Bathrooms</h3>
+                    <h3>🚿 Bathrooms</h3>
                     <p>Every bathroom receives a thorough deep clean: tile scrubbing, grout restoration, glass shower door descaling, fixture polishing, and vanity sanitization. We clean behind toilets, inside medicine cabinets, and in the often-neglected spaces around and underneath bathroom storage. For homes with marble or granite vanities, we use specialized products that clean without etching or dulling the stone.</p>
                 </div>
 
                 <div class="highlight-box">
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
                     <p>We dust all surfaces from ceiling to floor -- ceiling fans, light fixtures, crown molding, window frames, blinds, and baseboards. Upholstered furniture is vacuumed, including under cushions. Hardwood and tile floors are cleaned with appropriate products, and carpeted areas receive thorough vacuuming with attention to edges and corners. We wipe down all switches, outlets, and door hardware -- the high-touch surfaces that accumulate grime invisibly over time.</p>
                 </div>
 
@@ -1018,7 +1162,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Luxury Home Specific: Protecting Premium Materials</h2>
+                <h2>✨ ✨ ✨ Luxury Home Specific: Protecting Premium Materials</h2>
 
                 <p>Newton's finest homes are filled with materials that require specialized care. Using the wrong product or technique on a premium surface can cause irreversible damage -- and that is a risk Blue Brick eliminates entirely. Our team is trained in the proper handling of every finish material commonly found in luxury Newton properties.</p>
 
@@ -1032,7 +1176,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Seasonal Deep Cleaning for Newton Homes</h2>
+                <h2>📅 Seasonal Deep Cleaning for Newton Homes</h2>
 
                 <p>New England's four distinct seasons create specific deep cleaning needs that Newton homeowners understand well. At Blue Brick, we tailor our deep cleaning services to the seasonal demands of the greater Boston climate.</p>
 
@@ -1048,9 +1192,13 @@
                 <h3>Winter Deep Clean</h3>
                 <p>Holiday hosting, reduced daylight, and increased time indoors make winter an ideal time for a comprehensive deep clean. Whether you are preparing for guests or simply want to start the new year with an immaculate home, our winter deep cleaning service addresses every surface and space that matters.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why Newton Homeowners Trust Blue Brick</h2>
+                <h2>💡 Why Newton Homeowners Trust Blue Brick</h2>
 
                 <p>Newton's luxury market does not tolerate mediocre results. Homeowners who invest in premium properties expect premium service -- and that is exactly what Blue Brick delivers. Here is what sets us apart from every other cleaning company serving the Newton area:</p>
 
@@ -1068,7 +1216,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Get a Free Deep Cleaning Quote for Your Newton Home</h2>
+                <h2>✨ ✨ ✨ Get a Free Deep Cleaning Quote for Your Newton Home</h2>
 
                 <p>Whether you need a one-time deep clean to reset your home, seasonal service to stay ahead of New England's demands, or a recurring deep cleaning schedule tailored to your lifestyle, Blue Brick is ready to deliver the results your Newton property deserves.</p>
 
@@ -1273,6 +1421,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

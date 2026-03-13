@@ -261,6 +261,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -1019,7 +1159,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Why Boston Restaurants Need Professional Deep Cleaning</h2>
+            <h2 class="reveal">💡 Why Boston Restaurants Need Professional Deep Cleaning</h2>
 
             <div class="reveal">
                 <p>Day-to-day kitchen cleaning keeps the surface presentable, but it does not address the deep-seated grease, carbon, and grime that accumulate in places your staff cannot easily reach. Over weeks and months, this buildup creates real problems — fire hazards in exhaust systems, bacterial growth in hidden crevices, foul odors that seep into the dining room, and conditions that will trigger violations during a health inspection.</p>
@@ -1037,35 +1177,39 @@
                 <p>A scheduled deep clean is not a luxury — it is a cost of doing business. It protects your health inspection score, reduces fire risk, extends equipment life, and keeps your restaurant operating at the standard your customers expect.</p>
             </div>
 
-            <h2 class="reveal">What Restaurant Deep Cleaning Covers</h2>
+            <h2 class="reveal">📋 What Restaurant Deep Cleaning Covers</h2>
 
             <div class="reveal">
                 <p>A professional restaurant deep clean goes far beyond what your closing crew handles each night. Blue Brick's restaurant deep cleaning service is a systematic, top-to-bottom process that targets every area of your operation — from the exhaust hood above your grill to the floor drains beneath your dishwasher. Here is what we cover.</p>
 
-                <h3>Hood &amp; Exhaust Systems</h3>
+                <h3>🔥 Hood &amp; Exhaust Systems</h3>
                 <p>The kitchen exhaust system is the single most important target of any restaurant deep clean. Grease-laden vapor passes through filters, collects in the hood canopy, and deposits inside ductwork every time your kitchen is in service. Left uncleaned, this creates a serious fire hazard. Blue Brick uses commercial-grade degreasing agents and pressure-washing equipment to thoroughly clean hood canopies, baffle filters, exhaust fans, and accessible ductwork. We clean to NFPA 96 standards and document the work for your records and insurance compliance.</p>
 
-                <h3>Fryers, Grills &amp; Cooking Equipment</h3>
+                <h3>🍳 Fryers, Grills &amp; Cooking Equipment</h3>
                 <p>Carbon buildup on grill grates, fryer exteriors, flattops, and char-broilers is more than an aesthetic issue — it affects heat distribution, food quality, and equipment longevity. We break down carbonized grease, scrub cooking surfaces, clean equipment exteriors, and detail the areas behind and beneath each unit where spillover accumulates. Ovens, steamers, and salamanders are included in the deep clean.</p>
 
-                <h3>Floors, Walls &amp; Ceilings</h3>
+                <h3>🪣 Floors, Walls &amp; Ceilings</h3>
                 <p>Commercial kitchen floors take a beating. Grease, food debris, and cleaning chemicals create a layered residue that standard mopping cannot remove. We use industrial floor scrubbers and degreasing solutions to restore non-slip surfaces to their original condition. Walls behind cooking lines, ceiling tiles above fryers, and all tile grout lines are scrubbed and sanitized. Floor drains are cleared and deodorized.</p>
 
                 <h3>Walk-In Coolers &amp; Freezers</h3>
                 <p>Cold storage environments are prone to mold growth, condensation issues, and odor problems — particularly around gaskets, evaporator coils, and shelving units. We pull all product, clean and sanitize every interior surface, check gasket integrity, wipe down condenser coils, and ensure the unit is draining properly. A clean walk-in is not just a health code requirement; it directly affects the quality and safety of your stored product.</p>
 
-                <h3>Dining Areas &amp; Front of House</h3>
+                <h3>🪑 Dining Areas &amp; Front of House</h3>
                 <p>Your dining room is the first thing customers see and the last thing they remember. Deep cleaning the front of house includes detailed cleaning of upholstery, booth seating, table bases, light fixtures, windowsills, baseboards, and HVAC vents. We deep-clean carpets or scrub hard flooring, sanitize high-touch surfaces like door handles and menus, and address any buildup on decorative elements, bar tops, and service stations.</p>
 
-                <h3>Restrooms</h3>
+                <h3>🚻 Restrooms</h3>
                 <p>Restaurant restrooms are a direct reflection of your establishment's standards. We deep-clean and sanitize all fixtures, scrub tile and grout, clean exhaust fans, descale faucets and drains, and polish all surfaces. Restrooms are often the deciding factor in online reviews — and one of the first things a health inspector checks.</p>
             </div>
 
             <div class="highlight-box reveal">
                 <p><strong>Fire Safety Note:</strong> The National Fire Protection Association (NFPA 96) requires kitchen exhaust systems to be cleaned on a regular schedule based on cooking volume. High-volume restaurants — the kind you find across Boston and Waltham — typically need quarterly hood cleaning at minimum. Blue Brick can set up a recurring schedule so you never fall behind.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Health Inspection Preparation</h2>
+
+            <h2 class="reveal">🏥 Health Inspection Preparation</h2>
 
             <div class="reveal">
                 <p>In Massachusetts, health inspections are unannounced. You do not get a phone call or a courtesy email — the inspector simply arrives. The restaurants that consistently score well are the ones that maintain inspection-ready conditions year-round, and professional deep cleaning is the foundation of that readiness.</p>
@@ -1084,7 +1228,7 @@
                 <p>If you have an inspection coming up — or if it has been a while since your last professional deep clean — do not wait. A single day of professional service can be the difference between a clean report and a list of violations that ends up on public record.</p>
             </div>
 
-            <h2 class="reveal">The Greater Boston Restaurant Scene</h2>
+            <h2 class="reveal">🍽️ The Greater Boston Restaurant Scene</h2>
 
             <div class="reveal">
                 <p>Greater Boston's dining landscape is vast and varied, and Blue Brick serves restaurants across the entire region. Every neighborhood has its own character, and we understand the specific needs of each.</p>
@@ -1098,7 +1242,7 @@
                 <p><strong>Newton, Brookline, and Watertown</strong> round out our primary service area. These communities feature a healthy mix of upscale dining, neighborhood restaurants, and ethnic food destinations that all share the same need for professional cleaning that meets commercial kitchen standards.</p>
             </div>
 
-            <h2 class="reveal">Maintaining Cleanliness Between Deep Cleans</h2>
+            <h2 class="reveal">🔄 Maintaining Cleanliness Between Deep Cleans</h2>
 
             <div class="reveal">
                 <p>A professional deep clean resets your facility to a pristine baseline, but maintaining that standard requires consistent effort from your team between scheduled services. Here are practical steps every restaurant owner and kitchen manager should implement:</p>
@@ -1119,8 +1263,12 @@
             <div class="highlight-box reveal">
                 <p><strong>Pro Tip:</strong> Schedule your deep clean for your slowest day of the week, or let us work overnight. Blue Brick offers flexible scheduling — including late-night and early-morning service windows — so your restaurant never misses a service.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Flexible Scheduling Around Your Hours</h2>
+
+            <h2 class="reveal">⏰ ⏰ ⏰ Flexible Scheduling Around Your Hours</h2>
 
             <div class="reveal">
                 <p>Restaurants do not operate on a 9-to-5 schedule, and neither do we. Blue Brick provides restaurant deep cleaning services during the hours that work for your operation — whether that means starting at midnight after your last table leaves, arriving at 5 AM before your prep team starts, or working through a planned closure day.</p>
@@ -1128,7 +1276,7 @@
                 <p>We coordinate directly with you to minimize disruption. For kitchens that cannot shut down entirely, we can work in sections — cleaning the cooking line one night and cold storage the next. The goal is always the same: a thorough, professional clean that does not cost you a single hour of revenue.</p>
             </div>
 
-            <h2 class="reveal">Why Restaurant Owners Choose Blue Brick</h2>
+            <h2 class="reveal">💡 Why Restaurant Owners Choose Blue Brick</h2>
 
             <div class="reveal">
                 <p>Restaurant owners and managers across Greater Boston choose Blue Brick because we deliver results without adding complexity to an already demanding operation.</p>
@@ -1143,7 +1291,7 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Service Areas</h2>
+            <h2 class="reveal">✨ ✨ ✨ Service Areas</h2>
 
             <div class="reveal">
                 <p>Blue Brick provides restaurant deep cleaning services throughout Greater Boston, including:</p>
@@ -1167,7 +1315,23 @@
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1348,6 +1512,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

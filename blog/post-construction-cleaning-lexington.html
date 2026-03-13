@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Lexington's Unique Housing Market Demands Specialized Post-Construction Cleaning</h2>
+                    <h2>💡 Why Lexington's Unique Housing Market Demands Specialized Post-Construction Cleaning</h2>
 
                     <p>Lexington, Massachusetts is not an ordinary suburb. It is a town where American history began, where property values consistently rank among the highest in the Commonwealth, and where homeowners hold their properties to a standard that reflects both the community's heritage and its affluence. From the stately colonials lining Massachusetts Avenue to the contemporary custom builds tucked into wooded lots off Grove Street, Lexington's residential landscape is defined by quality, character, and an expectation of excellence that extends to every phase of a construction or renovation project — including the final cleanup.</p>
 
@@ -1004,7 +1144,7 @@
 
 
                 <div class="reveal">
-                    <h2>The Challenge of Cleaning After Construction in Lexington</h2>
+                    <h2>🏗️ The Challenge of Cleaning After Construction in Lexington</h2>
 
                     <p>Post-construction cleaning in Lexington presents a distinct set of challenges that standard cleaning companies are not equipped to handle. The town's housing stock spans nearly three centuries of architectural styles, and many renovation projects involve bridging the gap between historic character and modern performance. This intersection creates cleaning scenarios that require both technical knowledge and a careful hand.</p>
 
@@ -1018,7 +1158,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Three-Phase Post-Construction Cleaning Process</h2>
+                    <h2>🏗️ Our Three-Phase Post-Construction Cleaning Process</h2>
 
                     <p>Professional post-construction cleaning is not a single pass with a mop and bucket. It is a structured, multi-phase process designed to progressively eliminate every trace of construction activity from a property. Blue Brick follows an industry-standard three-phase approach that we have refined through years of work on high-end residential and commercial projects throughout the Greater Boston area.</p>
 
@@ -1042,7 +1182,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Lexington Neighborhoods and Areas We Serve</h2>
+                    <h2>📍 Lexington Neighborhoods and Areas We Serve</h2>
 
                     <p>Lexington's construction and renovation activity is distributed across the town's diverse residential neighborhoods and its growing commercial corridor. Blue Brick provides post-construction cleaning services in every corner of Lexington, including the following key areas.</p>
 
@@ -1079,9 +1219,13 @@
 
                     <p>Lexington's Hartwell Avenue corridor is a major commercial and biotech hub. Lab build-outs, office renovations, and new commercial construction along this corridor require post-construction cleaning that meets the rigorous standards of tenants in the life sciences, technology, and professional services sectors. Particulate control is especially critical in lab environments, where even trace construction dust can compromise sensitive equipment and research. Blue Brick's commercial post-construction cleaning services for Hartwell Avenue properties include enhanced HEPA filtration protocols, detailed surface decontamination, and documentation of cleaning procedures for tenant quality assurance records.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>What Makes Lexington Construction Cleanup Different</h2>
+                    <h2>📋 What Makes Lexington Construction Cleanup Different</h2>
 
                     <p>Post-construction cleaning in Lexington is not interchangeable with construction cleanup in a new development of tract homes. Several factors make Lexington projects uniquely demanding, and each one requires a cleaning team that understands the local context.</p>
 
@@ -1101,7 +1245,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Historic Restorations: Cleaning with the Care These Properties Deserve</h2>
+                    <h2>📍 Historic Restorations: Cleaning with the Care These Properties Deserve</h2>
 
                     <p>Lexington's identity is inseparable from its history. The town played a defining role in the American Revolution, and that heritage is reflected in its architecture, its streetscapes, and the deep respect its residents have for the structures that connect the present to the past. Restoring a historic Lexington home is an act of stewardship, and the post-construction cleanup must honor that commitment.</p>
 
@@ -1111,7 +1255,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>New Custom Builds: Meeting the Standard from Day One</h2>
+                    <h2>✨ ✨ ✨ New Custom Builds: Meeting the Standard from Day One</h2>
 
                     <p>Lexington's new construction market is driven by families building their dream homes. These projects represent investments that often exceed $2 million, and the expectations for quality are absolute. A new custom build in Lexington might feature a chef's kitchen with a quartzite waterfall island, white oak wide-plank flooring throughout, floor-to-ceiling windows overlooking a professionally landscaped yard, a primary suite with heated marble floors, and a home theater with acoustic wall treatments. Every one of these elements requires careful post-construction cleaning before the homeowner walks through the door for the first time.</p>
 
@@ -1127,7 +1271,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Commercial and Biotech Construction Cleanup on Hartwell Avenue</h2>
+                    <h2>🏗️ Commercial and Biotech Construction Cleanup on Hartwell Avenue</h2>
 
                     <p>Lexington's Hartwell Avenue corridor is one of Greater Boston's most significant commercial zones outside the city core. The corridor is home to biotech laboratories, pharmaceutical companies, technology firms, and professional services offices, many of which undergo periodic build-outs, renovations, and expansions as tenants grow or turn over. The post-construction cleaning requirements for these commercial spaces differ significantly from residential projects, and Blue Brick is equipped to handle both.</p>
 
@@ -1135,9 +1279,13 @@
 
                     <p>For office build-outs along Hartwell Avenue, our commercial cleaning process addresses the full scope of construction residue while respecting the tenant's move-in timeline. We clean ceiling tiles and grid systems, partition walls and glass, carpet and hard flooring, restrooms and break rooms, conference rooms and reception areas, and all common corridors and elevator lobbies. Our crews can work evenings and weekends to accommodate commercial schedules and minimize disruption to adjacent tenants who may already be operating in the building.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Why Hire a Professional Post-Construction Cleaning Team</h2>
+                    <h2>💡 Why Hire a Professional Post-Construction Cleaning Team</h2>
 
                     <p>Some property owners and contractors consider handling post-construction cleanup with their own labor or a general cleaning service. In a market like Lexington, where the stakes are high and the margins for error are thin, this approach creates more problems than it solves.</p>
 
@@ -1155,7 +1303,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Process: What to Expect When You Work with Us</h2>
+                    <h2>📋 The Blue Brick Process: What to Expect When You Work with Us</h2>
 
                     <p>Blue Brick's process is designed to be straightforward, transparent, and reliable. Here is what happens when you contact us for post-construction cleaning in Lexington.</p>
 
@@ -1175,7 +1323,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Renovation Cleaning for Lexington's Active Remodeling Market</h2>
+                    <h2>🔨 Renovation Cleaning for Lexington's Active Remodeling Market</h2>
 
                     <p>Not every project in Lexington is a full new build or a historic restoration. A large portion of our work involves cleaning up after targeted renovations — kitchen remodels, bathroom overhauls, basement finishing, addition construction, and whole-floor modernizations. These projects generate the same types of construction debris as larger builds but present unique challenges because the homeowner is often living in the property during the work.</p>
 
@@ -1187,7 +1335,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Protecting Your Investment: The Long-Term Value of Professional Cleanup</h2>
+                    <h2>⭐ ⭐ ⭐ Protecting Your Investment: The Long-Term Value of Professional Cleanup</h2>
 
                     <p>In a town where the median home sale price consistently exceeds $1.2 million, the quality of a post-construction cleaning is not just about aesthetics — it is about protecting a significant financial investment. Construction residue that is not properly removed can cause long-term damage that diminishes property value and creates costly maintenance issues down the road.</p>
 
@@ -1203,7 +1351,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Serving Lexington's Builders, Architects, and Real Estate Professionals</h2>
+                    <h2>⭐ ⭐ ⭐ Serving Lexington's Builders, Architects, and Real Estate Professionals</h2>
 
                     <p>Blue Brick works directly with Lexington's network of general contractors, custom home builders, architects, interior designers, and real estate agents. We understand that for these professionals, the post-construction cleaning is not a standalone service — it is a critical component of the project delivery that reflects directly on their reputation and their client relationships.</p>
 
@@ -1226,7 +1374,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1402,6 +1566,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

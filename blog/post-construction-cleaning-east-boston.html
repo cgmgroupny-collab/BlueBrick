@@ -272,6 +272,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -945,7 +1085,7 @@
             <p class="intro-highlight reveal">East Boston is in the middle of a historic building boom. From the waterfront condominiums along the harbor to the mixed-use developments transforming Maverick Square, new construction is reshaping Eastie block by block. And every one of those projects needs one thing before keys change hands: a thorough, professional post-construction cleaning.</p>
 
             <div class="reveal">
-                <h2>East Boston's <em>Development Boom</em></h2>
+                <h2>🏙️ East Boston's <em>Development Boom</em></h2>
 
                 <p>Over the past decade, East Boston has emerged as one of Greater Boston's most dynamic real estate markets. What was once an under-the-radar neighborhood is now home to luxury waterfront condos, modern mixed-use complexes, and high-end renovations that rival anything on the other side of the harbor.</p>
 
@@ -961,7 +1101,7 @@
 
 
             <div class="reveal">
-                <h2>Why Post-Construction Cleaning in <em>Eastie</em> Is Different</h2>
+                <h2>💡 Why Post-Construction Cleaning in <em>Eastie</em> Is Different</h2>
 
                 <p>East Boston presents a unique set of conditions that demand specialized post-construction cleaning expertise. Generic cleaning crews often underestimate what Eastie properties require.</p>
 
@@ -977,9 +1117,13 @@
                 <h3>Mixed-Use Complexity</h3>
                 <p>Many new East Boston developments combine ground-floor retail or restaurant space with residential units above. Each type of space has different cleaning requirements, different finish materials, and different standards. Retail spaces demand floor prep and storefront glass detailing. Residential units demand HVAC duct cleaning, appliance interiors, and closet-level attention. We handle both under one scope of work.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>The Three Phases of <em>Construction Cleanup</em></h2>
+                <h2>🏗️ The Three Phases of <em>Construction Cleanup</em></h2>
 
                 <p>Professional post-construction cleaning is not a single event. It is a phased process that aligns with the construction timeline. Blue Brick delivers all three phases:</p>
 
@@ -994,7 +1138,7 @@
             </div>
 
             <div class="reveal">
-                <h2>East Boston Neighborhoods <em>We Serve</em></h2>
+                <h2>📍 East Boston Neighborhoods <em>We Serve</em></h2>
 
                 <ul>
                     <li><strong>Jeffries Point</strong> — Waterfront condos, townhome conversions, and new luxury builds along the harbor</li>
@@ -1004,9 +1148,13 @@
                     <li><strong>The Waterfront</strong> — Large-scale condo developments with harbor views, from Clippership Wharf to East Pier</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why East Boston Developers <em>Choose Blue Brick</em></h2>
+                <h2>💡 Why East Boston Developers <em>Choose Blue Brick</em></h2>
 
                 <p>Property developers operating in East Boston work on tight timelines with high-value units. A delayed cleaning can push back occupancy, stall closings, and cost thousands per day. Blue Brick understands these stakes because we work with developers and general contractors regularly.</p>
 
@@ -1022,7 +1170,7 @@
             </div>
 
             <div class="reveal">
-                <h2>What to Expect When <em>You Hire Blue Brick</em></h2>
+                <h2>📋 What to Expect When <em>You Hire Blue Brick</em></h2>
 
                 <p>Our process is straightforward and built for efficiency:</p>
 
@@ -1204,6 +1352,22 @@
                 mainNav.querySelectorAll('a').forEach(a => a.style.color = '');
             }
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

@@ -329,6 +329,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -541,37 +681,6 @@
             border-left: 3px solid var(--amber);
             padding-left: 1.2rem;
             margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--light-gray);
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-            line-height: 1.5;
-        }
-
-        .faq-answer {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
             line-height: 1.8;
         }
 
@@ -1033,7 +1142,7 @@
             <p class="intro-highlight reveal">East Boston is one of the most dynamic neighborhoods in Greater Boston. Between the waterfront development boom, the constant churn of rental turnover, and the salt air that accelerates wear on every surface, Eastie homes and apartments need more than routine cleaning. They need a proper deep clean — the kind that reaches behind appliances, inside cabinets, under baseboards, and into every corner that daily life leaves behind. That is exactly what Blue Brick delivers.</p>
 
             <div class="reveal">
-                <h2>Why East Boston Homes Need <em>Deep Cleaning</em></h2>
+                <h2>💡 Why East Boston Homes Need <em>Deep Cleaning</em></h2>
 
                 <p>Deep cleaning is not the same as regular cleaning. Regular cleaning maintains surfaces. Deep cleaning resets them. It targets the layers of grime, grease, dust, and buildup that accumulate over weeks and months in places you do not see during everyday tidying. For East Boston properties specifically, several factors make deep cleaning not just helpful but essential.</p>
 
@@ -1049,7 +1158,7 @@
 
 
             <div class="reveal">
-                <h2>East Boston's Neighborhoods, <em>Block by Block</em></h2>
+                <h2>📍 East Boston's Neighborhoods, <em>Block by Block</em></h2>
 
                 <p>We serve every corner of Eastie and understand the distinct character of each neighborhood. The housing stock varies, and so do the deep cleaning requirements.</p>
 
@@ -1065,13 +1174,17 @@
                 <h3>Eagle Hill</h3>
                 <p>One of Eastie's most established residential areas, known for its tight streets and mix of triple-deckers and smaller multi-family homes. Many Eagle Hill properties have been through generations of tenants, and layers of wear accumulate in ways that only a deep clean can address. We frequently handle grout restoration, cabinet interior cleaning, and behind-appliance detailing in Eagle Hill units that have not had a thorough cleaning in years. The results are transformative.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>What Our Deep Cleaning <em>Actually Includes</em></h2>
+                <h2>📋 What Our Deep Cleaning <em>Actually Includes</em></h2>
 
                 <p>When Blue Brick performs a deep clean, we follow a comprehensive checklist that covers every room and every surface. This is not a surface-level wipe-down. Here is what you can expect:</p>
 
-                <h3>Kitchen Deep Clean</h3>
+                <h3>🍳 Kitchen Deep Clean</h3>
                 <ul>
                     <li><strong>Appliance interiors</strong> — Oven, microwave, refrigerator, and dishwasher cleaned inside and out, including shelves, drawers, and door seals</li>
                     <li><strong>Range hood and exhaust fan</strong> — Degreased and wiped, including filters</li>
@@ -1081,7 +1194,7 @@
                     <li><strong>Countertops</strong> — Cleaned with appropriate products for granite, quartz, laminate, or butcher block</li>
                 </ul>
 
-                <h3>Bathroom Deep Clean</h3>
+                <h3>🚿 Bathroom Deep Clean</h3>
                 <ul>
                     <li><strong>Tile and grout</strong> — Hand-scrubbed to remove mildew, soap scum, and discoloration</li>
                     <li><strong>Shower and tub</strong> — Glass doors de-scaled, tub surfaces restored, caulking lines detailed</li>
@@ -1090,7 +1203,7 @@
                     <li><strong>Exhaust fan and vents</strong> — Dust and buildup removed to improve airflow</li>
                 </ul>
 
-                <h3>Living Areas and Bedrooms</h3>
+                <h3>🛏️ Living Areas and Bedrooms</h3>
                 <ul>
                     <li><strong>Baseboards and trim</strong> — Wiped along every wall, including behind furniture</li>
                     <li><strong>Window sills and tracks</strong> — Debris removed, tracks detailed, sills wiped</li>
@@ -1102,7 +1215,7 @@
             </div>
 
             <div class="reveal">
-                <h2>High Rental Turnover and <em>September 1 in Eastie</em></h2>
+                <h2>🔄 High Rental Turnover and <em>September 1 in Eastie</em></h2>
 
                 <p>Anyone who has lived in Boston knows about September 1. It is the single largest rental turnover day in the country, and East Boston is one of the hardest-hit neighborhoods. Thousands of leases begin and end on the same date, creating a compressed window where apartments need to be cleaned, inspected, and made ready for new tenants — all within days or even hours.</p>
 
@@ -1112,7 +1225,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Waterfront Development and <em>New Construction</em></h2>
+                <h2>🏗️ Waterfront Development and <em>New Construction</em></h2>
 
                 <p>East Boston's waterfront has been transformed by large-scale residential development over the past decade. Luxury condo buildings, mixed-use complexes, and high-end rental properties now line the harbor from Clippership Wharf to East Pier. These properties feature premium finishes and modern materials that require knowledgeable care.</p>
 
@@ -1120,9 +1233,13 @@
 
                 <p>We also work with property management companies overseeing common areas in these buildings — lobbies, fitness centers, shared kitchens, and rooftop terraces. Deep cleaning these high-traffic communal spaces on a regular schedule keeps the entire building at the standard its residents expect.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why East Boston Residents <em>Choose Blue Brick</em></h2>
+                <h2>💡 Why East Boston Residents <em>Choose Blue Brick</em></h2>
 
                 <p>Deep cleaning is a service where the details matter. The difference between a decent job and an exceptional one shows up in the grout lines, in the cabinet hinges, in the window tracks, and behind the refrigerator. Blue Brick operates at the exceptional end of that spectrum.</p>
 
@@ -1136,37 +1253,37 @@
             </div>
 
             <div class="reveal">
-                <h2>Frequently Asked <em>Questions</em></h2>
+                <h2>❓ ❓ ❓ Frequently Asked <em>Questions</em></h2>
 
                 <div class="faq-section">
                     <div class="faq-item">
-                        <p class="faq-question">What does a deep cleaning include in East Boston?</p>
-                        <p class="faq-answer">A deep cleaning from Blue Brick includes thorough scrubbing of kitchens and bathrooms, baseboard and trim detailing, interior window cleaning, appliance cleaning inside and out, grout and tile scrubbing, light fixture and vent dusting, cabinet interior wipe-downs, and detailed floor care. Every surface that accumulates hidden grime is addressed.</p>
+                        <div class="faq-question">What does a deep cleaning include in East Boston?</div>
+                        <div class="faq-answer"><p>A deep cleaning from Blue Brick includes thorough scrubbing of kitchens and bathrooms, baseboard and trim detailing, interior window cleaning, appliance cleaning inside and out, grout and tile scrubbing, light fixture and vent dusting, cabinet interior wipe-downs, and detailed floor care. Every surface that accumulates hidden grime is addressed.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How often should I schedule a deep cleaning for my East Boston apartment?</p>
-                        <p class="faq-answer">For most East Boston apartments and condos, we recommend a deep cleaning every three to six months, depending on household size, pets, and lifestyle. Properties near the waterfront may benefit from more frequent deep cleans due to salt air and humidity that accelerate grime buildup on surfaces and fixtures.</p>
+                        <div class="faq-question">How often should I schedule a deep cleaning for my East Boston apartment?</div>
+                        <div class="faq-answer"><p>For most East Boston apartments and condos, we recommend a deep cleaning every three to six months, depending on household size, pets, and lifestyle. Properties near the waterfront may benefit from more frequent deep cleans due to salt air and humidity that accelerate grime buildup on surfaces and fixtures.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How is deep cleaning different from regular cleaning?</p>
-                        <p class="faq-answer">Regular cleaning covers visible surfaces like countertops, floors, and toilets. Deep cleaning goes further by targeting buildup behind appliances, inside ovens and refrigerators, scrubbing tile grout, detailing baseboards, cleaning inside cabinets, removing limescale from fixtures, and addressing areas that routine cleaning skips. It resets your home to a baseline level of cleanliness.</p>
+                        <div class="faq-question">How is deep cleaning different from regular cleaning?</div>
+                        <div class="faq-answer"><p>Regular cleaning covers visible surfaces like countertops, floors, and toilets. Deep cleaning goes further by targeting buildup behind appliances, inside ovens and refrigerators, scrubbing tile grout, detailing baseboards, cleaning inside cabinets, removing limescale from fixtures, and addressing areas that routine cleaning skips. It resets your home to a baseline level of cleanliness.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How much does deep cleaning cost in East Boston?</p>
-                        <p class="faq-answer">Pricing depends on the size of the property, its current condition, and any add-on services requested. We provide transparent, upfront quotes after understanding your specific needs. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate.</p>
+                        <div class="faq-question">How much does deep cleaning cost in East Boston?</div>
+                        <div class="faq-answer"><p>Pricing depends on the size of the property, its current condition, and any add-on services requested. We provide transparent, upfront quotes after understanding your specific needs. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">Do you deep clean rental apartments in East Boston for move-in or move-out?</p>
-                        <p class="faq-answer">Yes. East Boston has one of the highest rental turnover rates in Greater Boston, especially around the September 1 cycle. We provide deep cleaning for tenants moving out who need to meet lease-end standards and for new tenants who want a fresh start. We also work directly with landlords and property managers who need units turned quickly between tenants.</p>
+                        <div class="faq-question">Do you deep clean rental apartments in East Boston for move-in or move-out?</div>
+                        <div class="faq-answer"><p>Yes. East Boston has one of the highest rental turnover rates in Greater Boston, especially around the September 1 cycle. We provide deep cleaning for tenants moving out who need to meet lease-end standards and for new tenants who want a fresh start. We also work directly with landlords and property managers who need units turned quickly between tenants.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How do I book a deep cleaning in East Boston?</p>
-                        <p class="faq-answer">Text us at 781-330-5604 or email bluebrickmass@gmail.com with your address, property size, and preferred timing. We will respond with a quote and available scheduling options. We do not take phone calls — texting is the fastest way to reach us.</p>
+                        <div class="faq-question">How do I book a deep cleaning in East Boston?</div>
+                        <div class="faq-answer"><p>Text us at 781-330-5604 or email bluebrickmass@gmail.com with your address, property size, and preferred timing. We will respond with a quote and available scheduling options. We do not take phone calls — texting is the fastest way to reach us.</p></div>
                     </div>
                 </div>
             </div>
@@ -1288,7 +1405,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1338,6 +1455,22 @@
                 mainNav.querySelectorAll('a').forEach(a => a.style.color = '');
             }
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

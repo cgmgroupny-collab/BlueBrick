@@ -260,6 +260,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -1018,7 +1158,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Why Waltham's Construction Boom Demands Expert Cleanup</h2>
+            <h2 class="reveal">💡 Why Waltham's Construction Boom Demands Expert Cleanup</h2>
 
             <div class="reveal">
                 <p>Waltham's position along the Route 128/I-95 corridor has made it one of the most active commercial construction markets in the state. Biotech and pharmaceutical companies are constantly expanding laboratory space, tech firms are renovating office suites to attract top talent, and the city's residential neighborhoods are seeing a wave of new condo developments and home renovations.</p>
@@ -1032,8 +1172,12 @@
                     <li><strong>Biotech &amp; Lab Spaces</strong> — Waltham hosts a significant cluster of biotech companies, many of which operate in specially constructed or converted laboratory environments. Post-construction cleaning in these spaces requires heightened attention to detail, as even minor dust contamination can compromise sensitive equipment and clean-room standards.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">The Three Phases of Post-Construction Cleaning</h2>
+
+            <h2 class="reveal">🏗️ The Three Phases of Post-Construction Cleaning</h2>
 
             <div class="reveal">
                 <p>Professional post-construction cleaning is not a single pass with a mop and vacuum. It is a structured, multi-phase process that progressively brings a construction site from rough conditions to a pristine, occupancy-ready state. At Blue Brick, we execute all three phases with precision.</p>
@@ -1052,7 +1196,7 @@
                 <p><strong>Contractor Tip:</strong> Scheduling post-construction cleaning in phases — rather than a single pass at the end — reduces project delays and ensures a cleaner finished product. Blue Brick coordinates directly with your project manager to align cleaning with your construction timeline.</p>
             </div>
 
-            <h2 class="reveal">Commercial Post-Construction Cleaning in Waltham</h2>
+            <h2 class="reveal">🏗️ Commercial Post-Construction Cleaning in Waltham</h2>
 
             <div class="reveal">
                 <p>Commercial properties present a unique set of challenges that go beyond what a standard residential cleaning crew can handle. Waltham's commercial real estate market is diverse, and Blue Brick has the experience and equipment to manage every scenario.</p>
@@ -1064,8 +1208,12 @@
                     <li><strong>Restaurant &amp; Retail Buildouts</strong> — Moody Street and downtown Waltham are home to a growing number of restaurants, cafes, and retail stores. Post-construction cleaning for these spaces includes kitchen hood and vent cleaning, display case detailing, restroom sanitization, and exterior facade wipe-downs — everything a business needs before opening day.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Residential Post-Construction Cleaning in Waltham</h2>
+
+            <h2 class="reveal">🏗️ Residential Post-Construction Cleaning in Waltham</h2>
 
             <div class="reveal">
                 <p>Waltham's residential neighborhoods — from the tree-lined streets near the Brandeis campus to the established homes south of Route 20 — are seeing significant renovation activity. Homeowners are updating kitchens, expanding living spaces, finishing basements, and adding primary suites to keep pace with modern expectations.</p>
@@ -1086,7 +1234,7 @@
                 <p>The goal is simple: when we finish, your Waltham home should feel like new construction — not like a construction zone.</p>
             </div>
 
-            <h2 class="reveal">Why Waltham Contractors and Property Managers Choose Blue Brick</h2>
+            <h2 class="reveal">💡 Why Waltham Contractors and Property Managers Choose Blue Brick</h2>
 
             <div class="reveal">
                 <p>Contractors, property managers, and business owners across Waltham choose Blue Brick for post-construction cleaning because we deliver consistent, reliable results without adding complexity to an already demanding project timeline.</p>
@@ -1106,7 +1254,23 @@
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1287,6 +1451,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

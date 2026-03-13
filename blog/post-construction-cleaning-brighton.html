@@ -262,6 +262,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -1110,7 +1250,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Brighton's Rental Market and <em>Constant Renovation</em></h2>
+            <h2 class="reveal">🔨 Brighton's Rental Market and <em>Constant Renovation</em></h2>
 
             <div class="reveal">
                 <p>Brighton has long been one of Boston's most sought-after neighborhoods for renters. Its proximity to Boston College, Boston University, and the Green Line makes it a magnet for students, young professionals, and families. That steady demand means property owners are continuously investing in their buildings — updating kitchens, modernizing bathrooms, replacing flooring, and converting older layouts into open-concept living spaces.</p>
@@ -1118,7 +1258,7 @@
                 <p>Unlike many Boston neighborhoods where renovation activity follows seasonal patterns, Brighton sees construction work year-round. Landlords who manage portfolios across Brighton Center, Oak Square, Cleveland Circle, and the Washington Street corridor know that keeping units updated is the key to commanding competitive rents and reducing vacancy. Every renovation, whether a single-unit refresh or a full building overhaul, ends with the same critical need: professional post-construction cleaning that transforms a job site into a move-in ready home.</p>
             </div>
 
-            <h2 class="reveal">The September 1st <em>Turnover Frenzy</em></h2>
+            <h2 class="reveal">🔄 The September 1st <em>Turnover Frenzy</em></h2>
 
             <div class="reveal">
                 <p>Anyone who has lived in or managed property in the Boston area knows about the September 1st phenomenon. The overwhelming majority of leases in Brighton — and its neighboring Allston — turn over on this single date. The result is a logistical challenge unlike anything seen in most American cities: thousands of tenants moving out and in on the same day, a tradition so notorious it has earned the name "Allston Christmas" for the furniture and belongings left curbside during the chaos.</p>
@@ -1130,7 +1270,7 @@
                 <p>Blue Brick operates dedicated September 1st turnover crews for Brighton and Allston property managers. We schedule in advance, commit to guaranteed completion windows, and handle the full scope — from rough clean through final detail — so your units are ready for tenant walkthroughs and move-ins on time.</p>
             </div>
 
-            <h2 class="reveal">Brighton's Key Neighborhoods <em>We Serve</em></h2>
+            <h2 class="reveal">📍 Brighton's Key Neighborhoods <em>We Serve</em></h2>
 
             <div class="neighborhood-grid">
                 <div class="neighborhood-card reveal-left" style="transition-delay: 0.05s">
@@ -1158,8 +1298,12 @@
                     <p>Quiet residential streets with single-family homes and small multi-units being renovated for growing families.</p>
                 </div>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Unique Challenges of <em>Brighton Properties</em></h2>
+
+            <h2 class="reveal">✨ ✨ ✨ Unique Challenges of <em>Brighton Properties</em></h2>
 
             <div class="reveal">
                 <p>Brighton's building stock presents challenges that require specialized cleaning knowledge. Much of the neighborhood's housing dates to the early and mid-20th century. Renovating these older structures generates specific types of debris and dust that differ from new construction — plaster dust from demolition, adhesive residue from old flooring, paint overspray in tight spaces, and construction grime embedded in original hardwood and tile.</p>
@@ -1169,7 +1313,7 @@
                 <p>Brighton's landlords and property managers also face a unique challenge with tenant expectations. The neighborhood's rental rates have risen significantly, and tenants paying premium rents expect spotless, move-in ready units. A poorly cleaned apartment after a renovation — visible dust on baseboards, grit in window tracks, adhesive residue on countertops — leads to immediate complaints, negative reviews, and strained landlord-tenant relationships from day one.</p>
             </div>
 
-            <h2 class="reveal">Our Three-Phase <em>Cleaning Process</em></h2>
+            <h2 class="reveal">⚙️ ⚙️ ⚙️ Our Three-Phase <em>Cleaning Process</em></h2>
 
             <div class="reveal">
                 <p>Blue Brick follows a structured, three-phase approach for every post-construction project in Brighton. This system ensures nothing is missed, regardless of the project's scale or timeline pressure.</p>
@@ -1183,7 +1327,7 @@
                 <p>For Brighton property managers handling September 1st turnovers, we also offer <strong>move-in ready turnover packages</strong> that compress our three-phase process into rapid-deployment timelines. Our crews can clean a standard Brighton apartment in a single day — from construction debris to tenant-ready — when the schedule demands it.</p>
             </div>
 
-            <h2 class="reveal">Property Manager <em>Partnerships</em></h2>
+            <h2 class="reveal">🏘️ Property Manager <em>Partnerships</em></h2>
 
             <div class="reveal">
                 <p>We understand that property managers in Brighton are not looking for a one-time cleaning vendor. They need a reliable partner who understands the rhythm of the rental market, can commit to schedules, and delivers consistent results across every unit, every time.</p>
@@ -1201,6 +1345,10 @@
 
                 <p>Whether you manage five units in Oak Square or fifty across Brighton and Allston, we scale our operation to meet your needs without compromising quality.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <!-- INLINE CTA -->
             <div class="inline-cta reveal-scale">
@@ -1215,7 +1363,7 @@
                 </div>
             </div>
 
-            <h2 class="reveal">Why Brighton Contractors <em>Choose Blue Brick</em></h2>
+            <h2 class="reveal">💡 Why Brighton Contractors <em>Choose Blue Brick</em></h2>
 
             <div class="reveal">
                 <p>General contractors working in Brighton know that the final clean is what their clients see — and remember. A well-executed renovation can be undermined by a mediocre cleanup. Dust on new countertops, scuff marks on freshly painted walls, debris in HVAC ducts — these details erode client confidence and reflect poorly on the contractor's work.</p>
@@ -1225,7 +1373,7 @@
                 <p>We carry full insurance and bonding, which means contractors can add us to their project schedules with confidence. When you hand over a spotless unit to your client, that reflects well on everyone involved — and it leads to the kind of repeat business that sustains a contracting operation in a competitive market like Brighton.</p>
             </div>
 
-            <h2 class="reveal">Serving Brighton's <em>Evolving Market</em></h2>
+            <h2 class="reveal">✨ ✨ ✨ Serving Brighton's <em>Evolving Market</em></h2>
 
             <div class="reveal">
                 <p>Brighton is changing. New mixed-use developments are rising along Western Avenue and Washington Street. Older buildings are being converted into modern condominiums. The neighborhood's rental stock is being steadily upgraded to meet the expectations of a demographic that values quality, convenience, and clean living spaces.</p>
@@ -1413,6 +1561,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

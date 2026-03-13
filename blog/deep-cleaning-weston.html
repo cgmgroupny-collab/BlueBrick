@@ -315,6 +315,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -579,21 +719,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-item h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-item p {
-            margin-bottom: 0.8rem;
         }
 
         /* ============================================
@@ -1060,7 +1185,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Weston: Where Deep Cleaning Meets Estate-Level Standards</h2>
+                    <h2>✨ ✨ ✨ Weston: Where Deep Cleaning Meets Estate-Level Standards</h2>
 
                     <p>Weston, Massachusetts is one of the wealthiest towns in the United States. With a median household income that ranks among the highest in New England and a housing market defined by multi-million-dollar estates on expansive lots, this is not a community where a quick surface wipe constitutes adequate cleaning. The homes here — sprawling colonials on three-acre parcels, architect-designed modern estates behind private gates, meticulously restored antique properties with museum-quality interiors — demand cleaning services that match the caliber of their construction.</p>
 
@@ -1076,7 +1201,7 @@
 
 
                 <div class="reveal">
-                    <h2>What Deep Cleaning Actually Means for a Luxury Home</h2>
+                    <h2>📋 What Deep Cleaning Actually Means for a Luxury Home</h2>
 
                     <p>Regular maintenance cleaning keeps a home presentable. Deep cleaning resets it. A proper deep clean reaches the areas that weekly or biweekly service does not — and in a Weston estate, those areas are numerous and significant.</p>
 
@@ -1100,7 +1225,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Weston Homes Require a Specialized Approach</h2>
+                    <h2>💡 Why Weston Homes Require a Specialized Approach</h2>
 
                     <p>The luxury finishes found throughout Weston's estates create specific cleaning challenges that most residential cleaning services are not equipped to handle. Using the wrong product on the wrong surface does not just fail to clean it — it can cause permanent damage that requires expensive professional remediation.</p>
 
@@ -1108,7 +1233,7 @@
 
                     <p>Weston kitchens and bathrooms regularly feature Calacatta marble, honed quartzite, soapstone, and specialty granite. Each stone has different porosity and chemical sensitivity. An acidic cleaner on marble causes etching. An abrasive pad on honed quartzite creates scratches visible in raking light. Blue Brick crews identify every stone type in the home during our initial walkthrough and clean each surface with the pH-neutral, stone-safe product matched to that specific material.</p>
 
-                    <h3>Premium Hardwood Flooring</h3>
+                    <h3>🪣 Premium Hardwood Flooring</h3>
 
                     <p>Wide-plank white oak with a matte oil finish responds to cleaning very differently than a high-gloss polyurethane-sealed walnut floor. Water-based cleaners can cloud an oil finish. Spray products designed for poly floors can leave a tacky residue on wax-sealed surfaces. Our teams verify the finish type in each room and apply the corresponding cleaning method — a distinction that protects your floors and preserves their intended appearance.</p>
 
@@ -1120,9 +1245,13 @@
 
                     <p>Living-finish brass, brushed nickel, matte black iron, and polished chrome all react differently to cleaning products. Acidic cleaners destroy the developing patina on unlacquered brass. Abrasive cloths scratch brushed metal finishes. Our crews identify every hardware type and treat it accordingly — preserving the intended aesthetic while removing fingerprints, water spots, and accumulated grime.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Weston Neighborhoods We Serve</h2>
+                    <h2>📍 Weston Neighborhoods We Serve</h2>
 
                     <p>Weston's neighborhoods each have their own character, lot sizes, and property profiles. Blue Brick provides deep cleaning across every area of this exclusive town.</p>
 
@@ -1153,7 +1282,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Our Deep Cleaning Process</h2>
+                    <h2>✨ ✨ ✨ Our Deep Cleaning Process</h2>
 
                     <p>Blue Brick's deep cleaning process is systematic, thorough, and designed specifically for luxury residential properties. We do not cut corners, and we do not rush through rooms to meet an artificial time constraint. The home gets the time it needs.</p>
 
@@ -1165,13 +1294,13 @@
 
                     <p>We clean from the top of each room to the bottom — ceiling fixtures and crown molding first, walls and windows next, furniture and surfaces after, and floors last. This ensures that dust and debris dislodged from upper surfaces is captured during lower-level cleaning rather than settling on already-cleaned areas. Each room is completed before the crew moves on, preventing the half-finished results that occur when teams bounce between rooms.</p>
 
-                    <h3>Step 3: Detail Pass and Quality Inspection</h3>
+                    <h3>🔍 Step 3: Detail Pass and Quality Inspection</h3>
 
                     <p>After the primary cleaning is complete, our team lead conducts a room-by-room inspection under directed lighting. This pass catches anything the initial cleaning may have missed — a smudge on a light switch plate, a dust line along the top of a door casing, a streak on a mirror visible only at certain angles. In Weston homes, where natural light floods through large windows and reveals every imperfection, this final detail pass is not optional. It is essential.</p>
                 </div>
 
                 <div class="reveal">
-                    <h2>Equipment and Products Built for Luxury Properties</h2>
+                    <h2>⚙️ ⚙️ ⚙️ Equipment and Products Built for Luxury Properties</h2>
 
                     <p>The tools and products a cleaning team uses matter as much as the techniques they employ. Blue Brick invests in commercial-grade equipment and specialty cleaning solutions that are specifically designed for high-end residential environments.</p>
 
@@ -1182,9 +1311,13 @@
                         <li><strong>Steam and detail tools.</strong> For grout deep cleaning, caulk line detailing, and stubborn buildup in bathrooms and kitchens, we deploy commercial steam cleaners that sanitize without chemicals. Soft-bristle detail brushes, crevice tools, and precision scrapers round out our toolkit for the intricate work that luxury homes demand.</li>
                     </ul>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>When to Schedule a Deep Cleaning in Weston</h2>
+                    <h2>📅 When to Schedule a Deep Cleaning in Weston</h2>
 
                     <p>Deep cleaning serves different purposes at different times of year, and Weston's New England setting creates natural inflection points when a thorough cleaning is particularly valuable.</p>
 
@@ -1198,7 +1331,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Blue Brick Difference in Weston</h2>
+                    <h2>✨ ✨ ✨ The Blue Brick Difference in Weston</h2>
 
                     <p>Weston homeowners have options when it comes to cleaning services. What sets Blue Brick apart is not just the quality of our work — it is the specificity of our approach and the caliber of our team.</p>
 
@@ -1218,7 +1351,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions About Deep Cleaning in Weston</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions About Deep Cleaning in Weston</h2>
 
                     <div class="faq-item">
                         <h3>What is included in a deep cleaning for a Weston luxury home?</h3>
@@ -1252,7 +1385,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Serving Weston and Surrounding Communities</h2>
+                    <h2>✨ ✨ ✨ Serving Weston and Surrounding Communities</h2>
 
                     <p>While this page focuses on our Weston deep cleaning services, Blue Brick serves luxury properties throughout the western suburbs and Greater Boston area. Our teams regularly clean homes in Newton, Wellesley, Waltham, Lincoln, Lexington, Natick, Brookline, and Boston proper. If your property is in Weston or a neighboring community, we are ready to deliver the same meticulous standard of care.</p>
 
@@ -1269,7 +1402,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1448,6 +1597,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

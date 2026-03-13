@@ -321,6 +321,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -597,38 +737,6 @@
             color: var(--yale);
             font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin-top: 2.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--light-gray);
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.7;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1111,7 +1219,7 @@
                 </figure>
 
 
-            <h2 class="reveal">The Boston Turnover Crunch: April 1 and September 1</h2>
+            <h2 class="reveal">🔄 The Boston Turnover Crunch: April 1 and September 1</h2>
 
             <div class="reveal">
                 <p>Greater Boston has one of the most concentrated lease turnover cycles in the country. Unlike cities where leases expire year-round, Boston's rental market is dominated by two peak dates: <strong>September 1</strong> and <strong>April 1</strong>. The September 1 cycle is by far the largest — driven by the academic calendar at dozens of universities and colleges — but April 1 turnovers are significant as well, particularly in neighborhoods like Allston, Brighton, Cambridge, and Somerville.</p>
@@ -1134,12 +1242,12 @@
                 <p><strong>Pro Tip:</strong> The biggest mistake we see property managers make is scheduling cleaning for the day before the new tenant moves in. Leave at least a two-day buffer. If the unit needs paint touch-ups, an appliance replacement, or any maintenance work after cleaning, you will be grateful for the extra time.</p>
             </div>
 
-            <h2 class="reveal">Room-by-Room Turnover Cleaning Checklist</h2>
+            <h2 class="reveal">✅ ✅ ✅ Room-by-Room Turnover Cleaning Checklist</h2>
 
             <div class="reveal">
                 <p>A thorough turnover clean goes far beyond a surface wipe-down. This is the checklist Blue Brick uses for every apartment turnover in Greater Boston. Use it to set expectations with your cleaning crew — or to evaluate their work after the fact.</p>
 
-                <h3>Kitchen</h3>
+                <h3>🍳 Kitchen</h3>
                 <ul>
                     <li>Oven interior and exterior — degreased and wiped clean, including racks and broiler pan</li>
                     <li>Refrigerator interior and exterior — all shelves, drawers, and door seals cleaned; top of unit dusted</li>
@@ -1153,7 +1261,7 @@
                     <li>Light fixtures, switch plates, and outlet covers — dusted and wiped</li>
                 </ul>
 
-                <h3>Bathroom(s)</h3>
+                <h3>🚿 Bathroom(s)</h3>
                 <ul>
                     <li>Toilet — interior, exterior, base, and behind tank cleaned and sanitized</li>
                     <li>Tub and/or shower — scrubbed, including tile walls, grout lines, fixtures, and drain</li>
@@ -1165,7 +1273,7 @@
                     <li>Towel bars, toilet paper holder, and hooks — wiped</li>
                 </ul>
 
-                <h3>Bedrooms and Living Areas</h3>
+                <h3>🛏️ Bedrooms and Living Areas</h3>
                 <ul>
                     <li>All baseboards — wiped along the full perimeter of each room</li>
                     <li>Window sills, tracks, and frames — dusted and wiped</li>
@@ -1187,8 +1295,12 @@
                     <li>Laundry area (if in-unit) — top and sides of washer/dryer wiped, lint trap cleaned, floor mopped</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Security Deposit Cleaning Disputes: What Massachusetts Law Says</h2>
+
+            <h2 class="reveal">📋 Security Deposit Cleaning Disputes: What Massachusetts Law Says</h2>
 
             <div class="reveal">
                 <p>Massachusetts has some of the most tenant-protective security deposit laws in the country. As a property manager, understanding these rules is not optional — it is essential for avoiding costly legal disputes.</p>
@@ -1219,7 +1331,7 @@
                 <p><strong>Legal Note:</strong> This article provides general information about Massachusetts security deposit law. It is not legal advice. Consult an attorney for guidance on specific situations.</p>
             </div>
 
-            <h2 class="reveal">Cost Factors: What Affects Turnover Cleaning Pricing</h2>
+            <h2 class="reveal">📋 Cost Factors: What Affects Turnover Cleaning Pricing</h2>
 
             <div class="reveal">
                 <p>Turnover cleaning pricing in Greater Boston varies based on several factors. Understanding these will help you budget accurately and avoid surprises.</p>
@@ -1262,7 +1374,7 @@
                 <p>Property managers turning over multiple units at once can typically negotiate better per-unit rates. Blue Brick offers batch pricing for multi-unit turnovers — the more units you book, the lower the per-unit cost.</p>
             </div>
 
-            <h2 class="reveal">Why Professional Turnover Cleaning Pays for Itself</h2>
+            <h2 class="reveal">💡 Why Professional Turnover Cleaning Pays for Itself</h2>
 
             <div class="reveal">
                 <p>Some landlords try to save money by cleaning units themselves or hiring the cheapest crew they can find. In our experience working with property managers across Greater Boston, professional turnover cleaning more than pays for itself in three ways:</p>
@@ -1273,8 +1385,12 @@
                     <li><strong>Property preservation</strong> — Grease that is not cleaned from a range hood becomes a fire hazard. Mildew that is not removed from shower grout eventually causes structural damage. Regular professional cleaning between tenants is preventive maintenance that extends the life of appliances, fixtures, and finishes.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Multi-Unit Batch Turnovers: How to Coordinate</h2>
+
+            <h2 class="reveal">🤔 Multi-Unit Batch Turnovers: How to Coordinate</h2>
 
             <div class="reveal">
                 <p>If you manage a building or portfolio with multiple units turning over on the same date, coordination is everything. Here is how we approach batch turnovers at Blue Brick:</p>
@@ -1290,7 +1406,7 @@
                 <p>For property managers handling September 1 or April 1 turnovers across multiple buildings in different neighborhoods — say, four units in Brighton, six in Allston, and three in Brookline — we build a multi-day route plan that accounts for travel time, unit size, and condition. The goal is zero missed deadlines and zero surprises on move-in day.</p>
             </div>
 
-            <h2 class="reveal">Service Areas Across Greater Boston</h2>
+            <h2 class="reveal">🗺️ Service Areas Across Greater Boston</h2>
 
             <div class="reveal">
                 <p>Blue Brick provides apartment turnover cleaning for property managers and landlords across the Greater Boston metro area. Our core service areas include:</p>
@@ -1313,43 +1429,59 @@
                 <p><strong>Serving Property Managers Across Greater Boston:</strong> From student apartments in Allston to luxury condos in Brookline, Blue Brick handles turnover cleaning at every scale. Text <strong>781-330-5604</strong> for bulk turnover pricing tailored to your portfolio.</p>
             </div>
 
-            <h2 class="reveal">Frequently Asked Questions</h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked Questions</h2>
 
             <div class="faq-section reveal">
                 <div class="faq-item">
-                    <p class="faq-question">How much does apartment turnover cleaning cost in Boston?</p>
-                    <p class="faq-answer">Pricing depends on unit size and condition. Expect $200-$350 for a studio, $300-$500 for a one-bedroom, $450-$750 for a two-bedroom, and $600-$950 for a three-bedroom. Units in poor condition or those requiring heavy degreasing will be at the higher end. Bulk pricing is available for property managers with multiple units.</p>
+                    <div class="faq-question">How much does apartment turnover cleaning cost in Boston?</div>
+                    <div class="faq-answer"><p>Pricing depends on unit size and condition. Expect $200-$350 for a studio, $300-$500 for a one-bedroom, $450-$750 for a two-bedroom, and $600-$950 for a three-bedroom. Units in poor condition or those requiring heavy degreasing will be at the higher end. Bulk pricing is available for property managers with multiple units.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How far in advance should I schedule turnover cleaning for September 1 in Boston?</p>
-                    <p class="faq-answer">Book by early August at the latest. The last week of August is the busiest period for turnover cleaning in the metro area, and most professional cleaning companies are fully committed by mid-August. If you manage multiple units, reach out in July to lock in your dates.</p>
+                    <div class="faq-question">How far in advance should I schedule turnover cleaning for September 1 in Boston?</div>
+                    <div class="faq-answer"><p>Book by early August at the latest. The last week of August is the busiest period for turnover cleaning in the metro area, and most professional cleaning companies are fully committed by mid-August. If you manage multiple units, reach out in July to lock in your dates.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Can professional cleaning help avoid security deposit disputes in Massachusetts?</p>
-                    <p class="faq-answer">Yes. Under Massachusetts General Laws Chapter 186, Section 15B, landlords can only deduct for damage beyond normal wear and tear. A professional cleaning invoice with before-and-after photos provides clear documentation that holds up in small claims court and significantly reduces the likelihood of disputes.</p>
+                    <div class="faq-question">Can professional cleaning help avoid security deposit disputes in Massachusetts?</div>
+                    <div class="faq-answer"><p>Yes. Under Massachusetts General Laws Chapter 186, Section 15B, landlords can only deduct for damage beyond normal wear and tear. A professional cleaning invoice with before-and-after photos provides clear documentation that holds up in small claims court and significantly reduces the likelihood of disputes.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How long does apartment turnover cleaning take?</p>
-                    <p class="faq-answer">A standard turnover clean takes 2-4 hours for a studio or one-bedroom and 4-6 hours for a two-bedroom. Units in poor condition may take 6-8 hours. For multi-unit turnovers, Blue Brick deploys multiple teams simultaneously to complete an entire building in a single day.</p>
+                    <div class="faq-question">How long does apartment turnover cleaning take?</div>
+                    <div class="faq-answer"><p>A standard turnover clean takes 2-4 hours for a studio or one-bedroom and 4-6 hours for a two-bedroom. Units in poor condition may take 6-8 hours. For multi-unit turnovers, Blue Brick deploys multiple teams simultaneously to complete an entire building in a single day.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">What is included in a professional apartment turnover cleaning?</p>
-                    <p class="faq-answer">A full turnover clean covers every room: kitchen appliance interiors and exteriors, countertops, cabinets, bathrooms (toilet, tub, tile, grout, vanity), baseboard wiping, light fixtures, closet interiors, window sills, and complete floor cleaning. Interior windows and carpet steam cleaning are typically available as add-on services.</p>
+                    <div class="faq-question">What is included in a professional apartment turnover cleaning?</div>
+                    <div class="faq-answer"><p>A full turnover clean covers every room: kitchen appliance interiors and exteriors, countertops, cabinets, bathrooms (toilet, tub, tile, grout, vanity), baseboard wiping, light fixtures, closet interiors, window sills, and complete floor cleaning. Interior windows and carpet steam cleaning are typically available as add-on services.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Do you offer bulk turnover cleaning for property managers with multiple units?</p>
-                    <p class="faq-answer">Yes. Blue Brick specializes in multi-unit batch turnover cleaning across Greater Boston. We coordinate schedules, deploy parallel teams, and provide a single point of contact for the entire project. Text 781-330-5604 for bulk pricing.</p>
+                    <div class="faq-question">Do you offer bulk turnover cleaning for property managers with multiple units?</div>
+                    <div class="faq-answer"><p>Yes. Blue Brick specializes in multi-unit batch turnover cleaning across Greater Boston. We coordinate schedules, deploy parallel teams, and provide a single point of contact for the entire project. Text 781-330-5604 for bulk pricing.</p></div>
                 </div>
             </div>
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1475,7 +1607,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1534,6 +1666,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

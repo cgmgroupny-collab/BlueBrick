@@ -319,6 +319,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -623,40 +763,6 @@
             color: var(--mid-gray);
             margin-bottom: 0;
             line-height: 1.6;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 3rem 0 2rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-item h3 {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            text-transform: none;
-            letter-spacing: 0;
-            margin: 0 0 0.6rem;
-            line-height: 1.5;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: var(--mid-gray);
-            line-height: 1.7;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1201,7 +1307,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Why Brighton Needs <em>Deep Cleaning Specialists</em></h2>
+            <h2 class="reveal">💡 Why Brighton Needs <em>Deep Cleaning Specialists</em></h2>
 
             <div class="reveal">
                 <p>Brighton is not a neighborhood where surface-level cleaning cuts it. The combination of older building stock, high tenant density, and relentless lease turnover cycles means that apartments and homes accumulate grime in places that regular cleaning simply does not reach. Kitchen grease builds up behind stoves and inside range hoods. Bathroom tile grout darkens over months of use. Dust collects inside heating vents, on top of ceiling fan blades, and in the tracks of windows that haven't been opened since last summer.</p>
@@ -1209,7 +1315,7 @@
                 <p>The neighborhood's proximity to Boston College and its concentration of student housing along Commonwealth Ave and Cleveland Circle means many apartments endure heavy use from groups of roommates. When those leases end — and in Brighton, they almost always end on September 1st or April 1st — the units need more than a quick vacuum and a spray of all-purpose cleaner. They need a professional deep clean that resets the apartment to a condition that the next tenant deserves and the landlord's investment requires.</p>
             </div>
 
-            <h2 class="reveal">Brighton's Turnover Calendar: <em>September 1st and April 1st</em></h2>
+            <h2 class="reveal">🔄 Brighton's Turnover Calendar: <em>September 1st and April 1st</em></h2>
 
             <div class="reveal">
                 <p>If you have managed rental property in Brighton, you know the rhythm. The vast majority of leases in this neighborhood — and neighboring Allston — are synchronized to two dates: September 1st and April 1st. September is the larger wave, the one that earned the infamous nickname "Allston Christmas" for the mountains of furniture left curbside as thousands of tenants swap apartments on the same day. April 1st brings a second, smaller but still significant turnover wave as mid-year leases expire and new tenants arrive.</p>
@@ -1221,7 +1327,7 @@
                 <p>Blue Brick runs dedicated turnover crews for Brighton's September 1st and April 1st rush. We book these dates well in advance — if you manage rental property in Brighton, reach out early to lock in your schedule. Text 781-330-5604 or email bluebrickmass@gmail.com.</p>
             </div>
 
-            <h2 class="reveal">What a Professional Deep Clean <em>Actually Includes</em></h2>
+            <h2 class="reveal">📋 What a Professional Deep Clean <em>Actually Includes</em></h2>
 
             <div class="reveal">
                 <p>A deep cleaning is not the same as a standard maintenance clean. When Blue Brick deep cleans a Brighton apartment or home, we address every surface, fixture, and hidden area that accumulates dirt over weeks and months of daily living. Here is what our deep cleaning service covers:</p>
@@ -1235,8 +1341,12 @@
 
                 <p>This is the level of cleaning that transforms an apartment from "lived in" to "move-in ready" — and it is the standard we hold ourselves to on every job in Brighton.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Brighton Neighborhoods <em>We Serve</em></h2>
+
+            <h2 class="reveal">📍 Brighton Neighborhoods <em>We Serve</em></h2>
 
             <div class="neighborhood-grid">
                 <div class="neighborhood-card reveal-left" style="transition-delay: 0.05s">
@@ -1278,7 +1388,7 @@
                 </div>
             </div>
 
-            <h2 class="reveal">Apartment Deep Cleaning <em>for Landlords and Tenants</em></h2>
+            <h2 class="reveal">🏢 Apartment Deep Cleaning <em>for Landlords and Tenants</em></h2>
 
             <div class="reveal">
                 <p>Brighton's rental market creates two distinct but equally important clients for deep cleaning services: landlords preparing units for new tenants, and tenants who want their apartment properly cleaned when they move in — or who need a thorough move-out clean to protect their security deposit.</p>
@@ -1293,8 +1403,12 @@
 
                 <p>Moving into a new Brighton apartment should feel like a fresh start — not a battle with someone else's grime. If your new unit was not properly cleaned before you arrived, or if you simply want the peace of mind that comes with a professional deep clean before you unpack, Blue Brick is here for you. We also provide move-out deep cleaning for tenants who want to leave their apartment in pristine condition, which can be the difference between getting your full security deposit back and losing it to cleaning deductions.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Spring Cleaning in <em>Brighton</em></h2>
+
+            <h2 class="reveal">🌸 Spring Cleaning in <em>Brighton</em></h2>
 
             <div class="reveal">
                 <p>After a long Boston winter — months of closed windows, running radiators, tracked-in salt and slush, and the general heaviness of living sealed up against the cold — Brighton homes and apartments need a reset. Spring cleaning is not just a tradition; it is a practical necessity for maintaining a healthy, comfortable living space.</p>
@@ -1304,7 +1418,7 @@
                 <p>For Brighton homeowners near Oak Square, North Brighton, and the residential streets off Washington Street, spring cleaning is also an opportunity to address areas of the house that get neglected during the colder months: basement entries, mudrooms, enclosed porches, and the layers of grime that accumulate around entryways where boots and coats pile up from November through March.</p>
             </div>
 
-            <h2 class="reveal">Why Brighton Clients <em>Choose Blue Brick</em></h2>
+            <h2 class="reveal">💡 Why Brighton Clients <em>Choose Blue Brick</em></h2>
 
             <div class="reveal">
                 <p>Brighton has no shortage of cleaning services advertising online. What sets Blue Brick apart is the combination of reliability, thoroughness, and professionalism that this neighborhood's demanding rental market requires. Here is what our Brighton clients consistently value:</p>
@@ -1318,7 +1432,7 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Frequently Asked <em>Questions</em></h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked <em>Questions</em></h2>
 
             <div class="faq-section">
                 <div class="faq-item reveal">
@@ -1342,7 +1456,7 @@
                     <p>For standard deep cleaning, we typically need 3-5 days notice. During peak turnover periods — late August through early September, and late March through early April — we recommend booking 2-4 weeks in advance to secure your preferred dates.</p>
                 </div>
                 <div class="faq-item reveal">
-                    <h3>Do you serve all Brighton neighborhoods?</h3>
+                    <h3>🔥 Do you serve all Brighton neighborhoods?</h3>
                     <p>Yes. We provide deep cleaning services throughout all of Brighton, including Cleveland Circle, Oak Square, Brighton Center, Commonwealth Ave corridor, the Washington Street corridor, North Brighton, and the Boston College area. We also serve neighboring Allston.</p>
                 </div>
             </div>
@@ -1525,6 +1639,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

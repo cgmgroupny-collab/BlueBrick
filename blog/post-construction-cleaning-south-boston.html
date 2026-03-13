@@ -263,6 +263,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -993,7 +1133,7 @@
         <article class="article-wrapper" role="article">
 
             <div class="reveal">
-                <h2>South Boston Is Building. We Make It Shine.</h2>
+                <h2>🏙️ South Boston Is Building. We Make It Shine.</h2>
                 <p>South Boston has undergone one of the most dramatic transformations of any neighborhood in Greater Boston. What was once a tight-knit, working-class Irish enclave is now one of the most sought-after addresses in the city. The Seaport District alone has added millions of square feet of residential, commercial, and mixed-use space over the past decade. Fort Point has evolved from industrial warehouses into luxury lofts. Along Broadway and down through City Point, triple-deckers and row houses are being gut-renovated to meet the tastes of a new generation of buyers willing to pay a premium for quality.</p>
                 <p>All of this construction generates one unavoidable reality: dust, debris, and the kind of deep-set grime that standard cleaning cannot touch. Whether it is a newly built Seaport condominium tower or a century-old Andrew Square brownstone stripped to the studs and rebuilt, every project needs professional post-construction cleaning before anyone can move in, stage for sale, or open for business.</p>
             </div>
@@ -1005,7 +1145,7 @@
 
 
             <div class="reveal">
-                <h2>Why South Boston Demands a Higher Standard</h2>
+                <h2>💡 Why South Boston Demands a Higher Standard</h2>
                 <p>South Boston is not a one-size-fits-all neighborhood. The cleaning requirements for a 40th-floor Seaport penthouse with floor-to-ceiling glass and imported Italian tile are fundamentally different from those of a renovated row house on East Broadway with original hardwood floors and exposed brick. Blue Brick understands these distinctions because we work across every property type in Southie.</p>
                 <p>The Seaport District's luxury developments feature high-end finishes that require careful handling: quartz countertops, custom cabinetry, engineered hardwood, frameless glass showers, and smart home fixtures. Construction dust settles into every crevice of these surfaces. If it is not removed correctly, it scratches, stains, or dulls materials that cost thousands of dollars to install. The margin for error is zero.</p>
                 <p>Meanwhile, Fort Point's converted lofts and warehouse-to-residential projects present their own challenges. Exposed ductwork, polished concrete floors, and steel-frame windows collect and trap fine particulate in ways that conventional cleaning overlooks. And along the traditional Southie streets — from Andrew Square to City Point — contractors renovating historic row houses must contend with plaster dust from demolished walls, sawdust from new framing, and adhesive residue from updated flooring, all within compact footprints where there is little room to maneuver.</p>
@@ -1014,9 +1154,13 @@
             <div class="highlight-box reveal">
                 <p><strong>The Southie factor:</strong> Narrow streets, limited parking, tight building access, and active neighbors mean construction cleanup in South Boston requires a crew that knows how to work efficiently in constrained spaces — without disrupting the block. Blue Brick plans logistics around these realities so the job gets done on schedule.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>The Three Phases of Post-Construction Cleaning</h2>
+                <h2>🏗️ The Three Phases of Post-Construction Cleaning</h2>
                 <p>Professional post-construction cleaning is not a single event. It is a structured, multi-phase process designed to systematically eliminate every trace of construction activity. Blue Brick follows industry-standard protocols across three distinct phases:</p>
 
                 <h3>1. Rough Clean</h3>
@@ -1030,7 +1174,7 @@
             </div>
 
             <div class="reveal">
-                <h2>Specific Areas We Serve in South Boston</h2>
+                <h2>📍 Specific Areas We Serve in South Boston</h2>
                 <p>Blue Brick provides post-construction cleaning services across every part of South Boston, including:</p>
                 <ul>
                     <li><strong>Seaport District / Innovation District</strong> — Luxury high-rise condominiums, Class A office towers, ground-floor retail, and mixed-use developments. We are experienced with high-rise logistics including freight elevator scheduling, building management coordination, and floor protection protocols.</li>
@@ -1040,9 +1184,13 @@
                     <li><strong>Andrew Square</strong> — A transit-accessible hub seeing significant new development and renovation activity. From new-build townhouses to updated apartments, we handle the full range of post-construction cleanup here.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why Developers and Contractors Choose Blue Brick</h2>
+                <h2>💡 Why Developers and Contractors Choose Blue Brick</h2>
                 <p>In a market like South Boston, where property values are among the highest in the city and buyer expectations match, the quality of your post-construction cleaning directly impacts your bottom line. A poorly cleaned unit delays closings, triggers punch-list disputes, and undermines the perceived value of a finished product that took months or years to build.</p>
                 <p>Blue Brick works with general contractors, developers, property managers, and real estate agents across Southie who need a cleaning partner they can trust to deliver consistently. Here is what that partnership looks like:</p>
                 <ul>
@@ -1058,7 +1206,7 @@
             </div>
 
             <div class="reveal">
-                <h2>What to Expect When You Work With Us</h2>
+                <h2>📋 What to Expect When You Work With Us</h2>
                 <p>Getting started with Blue Brick is straightforward. Contact us by phone at <a href="tel:+17813305604">(781) 330-5604</a> or <a href="mailto:bluebrickmass@gmail.com">email</a> with your project details — property address, square footage, construction phase, and your target completion date. We will schedule a site visit, walk the property, and deliver a detailed estimate within 24 hours.</p>
                 <p>Once the scope is agreed upon, we assign a dedicated crew to your project. Our teams arrive on time, equipped with commercial-grade equipment and cleaning products appropriate for every surface type in your property. We coordinate directly with your general contractor or project manager to avoid scheduling conflicts and keep the project on track.</p>
                 <p>South Boston is building at a pace that shows no signs of slowing. From the Seaport's skyline-defining towers to the row houses along East Broadway that have defined this neighborhood for over a century, every project deserves a finished product that reflects the investment behind it. Blue Brick is here to deliver exactly that.</p>
@@ -1261,6 +1409,22 @@
                 }
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

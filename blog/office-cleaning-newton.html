@@ -318,6 +318,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -594,38 +734,6 @@
             color: var(--yale);
             font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin-top: 2.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--light-gray);
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-of-type {
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1108,7 +1216,7 @@
                 </figure>
 
 
-            <h2 class="reveal">Newton's Commercial Landscape</h2>
+            <h2 class="reveal">🏢 Newton's Commercial Landscape</h2>
 
             <div class="reveal">
                 <p>Newton is a city of thirteen villages, and its commercial activity is distributed across multiple distinct corridors and centers rather than concentrated in a single downtown. This decentralized layout means that Newton's office spaces range from small professional suites above village storefronts to large multi-tenant commercial buildings along the city's major thoroughfares. Understanding this landscape is essential to providing cleaning services that genuinely fit each facility.</p>
@@ -1122,15 +1230,15 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Types of Businesses We Clean in Newton</h2>
+            <h2 class="reveal">✨ ✨ ✨ Types of Businesses We Clean in Newton</h2>
 
             <div class="reveal">
                 <p>Every commercial space in Newton has its own cleaning requirements. A medical practice on Route 9 has fundamentally different needs than a creative agency in Newtonville or a law firm in Newton Centre. Blue Brick tailors its cleaning programs to the specific demands of each workspace, ensuring that every client receives a service built around their facility — not a one-size-fits-all checklist.</p>
 
-                <h3>Law Firms &amp; Financial Services</h3>
+                <h3>⚖️ ⚖️ ⚖️ Law Firms &amp; Financial Services</h3>
                 <p>Newton is home to dozens of law firms, financial advisory practices, accounting offices, and wealth management companies — many of them concentrated in Newton Centre and Newton Corner. These businesses operate in environments where trust, discretion, and attention to detail are paramount. Client-facing conference rooms, private offices, reception areas, and executive suites must be impeccable at all times. Blue Brick delivers the kind of white-glove cleaning that these environments demand — polished surfaces, streak-free glass, vacuumed carpets with visible track lines, and restrooms that are always fully stocked and spotless.</p>
 
-                <h3>Medical &amp; Dental Practices</h3>
+                <h3>🏥 Medical &amp; Dental Practices</h3>
                 <p>Newton's medical community spans family medicine, pediatrics, dentistry, orthodontics, dermatology, orthopedics, and a wide range of specialty practices. Waiting rooms, exam rooms, treatment areas, restrooms, and reception desks must be sanitized to standards that protect patient health and satisfy regulatory requirements. Blue Brick uses EPA-registered disinfectants, follows healthcare-adjacent sanitation protocols, and provides documented cleaning logs so practice managers can demonstrate compliance during inspections. We understand the difference between cleaning for appearance and cleaning for health — and we do both.</p>
 
                 <h3>Real Estate &amp; Insurance Offices</h3>
@@ -1142,8 +1250,12 @@
                 <h3>Multi-Tenant Office Buildings</h3>
                 <p>Several of Newton's larger office buildings — particularly along Needham Street, Route 9, and near Newton Corner — house multiple tenants under a single roof. Property managers responsible for these buildings need a cleaning partner that can maintain consistent quality across shared lobbies, elevators, stairwells, restrooms, and common areas while also accommodating the individual needs of each tenant. Blue Brick works directly with property managers to deliver coordinated cleaning programs that keep the entire building at the same high standard.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">What Our Commercial Office Cleaning Includes</h2>
+
+            <h2 class="reveal">📋 What Our Commercial Office Cleaning Includes</h2>
 
             <div class="reveal">
                 <p>Blue Brick's office cleaning programs are built around your facility's specific needs, but most commercial clients in Newton rely on a core set of services that we deliver with consistency and precision.</p>
@@ -1169,7 +1281,7 @@
                 <p><strong>Flexible Programs:</strong> Every Newton office is different. Blue Brick builds custom cleaning schedules — from one night per week to five nights plus weekend service — based on your square footage, headcount, and specific facility needs. No long-term contracts required.</p>
             </div>
 
-            <h2 class="reveal">After-Hours &amp; Weekend Cleaning</h2>
+            <h2 class="reveal">✨ ✨ ✨ After-Hours &amp; Weekend Cleaning</h2>
 
             <div class="reveal">
                 <p>Most commercial office cleaning in Newton happens outside of business hours. Blue Brick provides after-hours cleaning programs that begin after your team leaves for the day and are completed before the first employee arrives the next morning. For offices along Route 9 and Needham Street that operate on extended schedules, we adjust our start times accordingly — whether that means beginning at 6 PM, 8 PM, or later.</p>
@@ -1179,7 +1291,7 @@
                 <p>For offices that require daytime cleaning — lobbies, restrooms, or common areas that need mid-day attention — we provide discreet daytime porter services. Our porters work quietly and professionally, maintaining high-traffic areas without disrupting meetings, phone calls, or focused work.</p>
             </div>
 
-            <h2 class="reveal">Why Choose a Local Newton Cleaner Over a National Chain</h2>
+            <h2 class="reveal">💡 Why Choose a Local Newton Cleaner Over a National Chain</h2>
 
             <div class="reveal">
                 <p>National janitorial franchises are everywhere, and they all promise the same thing: consistent service at a competitive price. The reality is often different. High turnover, subcontracted labor, and distant management create gaps in quality that become obvious within weeks.</p>
@@ -1194,8 +1306,12 @@
                     <li><strong>Investment in the Community</strong> — Blue Brick employs local workers, supports local businesses, and has a reputation to maintain in the communities we serve. Our success depends on the relationships we build right here in Newton.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Insured, Licensed &amp; Built for Commercial Work</h2>
+
+            <h2 class="reveal">🏢 Insured, Licensed &amp; Built for Commercial Work</h2>
 
             <div class="reveal">
                 <p>Choosing a commercial cleaning provider is a business decision that carries real risk. An uninsured or underqualified cleaning company can expose your business to liability, damage your property, or compromise your security. Blue Brick eliminates those concerns.</p>
@@ -1212,51 +1328,67 @@
                 <p><strong>Serving All of Newton:</strong> From Newton Centre professional offices to Route 9 medical complexes, from Needham Street multi-tenant buildings to Newton Corner financial firms — Blue Brick delivers professional commercial office cleaning across every village and corridor in the city.</p>
             </div>
 
-            <h2 class="reveal">Frequently Asked Questions</h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked Questions</h2>
 
             <div class="faq-section reveal">
                 <div class="faq-item">
-                    <p class="faq-question">How much does commercial office cleaning cost in Newton, MA?</p>
-                    <p class="faq-answer">Commercial office cleaning costs in Newton vary based on square footage, cleaning frequency, and the specific services required. A small professional office of 1,000–2,000 square feet typically starts at a different rate than a 20,000-square-foot multi-suite building on Route 9. Blue Brick provides free walkthroughs and custom proposals so you receive an accurate quote based on your facility's actual needs — not a generic estimate.</p>
+                    <div class="faq-question">How much does commercial office cleaning cost in Newton, MA?</div>
+                    <div class="faq-answer"><p>Commercial office cleaning costs in Newton vary based on square footage, cleaning frequency, and the specific services required. A small professional office of 1,000–2,000 square feet typically starts at a different rate than a 20,000-square-foot multi-suite building on Route 9. Blue Brick provides free walkthroughs and custom proposals so you receive an accurate quote based on your facility's actual needs — not a generic estimate.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Do you offer after-hours office cleaning in Newton?</p>
-                    <p class="faq-answer">Yes. The majority of our Newton commercial clients receive after-hours cleaning. Our crews arrive after your staff leaves for the day and complete all work before the first employee arrives the next morning. We accommodate flexible start times — whether that means 6 PM, 8 PM, or later — depending on your office's operating schedule.</p>
+                    <div class="faq-question">Do you offer after-hours office cleaning in Newton?</div>
+                    <div class="faq-answer"><p>Yes. The majority of our Newton commercial clients receive after-hours cleaning. Our crews arrive after your staff leaves for the day and complete all work before the first employee arrives the next morning. We accommodate flexible start times — whether that means 6 PM, 8 PM, or later — depending on your office's operating schedule.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Can you clean medical and dental offices in Newton?</p>
-                    <p class="faq-answer">Absolutely. Blue Brick cleans medical offices, dental practices, and outpatient clinics throughout Newton. We use EPA-registered disinfectants, follow healthcare-adjacent sanitation protocols, and provide documented cleaning logs so practice managers can demonstrate compliance during inspections.</p>
+                    <div class="faq-question">Can you clean medical and dental offices in Newton?</div>
+                    <div class="faq-answer"><p>Absolutely. Blue Brick cleans medical offices, dental practices, and outpatient clinics throughout Newton. We use EPA-registered disinfectants, follow healthcare-adjacent sanitation protocols, and provide documented cleaning logs so practice managers can demonstrate compliance during inspections.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How often should a Newton office be professionally cleaned?</p>
-                    <p class="faq-answer">Most commercial offices in Newton benefit from cleaning three to five times per week. Smaller professional offices with low foot traffic may only need one or two visits per week, while medical practices and high-traffic buildings along Needham Street or Route 9 often require daily service. Blue Brick builds custom schedules based on your headcount, traffic patterns, and facility requirements.</p>
+                    <div class="faq-question">How often should a Newton office be professionally cleaned?</div>
+                    <div class="faq-answer"><p>Most commercial offices in Newton benefit from cleaning three to five times per week. Smaller professional offices with low foot traffic may only need one or two visits per week, while medical practices and high-traffic buildings along Needham Street or Route 9 often require daily service. Blue Brick builds custom schedules based on your headcount, traffic patterns, and facility requirements.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Do you require long-term contracts for office cleaning in Newton?</p>
-                    <p class="faq-answer">No. Blue Brick does not require long-term contracts for commercial cleaning services in Newton. We earn your business every visit. Our clients stay with us because of consistent quality and reliable service — not because they are locked into an agreement.</p>
+                    <div class="faq-question">Do you require long-term contracts for office cleaning in Newton?</div>
+                    <div class="faq-answer"><p>No. Blue Brick does not require long-term contracts for commercial cleaning services in Newton. We earn your business every visit. Our clients stay with us because of consistent quality and reliable service — not because they are locked into an agreement.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">What areas of Newton do you serve?</p>
-                    <p class="faq-answer">Blue Brick serves all of Newton, including Newton Centre, Newton Corner, Newton Highlands, Newton Upper Falls, Newton Lower Falls, Newtonville, West Newton, Auburndale, Waban, and Chestnut Hill. We also clean offices along the Needham Street commercial corridor and Route 9 business district.</p>
+                    <div class="faq-question">What areas of Newton do you serve?</div>
+                    <div class="faq-answer"><p>Blue Brick serves all of Newton, including Newton Centre, Newton Corner, Newton Highlands, Newton Upper Falls, Newton Lower Falls, Newtonville, West Newton, Auburndale, Waban, and Chestnut Hill. We also clean offices along the Needham Street commercial corridor and Route 9 business district.</p></div>
                 </div>
             </div>
 
-            <h2 class="reveal">Get a Free Office Cleaning Walkthrough</h2>
+            <h2 class="reveal">💼 Get a Free Office Cleaning Walkthrough</h2>
 
             <div class="reveal">
                 <p>The best way to get an accurate quote for commercial office cleaning in Newton is a walkthrough. We visit your facility, assess your square footage, discuss your cleaning priorities, and build a custom program that fits your schedule and budget. There is no cost and no obligation.</p>
 
-                <p>Text <strong><a href="sms:+17813305604">781-330-5604</a></strong> or email <strong><a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></strong> to schedule your free walkthrough. Most walkthroughs can be completed within 24 hours, and you will receive a detailed proposal within one business day. Whether you manage a 1,500-square-foot professional office in Newton Centre or a 40,000-square-foot multi-tenant building on Needham Street, Blue Brick has the team, the equipment, and the local expertise to keep your Newton office clean.</p>
+                <p>Text <strong><a href="sms:+17813305604">781-330-5604</a></strong> or email <strong><a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></strong> to schedule your free walkthrough. Most walkthroughs can be completed within 24 hours, and you will receive a detailed proposal within one business day. Whether you manage a 1,500-square-foot professional office in Newton Centre or a 40,000-square-foot multi-tenant building on Needham Street, Blue Brick has the team, the equipment, and the local expertise to keep your Newton office clean.</p></div>
             </div>
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1380,7 +1512,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1439,6 +1571,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

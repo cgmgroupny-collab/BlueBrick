@@ -327,6 +327,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -603,38 +743,6 @@
             color: var(--yale);
             font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin-top: 2.5rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--light-gray);
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.7;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1119,7 +1227,7 @@
                 </figure>
 
 
-            <h2 class="reveal">"Broom Clean" vs. Deep Clean: Know the Difference</h2>
+            <h2 class="reveal">✨ ✨ ✨ "Broom Clean" vs. Deep Clean: Know the Difference</h2>
 
             <div class="reveal">
                 <p>Your lease may require you to leave the apartment in "broom clean" condition. This is one of the most misunderstood terms in rental housing, and the gap between what tenants think it means and what landlords expect often leads to deposit disputes.</p>
@@ -1133,7 +1241,7 @@
                 <p>The safest approach is to leave the apartment cleaner than "broom clean" requires. You do not need to repaint the walls or refinish the floors, but every surface a landlord can see, touch, or open should be clean.</p>
             </div>
 
-            <h2 class="reveal">Your Move-Out Cleaning Timeline</h2>
+            <h2 class="reveal">📦 Your Move-Out Cleaning Timeline</h2>
 
             <div class="reveal">
                 <p>Do not save all the cleaning for the last day. By then, you will be exhausted from packing and moving. Spread the work over the final week of your tenancy, cleaning rooms as you empty them.</p>
@@ -1150,13 +1258,17 @@
             <div class="highlight-box reveal">
                 <p><strong>Boston Timing Note:</strong> If your lease ends August 31 or September 1, do not expect to find last-minute cleaning help. This is the busiest moving period in the country for the Greater Boston area. Book professional cleaning at least two to three weeks in advance, or plan to do it yourself with dedicated time blocked on your calendar.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">Room-by-Room Move-Out Cleaning Checklist</h2>
+
+            <h2 class="reveal">📦 Room-by-Room Move-Out Cleaning Checklist</h2>
 
             <div class="reveal">
                 <p>Print this or save it to your phone. Go room by room and check off each item. This is the same standard professional cleaners use — and the same standard your landlord will be evaluating.</p>
 
-                <h3>Kitchen</h3>
+                <h3>🍳 Kitchen</h3>
                 <ul>
                     <li><strong>Oven</strong> — Clean interior, racks, broiler pan, and door glass inside and out. Remove all burned-on food and grease. This is the single most common item landlords deduct for.</li>
                     <li><strong>Stovetop and burners</strong> — Lift burner grates or coils and clean underneath. Degrease the entire surface, including knobs and control panel.</li>
@@ -1172,7 +1284,7 @@
                     <li><strong>Light fixtures and switch plates</strong> — Dust or wipe the light fixture. Wipe switch plates and outlet covers with a damp cloth — they yellow over time and cleaning makes a visible difference.</li>
                 </ul>
 
-                <h3>Bathroom(s)</h3>
+                <h3>🚿 Bathroom(s)</h3>
                 <ul>
                     <li><strong>Toilet</strong> — Clean the bowl interior with a brush and cleaner. Wipe the seat (top and bottom), lid, tank exterior, base, and the floor behind the toilet. This is one of the most frequently missed spots.</li>
                     <li><strong>Tub and/or shower</strong> — Scrub the basin, tile walls, grout lines, fixtures, showerhead, and door or curtain rod. Remove soap scum and any mildew stains.</li>
@@ -1184,7 +1296,7 @@
                     <li><strong>Towel bars and hardware</strong> — Wipe all towel racks, toilet paper holders, hooks, and any mounted hardware.</li>
                 </ul>
 
-                <h3>Bedrooms</h3>
+                <h3>🛏️ Bedrooms</h3>
                 <ul>
                     <li><strong>Closet interiors</strong> — Remove everything. Wipe shelves, dust the rod, and vacuum or mop the closet floor. Check for any scuffs on closet walls.</li>
                     <li><strong>Baseboards</strong> — Wipe along the entire perimeter of the room. Baseboards collect dust over the course of a lease and dirty baseboards are immediately visible during an inspection.</li>
@@ -1196,7 +1308,7 @@
                     <li><strong>Walls</strong> — Remove all nails, hooks, and adhesive strips. Fill small nail holes with spackle if your lease requires it. Wipe any visible scuff marks with a magic eraser.</li>
                 </ul>
 
-                <h3>Living Areas and Hallways</h3>
+                <h3>🛋️ Living Areas and Hallways</h3>
                 <ul>
                     <li><strong>All tasks from the bedroom list above</strong> — Baseboards, window sills, light fixtures, switch plates, outlet covers, doors, and floors.</li>
                     <li><strong>Front door</strong> — Wipe both sides, clean the handle and deadbolt, and wipe the door frame.</li>
@@ -1207,7 +1319,7 @@
                 </ul>
             </div>
 
-            <h2 class="reveal">Things Renters Forget to Clean</h2>
+            <h2 class="reveal">🏢 Things Renters Forget to Clean</h2>
 
             <div class="reveal">
                 <p>Landlords and property managers who do turnovers regularly know exactly where tenants cut corners. These are the spots that result in deductions — not because they are difficult to clean, but because tenants simply forget about them:</p>
@@ -1232,7 +1344,7 @@
                 <p><strong>Quick Test:</strong> After you finish cleaning, walk through the apartment as if you were the landlord seeing it for the first time. Open every cabinet, look inside the oven, check behind the toilet, and glance at the baseboards. If anything catches your eye, it will catch theirs.</p>
             </div>
 
-            <h2 class="reveal">Massachusetts Security Deposit Law: What Renters Need to Know</h2>
+            <h2 class="reveal">📋 Massachusetts Security Deposit Law: What Renters Need to Know</h2>
 
             <div class="reveal">
                 <p>Massachusetts has some of the strongest tenant protections in the country when it comes to security deposits. Understanding your rights helps you push back against unfair deductions — and understanding your obligations helps you avoid legitimate ones.</p>
@@ -1261,8 +1373,12 @@
             <div class="highlight-box reveal">
                 <p><strong>Legal Note:</strong> This article provides general information about Massachusetts security deposit law. It is not legal advice. For guidance on a specific situation, consult a tenant's rights attorney or contact the Massachusetts Attorney General's office.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
 
-            <h2 class="reveal">When to Hire a Professional (and Why It Often Saves You Money)</h2>
+
+            <h2 class="reveal">💡 When to Hire a Professional (and Why It Often Saves You Money)</h2>
 
             <div class="reveal">
                 <p>Not every move-out requires professional cleaning. If you kept your apartment reasonably clean throughout your tenancy and you have the time and energy to spend a full day scrubbing, you can handle it yourself.</p>
@@ -1288,7 +1404,7 @@
                 <p>Compare those numbers to the cost of losing even a portion of your deposit. In nearly every scenario, professional cleaning is the lower-risk investment.</p>
             </div>
 
-            <h2 class="reveal">Service Areas Across Greater Boston</h2>
+            <h2 class="reveal">🗺️ Service Areas Across Greater Boston</h2>
 
             <div class="reveal">
                 <p><strong>Blue Brick Luxury and Commercial Cleaning</strong> provides professional move-out cleaning for renters across the entire Greater Boston metro area. Our core service areas include:</p>
@@ -1314,43 +1430,59 @@
                 <p><strong>Ready to book?</strong> Text <strong>781-330-5604</strong> with your move-out date, apartment size, and address. We will reply with a quote within 2 hours — no phone calls, no runaround.</p>
             </div>
 
-            <h2 class="reveal">Frequently Asked Questions</h2>
+            <h2 class="reveal">❓ ❓ ❓ Frequently Asked Questions</h2>
 
             <div class="faq-section reveal">
                 <div class="faq-item">
-                    <p class="faq-question">What does "broom clean" mean when moving out of an apartment in Boston?</p>
-                    <p class="faq-answer">Broom clean means the apartment is swept, free of personal belongings and trash, and in a generally tidy condition — but not deep cleaned. Most Boston landlords expect more than broom clean at move-out. If your lease only specifies broom clean, you are legally held to that standard, but leaving the apartment in better condition significantly reduces the risk of deposit deductions.</p>
+                    <div class="faq-question">What does "broom clean" mean when moving out of an apartment in Boston?</div>
+                    <div class="faq-answer"><p>Broom clean means the apartment is swept, free of personal belongings and trash, and in a generally tidy condition — but not deep cleaned. Most Boston landlords expect more than broom clean at move-out. If your lease only specifies broom clean, you are legally held to that standard, but leaving the apartment in better condition significantly reduces the risk of deposit deductions.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">How much does professional move-out cleaning cost in Boston?</p>
-                    <p class="faq-answer">Professional move-out cleaning in Greater Boston typically costs $250-$400 for a studio, $350-$550 for a one-bedroom, $500-$800 for a two-bedroom, and $700-$1,000 for a three-bedroom. Pricing depends on the apartment's condition and whether add-on services like carpet steam cleaning or interior windows are included. In most cases, the cost is significantly less than what you could lose from your security deposit.</p>
+                    <div class="faq-question">How much does professional move-out cleaning cost in Boston?</div>
+                    <div class="faq-answer"><p>Professional move-out cleaning in Greater Boston typically costs $250-$400 for a studio, $350-$550 for a one-bedroom, $500-$800 for a two-bedroom, and $700-$1,000 for a three-bedroom. Pricing depends on the apartment's condition and whether add-on services like carpet steam cleaning or interior windows are included. In most cases, the cost is significantly less than what you could lose from your security deposit.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Can my landlord deduct cleaning costs from my security deposit in Massachusetts?</p>
-                    <p class="faq-answer">Under Massachusetts General Laws Chapter 186, Section 15B, landlords can only deduct for damage beyond normal wear and tear. Routine cleaning from ordinary use is generally considered normal wear and tear. However, conditions that go beyond normal — such as heavy grease buildup, mildew, pet damage, or trash left behind — may be deductible. The distinction depends on whether the condition results from tenant negligence rather than ordinary use over the lease term.</p>
+                    <div class="faq-question">Can my landlord deduct cleaning costs from my security deposit in Massachusetts?</div>
+                    <div class="faq-answer"><p>Under Massachusetts General Laws Chapter 186, Section 15B, landlords can only deduct for damage beyond normal wear and tear. Routine cleaning from ordinary use is generally considered normal wear and tear. However, conditions that go beyond normal — such as heavy grease buildup, mildew, pet damage, or trash left behind — may be deductible. The distinction depends on whether the condition results from tenant negligence rather than ordinary use over the lease term.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">When should I start cleaning before moving out?</p>
-                    <p class="faq-answer">Start at least one week before your move-out date. Clean rooms from back to front as you pack — closets and spare rooms first, kitchen and bathrooms last. Save the final sweep and floor cleaning for move-out day after all furniture is removed. If hiring a professional, book at least two weeks in advance, or three weeks during September 1 and April 1 moving seasons.</p>
+                    <div class="faq-question">When should I start cleaning before moving out?</div>
+                    <div class="faq-answer"><p>Start at least one week before your move-out date. Clean rooms from back to front as you pack — closets and spare rooms first, kitchen and bathrooms last. Save the final sweep and floor cleaning for move-out day after all furniture is removed. If hiring a professional, book at least two weeks in advance, or three weeks during September 1 and April 1 moving seasons.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">What do Boston landlords check during a move-out inspection?</p>
-                    <p class="faq-answer">Experienced landlords check the inside of the oven and refrigerator, bathroom grout and tile, closet interiors, baseboards, light fixtures, switch plates, window sills and tracks, and the overall condition of floors and walls. They also look behind the toilet, under stove burners, on top of the refrigerator, and inside cabinet drawers — the places tenants most commonly forget to clean.</p>
+                    <div class="faq-question">What do Boston landlords check during a move-out inspection?</div>
+                    <div class="faq-answer"><p>Experienced landlords check the inside of the oven and refrigerator, bathroom grout and tile, closet interiors, baseboards, light fixtures, switch plates, window sills and tracks, and the overall condition of floors and walls. They also look behind the toilet, under stove burners, on top of the refrigerator, and inside cabinet drawers — the places tenants most commonly forget to clean.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <p class="faq-question">Is it worth hiring a professional cleaner before moving out?</p>
-                    <p class="faq-answer">In most cases, yes. Professional move-out cleaning costs a fraction of what you stand to lose from your security deposit. A professional crew also completes the job faster, knows exactly what landlords look for, and can provide documentation that protects you in case of a dispute. Text 781-330-5604 for a move-out cleaning quote.</p>
+                    <div class="faq-question">Is it worth hiring a professional cleaner before moving out?</div>
+                    <div class="faq-answer"><p>In most cases, yes. Professional move-out cleaning costs a fraction of what you stand to lose from your security deposit. A professional crew also completes the job faster, knows exactly what landlords look for, and can provide documentation that protects you in case of a dispute. Text 781-330-5604 for a move-out cleaning quote.</p></div>
                 </div>
             </div>
 
         </article>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1476,7 +1608,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1535,6 +1667,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

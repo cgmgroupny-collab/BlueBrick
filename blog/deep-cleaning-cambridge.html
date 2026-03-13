@@ -258,6 +258,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -988,7 +1128,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Cambridge Homes Need Professional Deep Cleaning</h2>
+                    <h2>💡 Why Cambridge Homes Need Professional Deep Cleaning</h2>
 
                     <p>Cambridge is unlike any other city in Greater Boston. It is home to two of the world's most prestigious universities, a thriving biotech corridor, and some of the most diverse housing stock in New England. From pre-war triple-deckers near Inman Square to sleek new condominiums overlooking Kendall Square, Cambridge residences absorb heavy daily use from students, professionals, researchers, and families who lead demanding lives.</p>
 
@@ -1004,7 +1144,7 @@
 
 
                 <div class="reveal">
-                    <h2>Cambridge Neighborhoods We Serve</h2>
+                    <h2>📍 Cambridge Neighborhoods We Serve</h2>
 
                     <p>Cambridge's distinct squares and residential areas each present unique cleaning requirements. We serve them all.</p>
 
@@ -1027,13 +1167,17 @@
 
                     <p><strong>Cambridge Highlands</strong> is one of the city's quieter residential pockets, with well-maintained single-family homes and duplexes. Homeowners here invest in their properties and expect cleaning that matches that standard — detailed, thorough, and respectful of premium finishes.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>What a Professional Deep Clean Includes</h2>
+                    <h2>📋 What a Professional Deep Clean Includes</h2>
 
                     <p>A Blue Brick deep clean is not a surface wipe-down. It is a systematic, room-by-room process that addresses every area of your home. Here is what to expect.</p>
 
-                    <h3>Kitchen Deep Clean</h3>
+                    <h3>🍳 Kitchen Deep Clean</h3>
 
                     <ul>
                         <li><strong>Oven interior and stovetop.</strong> Degreasing baked-on residue, cleaning burner grates, and detailing knobs and control panels.</li>
@@ -1044,7 +1188,7 @@
                         <li><strong>Microwave, dishwasher exterior, and small appliance surfaces.</strong></li>
                     </ul>
 
-                    <h3>Bathroom Deep Clean</h3>
+                    <h3>🚿 Bathroom Deep Clean</h3>
 
                     <ul>
                         <li><strong>Tile and grout.</strong> Scrubbing shower walls, floor tiles, and grout lines to remove mildew, soap scum, and mineral buildup.</li>
@@ -1054,7 +1198,7 @@
                         <li><strong>Exhaust fan and vents.</strong> Removing dust accumulation that reduces ventilation efficiency.</li>
                     </ul>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <ul>
                         <li><strong>Baseboards, door frames, and trim.</strong> Wiping down every linear foot of baseboard and trim throughout the home.</li>
@@ -1071,7 +1215,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Apartment Deep Cleaning for Cambridge's College and Professional Market</h2>
+                    <h2>🏢 Apartment Deep Cleaning for Cambridge's College and Professional Market</h2>
 
                     <p>Cambridge has one of the highest concentrations of renters in Massachusetts. Between Harvard and MIT students, postdocs, biotech professionals, and the steady stream of people relocating for work, the apartment turnover rate in this city is relentless. That turnover creates a constant need for deep cleaning.</p>
 
@@ -1081,9 +1225,13 @@
 
                     <p>If you are moving into a new apartment, a pre-move-in deep clean gives you a verified fresh start. You do not have to wonder what the previous tenant left behind. We sanitize every surface before your belongings arrive.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>September 1 and Spring: Cambridge's Peak Turnover Seasons</h2>
+                    <h2>🌸 September 1 and Spring: Cambridge's Peak Turnover Seasons</h2>
 
                     <p>Cambridge runs on an academic calendar, and that calendar drives two intense turnover seasons that create enormous demand for deep cleaning services.</p>
 
@@ -1099,7 +1247,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Choose Blue Brick for Deep Cleaning in Cambridge</h2>
+                    <h2>💡 Why Choose Blue Brick for Deep Cleaning in Cambridge</h2>
 
                     <ul>
                         <li><strong>Fully insured.</strong> Blue Brick carries comprehensive liability insurance. Your property, your belongings, and our team are all protected. You will never be exposed to risk from an uninsured cleaning crew.</li>
@@ -1112,7 +1260,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>How to Book Your Cambridge Deep Clean</h2>
+                    <h2>🤔 How to Book Your Cambridge Deep Clean</h2>
 
                     <p>Getting started takes less than a minute. Here is the process.</p>
 
@@ -1138,7 +1286,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1317,6 +1481,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

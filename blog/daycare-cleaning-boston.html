@@ -259,6 +259,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -989,7 +1129,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Daycare Centers Need Professional Cleaning</h2>
+                    <h2>💡 Why Daycare Centers Need Professional Cleaning</h2>
 
                     <p>Daycare and childcare centers are among the most demanding environments to keep clean. Dozens of young children share enclosed spaces for hours each day, touching the same surfaces, sharing toys, eating meals, and napping in close proximity. The result is a facility where germs spread faster than almost any other commercial setting. According to the Centers for Disease Control and Prevention, children in group care settings experience more respiratory and gastrointestinal infections than children cared for at home, making rigorous cleaning and disinfection not just a best practice but a public health necessity.</p>
 
@@ -1007,7 +1147,7 @@
 
 
                 <div class="reveal">
-                    <h2>What Professional Daycare Cleaning Includes</h2>
+                    <h2>📋 What Professional Daycare Cleaning Includes</h2>
 
                     <p>Cleaning a daycare facility is fundamentally different from cleaning an office, retail space, or even a residential property. Every surface, material, and room requires protocols specifically designed for environments where young children spend their days. Here is what a thorough professional daycare cleaning covers.</p>
 
@@ -1019,11 +1159,11 @@
 
                     <p>Play areas accumulate dirt, saliva, food particles, and bodily fluids at a rate that surprises even experienced daycare operators. Soft play surfaces, climbing structures, activity tables, and shared toys all require regular deep cleaning. We clean and sanitize play equipment, wipe down shelving and storage bins, and address the floors, mats, and padding where children spend most of their time. For facilities with outdoor play equipment, we also clean and sanitize those surfaces on a scheduled basis.</p>
 
-                    <h3>Restroom and Diaper Area Disinfection</h3>
+                    <h3>🚻 Restroom and Diaper Area Disinfection</h3>
 
                     <p>Restrooms and diaper changing areas are the highest-risk zones in any childcare facility. These areas demand hospital-grade disinfection protocols. Blue Brick thoroughly cleans and disinfects toilets, training potties, sinks, changing tables, diaper disposal units, and all surrounding surfaces. We restock supplies, clean mirrors and partitions, and ensure these areas pass both the visual inspection and the microbial one. Floors are mopped with disinfecting solution, and grout lines are addressed to prevent mold and bacterial buildup.</p>
 
-                    <h3>Kitchen and Food Prep Areas</h3>
+                    <h3>🍳 Kitchen and Food Prep Areas</h3>
 
                     <p>Most daycare facilities serve meals and snacks, which means food preparation and serving areas must meet both EEC sanitation requirements and general food safety standards. We clean and sanitize countertops, high chairs, feeding tables, sinks, appliance exteriors, and storage areas. Floors are degreased and mopped. Trash and recycling receptacles are cleaned and sanitized, not just emptied. The goal is an environment where meals can be prepared and served without any cross-contamination risk.</p>
 
@@ -1031,7 +1171,7 @@
 
                     <p>Nap rooms and cot storage areas need regular attention that goes beyond surface wiping. We sanitize cot frames, clean nap mats, vacuum or mop nap room floors, and ensure the area is free of dust, allergens, and odors. Proper nap area hygiene reduces the spread of respiratory illnesses, head lice, and skin infections that can move quickly through a daycare population. We also clean and dust shelving, window sills, and air vents in nap areas to maintain overall air quality.</p>
 
-                    <h3>Floor Care Throughout the Facility</h3>
+                    <h3>🪣 Floor Care Throughout the Facility</h3>
 
                     <p>Children spend a significant portion of their day on the floor, whether crawling, playing, or sitting during circle time. This makes floor cleanliness far more important in a daycare than in a typical commercial space. Blue Brick vacuums all carpeted areas with HEPA-filtered equipment to remove dust, allergens, and embedded debris. Hard floors are swept and mopped with child-safe cleaning solutions. We pay particular attention to baseboards, corners, and the areas under furniture where dirt and allergens accumulate unseen.</p>
                 </div>
@@ -1039,9 +1179,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick uses only EPA-registered, child-safe cleaning and disinfecting products. Every solution we bring into your facility is non-toxic, low-odor, and free of harsh chemicals. Your children and staff are never exposed to harmful residues.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Child-Safe Cleaning Products and Methods</h2>
+                    <h2>👶 Child-Safe Cleaning Products and Methods</h2>
 
                     <p>The cleaning products and methods used in a daycare facility matter as much as the cleaning itself. Young children are far more vulnerable to chemical exposure than adults. They breathe faster, have a higher surface-area-to-body-weight ratio, and routinely put their hands and objects in their mouths. Using standard commercial cleaning products in a childcare environment is not acceptable.</p>
 
@@ -1059,7 +1203,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Massachusetts EEC Licensing Cleanliness Requirements</h2>
+                    <h2>✨ ✨ ✨ Massachusetts EEC Licensing Cleanliness Requirements</h2>
 
                     <p>The Massachusetts Department of Early Education and Care (EEC) regulates all licensed childcare programs in the state, and cleanliness is a significant component of licensing compliance. Facilities are inspected regularly, and violations related to sanitation can result in corrective action plans, conditional licenses, or suspension of operations.</p>
 
@@ -1077,9 +1221,13 @@
 
                     <p>By partnering with Blue Brick for your facility's professional cleaning, you create a documented, consistent cleaning program that demonstrates compliance during EEC inspections. We provide cleaning logs and checklists that serve as evidence of your ongoing commitment to maintaining a safe, sanitary environment for the children in your care.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Flexible Scheduling That Never Disrupts Children</h2>
+                    <h2>👶 Flexible Scheduling That Never Disrupts Children</h2>
 
                     <p>One of the most important aspects of daycare cleaning is when it happens. Children cannot be present during deep cleaning operations, and daily operations cannot be disrupted by cleaning crews working during business hours. Blue Brick solves this with fully flexible scheduling designed around your facility's operating hours.</p>
 
@@ -1094,7 +1242,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Greater Boston Service Areas</h2>
+                    <h2>🗺️ Greater Boston Service Areas</h2>
 
                     <p>Blue Brick provides professional daycare and childcare center cleaning across the Greater Boston area. Whether you operate a small home-based program or a multi-room early education center, we serve facilities in the following communities and surrounding areas.</p>
 
@@ -1114,7 +1262,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Why Trust Blue Brick With Your Facility</h2>
+                    <h2>💡 Why Trust Blue Brick With Your Facility</h2>
 
                     <p>Choosing a cleaning company for a childcare facility is a decision that directly affects the health and safety of children. It is not a decision to make based on the lowest bid. Here is what sets Blue Brick apart from general janitorial services.</p>
 
@@ -1142,7 +1290,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1320,6 +1484,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

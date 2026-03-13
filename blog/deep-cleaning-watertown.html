@@ -307,6 +307,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -571,40 +711,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-item h3 {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            text-transform: none;
-            letter-spacing: 0;
-            margin: 0 0 0.6rem;
-            cursor: default;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
-            margin-bottom: 0;
         }
 
         /* ============================================
@@ -1071,7 +1177,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Watertown Homes Need Professional Deep Cleaning</h2>
+                    <h2>💡 Why Watertown Homes Need Professional Deep Cleaning</h2>
 
                     <p>Watertown sits at the crossroads of Boston and Cambridge, a town that has maintained its residential character while undergoing significant transformation over the past decade. The housing stock here is remarkably diverse: century-old Victorians and Colonials along Mount Auburn Street, dense blocks of triple-deckers in East Watertown, mid-century ranches near Coolidge Square, and modern luxury apartments in the Arsenal Yards development. Each of these property types accumulates dirt, allergens, and grime in ways that routine cleaning simply cannot address.</p>
 
@@ -1087,23 +1193,23 @@
 
 
                 <div class="reveal">
-                    <h2>What a Blue Brick Deep Cleaning Includes</h2>
+                    <h2>📋 What a Blue Brick Deep Cleaning Includes</h2>
 
                     <p>Deep cleaning is not a faster version of regular cleaning. It is a fundamentally different scope of work. When our crews arrive at a Watertown home or apartment, they follow a systematic, room-by-room process designed to eliminate the buildup that accumulates over weeks and months of daily living.</p>
 
-                    <h3>Kitchen Deep Cleaning</h3>
+                    <h3>🍳 Kitchen Deep Cleaning</h3>
 
                     <p>The kitchen is where deep cleaning has the most visible impact. Our process includes degreasing range hoods, stovetops, and backsplashes. We pull out appliances where accessible to clean behind and beneath refrigerators, stoves, and dishwashers. Cabinet fronts and interiors are wiped down, removing fingerprints, cooking residue, and spills that attract pests. Countertops are sanitized. Sinks and faucets are descaled and polished. Small appliance surfaces are cleaned. For Watertown's older kitchens with tile countertops or original cabinetry, we use products that cut through grime without damaging vintage finishes.</p>
 
-                    <h3>Bathroom Deep Cleaning</h3>
+                    <h3>🚿 Bathroom Deep Cleaning</h3>
 
                     <p>Bathrooms require the most intensive sanitization during a deep clean. We scrub tile and grout lines on floors, walls, and shower surrounds. Soap scum and hard water deposits are removed from glass doors, fixtures, and showerheads. Toilets are cleaned inside and out, including the base and behind the tank. Vanities, mirrors, and medicine cabinets are detailed. Exhaust fans are cleaned to restore proper ventilation. Many Watertown bathrooms, particularly in the older homes near Watertown Square and along the Pleasant Street corridor, have original tile work and porcelain fixtures that benefit enormously from professional-grade descaling and restoration cleaning.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Throughout the home, deep cleaning addresses the surfaces that routine cleaning overlooks. Baseboards are hand-wiped along every wall. Ceiling fans and light fixtures are dusted and wiped. Window sills, tracks, and interior glass are cleaned. Switch plates and door handles are sanitized. Upholstered furniture is thoroughly vacuumed, including cushion crevices. Radiators and heating vents are cleared of dust accumulation. Closet shelving is wiped down. For homes along the Charles River corridor or near heavily trafficked roads like Arsenal Street, deep cleaning also addresses the fine particulate dust that infiltrates from outdoor air and settles on every horizontal surface.</p>
 
-                    <h3>Floors and Hard Surfaces</h3>
+                    <h3>🪣 Floors and Hard Surfaces</h3>
 
                     <p>Every floor in the home receives detailed attention. Hardwood floors are vacuumed with HEPA filtration and then damp-mopped with appropriate cleaners that protect the finish. Tile and stone floors are scrubbed along grout lines. Carpeted areas receive deep vacuuming with edge work along baseboards. Area rugs are vacuumed on both sides where possible. Entryway and mudroom floors, which take the brunt of Watertown's seasonal weather tracked inside on shoes and boots, receive extra attention to remove salt residue, sand, and ground-in dirt.</p>
                 </div>
@@ -1111,9 +1217,13 @@
                 <div class="highlight-box reveal">
                     <p>Blue Brick's deep cleaning covers every surface in your home from ceiling to floor. We clean the areas you see every day and the ones you have not looked at in months. The difference is immediate and lasting.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Watertown Neighborhoods We Serve</h2>
+                    <h2>📍 Watertown Neighborhoods We Serve</h2>
 
                     <p>Watertown is a compact town, but its neighborhoods have distinct characters and housing types. Blue Brick provides deep cleaning services across all of them.</p>
 
@@ -1138,7 +1248,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Seasonal Deep Cleaning for New England Living</h2>
+                    <h2>🛋️ Seasonal Deep Cleaning for New England Living</h2>
 
                     <p>Watertown's New England climate creates a natural rhythm for deep cleaning that aligns with the seasons. Each transition brings specific cleaning needs that go beyond what routine maintenance can handle.</p>
 
@@ -1151,7 +1261,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Deep Cleaning vs. Regular Cleaning: Understanding the Difference</h2>
+                    <h2>✨ ✨ ✨ Deep Cleaning vs. Regular Cleaning: Understanding the Difference</h2>
 
                     <p>Homeowners sometimes wonder whether they need a deep cleaning or whether their regular cleaning service is sufficient. The distinction is straightforward.</p>
 
@@ -1161,9 +1271,13 @@
 
                     <p>Most Watertown homes benefit from a deep cleaning every three to four months, supplemented by regular cleaning in between. Properties with pets, young children, allergy-sensitive residents, or heavy foot traffic may benefit from more frequent deep cleans. Homes that have not been professionally deep cleaned before often show the most dramatic results on the first visit, with subsequent deep cleans maintaining that elevated standard.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Older Homes, Modern Standards</h2>
+                    <h2>✨ ✨ ✨ Older Homes, Modern Standards</h2>
 
                     <p>A significant portion of Watertown's housing stock was built before 1950. These homes have architectural character that newer construction cannot replicate: original hardwood floors, crown molding, built-in cabinetry, clawfoot tubs, plaster walls, and radiator heating. They also present cleaning challenges that require knowledge and care.</p>
 
@@ -1173,7 +1287,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Arsenal Yards and Modern Apartment Cleaning</h2>
+                    <h2>🏢 Arsenal Yards and Modern Apartment Cleaning</h2>
 
                     <p>At the other end of the spectrum, the Arsenal Yards development and other new construction along Arsenal Street have introduced a wave of modern apartments and condominiums to Watertown. These units feature contemporary finishes that require their own specialized approach to deep cleaning.</p>
 
@@ -1183,7 +1297,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
@@ -1223,7 +1337,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1399,6 +1529,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>

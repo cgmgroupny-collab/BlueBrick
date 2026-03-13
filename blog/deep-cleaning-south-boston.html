@@ -321,6 +321,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -585,36 +725,6 @@
 
         .highlight-box strong {
             color: var(--prussian);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
         }
 
         /* ============================================
@@ -1081,7 +1191,7 @@
         <article class="article-wrapper" role="article">
 
             <div class="reveal">
-                <h2>South Boston Deserves a Deep Clean That Matches Its Standards</h2>
+                <h2>📍 South Boston Deserves a Deep Clean That Matches Its Standards</h2>
                 <p>South Boston has evolved from a tightly knit, working-class neighborhood into one of the most coveted addresses in Greater Boston. The Seaport District's skyline now rivals any waterfront in the Northeast. Fort Point's converted warehouses attract creative professionals willing to pay a premium for character. Broadway remains the commercial heartbeat of Southie, lined with restaurants, boutiques, and renovated apartments. City Point's tree-lined streets command some of the highest residential prices in the city. And Andrew Square, anchored by its Red Line station, has become a development magnet drawing new construction and gut renovations block by block.</p>
                 <p>With that evolution comes a higher standard of living — and a higher standard of maintenance. The dust that settles behind a Sub-Zero refrigerator in a Seaport penthouse, the grime that builds up in the grout of a century-old City Point bathroom, the allergens trapped in the ductwork of a Fort Point loft — none of these respond to a quick wipe-down. They require systematic, thorough deep cleaning performed by professionals who understand the specific demands of every property type in South Boston.</p>
                 <p>Blue Brick provides comprehensive deep cleaning services across every neighborhood in South Boston. We bring the equipment, the expertise, and the trained attention to detail that Southie's premium housing stock demands.</p>
@@ -1094,28 +1204,32 @@
 
 
             <div class="reveal">
-                <h2>What a Professional Deep Cleaning Includes</h2>
+                <h2>📋 What a Professional Deep Cleaning Includes</h2>
                 <p>A Blue Brick deep clean is not a surface-level maintenance visit. It is a room-by-room, surface-by-surface restoration designed to eliminate the accumulated dirt, bacteria, grease, and allergens that degrade your home's appearance and air quality over time. Here is exactly what you can expect.</p>
 
-                <h3>Kitchen Deep Cleaning</h3>
+                <h3>🍳 Kitchen Deep Cleaning</h3>
                 <p>The kitchen accumulates more hidden grime than any other room. We degrease range hoods, backsplashes, and the exterior and interior of ovens. We pull appliances away from walls to clean behind and beneath them — retrieving months of trapped crumbs, dust, and grease film. Countertops are sanitized. Cabinet fronts and hardware are wiped down. Sink basins and faucets are scrubbed and polished. If your South Boston kitchen has stone countertops or custom cabinetry, we use products specifically formulated to protect those finishes.</p>
 
-                <h3>Bathroom Deep Cleaning</h3>
+                <h3>🚿 Bathroom Deep Cleaning</h3>
                 <p>Bathrooms in South Boston range from compact apartment layouts to spa-grade master suites in Seaport high-rises. Regardless of size, every bathroom gets the same treatment: tile and grout scrubbing, shower glass descaling, toilet sanitization inside and out, vanity and mirror detailing, and exhaust fan cleaning. Hard water deposits, soap scum, and mildew are eliminated — not just masked.</p>
 
-                <h3>Living Areas and Bedrooms</h3>
+                <h3>🛏️ Living Areas and Bedrooms</h3>
                 <p>We dust every surface from ceiling to floor — light fixtures, ceiling fans, crown molding, window sills, baseboards, and door frames. Upholstered furniture is vacuumed with HEPA-filtered equipment. Behind and beneath sofas, beds, and dressers — the places where dust bunnies and allergens accumulate unchecked — are thoroughly cleaned. Interior windows are wiped streak-free. Switch plates, outlet covers, and door handles are sanitized.</p>
 
-                <h3>Floors</h3>
+                <h3>🪣 Floors</h3>
                 <p>South Boston's housing stock spans engineered hardwood in new Seaport condos, original hardwood in pre-war row houses, tile in updated kitchens and bathrooms, and everything in between. We match our cleaning products and methods to the specific flooring material in each room. Hardwood is vacuumed and cleaned with pH-neutral solutions that protect the finish. Tile grout is scrubbed. Entryways and high-traffic areas receive extra attention to remove ground-in dirt that regular mopping leaves behind.</p>
             </div>
 
             <div class="highlight-box reveal">
                 <p><strong>Why it matters:</strong> A professional deep cleaning removes up to 99% of surface-level bacteria and significantly reduces airborne allergens. For South Boston residents living in older row houses with limited ventilation or newer high-rises with sealed HVAC systems, periodic deep cleaning is not a luxury — it is a practical investment in indoor air quality and property preservation.</p>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Neighborhood-by-Neighborhood: Deep Cleaning Across South Boston</h2>
+                <h2>📍 Neighborhood-by-Neighborhood: Deep Cleaning Across South Boston</h2>
                 <p>South Boston is not a monolith. Each neighborhood presents distinct property types and cleaning challenges. Blue Brick tailors every deep clean to the specific conditions of your home and location.</p>
                 <ul>
                     <li><strong>Seaport District / Innovation District</strong> — The Seaport's luxury condominiums feature premium finishes that demand careful handling: quartz and marble countertops, frameless glass shower enclosures, smart home fixtures, and engineered hardwood throughout. We coordinate with building management on freight elevator access and floor protection. Our teams understand high-rise protocols and the expectations of owners in buildings where monthly HOA fees alone signal the standard of living.</li>
@@ -1127,7 +1241,7 @@
             </div>
 
             <div class="reveal">
-                <h2>New Luxury Condos and Historic Row Houses: Different Properties, Same Standard</h2>
+                <h2>✨ ✨ ✨ New Luxury Condos and Historic Row Houses: Different Properties, Same Standard</h2>
                 <p>One of the defining characteristics of South Boston's housing market is the coexistence of brand-new luxury construction and century-old residential architecture. A Seaport tower completed in 2025 and a row house on East Fourth Street built in 1910 could not be more different in their materials, layouts, and maintenance needs — but both deserve the same level of deep cleaning precision.</p>
                 <p>For new luxury condos, deep cleaning addresses the fine particulate that accumulates after construction and initial move-in. Even units that received a builder's clean often harbor dust in HVAC systems, inside cabinet tracks, and along window seals. Our deep clean ensures that every surface matches the premium experience the property was designed to deliver.</p>
                 <p>For historic row houses, the challenges multiply. Original plaster walls, vintage tile, antique hardware, and aged hardwood require products and techniques that clean effectively without causing damage. Moisture sensitivity, lead paint awareness in pre-1978 buildings, and the irregular surfaces created by a century of settling all factor into how we approach each room. Blue Brick's crews are trained to identify and adapt to these conditions on site.</p>
@@ -1138,7 +1252,7 @@
             </div>
 
             <div class="reveal">
-                <h2>When to Schedule a Deep Cleaning in South Boston</h2>
+                <h2>📅 When to Schedule a Deep Cleaning in South Boston</h2>
                 <p>Certain moments in the life of a home call for more than routine maintenance. These are the most common reasons South Boston residents book a Blue Brick deep clean:</p>
                 <ul>
                     <li><strong>Move-in or move-out</strong> — Whether you are arriving in a new Seaport condo or leaving a Broadway apartment, a deep clean ensures the property is in impeccable condition for the transition.</li>
@@ -1148,9 +1262,13 @@
                     <li><strong>Allergy season preparation</strong> — South Boston's proximity to the waterfront means pollen, mold spores, and humidity all contribute to indoor allergen buildup. A deep clean with HEPA-filtered equipment significantly reduces these triggers.</li>
                 </ul>
             </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
             <div class="reveal">
-                <h2>Why South Boston Residents Choose Blue Brick</h2>
+                <h2>💡 Why South Boston Residents Choose Blue Brick</h2>
                 <p>South Boston's cleaning market is not short on options. What separates Blue Brick is our understanding that deep cleaning is not a commodity — it is a skilled service that requires the right training, the right products, and the right attention to the property you are servicing. Here is what our clients across Southie consistently cite:</p>
                 <ul>
                     <li><strong>Transparent pricing</strong> — We provide detailed, itemized estimates based on square footage, property condition, and specific cleaning requirements. No hidden fees, no vague quotes.</li>
@@ -1162,44 +1280,44 @@
             </div>
 
             <div class="reveal">
-                <h2>Getting Started Is Simple</h2>
+                <h2>🚀 Getting Started Is Simple</h2>
                 <p>Contact Blue Brick by texting <strong><a href="sms:+17813305604">781-330-5604</a></strong> or emailing <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a> with your property details — address, approximate square footage, number of bedrooms and bathrooms, and any specific areas of concern. We will respond with a detailed estimate, typically within 2 hours.</p>
                 <p>Once the scope is confirmed, we assign a dedicated crew to your property. Our teams arrive on time with commercial-grade equipment and cleaning products matched to every surface in your home. We work methodically through each room, and we do not consider the job complete until every surface meets Blue Brick's standard.</p>
                 <p>South Boston is a neighborhood that has always taken pride in its homes — from the triple-deckers that have anchored these streets for generations to the glass towers that now define its skyline. Whether you live in a Fort Point loft, a City Point brownstone, a Seaport penthouse, or an Andrew Square apartment, your home deserves a deep clean that matches the investment you have made in living here. Blue Brick delivers exactly that.</p>
             </div>
 
             <div class="reveal">
-                <h2>Frequently Asked Questions</h2>
+                <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                 <div class="faq-section">
                     <div class="faq-item">
-                        <p class="faq-question">How much does a deep cleaning cost in South Boston?</p>
-                        <p class="faq-answer">Deep cleaning costs in South Boston vary based on the size of the home, its current condition, and any specialty surfaces that require attention. A one-bedroom Seaport condo will differ from a three-bedroom row house on East Broadway. Blue Brick provides transparent, itemized quotes with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate — most quotes are delivered within 2 hours.</p>
+                        <div class="faq-question">How much does a deep cleaning cost in South Boston?</div>
+                        <div class="faq-answer"><p>Deep cleaning costs in South Boston vary based on the size of the home, its current condition, and any specialty surfaces that require attention. A one-bedroom Seaport condo will differ from a three-bedroom row house on East Broadway. Blue Brick provides transparent, itemized quotes with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate — most quotes are delivered within 2 hours.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">What is included in a professional deep cleaning?</p>
-                        <p class="faq-answer">A professional deep cleaning goes far beyond routine tidying. It includes detailed scrubbing of kitchens and bathrooms, baseboard and trim wiping, interior window cleaning, appliance interior cleaning, grout scrubbing, dust removal from vents and light fixtures, and thorough vacuuming behind and beneath furniture. Blue Brick tailors each deep clean to the specific needs of your South Boston property — whether it is a luxury Seaport condo or a historic Southie row house.</p>
+                        <div class="faq-question">What is included in a professional deep cleaning?</div>
+                        <div class="faq-answer"><p>A professional deep cleaning goes far beyond routine tidying. It includes detailed scrubbing of kitchens and bathrooms, baseboard and trim wiping, interior window cleaning, appliance interior cleaning, grout scrubbing, dust removal from vents and light fixtures, and thorough vacuuming behind and beneath furniture. Blue Brick tailors each deep clean to the specific needs of your South Boston property — whether it is a luxury Seaport condo or a historic Southie row house.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How long does a deep cleaning take for a South Boston apartment?</p>
-                        <p class="faq-answer">A deep cleaning for a typical South Boston apartment (1-2 bedrooms) takes approximately 3 to 5 hours depending on the condition and square footage. Larger homes, multi-level row houses, and properties that have not been professionally cleaned recently may require additional time. We provide accurate time estimates during the quoting process.</p>
+                        <div class="faq-question">How long does a deep cleaning take for a South Boston apartment?</div>
+                        <div class="faq-answer"><p>A deep cleaning for a typical South Boston apartment (1-2 bedrooms) takes approximately 3 to 5 hours depending on the condition and square footage. Larger homes, multi-level row houses, and properties that have not been professionally cleaned recently may require additional time. We provide accurate time estimates during the quoting process.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">Do you clean luxury condos in the Seaport District?</p>
-                        <p class="faq-answer">Yes. Blue Brick regularly services luxury condominiums throughout the Seaport District and Innovation District. We are experienced with high-rise building protocols including concierge coordination, freight elevator scheduling, and the careful handling of premium finishes such as quartz countertops, engineered hardwood, and frameless glass showers.</p>
+                        <div class="faq-question">Do you clean luxury condos in the Seaport District?</div>
+                        <div class="faq-answer"><p>Yes. Blue Brick regularly services luxury condominiums throughout the Seaport District and Innovation District. We are experienced with high-rise building protocols including concierge coordination, freight elevator scheduling, and the careful handling of premium finishes such as quartz countertops, engineered hardwood, and frameless glass showers.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">How often should I schedule a deep cleaning?</p>
-                        <p class="faq-answer">For most South Boston households, a professional deep cleaning every 3 to 6 months keeps the home in excellent condition between regular maintenance cleanings. Homes with pets, allergies, or high foot traffic benefit from quarterly deep cleans. Seasonal deep cleaning is especially popular among Southie residents during spring and fall.</p>
+                        <div class="faq-question">How often should I schedule a deep cleaning?</div>
+                        <div class="faq-answer"><p>For most South Boston households, a professional deep cleaning every 3 to 6 months keeps the home in excellent condition between regular maintenance cleanings. Homes with pets, allergies, or high foot traffic benefit from quarterly deep cleans. Seasonal deep cleaning is especially popular among Southie residents during spring and fall.</p></div>
                     </div>
 
                     <div class="faq-item">
-                        <p class="faq-question">Can I book a deep cleaning in South Boston on short notice?</p>
-                        <p class="faq-answer">Blue Brick accommodates short-notice bookings whenever scheduling allows. Text us at 781-330-5604 or email bluebrickmass@gmail.com to check availability. We serve all South Boston neighborhoods including the Seaport, Broadway, City Point, Fort Point, and Andrew Square.</p>
+                        <div class="faq-question">Can I book a deep cleaning in South Boston on short notice?</div>
+                        <div class="faq-answer"><p>Blue Brick accommodates short-notice bookings whenever scheduling allows. Text us at 781-330-5604 or email bluebrickmass@gmail.com to check availability. We serve all South Boston neighborhoods including the Seaport, Broadway, City Point, Fort Point, and Andrew Square.</p></div>
                     </div>
                 </div>
             </div>
@@ -1336,7 +1454,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1402,5 +1520,21 @@
             });
         });
     </script>
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+    </script>
+
 </body>
 </html>

@@ -317,6 +317,146 @@
             font-style: italic;
         }
 
+
+        /* ============================================
+           INLINE CTA BANNERS
+           ============================================ */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .inline-cta p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--prussian);
+        }
+
+        .inline-cta a {
+            color: var(--cerulean);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--amber);
+            text-underline-offset: 3px;
+        }
+
+        .inline-cta a:hover {
+            color: var(--amber);
+        }
+
+
+        /* ============================================
+           FAQ ACCORDION
+           ============================================ */
+        
+
+        
+
+        .faq-item:hover {
+            border-color: var(--amber);
+        }
+
+        
+
+        .faq-question:hover {
+            background: rgba(236, 164, 0, 0.06);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--amber);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        
+
+        .faq-item.open 
+
+
+        /* ============================================
+           QUOTE CALCULATOR EMBED
+           ============================================ */
+        .quote-calc-embed {
+            background: linear-gradient(135deg, var(--prussian), #0a2a5c);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .quote-calc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quote-calc-header span {
+            font-size: 2.5rem;
+        }
+
+        .quote-calc-header strong {
+            display: block;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .quote-calc-header p {
+            margin: 0.2rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .quote-calc-btn {
+            background: var(--amber);
+            color: var(--prussian) !important;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-decoration: none !important;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-calc-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            color: var(--prussian) !important;
+        }
+
+        @media (max-width: 600px) {
+            .quote-calc-embed {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quote-calc-header {
+                flex-direction: column;
+            }
+            .quote-calc-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
 /* ============================================
            HEADER
            ============================================ */
@@ -581,36 +721,6 @@
             background: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 29, 74, 0.08);
-        }
-
-        /* ============================================
-           FAQ SECTION
-           ============================================ */
-        .faq-section {
-            margin: 2.5rem 0;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-question {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--prussian);
-            margin-bottom: 0.6rem;
-        }
-
-        .faq-answer {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            line-height: 1.8;
         }
 
         /* ============================================
@@ -1077,7 +1187,7 @@
             <article class="article-container">
 
                 <div class="reveal">
-                    <h2>Why Brookline Homes Deserve a Professional Deep Clean</h2>
+                    <h2>📍 Why Brookline Homes Deserve a Professional Deep Clean</h2>
 
                     <p>Brookline is one of the most desirable communities in Greater Boston. Its tree-lined streets, top-rated schools, and walkable neighborhoods attract professionals, families, and academics who hold their living spaces to an exacting standard. Whether you own a stately Victorian in Brookline Village, a pre-war co-op near Coolidge Corner, or a modern luxury condo overlooking the Chestnut Hill Reservoir, your home accumulates grime in places that routine cleaning simply does not reach.</p>
 
@@ -1093,23 +1203,23 @@
 
 
                 <div class="reveal">
-                    <h2>What Our Deep Cleaning Service Includes</h2>
+                    <h2>📋 What Our Deep Cleaning Service Includes</h2>
 
                     <p>A Blue Brick deep clean is not a quick wipe-down. It is a room-by-room, surface-by-surface process designed to eliminate accumulated dirt, bacteria, and allergens that degrade your home's appearance and air quality over time. Here is what you can expect.</p>
 
-                    <h3>Kitchen Deep Clean</h3>
+                    <h3>🍳 Kitchen Deep Clean</h3>
 
                     <p>The kitchen is where grease, food residue, and bacteria concentrate most aggressively. Our deep cleaning process includes degreasing range hoods, exhaust fans, and backsplashes. We clean inside and behind the oven, refrigerator, microwave, and dishwasher. Countertops, cabinet fronts, and drawer interiors are wiped down with appropriate products. Sinks are scrubbed and sanitized. Floor grout is hand-cleaned. Every handle, knob, and switchplate receives attention. In Brookline's older kitchens with custom tile work and butcher block surfaces, we use specialized methods that protect these premium materials.</p>
 
-                    <h3>Bathroom Deep Clean</h3>
+                    <h3>🚿 Bathroom Deep Clean</h3>
 
                     <p>Bathrooms accumulate soap scum, hard water stains, mildew, and bacteria faster than any other room. We deep clean tile and grout on walls and floors, descale showerheads and faucets, scrub inside toilet bowls and behind toilet bases, clean exhaust vents, wipe down medicine cabinets inside and out, and polish mirrors and glass to a streak-free finish. Brookline's many older homes feature vintage tilework and porcelain fixtures that require careful product selection — we know which cleaners are safe for these surfaces and which will cause permanent damage.</p>
 
-                    <h3>Living Areas and Bedrooms</h3>
+                    <h3>🛏️ Living Areas and Bedrooms</h3>
 
                     <p>Deep cleaning living spaces means going beyond vacuuming and dusting. We clean baseboards, door frames, window sills, and light fixtures. Ceiling fan blades are wiped down. Upholstery is vacuumed with HEPA-filtered equipment to extract embedded allergens. Behind and beneath furniture gets thorough attention. Air vents and registers are cleaned to improve indoor air quality. Window tracks are detailed. Every surface that routine cleaning overlooks is addressed.</p>
 
-                    <h3>Floors</h3>
+                    <h3>🪣 Floors</h3>
 
                     <p>Brookline homes feature a range of flooring materials — original hardwood in historic properties, engineered wood in newer condos, marble and tile in entryways and bathrooms, and high-quality carpet in bedrooms and dens. Our crews are trained in the proper cleaning methods for each material. Hardwood floors are cleaned with pH-neutral solutions that protect the finish. Tile grout is scrubbed by hand. Carpets are deep-vacuumed using commercial-grade HEPA equipment. We never use products or techniques that compromise your flooring investment.</p>
                 </div>
@@ -1117,9 +1227,13 @@
                 <div class="highlight-box reveal">
                     <p>Every Blue Brick deep clean is customized to your home's specific surfaces, layout, and condition. We do not use a one-size-fits-all checklist — we assess your property and tailor our approach accordingly.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Brookline Neighborhoods We Serve</h2>
+                    <h2>📍 Brookline Neighborhoods We Serve</h2>
 
                     <p>Brookline's distinct neighborhoods each feature different housing types and cleaning challenges. We provide deep cleaning services across every part of town.</p>
 
@@ -1143,15 +1257,19 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>The Spring Cleaning Advantage</h2>
+                    <h2>🌸 The Spring Cleaning Advantage</h2>
 
                     <p>New England winters are hard on homes. Months of sealed windows, running heating systems, road salt tracked indoors, and reduced ventilation create conditions that leave every surface in your home carrying a winter's worth of accumulated buildup. Brookline residents who invest in a professional spring deep clean start the warmer months with a home that looks, smells, and feels genuinely refreshed.</p>
 
                     <p>A spring deep clean goes beyond aesthetics. Removing dust from HVAC vents and returns before switching from heat to air conditioning improves system efficiency and reduces allergen circulation. Cleaning windows inside and out brings in more natural light. Scrubbing winter grime from entryway tile and hallway floors eliminates the salt residue that deteriorates these surfaces over time. It is one of the most effective investments a Brookline homeowner can make in their property's long-term condition.</p>
                 </div>
+                <div class="inline-cta reveal">
+                    <p>📞 <strong>Get your free estimate today!</strong> Text or call <a href="tel:+17813305604">781-330-5604</a> · <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></p>
+                </div>
+
 
                 <div class="reveal">
-                    <h2>Why Brookline Professionals Choose Blue Brick</h2>
+                    <h2>💡 Why Brookline Professionals Choose Blue Brick</h2>
 
                     <p>Brookline's population includes a high concentration of physicians, attorneys, academics, executives, and entrepreneurs. These are people whose time is valuable and whose standards are non-negotiable. They choose Blue Brick for deep cleaning because we deliver a level of service that matches their expectations.</p>
 
@@ -1166,7 +1284,7 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Deep Cleaning vs. Regular Cleaning: What Is the Difference?</h2>
+                    <h2>📋 Deep Cleaning vs. Regular Cleaning: What Is the Difference?</h2>
 
                     <p>Regular cleaning maintains surface-level tidiness — vacuuming visible floors, wiping counters, cleaning toilets and sinks, and general dusting. It keeps your home looking presentable between deeper sessions. A deep clean, by contrast, addresses the accumulated grime that regular cleaning misses.</p>
 
@@ -1178,37 +1296,37 @@
                 </div>
 
                 <div class="reveal">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>❓ ❓ ❓ Frequently Asked Questions</h2>
 
                     <div class="faq-section">
                         <div class="faq-item">
-                            <p class="faq-question">How much does a deep cleaning cost in Brookline, MA?</p>
-                            <p class="faq-answer">Deep cleaning costs in Brookline vary based on the size of the home, its current condition, and any specialty surfaces that require attention. Blue Brick provides transparent, itemized quotes with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate — most quotes are delivered within 2 hours.</p>
+                            <div class="faq-question">How much does a deep cleaning cost in Brookline, MA?</div>
+                            <div class="faq-answer"><p>Deep cleaning costs in Brookline vary based on the size of the home, its current condition, and any specialty surfaces that require attention. Blue Brick provides transparent, itemized quotes with no hidden fees. Text us at 781-330-5604 or email bluebrickmass@gmail.com for a free estimate — most quotes are delivered within 2 hours.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">What is included in a professional deep cleaning?</p>
-                            <p class="faq-answer">A professional deep cleaning goes far beyond routine tidying. It includes detailed scrubbing of kitchens and bathrooms, baseboard and trim wiping, interior window cleaning, appliance interior cleaning, grout scrubbing, dust removal from vents and light fixtures, and thorough vacuuming behind and beneath furniture. Blue Brick tailors each deep clean to the specific needs of your Brookline property.</p>
+                            <div class="faq-question">What is included in a professional deep cleaning?</div>
+                            <div class="faq-answer"><p>A professional deep cleaning goes far beyond routine tidying. It includes detailed scrubbing of kitchens and bathrooms, baseboard and trim wiping, interior window cleaning, appliance interior cleaning, grout scrubbing, dust removal from vents and light fixtures, and thorough vacuuming behind and beneath furniture. Blue Brick tailors each deep clean to the specific needs of your Brookline property.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How long does a deep cleaning take for a Brookline apartment?</p>
-                            <p class="faq-answer">A deep cleaning for a typical Brookline apartment (1-2 bedrooms) takes approximately 3 to 5 hours depending on the condition and square footage. Larger homes and properties that have not been professionally cleaned recently may require additional time. We provide accurate time estimates during the quoting process.</p>
+                            <div class="faq-question">How long does a deep cleaning take for a Brookline apartment?</div>
+                            <div class="faq-answer"><p>A deep cleaning for a typical Brookline apartment (1-2 bedrooms) takes approximately 3 to 5 hours depending on the condition and square footage. Larger homes and properties that have not been professionally cleaned recently may require additional time. We provide accurate time estimates during the quoting process.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">How often should I schedule a deep cleaning?</p>
-                            <p class="faq-answer">For most Brookline households, a professional deep cleaning every 3 to 6 months keeps the home in excellent condition between regular maintenance cleanings. Homes with pets, allergies, or high foot traffic benefit from quarterly deep cleans. Spring and fall are especially popular times for Brookline residents to schedule deep cleaning services.</p>
+                            <div class="faq-question">How often should I schedule a deep cleaning?</div>
+                            <div class="faq-answer"><p>For most Brookline households, a professional deep cleaning every 3 to 6 months keeps the home in excellent condition between regular maintenance cleanings. Homes with pets, allergies, or high foot traffic benefit from quarterly deep cleans. Spring and fall are especially popular times for Brookline residents to schedule deep cleaning services.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">Do you use safe cleaning products for homes with children and pets?</p>
-                            <p class="faq-answer">Yes. Blue Brick uses professional-grade cleaning products that are effective on tough grime while remaining safe for households with children and pets. If you have specific product preferences or sensitivities, let us know during scheduling and we will accommodate your requirements.</p>
+                            <div class="faq-question">Do you use safe cleaning products for homes with children and pets?</div>
+                            <div class="faq-answer"><p>Yes. Blue Brick uses professional-grade cleaning products that are effective on tough grime while remaining safe for households with children and pets. If you have specific product preferences or sensitivities, let us know during scheduling and we will accommodate your requirements.</p></div>
                         </div>
 
                         <div class="faq-item">
-                            <p class="faq-question">Can I book a deep cleaning for my Brookline condo on short notice?</p>
-                            <p class="faq-answer">Blue Brick accommodates short-notice bookings whenever scheduling allows. Text us at 781-330-5604 or email bluebrickmass@gmail.com to check availability. We serve all Brookline neighborhoods including Coolidge Corner, Brookline Village, Chestnut Hill, Washington Square, and Beaconsfield.</p>
+                            <div class="faq-question">Can I book a deep cleaning for my Brookline condo on short notice?</div>
+                            <div class="faq-answer"><p>Blue Brick accommodates short-notice bookings whenever scheduling allows. Text us at 781-330-5604 or email bluebrickmass@gmail.com to check availability. We serve all Brookline neighborhoods including Coolidge Corner, Brookline Village, Chestnut Hill, Washington Square, and Beaconsfield.</p></div>
                         </div>
                     </div>
                 </div>
@@ -1223,7 +1341,23 @@
 
 </section>
 
-        <!-- ==========================================
+        
+        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
+
+                <div class="quote-calc-embed reveal">
+                    <div class="quote-calc-header">
+                        <span>💰</span>
+                        <div>
+                            <strong>Get an Instant Estimate</strong>
+                            <p>See pricing for your home or office in seconds</p>
+                        </div>
+                    </div>
+                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
+                </div>
+
+        </div>
+
+<!-- ==========================================
              CTA SECTION
              ========================================== -->
         <section class="cta-section reveal-scale">
@@ -1340,7 +1474,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -1399,6 +1533,22 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+    </script>
+
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Toggle current
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
     </script>
 
 </body>
