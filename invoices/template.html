@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Invoice</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: letter; margin: 0.5in; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #111;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: #fff;
+    padding: 48px 52px;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+    position: relative;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; padding: 0; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    background: #001D4A;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-mark svg { width: 24px; height: 24px; }
+
+  .brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #001D4A;
+    letter-spacing: -0.3px;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    color: #666;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .invoice-label {
+    text-align: right;
+  }
+
+  .invoice-label h1 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #001D4A;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .invoice-num {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* ── Info Grid ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .info-block label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 6px;
+  }
+
+  .info-block p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .info-block strong {
+    font-weight: 600;
+    color: #111;
+  }
+
+  /* ── Table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+
+  thead th {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #999;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #001D4A;
+    text-align: left;
+  }
+
+  thead th:nth-child(2) { text-align: center; }
+  thead th:last-child { text-align: right; }
+
+  tbody td {
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+
+  tbody td:nth-child(2) { text-align: center; color: #666; }
+  tbody td:last-child { text-align: right; font-weight: 600; }
+
+  .item-name { font-weight: 500; }
+  .item-desc {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+    max-width: 380px;
+  }
+
+  /* ── Totals ── */
+  .totals {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .totals-box { width: 240px; }
+
+  .totals-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  .totals-row.total {
+    border-top: 2px solid #001D4A;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #001D4A;
+  }
+
+  /* ── Status ── */
+  .status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .status-due { background: #FEF3C7; color: #92400E; }
+  .status-paid { background: #D1FAE5; color: #065F46; }
+  .status-overdue { background: #FEE2E2; color: #991B1B; }
+
+  /* ── Notes ── */
+  .notes {
+    margin-bottom: 36px;
+    padding: 16px 20px;
+    background: #FAFAFA;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .notes strong { color: #444; }
+
+  /* ── Promo ── */
+  .promo {
+    margin: 32px 0;
+    padding: 20px 24px;
+    border: 1.5px dashed #ECA400;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .promo-badge {
+    background: #ECA400;
+    color: #001D4A;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .promo-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .promo-text strong { color: #001D4A; }
+
+  /* ── Footer ── */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 24px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .footer a {
+    color: #006992;
+    text-decoration: none;
+  }
+
+  .payment-methods span {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-size: 11px;
+    color: #555;
+    font-weight: 500;
+  }
+
+  /* ── Print Button ── */
+  .print-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: #001D4A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .print-btn:hover { background: #27476E; }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">Save PDF</button>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="10" width="7" height="10" rx="1" fill="#ECA400"/>
+          <rect x="14" y="6" width="7" height="14" rx="1" fill="#ECA400"/>
+          <rect x="8.5" y="3" width="7" height="17" rx="1" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Blue Brick</div>
+        <div class="brand-sub">Luxury & Commercial Cleaning</div>
+      </div>
+    </div>
+    <div class="invoice-label">
+      <h1>Invoice</h1>
+      <div class="invoice-num">#<!-- INVOICE_NUMBER -->000047</div>
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="info-grid">
+    <div class="info-block">
+      <label>Billed To</label>
+      <p>
+        <strong><!-- CLIENT_NAME -->Client Name</strong><br>
+        <!-- CLIENT_ADDRESS -->123 Street, City, MA
+      </p>
+    </div>
+    <div class="info-block">
+      <label>Date</label>
+      <p>
+        <strong>Issued:</strong> <!-- ISSUE_DATE -->March 13, 2026<br>
+        <strong>Due:</strong> <!-- DUE_DATE -->March 28, 2026
+      </p>
+    </div>
+    <div class="info-block">
+      <label>From</label>
+      <p>
+        <strong>Blue Brick Cleaning</strong><br>
+        781-330-5604<br>
+        bluebrickmass@gmail.com
+      </p>
+    </div>
+  </div>
+
+  <!-- Line Items -->
+  <table>
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Qty</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ITEMS START -->
+      <tr>
+        <td>
+          <div class="item-name">Floor Sweeping & Debris Removal</div>
+          <div class="item-desc">Full sweep of all hard surfaces, corners, edges. Removal of loose dust and debris.</div>
+        </td>
+        <td>1</td>
+        <td>$275.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-name">Damp Mopping & Surface Restoration</div>
+          <div class="item-desc">Secondary pass with damp mop. Wipe-down of all countertops, sills, and surfaces.</div>
+        </td>
+        <td>1</td>
+        <td>$250.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-name">Baseboard, Trim & Detail Cleaning</div>
+          <div class="item-desc">Hand-wiping of all baseboards, door frames, trim, and built-in edges.</div>
+        </td>
+        <td>1</td>
+        <td>$175.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-name">Full Disinfection Protocol</div>
+          <div class="item-desc">Complete sanitization procedure — layered antimicrobial treatment across all surfaces, fixtures, vents, hardware, and high-touch contact points with required dwell time between passes.</div>
+        </td>
+        <td>1</td>
+        <td>$325.00</td>
+      </tr>
+      <!-- ITEMS END -->
+    </tbody>
+  </table>
+
+  <!-- Totals -->
+  <div class="totals">
+    <div class="totals-box">
+      <div class="totals-row">
+        <span>Subtotal</span>
+        <span><!-- SUBTOTAL -->$1,025.00</span>
+      </div>
+      <div class="totals-row total">
+        <span>Total Due</span>
+        <span><!-- TOTAL -->$1,025.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div style="margin-bottom: 24px;">
+    <span class="status-badge status-due"><!-- STATUS -->Payment Due</span>
+  </div>
+
+  <!-- Notes -->
+  <div class="notes">
+    <strong>Payment Terms:</strong> Due within 15 days of issue date. Accepted methods: Zelle, Venmo, Cash. Please reference invoice number with payment.
+  </div>
+
+  <!-- Spring Promo -->
+  <div class="promo">
+    <div class="promo-badge">20% OFF</div>
+    <div class="promo-text">
+      <strong>Spring Cleaning Special</strong> — Book a deep clean before April 30 and save 20%. Residential or commercial, any size. Call or text <strong>781-330-5604</strong> to schedule.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>
+      <div class="payment-methods">
+        <span>Zelle</span>
+        <span>Venmo</span>
+        <span>Cash</span>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      781-330-5604 &nbsp;&bull;&nbsp; bluebrickmass@gmail.com<br>
+      Greater Boston Area, MA
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

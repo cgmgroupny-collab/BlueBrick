@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice #000045 — Blue Brick</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: letter; margin: 0; }
+
+  :root {
+    --ink: #0C0A09;
+    --prussian: #001D4A;
+    --yale: #27476E;
+    --cerulean: #006992;
+    --gold: #CA8A04;
+    --gold-light: #ECA400;
+    --stone-50: #FAFAF9;
+    --stone-100: #F5F5F4;
+    --stone-200: #E7E5E4;
+    --stone-400: #A8A29E;
+    --stone-500: #78716C;
+    --stone-600: #57534E;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+    background: #e8e6e3;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 13px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── Accent stripe ── */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--prussian) 0%, var(--prussian) 60%, var(--gold) 60%, var(--gold) 100%);
+  }
+
+  /* ── Layout ── */
+  .inner { padding: 52px 56px 40px; }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+
+  .brand { display: flex; align-items: center; gap: 14px; }
+
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+    background: var(--prussian);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .brand-mark svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold-light);
+  }
+
+  .brand-text h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--prussian);
+    line-height: 1.1;
+  }
+
+  .brand-text span {
+    font-family: 'Jost', sans-serif;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--stone-500);
+  }
+
+  .inv-tag {
+    text-align: right;
+  }
+
+  .inv-tag h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--prussian);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .inv-tag .inv-number {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    color: var(--stone-400);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: var(--stone-200);
+    margin-bottom: 32px;
+  }
+
+  /* ── Info Row ── */
+  .info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .info-block {}
+
+  .info-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--stone-400);
+    margin-bottom: 8px;
+  }
+
+  .info-value {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--stone-600);
+  }
+
+  .info-value strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── Table ── */
+  .items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+  }
+
+  .items-table thead th {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--stone-400);
+    padding: 0 0 12px 0;
+    border-bottom: 2px solid var(--prussian);
+    text-align: left;
+  }
+
+  .items-table thead th:last-child { text-align: right; }
+  .items-table thead th:nth-child(2) { text-align: center; }
+
+  .items-table tbody td {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--stone-100);
+    vertical-align: top;
+    font-size: 13px;
+  }
+
+  .items-table tbody td:last-child {
+    text-align: right;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .items-table tbody td:nth-child(2) {
+    text-align: center;
+    color: var(--stone-500);
+  }
+
+  .item-name {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .item-desc {
+    font-size: 11.5px;
+    color: var(--stone-500);
+    margin-top: 3px;
+    max-width: 360px;
+    line-height: 1.5;
+  }
+
+  /* ── Totals ── */
+  .totals-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 36px;
+  }
+
+  .totals {
+    width: 220px;
+  }
+
+  .totals-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-size: 13px;
+    color: var(--stone-600);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .totals-line.grand {
+    border-top: 2px solid var(--prussian);
+    margin-top: 10px;
+    padding-top: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--prussian);
+    font-family: 'Bodoni Moda', serif;
+  }
+
+  /* ── Status ── */
+  .status {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: #FEF3C7;
+    color: #92400E;
+    margin-bottom: 28px;
+  }
+
+  /* ── Notes ── */
+  .notes {
+    padding: 16px 20px;
+    background: var(--stone-50);
+    border-left: 3px solid var(--stone-200);
+    font-size: 11.5px;
+    color: var(--stone-500);
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+
+  .notes strong { color: var(--stone-600); font-weight: 600; }
+
+  /* ── Promo ── */
+  .promo {
+    padding: 20px 24px;
+    border: 1.5px solid var(--gold);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF 100%);
+  }
+
+  .promo-badge {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    background: var(--gold);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bodoni Moda', serif;
+    line-height: 1;
+  }
+
+  .promo-badge .num {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .promo-badge .off {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .promo-body { font-size: 12px; line-height: 1.6; color: var(--stone-600); }
+  .promo-body strong { color: var(--prussian); }
+
+  /* ── Footer ── */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--stone-200);
+  }
+
+  .footer-methods {
+    display: flex;
+    gap: 8px;
+  }
+
+  .footer-methods span {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--stone-50);
+    border: 1px solid var(--stone-200);
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--stone-600);
+  }
+
+  .footer-contact {
+    text-align: right;
+    font-size: 11px;
+    color: var(--stone-400);
+    line-height: 1.7;
+  }
+
+  .footer-contact a {
+    color: var(--cerulean);
+    text-decoration: none;
+  }
+
+  /* ── Print Button ── */
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--prussian);
+    color: var(--gold-light);
+    border: none;
+    padding: 10px 22px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 200ms;
+  }
+  .print-btn:hover { background: var(--yale); }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">Save PDF</button>
+
+<div class="page">
+  <div class="inner">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4L4 18H9V34H31V18H36L20 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <rect x="12" y="22" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>Blue Brick</h2>
+          <span>Luxury & Commercial Cleaning</span>
+        </div>
+      </div>
+      <div class="inv-tag">
+        <h1>Invoice</h1>
+        <div class="inv-number">#000045</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Info -->
+    <div class="info-row">
+      <div class="info-block">
+        <div class="info-label">Billed To</div>
+        <div class="info-value">
+          <strong>Nick Wise</strong><br>
+          661 Bennington St, #3<br>
+          Boston, MA
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Invoice Date</div>
+        <div class="info-value">
+          <strong>Issued</strong> March 13, 2026<br>
+          <strong>Due</strong> March 28, 2026
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">From</div>
+        <div class="info-value">
+          <strong>Blue Brick Cleaning</strong><br>
+          781-330-5604<br>
+          bluebrickmass@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <!-- Items -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Qty</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-name">Residential Cleaning</div>
+            <div class="item-desc">Full cleaning service at 661 Bennington St, Unit #3, Boston, MA</div>
+          </td>
+          <td>1</td>
+          <td>$285.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Totals -->
+    <div class="totals-wrap">
+      <div class="totals">
+        <div class="totals-line">
+          <span>Subtotal</span>
+          <span>$285.00</span>
+        </div>
+        <div class="totals-line grand">
+          <span>Total Due</span>
+          <span>$285.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div><span class="status">Payment Due</span></div>
+
+    <!-- Notes -->
+    <div class="notes">
+      <strong>Payment Terms</strong> — Due within 15 days of issue. Please reference invoice #000045 with your payment. Thank you for choosing Blue Brick.
+    </div>
+
+    <!-- Promo -->
+    <div class="promo">
+      <div class="promo-badge">
+        <span class="num">20%</span>
+        <span class="off">off</span>
+      </div>
+      <div class="promo-body">
+        <strong>Spring Cleaning Special</strong> — Book a deep clean before April 30 and save 20% on any residential or commercial service. Call or text <strong>781-330-5604</strong> to schedule.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-methods">
+        <span>Zelle</span>
+        <span>Venmo</span>
+        <span>Cash</span>
+      </div>
+      <div class="footer-contact">
+        781-330-5604<br>
+        <a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a><br>
+        Greater Boston Area, MA
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
