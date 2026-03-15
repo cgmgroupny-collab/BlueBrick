@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Social Graphics Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ═══════════════════════════════════════════
+   CSS VARIABLES & RESET
+   ═══════════════════════════════════════════ */
+:root {
+    --prussian: #001D4A;
+    --prussian-deep: #00132f;
+    --yale: #27476E;
+    --cerulean: #006992;
+    --amber: #ECA400;
+    --amber-light: #f4be3a;
+    --amber-glow: rgba(236, 164, 0, 0.12);
+    --cream: #EAF8BF;
+    --white: #ffffff;
+    --surface: rgba(255,255,255,0.04);
+    --surface-hover: rgba(255,255,255,0.08);
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,255,255,0.15);
+    --text-primary: #f0f2f5;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --font-display: 'Bebas Neue', Impact, sans-serif;
+    --font-body: 'Manrope', system-ui, sans-serif;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--prussian-deep);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--yale); border-radius: 3px; }
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════ */
+.page-header {
+    background: linear-gradient(135deg, var(--prussian) 0%, var(--yale) 100%);
+    border-bottom: 3px solid var(--amber);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-mark {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: var(--white);
+}
+
+.logo-mark span { color: var(--amber); }
+
+.header-subtitle {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-badge {
+    background: var(--amber-glow);
+    border: 1px solid rgba(236, 164, 0, 0.3);
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION HEADERS
+   ═══════════════════════════════════════════ */
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.section-header h2 span { color: var(--amber); }
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════
+   CUSTOM BUILDER
+   ═══════════════════════════════════════════ */
+.builder-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 60px;
+}
+
+.builder-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.builder-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(236, 164, 0, 0.15);
+}
+
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.form-group select option {
+    background: var(--prussian);
+    color: var(--white);
+}
+
+.format-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.format-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.format-btn.active,
+.format-btn:hover {
+    background: var(--amber-glow);
+    border-color: var(--amber);
+    color: var(--amber);
+}
+
+.builder-preview-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.builder-preview-container {
+    transform-origin: top center;
+    position: relative;
+}
+
+.builder-preview-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-download-builder {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--amber) 0%, #d4940a 100%);
+    color: var(--prussian);
+    border: none;
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-download-builder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 164, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════
+   GALLERY GRID
+   ═══════════════════════════════════════════ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 32px;
+}
+
+.graphic-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.graphic-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.graphic-card.story-card {
+    grid-row: span 2;
+}
+
+.graphic-preview {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #0a0a0a;
+    position: relative;
+}
+
+.graphic-preview .social-graphic {
+    transform-origin: top left;
+}
+
+.graphic-meta {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.graphic-info h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.graphic-info span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, var(--amber) 0%, #d4940a 100%);
+    color: var(--prussian);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(236, 164, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════
+   SOCIAL GRAPHICS — SHARED PATTERNS
+   ═══════════════════════════════════════════ */
+
+/* Brick pattern overlay */
+.brick-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background:
+        linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.5) 49.5%, rgba(255,255,255,0.5) 50.5%, transparent 50.5%) 0 0 / 60px 30px,
+        linear-gradient(0deg, transparent 93%, rgba(255,255,255,0.5) 93%) 0 0 / 60px 30px,
+        linear-gradient(0deg, transparent 93%, rgba(255,255,255,0.5) 93%) 30px 15px / 60px 30px;
+    pointer-events: none;
+}
+
+/* Diagonal lines */
+.diagonal-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(255,255,255,0.5) 20px,
+        rgba(255,255,255,0.5) 21px
+    );
+    pointer-events: none;
+}
+
+/* Dot grid */
+.dot-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px) 0 0 / 24px 24px;
+    pointer-events: none;
+}
+
+/* Gold corner accents */
+.corner-accent {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+}
+
+.corner-accent.tl { top: 0; left: 0; border-top: 3px solid var(--amber); border-left: 3px solid var(--amber); }
+.corner-accent.tr { top: 0; right: 0; border-top: 3px solid var(--amber); border-right: 3px solid var(--amber); }
+.corner-accent.bl { bottom: 0; left: 0; border-bottom: 3px solid var(--amber); border-left: 3px solid var(--amber); }
+.corner-accent.br { bottom: 0; right: 0; border-bottom: 3px solid var(--amber); border-right: 3px solid var(--amber); }
+
+/* Brand bar */
+.brand-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(135deg, var(--prussian) 0%, #001030 100%);
+    border-top: 3px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 5;
+}
+
+.brand-bar-logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: var(--white);
+}
+
+.brand-bar-logo span { color: var(--amber); }
+
+.brand-bar-tagline {
+    font-family: var(--font-body);
+    font-size: 10px;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.brand-bar-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255,255,255,0.2);
+}
+
+/* ═══════════════════════════════════════════
+   INDIVIDUAL GRAPHIC STYLES
+   ═══════════════════════════════════════════ */
+
+/* 1. Spring Cleaning Promo */
+.g-spring {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #001D4A 0%, #002060 40%, #003080 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-spring .floral-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    border: 2px solid rgba(236, 164, 0, 0.15);
+    border-radius: 50%;
+}
+
+.g-spring .floral-ring::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(236, 164, 0, 0.08);
+    border-radius: 50%;
+}
+
+.g-spring .floral-accent {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0.12;
+}
+
+.g-spring .floral-accent:nth-child(2) {
+    top: 60px; right: 80px;
+    background: radial-gradient(circle, #6dbe45 0%, transparent 70%);
+    width: 160px; height: 160px;
+}
+
+.g-spring .floral-accent:nth-child(3) {
+    bottom: 140px; left: 60px;
+    background: radial-gradient(circle, #ECA400 0%, transparent 70%);
+    width: 140px; height: 140px;
+}
+
+.g-spring .floral-accent:nth-child(4) {
+    top: 200px; left: 100px;
+    background: radial-gradient(circle, #88c9a1 0%, transparent 70%);
+}
+
+.g-spring .floral-accent:nth-child(5) {
+    bottom: 240px; right: 120px;
+    background: radial-gradient(circle, #f0d060 0%, transparent 70%);
+    width: 100px; height: 100px;
+}
+
+/* Leaf decorations */
+.g-spring .leaf {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    border-radius: 0 50% 50% 0;
+    opacity: 0.08;
+    background: #6dbe45;
+}
+
+.g-spring .leaf:nth-child(6) { top: 100px; left: 200px; transform: rotate(30deg); }
+.g-spring .leaf:nth-child(7) { bottom: 200px; right: 180px; transform: rotate(-45deg); width: 30px; height: 60px; }
+.g-spring .leaf:nth-child(8) { top: 300px; right: 100px; transform: rotate(60deg); width: 35px; height: 70px; }
+
+.g-spring .spring-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 5;
+    padding: 80px;
+}
+
+.g-spring .tag-line {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 20px;
+}
+
+.g-spring .tag-line::before,
+.g-spring .tag-line::after {
+    content: '— ';
+    color: rgba(236, 164, 0, 0.4);
+}
+
+.g-spring .tag-line::after { content: ' —'; }
+
+.g-spring h1 {
+    font-family: var(--font-display);
+    font-size: 96px;
+    letter-spacing: 8px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.g-spring h1 em {
+    font-style: normal;
+    color: var(--amber);
+    display: block;
+    font-size: 110px;
+}
+
+.g-spring .offer-box {
+    background: linear-gradient(135deg, var(--amber) 0%, #d4940a 100%);
+    padding: 18px 50px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.g-spring .offer-box span {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: var(--prussian);
+    letter-spacing: 4px;
+}
+
+.g-spring .sub-text {
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* 2. Before/After Split */
+.g-before-after {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+    display: flex;
+}
+
+.g-before-after .split-side {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.g-before-after .split-before {
+    background: linear-gradient(180deg, #1a1008 0%, #2d1a0a 50%, #1a1008 100%);
+}
+
+.g-before-after .split-before .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    background:
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139,90,43,0.3) 3px, rgba(139,90,43,0.3) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(139,90,43,0.15) 8px, rgba(139,90,43,0.15) 9px);
+}
+
+.g-before-after .split-before .dust-particles {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(2px 2px at 100px 200px, rgba(200,170,100,0.4), transparent),
+        radial-gradient(2px 2px at 300px 400px, rgba(200,170,100,0.3), transparent),
+        radial-gradient(3px 3px at 200px 300px, rgba(200,170,100,0.2), transparent),
+        radial-gradient(2px 2px at 400px 150px, rgba(200,170,100,0.3), transparent),
+        radial-gradient(2px 2px at 150px 500px, rgba(200,170,100,0.25), transparent),
+        radial-gradient(3px 3px at 350px 600px, rgba(200,170,100,0.2), transparent);
+}
+
+.g-before-after .split-before .icon-mess {
+    width: 200px;
+    height: 200px;
+    border: 3px dashed rgba(200,170,100,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.g-before-after .split-before .icon-mess::after {
+    content: '';
+    width: 120px;
+    height: 120px;
+    background: repeating-conic-gradient(rgba(200,170,100,0.15) 0deg 10deg, transparent 10deg 20deg);
+    border-radius: 50%;
+}
+
+.g-before-after .split-after {
+    background: linear-gradient(180deg, #e8f4f8 0%, #ffffff 50%, #e8f4f8 100%);
+}
+
+.g-before-after .split-after .sparkle-grid {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(2px 2px at 80px 120px, rgba(0,105,146,0.5), transparent),
+        radial-gradient(3px 3px at 250px 300px, rgba(236,164,0,0.5), transparent),
+        radial-gradient(2px 2px at 400px 200px, rgba(0,105,146,0.4), transparent),
+        radial-gradient(2px 2px at 150px 450px, rgba(236,164,0,0.3), transparent),
+        radial-gradient(3px 3px at 350px 100px, rgba(0,105,146,0.4), transparent),
+        radial-gradient(2px 2px at 300px 500px, rgba(236,164,0,0.3), transparent);
+}
+
+.g-before-after .split-after .icon-clean {
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgba(0,105,146,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    background: rgba(0,105,146,0.05);
+}
+
+.g-before-after .split-after .icon-clean::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(from 0deg, rgba(0,105,146,0.3), rgba(236,164,0,0.3), rgba(0,105,146,0.3));
+    border-radius: 50%;
+}
+
+.g-before-after .split-label {
+    font-family: var(--font-display);
+    font-size: 72px;
+    letter-spacing: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.g-before-after .split-before .split-label { color: rgba(200,170,100,0.6); }
+.g-before-after .split-after .split-label { color: var(--cerulean); }
+
+.g-before-after .split-sublabel {
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+}
+
+.g-before-after .split-before .split-sublabel { color: rgba(200,170,100,0.5); }
+.g-before-after .split-after .split-sublabel { color: var(--yale); }
+
+.g-before-after .center-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 80px;
+    width: 4px;
+    background: linear-gradient(180deg, var(--amber), var(--amber) 70%, transparent);
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+.g-before-after .center-diamond {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background: var(--amber);
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.g-before-after .center-diamond::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--prussian);
+}
+
+/* 3. Post-Construction */
+.g-post-construction {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #0a0a0a 0%, #001D4A 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-post-construction .grid-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background:
+        linear-gradient(0deg, rgba(255,255,255,0.5) 1px, transparent 1px) 0 0 / 1px 40px,
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px) 0 0 / 40px 1px;
+}
+
+.g-post-construction .glow-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,105,146,0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.g-post-construction .pc-content {
+    position: absolute;
+    inset: 60px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.g-post-construction .pc-badge {
+    align-self: flex-start;
+    background: var(--amber);
+    color: var(--prussian);
+    font-size: 13px;
+    font-weight: 800;
+    padding: 8px 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.g-post-construction .pc-content h1 {
+    font-family: var(--font-display);
+    font-size: 88px;
+    letter-spacing: 6px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 16px;
+}
+
+.g-post-construction .pc-content h1 span {
+    color: var(--amber);
+}
+
+.g-post-construction .pc-line {
+    width: 100px;
+    height: 3px;
+    background: var(--amber);
+    margin-bottom: 40px;
+}
+
+.g-post-construction .pc-features {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.g-post-construction .pc-features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+}
+
+.g-post-construction .pc-features li .check {
+    width: 32px;
+    height: 32px;
+    background: rgba(236, 164, 0, 0.15);
+    border: 1px solid rgba(236, 164, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--amber);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* 4. Cleaning Tip Tuesday */
+.g-tip {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(145deg, #001D4A 0%, #002a5c 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-tip .chevron-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background: repeating-linear-gradient(
+        120deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.5) 40px,
+        rgba(255,255,255,0.5) 41px
+    ),
+    repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.5) 40px,
+        rgba(255,255,255,0.5) 41px
+    );
+}
+
+.g-tip .tip-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    z-index: 5;
+    text-align: center;
+}
+
+.g-tip .tip-badge {
+    background: var(--amber);
+    color: var(--prussian);
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 8px;
+    padding: 12px 40px;
+    margin-bottom: 60px;
+}
+
+.g-tip .tip-icon {
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--amber);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 48px;
+}
+
+.g-tip .tip-text {
+    font-size: 32px;
+    line-height: 1.5;
+    color: var(--white);
+    font-weight: 400;
+    max-width: 800px;
+}
+
+.g-tip .tip-text strong {
+    color: var(--amber);
+    font-weight: 700;
+}
+
+.g-tip .tip-hashtag {
+    position: absolute;
+    bottom: 110px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* 5. Testimonial Card */
+.g-testimonial {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #ffffff 0%, #f0f4f8 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-testimonial .testi-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--prussian), var(--cerulean), var(--amber));
+}
+
+.g-testimonial .testi-bg-shape {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,29,74,0.04) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.g-testimonial .testi-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 90px;
+    z-index: 5;
+    text-align: center;
+}
+
+.g-testimonial .quote-mark {
+    font-family: Georgia, serif;
+    font-size: 180px;
+    color: var(--amber);
+    line-height: 0.6;
+    margin-bottom: 30px;
+    opacity: 0.3;
+}
+
+.g-testimonial .stars {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.g-testimonial .star {
+    width: 36px;
+    height: 36px;
+    background: var(--amber);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.g-testimonial .testi-quote {
+    font-size: 34px;
+    line-height: 1.5;
+    color: var(--prussian);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.g-testimonial .testi-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--amber);
+    margin-bottom: 30px;
+}
+
+.g-testimonial .testi-author {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--prussian);
+    letter-spacing: 1px;
+}
+
+.g-testimonial .testi-location {
+    font-size: 16px;
+    color: var(--cerulean);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+.g-testimonial .testi-brand-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--prussian);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.g-testimonial .testi-brand-bar .bb-logo {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: var(--white);
+}
+
+.g-testimonial .testi-brand-bar .bb-logo span { color: var(--amber); }
+
+/* 6. Service Area Map */
+.g-map {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #001D4A 0%, #001535 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-map .map-radial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,105,146,0.15);
+}
+
+.g-map .map-radial::before {
+    content: '';
+    position: absolute;
+    inset: 80px;
+    border: 1px solid rgba(0,105,146,0.1);
+    border-radius: 50%;
+}
+
+.g-map .map-radial::after {
+    content: '';
+    position: absolute;
+    inset: 160px;
+    border: 1px solid rgba(0,105,146,0.08);
+    border-radius: 50%;
+}
+
+.g-map .map-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    padding: 60px;
+}
+
+.g-map .map-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.g-map .map-header h1 {
+    font-family: var(--font-display);
+    font-size: 72px;
+    letter-spacing: 5px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 8px;
+}
+
+.g-map .map-header h1 span { color: var(--amber); }
+
+.g-map .map-header p {
+    font-size: 18px;
+    color: var(--amber);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.g-map .map-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--amber);
+    margin-bottom: 40px;
+}
+
+.g-map .city-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 24px;
+    text-align: center;
+    flex: 1;
+    align-content: center;
+}
+
+.g-map .city-item {
+    padding: 16px 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.g-map .city-item.highlight {
+    background: rgba(236, 164, 0, 0.1);
+    border-color: rgba(236, 164, 0, 0.3);
+    color: var(--amber);
+}
+
+.g-map .map-pin {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--amber);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.g-map .map-pin:nth-child(2) { top: 180px; left: 300px; }
+.g-map .map-pin:nth-child(3) { top: 250px; right: 250px; }
+.g-map .map-pin:nth-child(4) { bottom: 200px; left: 400px; }
+.g-map .map-pin:nth-child(5) { top: 400px; left: 200px; }
+.g-map .map-pin:nth-child(6) { bottom: 300px; right: 300px; }
+
+/* 7. Move-Out Cleaning */
+.g-moveout {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #001D4A 0%, #27476E 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-moveout .box-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background:
+        linear-gradient(0deg, transparent 95%, rgba(255,255,255,0.8) 95%) 0 0 / 80px 80px,
+        linear-gradient(90deg, transparent 95%, rgba(255,255,255,0.8) 95%) 0 0 / 80px 80px;
+}
+
+.g-moveout .mo-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    text-align: center;
+    padding: 80px;
+}
+
+.g-moveout .mo-icon {
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--amber);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
+    transform: rotate(5deg);
+}
+
+.g-moveout .mo-icon::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(236, 164, 0, 0.3);
+    border-radius: 14px;
+}
+
+.g-moveout .mo-icon .box-lines {
+    width: 60px;
+    height: 4px;
+    background: var(--amber);
+    position: relative;
+}
+
+.g-moveout .mo-icon .box-lines::before,
+.g-moveout .mo-icon .box-lines::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(236, 164, 0, 0.5);
+}
+
+.g-moveout .mo-icon .box-lines::before {
+    top: -25px;
+    width: 40px;
+    height: 3px;
+}
+
+.g-moveout .mo-icon .box-lines::after {
+    top: -15px;
+    width: 50px;
+    height: 3px;
+}
+
+.g-moveout h1 {
+    font-family: var(--font-display);
+    font-size: 96px;
+    letter-spacing: 5px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 20px;
+}
+
+.g-moveout h1 span { color: var(--amber); }
+
+.g-moveout .mo-sub {
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+.g-moveout .mo-cta {
+    background: var(--amber);
+    color: var(--prussian);
+    font-family: var(--font-display);
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding: 18px 50px;
+    border-radius: 4px;
+}
+
+/* 8. Restaurant Deep Clean */
+.g-restaurant {
+    width: 1080px;
+    height: 1080px;
+    background: linear-gradient(160deg, #0a0a0a 0%, #001D4A 40%, #001020 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-restaurant .hex-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background:
+        radial-gradient(circle at 0 0, transparent 19px, rgba(255,255,255,0.5) 19px, rgba(255,255,255,0.5) 20px, transparent 20px) 0 0 / 40px 70px,
+        radial-gradient(circle at 20px 35px, transparent 19px, rgba(255,255,255,0.5) 19px, rgba(255,255,255,0.5) 20px, transparent 20px) 0 0 / 40px 70px;
+}
+
+.g-restaurant .rest-glow {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(236,164,0,0.08) 0%, transparent 70%);
+}
+
+.g-restaurant .rest-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    padding: 70px;
+}
+
+.g-restaurant .rest-badge {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(236,164,0,0.1);
+    border: 1px solid rgba(236,164,0,0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 50px;
+}
+
+.g-restaurant .rest-badge .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--amber);
+    border-radius: 50%;
+}
+
+.g-restaurant .rest-badge span {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.g-restaurant h1 {
+    font-family: var(--font-display);
+    font-size: 88px;
+    letter-spacing: 5px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 20px;
+}
+
+.g-restaurant h1 span { color: var(--amber); }
+
+.g-restaurant .rest-line {
+    width: 80px;
+    height: 3px;
+    background: var(--amber);
+    margin-bottom: 30px;
+}
+
+.g-restaurant .rest-subtitle {
+    font-size: 30px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 50px;
+    line-height: 1.4;
+}
+
+.g-restaurant .rest-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.g-restaurant .rest-features .feat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    color: rgba(255,255,255,0.8);
+}
+
+.g-restaurant .rest-features .feat .amber-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--amber);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* 9. Story: Contact CTA */
+.g-story-cta {
+    width: 1080px;
+    height: 1920px;
+    background: linear-gradient(180deg, #001D4A 0%, #002a5c 40%, #001D4A 70%, #000d20 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-story-cta .wave-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background:
+        radial-gradient(ellipse 600px 60px at 50% 200px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(ellipse 600px 60px at 50% 600px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(ellipse 600px 60px at 50% 1000px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(ellipse 600px 60px at 50% 1400px, rgba(255,255,255,0.2), transparent);
+}
+
+.g-story-cta .story-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding: 120px 80px;
+    text-align: center;
+}
+
+.g-story-cta .story-logo {
+    font-family: var(--font-display);
+    font-size: 60px;
+    letter-spacing: 10px;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.g-story-cta .story-logo span { color: var(--amber); }
+
+.g-story-cta .story-tagline {
+    font-size: 14px;
+    color: var(--amber);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.g-story-cta .story-divider-line {
+    width: 60px;
+    height: 2px;
+    background: var(--amber);
+    margin-bottom: 80px;
+}
+
+.g-story-cta h1 {
+    font-family: var(--font-display);
+    font-size: 80px;
+    letter-spacing: 6px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 60px;
+}
+
+.g-story-cta h1 span { color: var(--amber); }
+
+.g-story-cta .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.g-story-cta .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.g-story-cta .contact-card .cc-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(236,164,0,0.15);
+    border: 1px solid rgba(236,164,0,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 24px;
+}
+
+.g-story-cta .contact-card .cc-info {
+    text-align: left;
+}
+
+.g-story-cta .contact-card .cc-label {
+    font-size: 13px;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.g-story-cta .contact-card .cc-value {
+    font-size: 24px;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.g-story-cta .story-cta-btn {
+    background: linear-gradient(135deg, var(--amber) 0%, #d4940a 100%);
+    color: var(--prussian);
+    font-family: var(--font-display);
+    font-size: 36px;
+    letter-spacing: 5px;
+    padding: 24px 60px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.g-story-cta .swipe-hint {
+    position: absolute;
+    bottom: 100px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* 10. Story: Quick Tip */
+.g-story-tip {
+    width: 1080px;
+    height: 1920px;
+    background: linear-gradient(180deg, #001D4A 0%, #003060 50%, #001D4A 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.g-story-tip .radial-deco {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    border: 1px solid rgba(236,164,0,0.06);
+}
+
+.g-story-tip .radial-deco::before {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border: 1px solid rgba(236,164,0,0.04);
+    border-radius: 50%;
+}
+
+.g-story-tip .story-tip-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding: 120px 80px;
+    text-align: center;
+}
+
+.g-story-tip .st-logo {
+    font-family: var(--font-display);
+    font-size: 40px;
+    letter-spacing: 8px;
+    color: var(--white);
+    margin-bottom: 80px;
+}
+
+.g-story-tip .st-logo span { color: var(--amber); }
+
+.g-story-tip .st-badge {
+    background: var(--amber);
+    color: var(--prussian);
+    font-family: var(--font-display);
+    font-size: 32px;
+    letter-spacing: 8px;
+    padding: 14px 50px;
+    margin-bottom: 80px;
+}
+
+.g-story-tip .st-number {
+    font-family: var(--font-display);
+    font-size: 200px;
+    color: rgba(236,164,0,0.08);
+    line-height: 1;
+    margin-bottom: -40px;
+}
+
+.g-story-tip .st-tip-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    letter-spacing: 4px;
+    color: var(--white);
+    margin-bottom: 50px;
+    line-height: 1.1;
+}
+
+.g-story-tip .st-tip-body {
+    font-size: 28px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 80px;
+}
+
+.g-story-tip .st-tip-body strong {
+    color: var(--amber);
+    font-weight: 700;
+}
+
+.g-story-tip .st-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.g-story-tip .st-footer .st-site {
+    font-size: 18px;
+    color: var(--amber);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.g-story-tip .st-footer .st-follow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE SCALING FOR PREVIEWS
+   ═══════════════════════════════════════════ */
+@media (max-width: 1600px) {
+    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    .builder-grid { grid-template-columns: 1fr; }
+    .main-content { padding: 20px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .page-header { padding: 16px 20px; flex-wrap: wrap; }
+}
+
+/* ═══════════════════════════════════════════
+   NOTIFICATION TOAST
+   ═══════════════════════════════════════════ */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--amber);
+    color: var(--prussian);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 14px;
+    z-index: 9999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+    <div>
+        <div class="logo-mark">BLUE <span>BRICK</span></div>
+        <div class="header-subtitle">Social Graphics Generator</div>
+    </div>
+    <div class="header-right">
+        <div class="header-badge">10 Templates</div>
+        <div class="header-badge">1080 x 1080 + Stories</div>
+    </div>
+</header>
+
+<main class="main-content">
+
+    <!-- ═══════════════════════════════════════
+         CUSTOM BUILDER
+         ═══════════════════════════════════════ -->
+    <section class="builder-section">
+        <div class="section-header">
+            <h2>CUSTOM <span>BUILDER</span></h2>
+            <p>Create branded graphics with your own content. Preview updates live.</p>
+        </div>
+
+        <div class="builder-grid">
+            <div class="builder-controls">
+                <div class="form-group">
+                    <label>Template Style</label>
+                    <select id="builderStyle" onchange="updateBuilderPreview()">
+                        <option value="promo">Promo / Offer</option>
+                        <option value="tip">Cleaning Tip</option>
+                        <option value="testimonial">Testimonial</option>
+                        <option value="service">Service Highlight</option>
+                        <option value="story">Story (9:16)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Headline</label>
+                    <input type="text" id="builderHeadline" placeholder="e.g. SPRING CLEANING SPECIAL" value="YOUR HEADLINE HERE" oninput="updateBuilderPreview()">
+                </div>
+
+                <div class="form-group">
+                    <label>Body Text</label>
+                    <textarea id="builderBody" placeholder="e.g. 15% off your first deep clean..." oninput="updateBuilderPreview()">Add your body text here. This will appear below the headline.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Background Style</label>
+                    <select id="builderBg" onchange="updateBuilderPreview()">
+                        <option value="navy-solid">Navy Solid</option>
+                        <option value="gradient">Navy Gradient</option>
+                        <option value="dark">Dark Premium</option>
+                        <option value="pattern">Navy + Pattern</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Format</label>
+                    <div class="format-toggle">
+                        <button class="format-btn active" data-format="feed" onclick="setBuilderFormat('feed', this)">Feed 1:1</button>
+                        <button class="format-btn" data-format="story" onclick="setBuilderFormat('story', this)">Story 9:16</button>
+                    </div>
+                </div>
+
+                <button class="btn-download-builder" onclick="downloadGraphic('builder-preview-graphic')">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PNG
+                </button>
+            </div>
+
+            <div class="builder-preview-wrap">
+                <div class="builder-preview-container" id="builder-preview-container">
+                    <!-- Builder preview rendered here by JS -->
+                </div>
+                <div class="builder-preview-label">Live Preview (scaled to fit)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALLERY
+         ═══════════════════════════════════════ -->
+    <div class="section-header">
+        <h2>READY-TO-USE <span>GRAPHICS</span></h2>
+        <p>10 pre-designed social media graphics. Click "Download" to save as PNG, or right-click the image to save.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <!-- 1. Spring Cleaning Promo -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-spring">
+                <div class="social-graphic g-spring" id="graphic-spring">
+                    <div class="brick-pattern"></div>
+                    <div class="floral-ring"></div>
+                    <div class="floral-accent"></div>
+                    <div class="floral-accent"></div>
+                    <div class="floral-accent"></div>
+                    <div class="floral-accent"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="corner-accent tl"></div>
+                    <div class="corner-accent tr"></div>
+                    <div class="corner-accent bl"></div>
+                    <div class="corner-accent br"></div>
+                    <div class="spring-content">
+                        <div class="tag-line">LIMITED TIME OFFER</div>
+                        <h1>SPRING<br>CLEANING<br><em>SPECIAL</em></h1>
+                        <div class="offer-box"><span>15% OFF YOUR FIRST DEEP CLEAN</span></div>
+                        <div class="sub-text">Book now &bull; Greater Boston Area</div>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>SPRING CLEANING PROMO</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-spring')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. Before/After Split -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-ba">
+                <div class="social-graphic g-before-after" id="graphic-before-after">
+                    <div class="split-side split-before">
+                        <div class="texture"></div>
+                        <div class="dust-particles"></div>
+                        <div class="icon-mess"></div>
+                        <div class="split-label">BEFORE</div>
+                        <div class="split-sublabel">Construction mess</div>
+                    </div>
+                    <div class="split-side split-after">
+                        <div class="sparkle-grid"></div>
+                        <div class="icon-clean"></div>
+                        <div class="split-label">AFTER</div>
+                        <div class="split-sublabel">Blue Brick clean</div>
+                    </div>
+                    <div class="center-divider"></div>
+                    <div class="center-diamond"></div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>BEFORE / AFTER SPLIT</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-before-after')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. Post-Construction -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-pc">
+                <div class="social-graphic g-post-construction" id="graphic-post-construction">
+                    <div class="grid-overlay"></div>
+                    <div class="diagonal-lines"></div>
+                    <div class="glow-circle"></div>
+                    <div class="corner-accent tl"></div>
+                    <div class="corner-accent tr"></div>
+                    <div class="corner-accent bl"></div>
+                    <div class="corner-accent br"></div>
+                    <div class="pc-content">
+                        <div class="pc-badge">OUR SPECIALTY</div>
+                        <h1>POST-<br>CONSTRUCTION<br><span>CLEANUP</span></h1>
+                        <div class="pc-line"></div>
+                        <ul class="pc-features">
+                            <li><div class="check">&#10003;</div>Dust & debris removal from every surface</li>
+                            <li><div class="check">&#10003;</div>Window & glass cleaning (inside & out)</li>
+                            <li><div class="check">&#10003;</div>Floor scrubbing, polishing & sealing</li>
+                            <li><div class="check">&#10003;</div>HVAC vent & duct cleaning</li>
+                            <li><div class="check">&#10003;</div>Final walk-through inspection</li>
+                        </ul>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>POST-CONSTRUCTION</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-post-construction')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 4. Cleaning Tip Tuesday -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-tip">
+                <div class="social-graphic g-tip" id="graphic-tip">
+                    <div class="chevron-pattern"></div>
+                    <div class="dot-grid"></div>
+                    <div class="corner-accent tl"></div>
+                    <div class="corner-accent tr"></div>
+                    <div class="corner-accent bl"></div>
+                    <div class="corner-accent br"></div>
+                    <div class="tip-content">
+                        <div class="tip-badge">CLEANING TIP TUESDAY</div>
+                        <div class="tip-icon">&#128161;</div>
+                        <div class="tip-text"><strong>PRO TIP:</strong> Always clean top to bottom to prevent re-contaminating surfaces you've already cleaned.</div>
+                        <div class="tip-hashtag">#CleaningTips #BlueBrick #BostonCleaning</div>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>CLEANING TIP TUESDAY</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-tip')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 5. Testimonial Card -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-testi">
+                <div class="social-graphic g-testimonial" id="graphic-testimonial">
+                    <div class="testi-accent"></div>
+                    <div class="testi-bg-shape"></div>
+                    <div class="diagonal-lines" style="opacity:0.02"></div>
+                    <div class="testi-content">
+                        <div class="quote-mark">&ldquo;</div>
+                        <div class="stars">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <div class="testi-quote">Blue Brick transformed our condo after renovation. Every surface was spotless &mdash; they even got the grout lines gleaming.</div>
+                        <div class="testi-divider"></div>
+                        <div class="testi-author">Sarah M.</div>
+                        <div class="testi-location">Newton, MA</div>
+                    </div>
+                    <div class="testi-brand-bar">
+                        <div class="bb-logo">BLUE <span>BRICK</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>TESTIMONIAL CARD</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-testimonial')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 6. Service Area Map -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-map">
+                <div class="social-graphic g-map" id="graphic-map">
+                    <div class="dot-grid"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-radial"></div>
+                    <div class="map-content">
+                        <div class="map-header">
+                            <h1>SERVING <span>15</span> CITIES<br>ACROSS GREATER <span>BOSTON</span></h1>
+                            <p>LUXURY & COMMERCIAL CLEANING</p>
+                        </div>
+                        <div class="map-divider"></div>
+                        <div class="city-grid">
+                            <div class="city-item highlight">Waltham</div>
+                            <div class="city-item highlight">Newton</div>
+                            <div class="city-item highlight">Cambridge</div>
+                            <div class="city-item">Brookline</div>
+                            <div class="city-item">Somerville</div>
+                            <div class="city-item">Brighton</div>
+                            <div class="city-item">Watertown</div>
+                            <div class="city-item highlight">Boston</div>
+                            <div class="city-item">South Boston</div>
+                            <div class="city-item">East Boston</div>
+                            <div class="city-item">Allston</div>
+                            <div class="city-item">Lexington</div>
+                            <div class="city-item">Needham</div>
+                            <div class="city-item">Wellesley</div>
+                            <div class="city-item">Weston</div>
+                        </div>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">bluebrickmass.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>SERVICE AREA MAP</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-map')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 7. Move-Out Cleaning -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-moveout">
+                <div class="social-graphic g-moveout" id="graphic-moveout">
+                    <div class="box-pattern"></div>
+                    <div class="diagonal-lines"></div>
+                    <div class="corner-accent tl"></div>
+                    <div class="corner-accent tr"></div>
+                    <div class="corner-accent bl"></div>
+                    <div class="corner-accent br"></div>
+                    <div class="mo-content">
+                        <div class="mo-icon">
+                            <div class="box-lines"></div>
+                        </div>
+                        <h1>MOVING?<br><span>LEAVE IT<br>TO US.</span></h1>
+                        <div class="mo-sub">Professional move-in &amp; move-out cleaning for property managers, landlords, and tenants across Greater Boston.</div>
+                        <div class="mo-cta">GET YOUR FREE ESTIMATE</div>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>MOVE-OUT CLEANING</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-moveout')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 8. Restaurant Deep Clean -->
+        <div class="graphic-card">
+            <div class="graphic-preview" id="preview-restaurant">
+                <div class="social-graphic g-restaurant" id="graphic-restaurant">
+                    <div class="hex-pattern"></div>
+                    <div class="brick-pattern"></div>
+                    <div class="rest-glow"></div>
+                    <div class="corner-accent tl"></div>
+                    <div class="corner-accent tr"></div>
+                    <div class="corner-accent bl"></div>
+                    <div class="corner-accent br"></div>
+                    <div class="rest-content">
+                        <div class="rest-badge">
+                            <div class="dot"></div>
+                            <span>Commercial Kitchen</span>
+                        </div>
+                        <h1>RESTAURANT<br>DEEP<br><span>CLEANING</span></h1>
+                        <div class="rest-line"></div>
+                        <div class="rest-subtitle">Health inspection ready<br>in 24 hours.</div>
+                        <div class="rest-features">
+                            <div class="feat"><div class="amber-dot"></div>Hood & exhaust system degreasing</div>
+                            <div class="feat"><div class="amber-dot"></div>Floor-to-ceiling sanitization</div>
+                            <div class="feat"><div class="amber-dot"></div>Grease trap & drain cleaning</div>
+                            <div class="feat"><div class="amber-dot"></div>Walk-in cooler deep clean</div>
+                        </div>
+                    </div>
+                    <div class="brand-bar">
+                        <div class="brand-bar-logo">BLUE <span>BRICK</span></div>
+                        <div class="brand-bar-divider"></div>
+                        <div class="brand-bar-tagline">Luxury & Commercial Cleaning</div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>RESTAURANT DEEP CLEAN</h3>
+                    <span>1080 x 1080 &mdash; Feed Post</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-restaurant')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 9. Story: Contact CTA -->
+        <div class="graphic-card story-card">
+            <div class="graphic-preview" id="preview-story-cta">
+                <div class="social-graphic g-story-cta" id="graphic-story-cta">
+                    <div class="wave-pattern"></div>
+                    <div class="brick-pattern"></div>
+                    <div class="corner-accent tl" style="width:100px;height:100px"></div>
+                    <div class="corner-accent tr" style="width:100px;height:100px"></div>
+                    <div class="corner-accent bl" style="width:100px;height:100px"></div>
+                    <div class="corner-accent br" style="width:100px;height:100px"></div>
+                    <div class="story-content">
+                        <div class="story-logo">BLUE <span>BRICK</span></div>
+                        <div class="story-tagline">Luxury & Commercial Cleaning</div>
+                        <div class="story-divider-line"></div>
+                        <h1>BOOK YOUR<br>FREE<br><span>WALKTHROUGH</span></h1>
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <div class="cc-icon">&#9742;</div>
+                                <div class="cc-info">
+                                    <div class="cc-label">Call or Text</div>
+                                    <div class="cc-value">781-330-5604</div>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="cc-icon">&#9993;</div>
+                                <div class="cc-info">
+                                    <div class="cc-label">Email</div>
+                                    <div class="cc-value">bluebrickmass@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="cc-icon">&#127760;</div>
+                                <div class="cc-info">
+                                    <div class="cc-label">Website</div>
+                                    <div class="cc-value">bluebrickmass.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-cta-btn">GET A FREE ESTIMATE</div>
+                    </div>
+                    <div class="swipe-hint">SWIPE UP TO BOOK</div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>STORY: CONTACT CTA</h3>
+                    <span>1080 x 1920 &mdash; Story</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-story-cta')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <!-- 10. Story: Quick Tip -->
+        <div class="graphic-card story-card">
+            <div class="graphic-preview" id="preview-story-tip">
+                <div class="social-graphic g-story-tip" id="graphic-story-tip">
+                    <div class="diagonal-lines"></div>
+                    <div class="radial-deco"></div>
+                    <div class="corner-accent tl" style="width:100px;height:100px"></div>
+                    <div class="corner-accent tr" style="width:100px;height:100px"></div>
+                    <div class="corner-accent bl" style="width:100px;height:100px"></div>
+                    <div class="corner-accent br" style="width:100px;height:100px"></div>
+                    <div class="story-tip-content">
+                        <div class="st-logo">BLUE <span>BRICK</span></div>
+                        <div class="st-badge">QUICK TIP</div>
+                        <div class="st-number">#1</div>
+                        <div class="st-tip-title">MICROFIBER<br>MATTERS</div>
+                        <div class="st-tip-body">Use <strong>color-coded microfiber cloths</strong> for different surfaces &mdash; one for glass, one for counters, one for bathrooms. This prevents <strong>cross-contamination</strong> and gives a streak-free finish every time.</div>
+                        <div class="st-footer">
+                            <div class="st-site">bluebrickmass.com</div>
+                            <div class="st-follow">FOLLOW FOR MORE TIPS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic-meta">
+                <div class="graphic-info">
+                    <h3>STORY: QUICK TIP</h3>
+                    <span>1080 x 1920 &mdash; Story</span>
+                </div>
+                <button class="btn-download" onclick="downloadGraphic('graphic-story-tip')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+    </div><!-- /gallery-grid -->
+
+</main>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════════════════════════════════════════
+   SCALE PREVIEWS TO FIT CARDS
+   ═══════════════════════════════════════════ */
+function scaleAllPreviews() {
+    document.querySelectorAll('.graphic-preview').forEach(container => {
+        const graphic = container.querySelector('.social-graphic');
+        if (!graphic) return;
+
+        const gw = graphic.offsetWidth || 1080;
+        const gh = graphic.offsetHeight || 1080;
+        const cw = container.parentElement.offsetWidth;
+
+        const scale = cw / gw;
+        graphic.style.transform = `scale(${scale})`;
+        graphic.style.transformOrigin = 'top left';
+        container.style.height = (gh * scale) + 'px';
+        container.style.width = '100%';
+    });
+}
+
+window.addEventListener('load', () => {
+    scaleAllPreviews();
+    updateBuilderPreview();
+});
+window.addEventListener('resize', () => {
+    scaleAllPreviews();
+    scaleBuilderPreview();
+});
+
+/* ═══════════════════════════════════════════
+   DOWNLOAD WITH HTML2CANVAS
+   ═══════════════════════════════════════════ */
+function downloadGraphic(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    showToast('Generating PNG...');
+
+    // Temporarily reset transform for capture
+    const origTransform = el.style.transform;
+    const origOrigin = el.style.transformOrigin;
+    el.style.transform = 'none';
+    el.style.transformOrigin = '';
+
+    html2canvas(el, {
+        width: el.scrollWidth,
+        height: el.scrollHeight,
+        scale: 1,
+        useCORS: true,
+        backgroundColor: null,
+        logging: false
+    }).then(canvas => {
+        el.style.transform = origTransform;
+        el.style.transformOrigin = origOrigin;
+
+        const link = document.createElement('a');
+        link.download = `blue-brick-${elementId.replace('graphic-', '')}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        showToast('Downloaded!');
+    }).catch(err => {
+        el.style.transform = origTransform;
+        el.style.transformOrigin = origOrigin;
+        console.error('Download error:', err);
+        showToast('Error generating image. Try right-click > Save.');
+    });
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+/* ═══════════════════════════════════════════
+   CUSTOM BUILDER
+   ═══════════════════════════════════════════ */
+let builderFormat = 'feed'; // 'feed' or 'story'
+
+function setBuilderFormat(format, btn) {
+    builderFormat = format;
+    document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateBuilderPreview();
+}
+
+function getBuilderBg(bgStyle) {
+    const backgrounds = {
+        'navy-solid': 'background: #001D4A;',
+        'gradient': 'background: linear-gradient(160deg, #001D4A 0%, #27476E 50%, #006992 100%);',
+        'dark': 'background: linear-gradient(160deg, #0a0a0a 0%, #001D4A 50%, #0a0a0a 100%);',
+        'pattern': 'background: #001D4A;'
+    };
+    return backgrounds[bgStyle] || backgrounds['navy-solid'];
+}
+
+function getBuilderPattern(bgStyle) {
+    if (bgStyle === 'pattern') {
+        return `<div style="position:absolute;inset:0;opacity:0.04;background:
+            linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.5) 49.5%, rgba(255,255,255,0.5) 50.5%, transparent 50.5%) 0 0 / 60px 30px,
+            linear-gradient(0deg, transparent 93%, rgba(255,255,255,0.5) 93%) 0 0 / 60px 30px,
+            linear-gradient(0deg, transparent 93%, rgba(255,255,255,0.5) 93%) 30px 15px / 60px 30px;pointer-events:none;"></div>
+            <div style="position:absolute;inset:0;opacity:0.06;background:radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px) 0 0 / 24px 24px;pointer-events:none;"></div>`;
+    }
+    if (bgStyle === 'dark') {
+        return `<div style="position:absolute;inset:0;opacity:0.03;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.5) 20px,rgba(255,255,255,0.5) 21px);pointer-events:none;"></div>`;
+    }
+    return `<div style="position:absolute;inset:0;opacity:0.04;background:repeating-linear-gradient(120deg,transparent,transparent 40px,rgba(255,255,255,0.5) 40px,rgba(255,255,255,0.5) 41px),repeating-linear-gradient(60deg,transparent,transparent 40px,rgba(255,255,255,0.5) 40px,rgba(255,255,255,0.5) 41px);pointer-events:none;"></div>`;
+}
+
+function updateBuilderPreview() {
+    const style = document.getElementById('builderStyle').value;
+    const headline = document.getElementById('builderHeadline').value || 'YOUR HEADLINE';
+    const body = document.getElementById('builderBody').value || 'Your body text here.';
+    const bgStyle = document.getElementById('builderBg').value;
+
+    const w = 1080;
+    const h = (builderFormat === 'story' || style === 'story') ? 1920 : 1080;
+    const bg = getBuilderBg(bgStyle);
+    const pattern = getBuilderPattern(bgStyle);
+
+    let innerContent = '';
+
+    if (style === 'promo') {
+        innerContent = `
+            <div style="position:absolute;width:80px;height:80px;top:0;left:0;border-top:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;top:0;right:0;border-top:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;bottom:0;left:0;border-bottom:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;bottom:0;right:0;border-bottom:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px;z-index:5;">
+                <div style="font-size:18px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:#ECA400;margin-bottom:20px;">— LIMITED TIME —</div>
+                <h1 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:${h > 1080 ? '80' : '88'}px;letter-spacing:6px;color:#fff;line-height:0.95;margin-bottom:30px;">${headline}</h1>
+                <div style="background:linear-gradient(135deg,#ECA400,#d4940a);padding:16px 44px;border-radius:4px;margin-bottom:30px;">
+                    <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;color:#001D4A;letter-spacing:3px;">${body}</span>
+                </div>
+                <div style="font-size:18px;color:rgba(255,255,255,0.5);letter-spacing:2px;">bluebrickmass.com</div>
+            </div>`;
+    } else if (style === 'tip') {
+        innerContent = `
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:${h > 1080 ? '120px 80px' : '80px'};z-index:5;">
+                <div style="background:#ECA400;color:#001D4A;font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:8px;padding:12px 40px;margin-bottom:60px;">CLEANING TIP</div>
+                <div style="width:100px;height:100px;border:3px solid #ECA400;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:50px;font-size:48px;">&#128161;</div>
+                <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:52px;letter-spacing:4px;color:#fff;margin-bottom:30px;">${headline}</h2>
+                <div style="font-size:${h > 1080 ? '28' : '30'}px;line-height:1.5;color:rgba(255,255,255,0.85);max-width:800px;">${body}</div>
+            </div>`;
+    } else if (style === 'testimonial') {
+        innerContent = `
+            <div style="position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#001D4A,#006992,#ECA400);"></div>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:${h > 1080 ? '140px 90px' : '100px 90px'};z-index:5;">
+                <div style="font-family:Georgia,serif;font-size:160px;color:#ECA400;line-height:0.6;margin-bottom:20px;opacity:0.3;">&ldquo;</div>
+                <div style="display:flex;gap:8px;margin-bottom:40px;">
+                    ${[1,2,3,4,5].map(() => '<div style="width:32px;height:32px;background:#ECA400;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);"></div>').join('')}
+                </div>
+                <div style="font-size:32px;line-height:1.5;color:#001D4A;font-style:italic;margin-bottom:40px;max-width:800px;">${body}</div>
+                <div style="width:60px;height:3px;background:#ECA400;margin-bottom:24px;"></div>
+                <div style="font-size:22px;font-weight:700;color:#001D4A;letter-spacing:1px;">${headline}</div>
+            </div>`;
+        // Override background for testimonial
+        const container = document.getElementById('builder-preview-container');
+        if (container) {
+            const existingGraphic = container.querySelector('.social-graphic');
+            if (existingGraphic) {
+                existingGraphic.style.background = 'linear-gradient(160deg, #ffffff 0%, #f0f4f8 100%)';
+            }
+        }
+    } else if (style === 'service') {
+        innerContent = `
+            <div style="position:absolute;width:80px;height:80px;top:0;left:0;border-top:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;top:0;right:0;border-top:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;bottom:0;left:0;border-bottom:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:80px;height:80px;bottom:0;right:0;border-bottom:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,105,146,0.12) 0%,transparent 70%);"></div>
+            <div style="position:absolute;inset:60px;display:flex;flex-direction:column;z-index:5;">
+                <div style="align-self:flex-start;background:#ECA400;color:#001D4A;font-size:13px;font-weight:800;padding:8px 20px;letter-spacing:3px;text-transform:uppercase;margin-bottom:40px;">OUR SPECIALTY</div>
+                <h1 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:${h > 1080 ? '76' : '84'}px;letter-spacing:5px;color:#fff;line-height:0.95;margin-bottom:20px;">${headline}</h1>
+                <div style="width:80px;height:3px;background:#ECA400;margin-bottom:30px;"></div>
+                <div style="font-size:22px;color:rgba(255,255,255,0.75);line-height:1.6;">${body}</div>
+            </div>`;
+    } else if (style === 'story') {
+        innerContent = `
+            <div style="position:absolute;width:100px;height:100px;top:0;left:0;border-top:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:100px;height:100px;top:0;right:0;border-top:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:100px;height:100px;bottom:0;left:0;border-bottom:3px solid #ECA400;border-left:3px solid #ECA400;"></div>
+            <div style="position:absolute;width:100px;height:100px;bottom:0;right:0;border-bottom:3px solid #ECA400;border-right:3px solid #ECA400;"></div>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 80px;z-index:5;">
+                <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;letter-spacing:8px;color:#fff;margin-bottom:8px;">BLUE <span style="color:#ECA400;">BRICK</span></div>
+                <div style="font-size:14px;color:#ECA400;letter-spacing:5px;text-transform:uppercase;font-weight:600;margin-bottom:80px;">Luxury & Commercial Cleaning</div>
+                <div style="width:60px;height:2px;background:#ECA400;margin-bottom:60px;"></div>
+                <h1 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:72px;letter-spacing:5px;color:#fff;line-height:1;margin-bottom:50px;">${headline}</h1>
+                <div style="font-size:26px;color:rgba(255,255,255,0.7);line-height:1.6;max-width:800px;margin-bottom:60px;">${body}</div>
+                <div style="background:linear-gradient(135deg,#ECA400,#d4940a);color:#001D4A;font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;letter-spacing:4px;padding:18px 50px;border-radius:6px;">LEARN MORE</div>
+            </div>`;
+    }
+
+    // Build the graphic
+    const isTestimonial = (style === 'testimonial');
+    const finalBg = isTestimonial ? 'background: linear-gradient(160deg, #ffffff 0%, #f0f4f8 100%);' : bg;
+
+    const html = `<div class="social-graphic" id="builder-preview-graphic" style="width:${w}px;height:${h}px;${finalBg}position:relative;overflow:hidden;font-family:'Manrope',system-ui,sans-serif;">
+        ${isTestimonial ? '' : pattern}
+        ${innerContent}
+        <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(135deg,#001D4A,#001030);border-top:3px solid #ECA400;display:flex;align-items:center;justify-content:center;gap:14px;z-index:5;">
+            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:24px;letter-spacing:5px;color:#fff;">BLUE <span style="color:#ECA400;">BRICK</span></div>
+            <div style="width:1px;height:26px;background:rgba(255,255,255,0.2);"></div>
+            <div style="font-size:10px;color:#ECA400;text-transform:uppercase;letter-spacing:3px;font-weight:600;">Luxury & Commercial Cleaning</div>
+        </div>
+    </div>`;
+
+    const container = document.getElementById('builder-preview-container');
+    container.innerHTML = html;
+
+    scaleBuilderPreview();
+}
+
+function scaleBuilderPreview() {
+    const container = document.getElementById('builder-preview-container');
+    const graphic = container.querySelector('.social-graphic');
+    if (!graphic) return;
+
+    const gw = graphic.offsetWidth || 1080;
+    const gh = graphic.offsetHeight || 1080;
+
+    // Calculate available width
+    const builderWrap = container.closest('.builder-preview-wrap');
+    const maxW = builderWrap ? builderWrap.offsetWidth : 600;
+    const maxH = window.innerHeight * 0.75;
+
+    const scaleW = maxW / gw;
+    const scaleH = maxH / gh;
+    const scale = Math.min(scaleW, scaleH, 0.5);
+
+    graphic.style.transform = `scale(${scale})`;
+    graphic.style.transformOrigin = 'top left';
+    container.style.width = (gw * scale) + 'px';
+    container.style.height = (gh * scale) + 'px';
+}
+</script>
+
+</body>
+</html>
