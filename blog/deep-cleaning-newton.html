@@ -67,21 +67,26 @@
     <!-- Article Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Deep Cleaning Services in Newton, MA",
-        "description": "Professional deep cleaning for Newton's luxury homes. From Chestnut Hill estates to Newton Centre colonials -- white-glove results for discerning homeowners.",
-        "author": {
-            "@type": "Organization",
-            "name": "Blue Brick Luxury and Commercial Cleaning"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Blue Brick Luxury and Commercial Cleaning"
-        },
-        "datePublished": "2026-03-10",
-        "dateModified": "2026-03-10"
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deep Cleaning Services in Newton, MA",
+  "description": "Professional deep cleaning for Newton's luxury homes. From Chestnut Hill estates to Newton Centre colonials -- white-glove results for discerning homeowners.",
+  "author": {
+    "@type": "Organization",
+    "name": "Blue Brick Luxury and Commercial Cleaning"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Brick Luxury and Commercial Cleaning",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluebrickmass.com/assets/images/logo-stacked-white.png"
     }
+  },
+  "datePublished": "2026-03-10",
+  "dateModified": "2026-03-10",
+  "image": "https://bluebrickmass.com/assets/images/logo-stacked-white.png"
+}
     </script>
 
     <!-- Fonts -->
@@ -94,12 +99,12 @@
            CSS VARIABLES — BLUE BRICK BRAND PALETTE
            ============================================ */
         :root {
-            --prussian: #001D4A;
-            --yale: #27476E;
-            --cerulean: #006992;
-            --amber: #ECA400;
-            --amber-light: #f4be3a;
-            --amber-glow: rgba(236, 164, 0, 0.15);
+            --prussian: #0C1F35;
+            --yale: #1A3A5C;
+            --cerulean: #3D7A9E;
+            --steel: #3D7A9E;
+            --steel-light: #5A9BBD;
+            --steel-glow: rgba(61, 122, 158, 0.15);
             --white: #ffffff;
             --off-white: #f9fafb;
             --light-gray: #f0f2f5;
@@ -132,7 +137,7 @@
 
         img { max-width: 100%; display: block; }
         a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--amber); }
+        a:hover { color: var(--steel); }
 
         /* ============================================
            ANIMATIONS
@@ -193,7 +198,7 @@
            ============================================ */
         .inline-cta {
             background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
-            border-left: 4px solid var(--amber);
+            border-left: 4px solid var(--steel);
             border-radius: 0 12px 12px 0;
             padding: 1.2rem 1.5rem;
             margin: 2rem 0;
@@ -210,12 +215,12 @@
             color: var(--cerulean);
             font-weight: 700;
             text-decoration: underline;
-            text-decoration-color: var(--amber);
+            text-decoration-color: var(--steel);
             text-underline-offset: 3px;
         }
 
         .inline-cta a:hover {
-            color: var(--amber);
+            color: var(--steel);
         }
 
 
@@ -235,14 +240,14 @@
         }
 
         .faq-item:hover {
-            border-color: var(--amber, #ECA400);
+            border-color: var(--amber, #3D7A9E);
         }
 
         .faq-question {
             font-family: var(--font-body, 'Manrope', sans-serif);
             font-size: 1rem;
             font-weight: 600;
-            color: var(--prussian, #001D4A);
+            color: var(--prussian, #0C1F35);
             padding: 1.2rem 3rem 1.2rem 1.2rem;
             margin: 0;
             cursor: pointer;
@@ -264,7 +269,7 @@
             transform: translateY(-50%);
             font-size: 1.4rem;
             font-weight: 300;
-            color: var(--amber, #ECA400);
+            color: var(--amber, #3D7A9E);
             transition: transform 0.3s;
         }
 
@@ -291,7 +296,7 @@
            QUOTE CALCULATOR EMBED
            ============================================ */
         .quote-calc-embed {
-            background: linear-gradient(135deg, #001D4A 0%, #0a2a5c 60%, #001D4A 100%);
+            background: linear-gradient(135deg, #0C1F35 0%, #0a2a5c 60%, #0C1F35 100%);
             border: 1px solid rgba(236, 164, 0, 0.15);
             border-radius: 14px;
             padding: 1.25rem 1.5rem;
@@ -350,8 +355,8 @@
         .quote-calc-btn {
             display: inline-flex;
             align-items: center;
-            background: #ECA400;
-            color: #001D4A;
+            background: #3D7A9E;
+            color: #0C1F35;
             font-size: 0.82rem;
             font-weight: 700;
             padding: 0.55rem 1.15rem;
@@ -413,7 +418,6 @@
         .logo img {
             width: 220px;
             height: auto;
-            filter: brightness(0) invert(1);
             transition: all 0.4s;
         }
 
@@ -433,11 +437,11 @@
             white-space: nowrap;
         }
 
-        nav a:hover { color: var(--amber); }
+        nav a:hover { color: var(--steel); }
 
         .nav-cta {
             padding: 0.55rem 1.5rem;
-            background: var(--amber);
+            background: var(--steel);
             color: var(--prussian) !important;
             font-weight: 700 !important;
             letter-spacing: 0.1em;
@@ -446,7 +450,7 @@
         }
 
         .nav-cta:hover {
-            background: var(--amber-light) !important;
+            background: var(--steel-light) !important;
             color: var(--prussian) !important;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(236, 164, 0, 0.35);
@@ -471,7 +475,7 @@
            BLOG POST HERO
            ============================================ */
         .post-hero {
-            padding: 180px clamp(1.5rem, 5vw, 4rem) 80px;
+            padding: 140px clamp(1.5rem, 5vw, 4rem) 60px;
             text-align: center;
             background: var(--prussian);
             position: relative;
@@ -482,7 +486,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('../assets/images/city images/newton home.png') center/cover no-repeat;
+            background: url('../assets/images/city-images/newton home.png') center/cover no-repeat;
             opacity: 0.15;
         }
 
@@ -502,7 +506,7 @@
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
@@ -520,10 +524,10 @@
             text-transform: uppercase;
         }
 
-        .post-hero h1 em { font-style: normal; color: var(--amber); }
+        .post-hero h1 em { font-style: normal; color: var(--steel); }
 
         .post-hero p {
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             max-width: 620px;
             margin: 0 auto;
             font-size: 1.05rem;
@@ -615,7 +619,7 @@
         .post-content blockquote {
             margin: 2rem 0;
             padding: 1.5rem 2rem;
-            border-left: 4px solid var(--amber);
+            border-left: 4px solid var(--steel);
             background: var(--off-white);
             border-radius: 0 8px 8px 0;
         }
@@ -705,10 +709,10 @@
             position: relative;
         }
 
-        .inline-cta h2 em { font-style: normal; color: var(--amber); }
+        .inline-cta h2 em { font-style: normal; color: var(--steel); }
 
         .inline-cta p {
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
             max-width: 500px;
@@ -730,7 +734,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2.2rem;
-            background: var(--amber);
+            background: var(--steel);
             color: var(--prussian);
             font-family: var(--font-body);
             font-size: 0.82rem;
@@ -742,7 +746,7 @@
         }
 
         .cta-btn-primary:hover {
-            background: var(--amber-light);
+            background: var(--steel-light);
             color: var(--prussian);
             transform: translateY(-3px);
             box-shadow: 0 12px 40px rgba(236, 164, 0, 0.4);
@@ -780,7 +784,7 @@
         }
 
         .related-inner {
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -807,7 +811,7 @@
             top: 50%;
             width: 28px;
             height: 2px;
-            background: var(--amber);
+            background: var(--steel);
         }
 
         .section-tag::before { right: calc(100% + 14px); animation: drawLineLeft 0.6s 0.3s both; }
@@ -895,14 +899,14 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
             transition: gap 0.3s;
         }
 
-        .read-more:hover { gap: 0.8rem; color: var(--amber); }
+        .read-more:hover { gap: 0.8rem; color: var(--steel); }
 
         
         
@@ -998,7 +1002,7 @@
 
         .chat-panel-header {
             padding: 1.25rem 1.25rem 1rem;
-            background: linear-gradient(135deg, #001D4A, #0a2a5c);
+            background: linear-gradient(135deg, #0C1F35, #0a2a5c);
             color: #fff;
             text-align: center;
         }
@@ -1013,7 +1017,7 @@
 
         .chat-panel-header p {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
         }
 
@@ -1057,8 +1061,8 @@
         }
 
         .chat-msg.sent .chat-msg-avatar {
-            background: linear-gradient(135deg, #ECA400, #d4940a);
-            color: #001D4A;
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
+            color: #0C1F35;
         }
 
         .chat-msg-bubble {
@@ -1185,7 +1189,7 @@
 
         .chat-opt-btn {
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             border: 1.5px solid #006992;
             border-radius: 20px;
             padding: 5px 14px;
@@ -1203,9 +1207,9 @@
         }
 
         .chat-opt-btn.amber {
-            border-color: #ECA400;
-            background: #ECA400;
-            color: #001D4A;
+            border-color: #3D7A9E;
+            background: #3D7A9E;
+            color: #0C1F35;
         }
 
         .chat-opt-btn.amber:hover {
@@ -1261,7 +1265,7 @@
             right: 2rem;
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, #ECA400, #d4940a);
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -1290,7 +1294,7 @@
         .back-to-top svg {
             width: 20px;
             height: 20px;
-            stroke: #001D4A;
+            stroke: #0C1F35;
             fill: none;
             stroke-width: 2.5;
             stroke-linecap: round;
@@ -1317,14 +1321,14 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, #001D4A 0%, rgba(0, 29, 74, 0.85) 30%, rgba(0, 29, 74, 0.75) 100%);
+            background: linear-gradient(180deg, #0C1F35 0%, rgba(0, 29, 74, 0.85) 30%, rgba(0, 29, 74, 0.75) 100%);
         }
 
         .footer-top {
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
             gap: 2.5rem;
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto 1.5rem;
             padding: 3rem clamp(1.5rem, 5vw, 4rem) 1.5rem;
             position: relative;
@@ -1340,7 +1344,6 @@
         .footer-brand .footer-logo img {
             width: 160px;
             height: auto;
-            filter: brightness(0) invert(1);
         }
 
         .footer-brand p {
@@ -1360,12 +1363,12 @@
             transition: color 0.3s;
         }
 
-        .contact-line:hover { color: #ECA400; }
+        .contact-line:hover { color: #3D7A9E; }
 
         .contact-line svg {
             width: 15px;
             height: 15px;
-            stroke: #ECA400;
+            stroke: #3D7A9E;
             fill: none;
             stroke-width: 1.5;
             flex-shrink: 0;
@@ -1386,7 +1389,7 @@
             bottom: 0; left: 0;
             width: 24px;
             height: 2px;
-            background: #ECA400;
+            background: #3D7A9E;
         }
 
         .footer-links-list {
@@ -1404,7 +1407,7 @@
         }
 
         .footer-links-list a:hover {
-            color: #ECA400;
+            color: #3D7A9E;
             padding-left: 4px;
         }
 
@@ -1412,7 +1415,7 @@
             text-align: center;
             padding: 1rem clamp(1.5rem, 5vw, 4rem);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -1507,7 +1510,7 @@
         }
 
         .highlight-box {
-            border-left: 4px solid var(--amber, #ECA400) !important;
+            border-left: 4px solid var(--amber, #3D7A9E) !important;
             background: linear-gradient(135deg, rgba(236, 164, 0, 0.04), rgba(0, 105, 146, 0.03)) !important;
             border-radius: 0 12px 12px 0 !important;
             padding: 1.5rem !important;
@@ -1535,7 +1538,7 @@
             bottom: calc(100% + 8px);
             right: 0;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             font-size: 0.78rem;
             font-weight: 600;
             padding: 0.5rem 1rem;
@@ -1579,7 +1582,7 @@
            EMAIL SUBSCRIBER
            ============================================ */
         .footer-cta {
-            background: linear-gradient(135deg, #ECA400 0%, #d4940a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #d4940a 100%);
             padding: 3rem 2rem;
             text-align: center;
             position: relative;
@@ -1594,7 +1597,7 @@
         .footer-cta h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.8rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.5rem;
             font-weight: 800;
         }
@@ -1617,7 +1620,7 @@
             border-radius: 50px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 29, 74, 0.2);
-            border: 2px solid #001D4A;
+            border: 2px solid #0C1F35;
         }
 
         .subscribe-input-wrap input[type="email"] {
@@ -1627,7 +1630,7 @@
             font-size: 0.95rem;
             font-family: inherit;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             outline: none;
             min-width: 0;
         }
@@ -1637,7 +1640,7 @@
         }
 
         .subscribe-btn {
-            background: #001D4A;
+            background: #0C1F35;
             color: #fff;
             font-weight: 700;
             font-size: 0.9rem;
@@ -1662,7 +1665,7 @@
         }
 
         .subscribe-success {
-            color: #001D4A !important;
+            color: #0C1F35 !important;
             font-weight: 600;
             font-size: 0.95rem;
             margin-top: 0.8rem !important;
@@ -1670,7 +1673,7 @@
 
         /* Inline blog subscriber CTA */
         .inline-subscribe {
-            background: linear-gradient(135deg, #ECA400 0%, #f4be3a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #f4be3a 100%);
             border-radius: 16px;
             padding: 2rem 1.5rem;
             margin: 2.5rem 0;
@@ -1693,7 +1696,7 @@
         .inline-subscribe h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.3rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.35rem;
             font-weight: 800;
         }
@@ -1743,15 +1746,14 @@
          ========================================== -->
         <div class="tube-nav" id="tubeNav">
         <div class="tube-nav-inner">
-            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4L4 18H9V34H31V18H36L20 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <rect x="12" y="22" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                </svg>
-            </a>
+            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">BLUE <span>BRICK</span></a>
             <a href="/#services" class="tube-nav-link">
                 <span class="nav-label">Services</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            </a>
+            <a href="/pricing.html" class="tube-nav-link">
+                <span class="nav-label">Pricing</span>
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
             </a>
             <a href="/cities.html" class="tube-nav-link">
                 <span class="nav-label">Areas</span>
@@ -2076,7 +2078,8 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="../assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning">
+                    <div style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: 2rem; letter-spacing: 4px; line-height: 1; color: #fff;">BLUE <span style="color: #5A9BBD;">BRICK</span></div>
+                    <div style="font-family: 'Manrope', sans-serif; font-size: 0.55rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem;">Luxury & Commercial Cleaning</div>
                 </div>
                 <p>Boston's trusted deep cleaning and luxury property care.</p>
                 <a href="sms:+17813305604" class="contact-line" aria-label="Text us">
@@ -2093,6 +2096,7 @@
                 <h4>Quick Links</h4>
                 <nav class="footer-links-list" aria-label="Quick links">
                     <a href="/">Home</a>
+                    <a href="/pricing.html">Pricing</a>
                     <a href="/cities.html">Service Areas</a>
                     <a href="/blog/">Blog</a>
                     <a href="/tools/quote-calculator.html">Quote Calculator</a>
@@ -2321,7 +2325,7 @@
                     { label: 'Text Me', amber: true, action: chatFlowAskPhone },
                     { label: 'Email Me', amber: true, action: chatFlowAskEmail },
                     { label: 'Use Quote Calculator', action: function() {
-                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#ECA400;font-weight:700\'>Open Quote Calculator →</a>");
+                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#3D7A9E;font-weight:700\'>Open Quote Calculator →</a>");
                         setTimeout(chatFlowAnythingElse, 1500);
                     }}
                 ]);

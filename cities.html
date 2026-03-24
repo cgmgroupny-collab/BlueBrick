@@ -20,12 +20,12 @@
 
     <style>
         :root {
-            --prussian: #001D4A;
-            --yale: #27476E;
-            --cerulean: #006992;
+            --prussian: #0C1F35;
+            --yale: #1A3A5C;
+            --cerulean: #3D7A9E;
             --cream: #EAF8BF;
-            --amber: #ECA400;
-            --amber-light: #f4be3a;
+            --steel: #3D7A9E;
+            --steel-light: #5A9BBD;
             --white: #ffffff;
             --off-white: #f9fafb;
             --light-gray: #f0f2f5;
@@ -54,7 +54,7 @@
 
         img { max-width: 100%; display: block; }
         a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--amber); }
+        a:hover { color: var(--steel); }
 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(40px); }
@@ -103,7 +103,6 @@
         .logo img {
             width: 220px;
             height: auto;
-            filter: brightness(0) invert(1);
             transition: all 0.4s;
         }
 
@@ -122,11 +121,11 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--amber); }
+        nav a:hover { color: var(--steel); }
 
         .nav-cta {
             padding: 0.55rem 1.5rem;
-            background: var(--amber);
+            background: var(--steel);
             color: var(--prussian) !important;
             font-weight: 700 !important;
             border-radius: 4px;
@@ -134,7 +133,7 @@
         }
 
         .nav-cta:hover {
-            background: var(--amber-light) !important;
+            background: var(--steel-light) !important;
             color: var(--prussian) !important;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(236, 164, 0, 0.35);
@@ -170,7 +169,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('assets/images/city images/boston condo.png') center/cover no-repeat;
+            background: url('assets/images/city-images/boston condo.png') center/cover no-repeat;
             opacity: 0.15;
         }
 
@@ -190,7 +189,7 @@
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
@@ -208,7 +207,7 @@
             text-transform: uppercase;
         }
 
-        .page-hero h1 em { font-style: normal; color: var(--amber); }
+        .page-hero h1 em { font-style: normal; color: var(--steel); }
 
         .page-hero p {
             color: rgba(255, 255, 255, 0.65);
@@ -231,7 +230,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -302,7 +301,7 @@
             font-weight: 700;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             margin-bottom: 0.5rem;
         }
 
@@ -341,11 +340,11 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             transition: gap 0.3s;
         }
 
-        .city-cta:hover { gap: 0.8rem; color: var(--amber); }
+        .city-cta:hover { gap: 0.8rem; color: var(--steel); }
 
         /* ============================================
            MAP / COVERAGE SECTION
@@ -378,7 +377,7 @@
             top: 50%;
             width: 28px;
             height: 2px;
-            background: var(--amber);
+            background: var(--steel);
         }
 
         .section-tag::before { right: calc(100% + 14px); }
@@ -480,7 +479,7 @@
             text-transform: uppercase;
         }
 
-        .cta-section h2 em { font-style: normal; color: var(--amber); }
+        .cta-section h2 em { font-style: normal; color: var(--steel); }
 
         .cta-section p {
             color: rgba(255, 255, 255, 0.6);
@@ -503,7 +502,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2.2rem;
-            background: var(--amber);
+            background: var(--steel);
             color: var(--prussian);
             font-family: var(--font-body);
             font-size: 0.82rem;
@@ -515,7 +514,7 @@
         }
 
         .cta-btn-primary:hover {
-            background: var(--amber-light);
+            background: var(--steel-light);
             color: var(--prussian);
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(236, 164, 0, 0.3);
@@ -554,7 +553,7 @@
         }
 
         .footer-inner {
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -587,7 +586,7 @@
             transition: color 0.3s;
         }
 
-        .footer-links a:hover { color: var(--amber); }
+        .footer-links a:hover { color: var(--steel); }
 
         .footer-copy {
             width: 100%;
@@ -717,15 +716,15 @@
         }
 
         .tube-nav.scrolled .tube-nav-link {
-            color: #001D4A !important;
+            color: #0C1F35 !important;
         }
 
         .tube-nav-link:hover {
-            color: #ECA400 !important;
+            color: #3D7A9E !important;
         }
 
         .tube-nav-link.active {
-            color: #ECA400 !important;
+            color: #3D7A9E !important;
             background: rgba(236, 164, 0, 0.08);
         }
 
@@ -737,7 +736,7 @@
             transform: translateX(-50%);
             width: 28px;
             height: 3px;
-            background: #ECA400;
+            background: #3D7A9E;
             border-radius: 3px 3px 0 0;
         }
 
@@ -756,8 +755,8 @@
 
         .tube-nav-cta {
             padding: 0.5rem 1.2rem !important;
-            background: linear-gradient(135deg, #ECA400, #d4940a) !important;
-            color: #001D4A !important;
+            background: linear-gradient(135deg, #3D7A9E, #d4940a) !important;
+            color: #0C1F35 !important;
             font-weight: 700 !important;
             box-shadow: 0 2px 10px rgba(236, 164, 0, 0.3);
             transition: all 0.3s !important;
@@ -766,7 +765,7 @@
         .tube-nav-cta:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 16px rgba(236, 164, 0, 0.4) !important;
-            color: #001D4A !important;
+            color: #0C1F35 !important;
         }
 
         .tube-nav-logo {
@@ -774,20 +773,15 @@
             align-items: center;
             padding: 0.25rem 0.75rem 0.25rem 0.5rem;
             text-decoration: none !important;
-        }
-
-        .tube-nav-logo svg {
-            width: 28px;
-            height: 28px;
-            color: rgba(255, 255, 255, 0.9);
+            font-family: "Bebas Neue", Impact, sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.95) !important;
             transition: color 0.3s;
         }
 
-        .tube-nav.scrolled .tube-nav-logo svg {
-            color: #001D4A;
-        }
-
-        .tube-nav-link .nav-icon { display: none; }
+.tube-nav.scrolled
+.tube-nav-link .nav-icon { display: none; }
         .tube-nav-link .nav-label { display: inline; }
 
         @media (max-width: 768px) {
@@ -909,7 +903,7 @@
 
         .chat-panel-header {
             padding: 1.25rem 1.25rem 1rem;
-            background: linear-gradient(135deg, #001D4A, #0a2a5c);
+            background: linear-gradient(135deg, #0C1F35, #0a2a5c);
             color: #fff;
             text-align: center;
         }
@@ -968,8 +962,8 @@
         }
 
         .chat-msg.sent .chat-msg-avatar {
-            background: linear-gradient(135deg, #ECA400, #d4940a);
-            color: #001D4A;
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
+            color: #0C1F35;
         }
 
         .chat-msg-bubble {
@@ -1096,7 +1090,7 @@
 
         .chat-opt-btn {
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             border: 1.5px solid #006992;
             border-radius: 20px;
             padding: 5px 14px;
@@ -1114,9 +1108,9 @@
         }
 
         .chat-opt-btn.amber {
-            border-color: #ECA400;
-            background: #ECA400;
-            color: #001D4A;
+            border-color: #3D7A9E;
+            background: #3D7A9E;
+            color: #0C1F35;
         }
 
         .chat-opt-btn.amber:hover {
@@ -1185,7 +1179,7 @@
             bottom: calc(100% + 8px);
             right: 0;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             font-size: 0.78rem;
             font-weight: 600;
             padding: 0.5rem 1rem;
@@ -1229,7 +1223,7 @@
            EMAIL SUBSCRIBER
            ============================================ */
         .footer-cta {
-            background: linear-gradient(135deg, #ECA400 0%, #d4940a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #d4940a 100%);
             padding: 3rem 2rem;
             text-align: center;
             position: relative;
@@ -1244,7 +1238,7 @@
         .footer-cta h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.8rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.5rem;
             font-weight: 800;
         }
@@ -1267,7 +1261,7 @@
             border-radius: 50px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 29, 74, 0.2);
-            border: 2px solid #001D4A;
+            border: 2px solid #0C1F35;
         }
 
         .subscribe-input-wrap input[type="email"] {
@@ -1277,7 +1271,7 @@
             font-size: 0.95rem;
             font-family: inherit;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             outline: none;
             min-width: 0;
         }
@@ -1287,7 +1281,7 @@
         }
 
         .subscribe-btn {
-            background: #001D4A;
+            background: #0C1F35;
             color: #fff;
             font-weight: 700;
             font-size: 0.9rem;
@@ -1312,7 +1306,7 @@
         }
 
         .subscribe-success {
-            color: #001D4A !important;
+            color: #0C1F35 !important;
             font-weight: 600;
             font-size: 0.95rem;
             margin-top: 0.8rem !important;
@@ -1320,7 +1314,7 @@
 
         /* Inline blog subscriber CTA */
         .inline-subscribe {
-            background: linear-gradient(135deg, #ECA400 0%, #f4be3a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #f4be3a 100%);
             border-radius: 16px;
             padding: 2rem 1.5rem;
             margin: 2.5rem 0;
@@ -1343,7 +1337,7 @@
         .inline-subscribe h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.3rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.35rem;
             font-weight: 800;
         }
@@ -1393,7 +1387,7 @@
             right: 2rem;
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, #ECA400, #d4940a);
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -1422,7 +1416,7 @@
         .back-to-top svg {
             width: 20px;
             height: 20px;
-            stroke: #001D4A;
+            stroke: #0C1F35;
             fill: none;
             stroke-width: 2.5;
             stroke-linecap: round;
@@ -1438,15 +1432,14 @@
 <body>
     <div class="tube-nav" id="tubeNav">
         <div class="tube-nav-inner">
-            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4L4 18H9V34H31V18H36L20 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <rect x="12" y="22" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                </svg>
-            </a>
+            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">BLUE <span>BRICK</span></a>
             <a href="/#services" class="tube-nav-link">
                 <span class="nav-label">Services</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            </a>
+            <a href="/pricing.html" class="tube-nav-link">
+                <span class="nav-label">Pricing</span>
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
             </a>
             <a href="/cities.html" class="tube-nav-link active">
                 <span class="nav-label">Areas</span>
@@ -1486,7 +1479,7 @@
 
                 <!-- Boston — Featured -->
                 <a href="/#quote" class="city-card reveal">
-                    <img src="assets/images/city images/boston condo.png" alt="Luxury Boston high-rise condo with city skyline views" loading="lazy">
+                    <img src="assets/images/city-images/boston condo.png" alt="Luxury Boston high-rise condo with city skyline views" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Featured Area</div>
@@ -1498,7 +1491,7 @@
 
                 <!-- East Boston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.1s">
-                    <img src="assets/images/city images/east boston rental propety.png" alt="East Boston multi-family rental property" loading="lazy">
+                    <img src="assets/images/city-images/east boston rental propety.png" alt="East Boston multi-family rental property" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Waterfront</div>
@@ -1510,7 +1503,7 @@
 
                 <!-- South Boston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="assets/images/city images/south boston kichen.png" alt="Modern renovated South Boston kitchen with marble island" loading="lazy">
+                    <img src="assets/images/city-images/south boston kichen.png" alt="Modern renovated South Boston kitchen with marble island" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Seaport District</div>
@@ -1522,7 +1515,7 @@
 
                 <!-- Newton -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.15s">
-                    <img src="assets/images/city images/newton home.png" alt="Luxury Newton home living room with coffered ceiling and fireplace" loading="lazy">
+                    <img src="assets/images/city-images/newton home.png" alt="Luxury Newton home living room with coffered ceiling and fireplace" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Luxury Estates</div>
@@ -1534,7 +1527,7 @@
 
                 <!-- Waltham -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.25s">
-                    <img src="assets/images/city images/waltham office.png" alt="Commercial office space cleaned in Waltham" loading="lazy">
+                    <img src="assets/images/city-images/waltham office.png" alt="Commercial office space cleaned in Waltham" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Commercial Hub</div>
@@ -1546,7 +1539,7 @@
 
                 <!-- Brighton -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.2s">
-                    <img src="assets/images/city images/brighton apartment.png" alt="Clean Brighton apartment with kitchen and living area" loading="lazy">
+                    <img src="assets/images/city-images/brighton apartment.png" alt="Clean Brighton apartment with kitchen and living area" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Residential</div>
@@ -1558,7 +1551,7 @@
 
                 <!-- Allston -->
                 <a href="/#quote" class="city-card reveal" style="transition-delay: 0.3s">
-                    <img src="assets/images/city images/alston finished apartment.png" alt="Finished Allston apartment with exposed brick and kitchen" loading="lazy">
+                    <img src="assets/images/city-images/alston finished apartment.png" alt="Finished Allston apartment with exposed brick and kitchen" loading="lazy">
                     <div class="city-overlay"></div>
                     <div class="city-content">
                         <div class="city-tag">Urban Living</div>
@@ -1646,7 +1639,8 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning">
+                    <div style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: 2rem; letter-spacing: 4px; line-height: 1; color: #fff;">BLUE <span style="color: #5A9BBD;">BRICK</span></div>
+                    <div style="font-family: 'Manrope', sans-serif; font-size: 0.55rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem;">Luxury & Commercial Cleaning</div>
                 </div>
                 <p>Boston's trusted deep cleaning and luxury property care.</p>
                 <a href="sms:+17813305604" class="contact-line" aria-label="Text us">
@@ -1663,6 +1657,7 @@
                 <h4>Quick Links</h4>
                 <nav class="footer-links-list" aria-label="Quick links">
                     <a href="/">Home</a>
+                    <a href="/pricing.html">Pricing</a>
                     <a href="/cities.html">Service Areas</a>
                     <a href="/blog/">Blog</a>
                     <a href="/tools/quote-calculator.html">Quote Calculator</a>
@@ -1926,7 +1921,7 @@
                     { label: 'Text Me', amber: true, action: chatFlowAskPhone },
                     { label: 'Email Me', amber: true, action: chatFlowAskEmail },
                     { label: 'Use Quote Calculator', action: function() {
-                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#ECA400;font-weight:700\'>Open Quote Calculator →</a>");
+                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#3D7A9E;font-weight:700\'>Open Quote Calculator →</a>");
                         setTimeout(chatFlowAnythingElse, 1500);
                     }}
                 ]);

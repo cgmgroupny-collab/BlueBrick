@@ -537,20 +537,15 @@
             align-items: center;
             padding: 0.25rem 0.75rem 0.25rem 0.5rem;
             text-decoration: none !important;
-        }
-
-        .tube-nav-logo svg {
-            width: 28px;
-            height: 28px;
-            color: rgba(255, 255, 255, 0.9);
+            font-family: "Bebas Neue", Impact, sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.95) !important;
             transition: color 0.3s;
         }
 
-        .tube-nav.scrolled .tube-nav-logo svg {
-            color: #001D4A;
-        }
-
-        .tube-nav-link .nav-icon { display: none; }
+.tube-nav.scrolled
+.tube-nav-link .nav-icon { display: none; }
         .tube-nav-link .nav-label { display: inline; }
 
         @media (max-width: 768px) {
@@ -687,7 +682,7 @@
 
         .chat-panel-header p {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
         }
 
@@ -1201,15 +1196,14 @@
 <body>
     <div class="tube-nav" id="tubeNav">
         <div class="tube-nav-inner">
-            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4L4 18H9V34H31V18H36L20 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <rect x="12" y="22" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                </svg>
-            </a>
+            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">BLUE <span>BRICK</span></a>
             <a href="/#services" class="tube-nav-link">
                 <span class="nav-label">Services</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            </a>
+            <a href="/pricing.html" class="tube-nav-link">
+                <span class="nav-label">Pricing</span>
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
             </a>
             <a href="/cities.html" class="tube-nav-link">
                 <span class="nav-label">Areas</span>
@@ -1260,7 +1254,7 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <a href="deep-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
+                        <a href="deep-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Waltham</h2>
@@ -1270,7 +1264,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="deep-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
+                        <a href="deep-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Newton</h2>
@@ -1310,7 +1304,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="deep-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
+                        <a href="deep-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Brighton</h2>
@@ -1330,7 +1324,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="deep-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
+                        <a href="deep-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Boston</h2>
@@ -1340,7 +1334,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="deep-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
+                        <a href="deep-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in East Boston</h2>
@@ -1350,7 +1344,7 @@
                     </article>
 
                     <article class="blog-card reveal">
-                        <a href="deep-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
+                        <a href="deep-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in South Boston</h2>
@@ -1360,7 +1354,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="deep-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
+                        <a href="deep-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Deep Cleaning</div>
                             <h2>Deep Cleaning in Allston</h2>
@@ -1419,7 +1413,7 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <a href="move-in-move-out-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Allston</h2>
@@ -1429,7 +1423,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="move-in-move-out-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Boston</h2>
@@ -1439,7 +1433,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="move-in-move-out-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Brighton</h2>
@@ -1469,7 +1463,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="move-in-move-out-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in East Boston</h2>
@@ -1499,7 +1493,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="move-in-move-out-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Newton</h2>
@@ -1519,7 +1513,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="move-in-move-out-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in South Boston</h2>
@@ -1529,7 +1523,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="move-in-move-out-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
+                        <a href="move-in-move-out-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Move-In/Move-Out Cleaning</div>
                             <h2>Move-In/Move-Out Cleaning in Waltham</h2>
@@ -1578,7 +1572,7 @@
                 <div class="blog-grid">
 
                     <article class="blog-card reveal">
-                        <a href="post-construction-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
+                        <a href="post-construction-cleaning-allston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/alston finished apartment.png')"><span>ALLSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Allston</h2>
@@ -1588,7 +1582,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="post-construction-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/boston condo.png')"><span>BOSTON</span></div></div></a>
+                        <a href="post-construction-cleaning-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/boston condo.png')"><span>BOSTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Boston</h2>
@@ -1598,7 +1592,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="post-construction-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
+                        <a href="post-construction-cleaning-brighton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/brighton apartment.png')"><span>BRIGHTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Brighton</h2>
@@ -1628,7 +1622,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="post-construction-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
+                        <a href="post-construction-cleaning-east-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/east boston rental propety.png')"><span>EASTIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in East Boston</h2>
@@ -1658,7 +1652,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="post-construction-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/newton home.png')"><span>NEWTON</span></div></div></a>
+                        <a href="post-construction-cleaning-newton.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/newton home.png')"><span>NEWTON</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Newton</h2>
@@ -1678,7 +1672,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.1s">
-                        <a href="post-construction-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
+                        <a href="post-construction-cleaning-south-boston.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/south boston kichen.png')"><span>SOUTHIE</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in South Boston</h2>
@@ -1688,7 +1682,7 @@
                     </article>
 
                     <article class="blog-card reveal" style="transition-delay: 0.2s">
-                        <a href="post-construction-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city images/waltham office.png')"><span>WALTHAM</span></div></div></a>
+                        <a href="post-construction-cleaning-waltham.html" class="card-link"><div class="card-img-wrap"><div class="card-image" style="background-image: url('../assets/images/city-images/waltham office.png')"><span>WALTHAM</span></div></div></a>
                         <div class="card-body">
                             <div class="card-tag">Post-Construction Cleaning</div>
                             <h2>Post-Construction Cleaning in Waltham</h2>
@@ -1886,6 +1880,7 @@
                 <h4>Quick Links</h4>
                 <nav class="footer-links-list" aria-label="Quick links">
                     <a href="/">Home</a>
+                    <a href="/pricing.html">Pricing</a>
                     <a href="/cities.html">Service Areas</a>
                     <a href="/blog/">Blog</a>
                     <a href="/tools/quote-calculator.html">Quote Calculator</a>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Blue Brick — Before/After Transformation Ad</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #0a0e17;
+    position: relative;
+  }
+
+  /* Split layout */
+  .split-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 60%;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .split-side {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .split-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Before side - desaturated, slightly darker */
+  .before-side img {
+    filter: saturate(0.3) brightness(0.7);
+  }
+
+  .after-side img {
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  /* Labels */
+  .split-label {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.15em;
+    padding: 8px 24px;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  .before-side .split-label {
+    left: 20px;
+    background: rgba(220, 38, 38, 0.85);
+    color: #fff;
+  }
+
+  .after-side .split-label {
+    right: 20px;
+    background: #ECA400;
+    color: #0C1F35;
+  }
+
+  /* Center divider with arrow */
+  .center-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 100%;
+    background: #ECA400;
+    z-index: 3;
+  }
+
+  .arrow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: #ECA400;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    box-shadow: 0 4px 20px rgba(236, 164, 0, 0.4);
+  }
+
+  .arrow-circle svg {
+    width: 28px;
+    height: 28px;
+    fill: #0C1F35;
+  }
+
+  /* Gradient overlay on photos */
+  .split-side::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(10, 14, 23, 0.6));
+    z-index: 1;
+  }
+
+  /* Content section */
+  .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    background: #0C1F35;
+    padding: 45px 65px 90px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  /* Amber accent line */
+  .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 65px;
+    right: 65px;
+    height: 3px;
+    background: linear-gradient(90deg, #ECA400, #3D7A9E, transparent);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .time-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(236, 164, 0, 0.12);
+    border: 1px solid rgba(236, 164, 0, 0.25);
+    border-radius: 6px;
+    padding: 10px 20px;
+  }
+
+  .time-badge .clock {
+    font-size: 22px;
+  }
+
+  .time-badge .text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #ECA400;
+    letter-spacing: 0.08em;
+  }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .headline span {
+    color: #ECA400;
+  }
+
+  .subtext {
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  /* Bottom row */
+  .bottom-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .services-row {
+    display: flex;
+    gap: 28px;
+  }
+
+  .service-tag {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .service-tag .check {
+    width: 18px;
+    height: 18px;
+    background: rgba(236, 164, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #ECA400;
+  }
+
+  .cta-btn {
+    background: #ECA400;
+    color: #0C1F35;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    padding: 16px 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-btn .phone {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 10, 18, 0.95);
+    padding: 14px 65px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    z-index: 5;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-item .dot {
+    width: 5px;
+    height: 5px;
+    background: #ECA400;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Split before/after images -->
+  <div class="split-container">
+    <div class="split-side before-side">
+      <img src="../assets/images/services images/renovation restoration clean.jpg" alt="Before — construction debris">
+      <div class="split-label">BEFORE</div>
+    </div>
+    <div class="split-side after-side">
+      <img src="../assets/images/city-images/newton home.png" alt="After — pristine clean">
+      <div class="split-label">AFTER</div>
+    </div>
+    <div class="center-divider"></div>
+    <div class="arrow-circle">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="header-row">
+      <img src="../assets/images/logo-stacked-white.png" alt="Blue Brick" class="logo">
+      <div class="time-badge">
+        <span class="clock">&#9200;</span>
+        <span class="text">24-Hour Turnaround</span>
+      </div>
+    </div>
+
+    <h1 class="headline">This Is What A Construction Site<br>Looks Like <span>24 Hours After We Show Up</span></h1>
+    <p class="subtext">From dust and debris to move-in ready &mdash; guaranteed.</p>
+
+    <div class="bottom-row">
+      <div class="services-row">
+        <span class="service-tag"><span class="check">&#10003;</span> New Builds</span>
+        <span class="service-tag"><span class="check">&#10003;</span> Renovations</span>
+        <span class="service-tag"><span class="check">&#10003;</span> Commercial</span>
+      </div>
+      <div class="cta-btn">
+        Free Quote <span class="phone">781-330-5604</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <span class="trust-item"><span class="dot"></span> Insured & Bonded</span>
+    <span class="trust-item"><span class="dot"></span> 5-Star Rated</span>
+    <span class="trust-item"><span class="dot"></span> 100+ Projects</span>
+    <span class="trust-item"><span class="dot"></span> Greater Boston</span>
+  </div>
+
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════
+  FACEBOOK POST CAPTION
+═══════════════════════════════════════════
+
+This is what a construction site looks like 24 hours after we show up. 👆
+
+No shortcuts. No dust left behind. Just pristine, move-in ready results.
+
+Whether it's a full renovation, new build, or commercial fit-out — we handle the mess so you don't have to.
+
+✅ Post-construction deep clean
+✅ Dust & debris removal
+✅ Window, fixture & floor detailing
+✅ 24-hour turnaround available
+
+📞 Free quote: 781-330-5604
+📧 bluebrickmass@gmail.com
+
+Serving Greater Boston — Newton, Waltham, Brighton, South Boston, East Boston & beyond.
+
+#BeforeAndAfter #PostConstructionCleaning #BostonCleaning #ConstructionCleanup #CommercialCleaning #BlueBrick #NewBuildClean #RenovationCleanup #GreaterBoston
+-->

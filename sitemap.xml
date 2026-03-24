@@ -2,373 +2,265 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://bluebrickcleaning.com/</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://bluebrickmass.com/</loc>
+    <lastmod>2026-03-15</lastmod>
   </url>
 
   <!-- Cities -->
   <url>
-    <loc>https://bluebrickcleaning.com/cities.html</loc>
+    <loc>https://bluebrickmass.com/cities.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Blog Index -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/index.html</loc>
+    <loc>https://bluebrickmass.com/blog/index.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Quote Calculator -->
   <url>
-    <loc>https://bluebrickcleaning.com/tools/quote-calculator.html</loc>
+    <loc>https://bluebrickmass.com/tools/quote-calculator.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
   <!-- Blog Posts: Deep Cleaning -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-allston.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-allston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-brighton.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-brighton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-brookline.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-brookline.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-cambridge.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-cambridge.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-east-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-east-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-lexington.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-lexington.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-needham.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-needham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-newton.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-newton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-somerville.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-somerville.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-south-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-south-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-waltham.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-waltham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-watertown.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-watertown.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-wellesley.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-wellesley.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/deep-cleaning-weston.html</loc>
+    <loc>https://bluebrickmass.com/blog/deep-cleaning-weston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts: Move-In/Move-Out Cleaning -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-allston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-allston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-brighton.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-brighton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-brookline.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-brookline.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-cambridge.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-cambridge.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-east-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-east-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-lexington.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-lexington.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-needham.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-needham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-newton.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-newton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-somerville.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-somerville.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-south-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-south-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-waltham.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-waltham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-watertown.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-watertown.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-wellesley.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-wellesley.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-in-move-out-cleaning-weston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-in-move-out-cleaning-weston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts: Post-Construction Cleaning -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-allston.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-allston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-brighton.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-brighton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-brookline.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-brookline.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-cambridge.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-cambridge.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-east-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-east-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-guide-contractors.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-guide-contractors.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-lexington.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-lexington.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-needham.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-needham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-newton.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-newton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-somerville.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-somerville.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-south-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-south-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-waltham.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-waltham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-watertown.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-watertown.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-wellesley.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-wellesley.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/post-construction-cleaning-weston.html</loc>
+    <loc>https://bluebrickmass.com/blog/post-construction-cleaning-weston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts: Office Cleaning -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/office-cleaning-cambridge.html</loc>
+    <loc>https://bluebrickmass.com/blog/office-cleaning-cambridge.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/office-cleaning-newton.html</loc>
+    <loc>https://bluebrickmass.com/blog/office-cleaning-newton.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/office-cleaning-waltham.html</loc>
+    <loc>https://bluebrickmass.com/blog/office-cleaning-waltham.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts: Specialty -->
   <url>
-    <loc>https://bluebrickcleaning.com/blog/airbnb-turnover-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/airbnb-turnover-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/daycare-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/daycare-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/move-out-cleaning-checklist-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/move-out-cleaning-checklist-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/property-manager-cleaning-guide-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/property-manager-cleaning-guide-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/restaurant-deep-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/restaurant-deep-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluebrickcleaning.com/blog/spring-cleaning-boston.html</loc>
+    <loc>https://bluebrickmass.com/blog/spring-cleaning-boston.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional Pages -->
+  <url>
+    <loc>https://bluebrickmass.com/privacy.html</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://bluebrickmass.com/realtor-price-guide.html</loc>
+    <lastmod>2026-03-21</lastmod>
   </url>
 </urlset>

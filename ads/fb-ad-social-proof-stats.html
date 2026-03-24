@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Blue Brick — Social Proof / Stats Ad</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #0C1F35;
+    position: relative;
+  }
+
+  /* Background image — office/commercial property */
+  .bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/images/city-images/waltham office.png') center/cover;
+    filter: brightness(0.15) saturate(0.3);
+    z-index: 0;
+  }
+
+  /* Gradient overlay */
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 31, 53, 0.5) 0%,
+      rgba(12, 31, 53, 0.3) 40%,
+      rgba(12, 31, 53, 0.8) 70%,
+      rgba(12, 31, 53, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 65px 85px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .logo {
+    height: 55px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stars {
+    font-size: 22px;
+    color: #ECA400;
+    letter-spacing: 2px;
+  }
+
+  .rating-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Big stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .stat {
+    padding: 30px 20px;
+    position: relative;
+  }
+
+  .stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 0;
+    height: 60%;
+    width: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 88px;
+    color: #ECA400;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 58px;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .headline span {
+    color: #ECA400;
+  }
+
+  .subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 45px;
+  }
+
+  /* Services row */
+  .services-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+  }
+
+  .service-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .service-pill .icon {
+    color: #ECA400;
+    font-size: 14px;
+  }
+
+  /* CTA section */
+  .cta-section {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .cta-btn {
+    background: #ECA400;
+    color: #0C1F35;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    padding: 20px 48px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .cta-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .cta-phone-group {
+    text-align: center;
+  }
+
+  .cta-phone-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .cta-phone {
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 10, 18, 0.95);
+    padding: 14px 65px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    z-index: 3;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-item .dot {
+    width: 5px;
+    height: 5px;
+    background: #ECA400;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <!-- Header -->
+    <div class="header">
+      <img src="../assets/images/logo-stacked-white.png" alt="Blue Brick" class="logo">
+      <div class="rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-text">47 Reviews</span>
+      </div>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Callbacks</div>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="headline">Why Boston&rsquo;s Top Contractors<br><span>Trust Us</span> With Their Final Clean</h1>
+    <p class="subtitle">We don't cut corners. We clean them.</p>
+
+    <!-- Services -->
+    <div class="services-row">
+      <span class="service-pill"><span class="icon">&#9670;</span> Post-Construction</span>
+      <span class="service-pill"><span class="icon">&#9670;</span> Renovation Cleanup</span>
+      <span class="service-pill"><span class="icon">&#9670;</span> New Build Final</span>
+      <span class="service-pill"><span class="icon">&#9670;</span> Commercial</span>
+      <span class="service-pill"><span class="icon">&#9670;</span> Move-In/Out</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-btn">Get Free Estimate</div>
+      <div class="cta-divider"></div>
+      <div class="cta-phone-group">
+        <div class="cta-phone-label">Call or Text</div>
+        <div class="cta-phone">781-330-5604</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <span class="trust-item"><span class="dot"></span> Insured & Bonded</span>
+    <span class="trust-item"><span class="dot"></span> Licensed</span>
+    <span class="trust-item"><span class="dot"></span> After-Hours Available</span>
+    <span class="trust-item"><span class="dot"></span> Greater Boston</span>
+  </div>
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════
+  FACEBOOK POST CAPTION
+═══════════════════════════════════════════
+
+100+ projects. 500+ happy clients. Zero callbacks. 💯
+
+That's the Blue Brick standard.
+
+We're the cleaning crew that Boston's top contractors, property managers, and developers call when the job has to be perfect — not just "good enough."
+
+Here's why they keep coming back:
+✅ Meticulous post-construction cleanup
+✅ Zero dust, zero debris, zero excuses
+✅ Fully insured & bonded
+✅ After-hours & weekend availability
+✅ 100% satisfaction guaranteed
+
+We don't cut corners. We clean them.
+
+📞 Free estimate: 781-330-5604
+📧 bluebrickmass@gmail.com
+
+Serving all of Greater Boston — Newton, Waltham, Brighton, Cambridge, Brookline, South Boston & more.
+
+#BostonCleaning #CommercialCleaning #PostConstructionCleanup #BlueBrick #5StarRated #BostonContractors #PropertyManagement #GreaterBoston #CleaningCompany
+-->
