@@ -65,21 +65,26 @@
 
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Move-In/Move-Out Cleaning in Lexington",
-        "description": "A comprehensive guide to professional move-in and move-out cleaning in Lexington — covering apartment turnovers, security deposit cleaning, and move-in preparation.",
-        "author": {
-            "@type": "Organization",
-            "name": "Blue Brick Luxury and Commercial Cleaning"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Blue Brick Luxury and Commercial Cleaning"
-        },
-        "datePublished": "2026-02-26",
-        "dateModified": "2026-02-26"
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Move-In/Move-Out Cleaning in Lexington",
+  "description": "A comprehensive guide to professional move-in and move-out cleaning in Lexington — covering apartment turnovers, security deposit cleaning, and move-in preparation.",
+  "author": {
+    "@type": "Organization",
+    "name": "Blue Brick Luxury and Commercial Cleaning"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Brick Luxury and Commercial Cleaning",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluebrickmass.com/assets/images/logo-stacked-white.png"
     }
+  },
+  "datePublished": "2026-02-26",
+  "dateModified": "2026-02-26",
+  "image": "https://bluebrickmass.com/assets/images/logo-stacked-white.png"
+}
     </script>
 
     <!-- Fonts -->
@@ -92,12 +97,12 @@
            CSS VARIABLES
            ============================================ */
         :root {
-            --prussian: #001D4A;
-            --yale: #27476E;
-            --cerulean: #006992;
-            --amber: #ECA400;
-            --amber-light: #f4be3a;
-            --amber-glow: rgba(236, 164, 0, 0.15);
+            --prussian: #0C1F35;
+            --yale: #1A3A5C;
+            --cerulean: #3D7A9E;
+            --steel: #3D7A9E;
+            --steel-light: #5A9BBD;
+            --steel-glow: rgba(61, 122, 158, 0.15);
             --white: #ffffff;
             --off-white: #f9fafb;
             --light-gray: #f0f2f5;
@@ -130,7 +135,7 @@
 
         img { max-width: 100%; display: block; }
         a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--amber); }
+        a:hover { color: var(--steel); }
 
         /* ============================================
            ANIMATIONS
@@ -253,7 +258,7 @@
            ============================================ */
         .inline-cta {
             background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
-            border-left: 4px solid var(--amber);
+            border-left: 4px solid var(--steel);
             border-radius: 0 12px 12px 0;
             padding: 1.2rem 1.5rem;
             margin: 2rem 0;
@@ -270,12 +275,12 @@
             color: var(--cerulean);
             font-weight: 700;
             text-decoration: underline;
-            text-decoration-color: var(--amber);
+            text-decoration-color: var(--steel);
             text-underline-offset: 3px;
         }
 
         .inline-cta a:hover {
-            color: var(--amber);
+            color: var(--steel);
         }
 
 
@@ -295,14 +300,14 @@
         }
 
         .faq-item:hover {
-            border-color: var(--amber, #ECA400);
+            border-color: var(--amber, #3D7A9E);
         }
 
         .faq-question {
             font-family: var(--font-body, 'Manrope', sans-serif);
             font-size: 1rem;
             font-weight: 600;
-            color: var(--prussian, #001D4A);
+            color: var(--prussian, #0C1F35);
             padding: 1.2rem 3rem 1.2rem 1.2rem;
             margin: 0;
             cursor: pointer;
@@ -324,7 +329,7 @@
             transform: translateY(-50%);
             font-size: 1.4rem;
             font-weight: 300;
-            color: var(--amber, #ECA400);
+            color: var(--amber, #3D7A9E);
             transition: transform 0.3s;
         }
 
@@ -351,7 +356,7 @@
            QUOTE CALCULATOR EMBED
            ============================================ */
         .quote-calc-embed {
-            background: linear-gradient(135deg, #001D4A 0%, #0a2a5c 60%, #001D4A 100%);
+            background: linear-gradient(135deg, #0C1F35 0%, #0a2a5c 60%, #0C1F35 100%);
             border: 1px solid rgba(236, 164, 0, 0.15);
             border-radius: 14px;
             padding: 1.25rem 1.5rem;
@@ -410,8 +415,8 @@
         .quote-calc-btn {
             display: inline-flex;
             align-items: center;
-            background: #ECA400;
-            color: #001D4A;
+            background: #3D7A9E;
+            color: #0C1F35;
             font-size: 0.82rem;
             font-weight: 700;
             padding: 0.55rem 1.15rem;
@@ -454,7 +459,7 @@
            EMAIL SUBSCRIBER
            ============================================ */
         .footer-cta {
-            background: linear-gradient(135deg, #ECA400 0%, #d4940a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #d4940a 100%);
             padding: 3rem 2rem;
             text-align: center;
             position: relative;
@@ -469,7 +474,7 @@
         .footer-cta h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.8rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.5rem;
             font-weight: 800;
         }
@@ -492,7 +497,7 @@
             border-radius: 50px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 29, 74, 0.2);
-            border: 2px solid #001D4A;
+            border: 2px solid #0C1F35;
         }
 
         .subscribe-input-wrap input[type="email"] {
@@ -502,7 +507,7 @@
             font-size: 0.95rem;
             font-family: inherit;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             outline: none;
             min-width: 0;
         }
@@ -512,7 +517,7 @@
         }
 
         .subscribe-btn {
-            background: #001D4A;
+            background: #0C1F35;
             color: #fff;
             font-weight: 700;
             font-size: 0.9rem;
@@ -537,7 +542,7 @@
         }
 
         .subscribe-success {
-            color: #001D4A !important;
+            color: #0C1F35 !important;
             font-weight: 600;
             font-size: 0.95rem;
             margin-top: 0.8rem !important;
@@ -545,7 +550,7 @@
 
         /* Inline blog subscriber CTA */
         .inline-subscribe {
-            background: linear-gradient(135deg, #ECA400 0%, #f4be3a 100%);
+            background: linear-gradient(135deg, #3D7A9E 0%, #f4be3a 100%);
             border-radius: 16px;
             padding: 2rem 1.5rem;
             margin: 2.5rem 0;
@@ -568,7 +573,7 @@
         .inline-subscribe h3 {
             font-family: var(--font-display, 'Playfair Display', serif);
             font-size: 1.3rem;
-            color: #001D4A;
+            color: #0C1F35;
             margin: 0 0 0.35rem;
             font-weight: 800;
         }
@@ -658,15 +663,15 @@
         }
 
         .tube-nav.scrolled .tube-nav-link {
-            color: var(--prussian, #001D4A) !important;
+            color: var(--prussian, #0C1F35) !important;
         }
 
         .tube-nav-link:hover {
-            color: #ECA400 !important;
+            color: #3D7A9E !important;
         }
 
         .tube-nav-link.active {
-            color: #ECA400 !important;
+            color: #3D7A9E !important;
             background: rgba(236, 164, 0, 0.08);
         }
 
@@ -679,7 +684,7 @@
             transform: translateX(-50%);
             width: 28px;
             height: 3px;
-            background: #ECA400;
+            background: #3D7A9E;
             border-radius: 3px 3px 0 0;
         }
 
@@ -698,8 +703,8 @@
 
         .tube-nav-cta {
             padding: 0.5rem 1.2rem !important;
-            background: linear-gradient(135deg, #ECA400, #d4940a) !important;
-            color: #001D4A !important;
+            background: linear-gradient(135deg, #3D7A9E, #d4940a) !important;
+            color: #0C1F35 !important;
             font-weight: 700 !important;
             box-shadow: 0 2px 10px rgba(236, 164, 0, 0.3);
             transition: all 0.3s !important;
@@ -708,7 +713,7 @@
         .tube-nav-cta:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 16px rgba(236, 164, 0, 0.4) !important;
-            color: #001D4A !important;
+            color: #0C1F35 !important;
         }
 
         .tube-nav-logo {
@@ -718,16 +723,14 @@
             text-decoration: none !important;
         }
 
-        .tube-nav-logo svg {
-            width: 28px;
+        .tube-nav-logo img {
             height: 28px;
-            color: rgba(255, 255, 255, 0.9);
-            transition: color 0.3s;
+            width: auto;
         }
 
-        .tube-nav.scrolled .tube-nav-logo svg {
-            color: #001D4A;
-        }
+        .tube-nav-logo .logo-scrolled { display: none; }
+        .tube-nav.scrolled .tube-nav-logo .logo-default { display: none; }
+        .tube-nav.scrolled .tube-nav-logo .logo-scrolled { display: block; }
 
         /* Mobile: icon-only nav */
         .tube-nav-link .nav-icon { display: none; }
@@ -766,7 +769,7 @@
            BLOG HERO
            ============================================ */
         .blog-hero {
-            padding: 180px clamp(1.5rem, 5vw, 4rem) 80px;
+            padding: 140px clamp(1.5rem, 5vw, 4rem) 60px;
             text-align: center;
             background: var(--prussian);
             position: relative;
@@ -807,7 +810,7 @@
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             margin-bottom: 1rem;
         }
 
@@ -821,10 +824,10 @@
             text-transform: uppercase;
         }
 
-        .blog-hero h1 em { font-style: normal; color: var(--amber); }
+        .blog-hero h1 em { font-style: normal; color: var(--steel); }
 
         .blog-hero p {
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             max-width: 620px;
             margin: 0 auto;
             font-size: 1.05rem;
@@ -843,7 +846,7 @@
             transition: color 0.3s;
         }
 
-        .breadcrumb a:hover { color: var(--amber); }
+        .breadcrumb a:hover { color: var(--steel); }
 
         .breadcrumb span { margin: 0 0.4rem; }
 
@@ -910,7 +913,7 @@
 
         .highlight-box {
             background: var(--off-white);
-            border-left: 4px solid var(--amber);
+            border-left: 4px solid var(--steel);
             padding: 1.5rem 1.8rem;
             margin: 2rem 0;
             border-radius: 0 8px 8px 0;
@@ -981,7 +984,7 @@
             text-transform: uppercase;
         }
 
-        .cta-section h2 em { font-style: normal; color: var(--amber); }
+        .cta-section h2 em { font-style: normal; color: var(--steel); }
 
         .cta-section p {
             color: rgba(255, 255, 255, 0.6);
@@ -1004,7 +1007,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2.2rem;
-            background: var(--amber);
+            background: var(--steel);
             color: var(--prussian);
             font-family: var(--font-body);
             font-size: 0.82rem;
@@ -1017,7 +1020,7 @@
         }
 
         .cta-btn-primary:hover {
-            background: var(--amber-light);
+            background: var(--steel-light);
             color: var(--prussian);
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 12px 40px rgba(236, 164, 0, 0.4);
@@ -1077,7 +1080,7 @@
             top: 50%;
             width: 28px;
             height: 2px;
-            background: var(--amber);
+            background: var(--steel);
         }
 
         .section-tag::before { right: calc(100% + 14px); animation: drawLineLeft 0.6s 0.3s both; }
@@ -1099,7 +1102,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -1119,7 +1122,7 @@
             position: absolute;
             bottom: 0; left: 0;
             width: 0; height: 3px;
-            background: linear-gradient(90deg, var(--cerulean), var(--amber));
+            background: linear-gradient(90deg, var(--cerulean), var(--steel));
             transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -1161,7 +1164,7 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--amber);
+            color: var(--steel);
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
@@ -1264,7 +1267,7 @@
 
         .chat-panel-header {
             padding: 1.25rem 1.25rem 1rem;
-            background: linear-gradient(135deg, #001D4A, #0a2a5c);
+            background: linear-gradient(135deg, #0C1F35, #0a2a5c);
             color: #fff;
             text-align: center;
         }
@@ -1279,7 +1282,7 @@
 
         .chat-panel-header p {
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
         }
 
@@ -1323,8 +1326,8 @@
         }
 
         .chat-msg.sent .chat-msg-avatar {
-            background: linear-gradient(135deg, #ECA400, #d4940a);
-            color: #001D4A;
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
+            color: #0C1F35;
         }
 
         .chat-msg-bubble {
@@ -1451,7 +1454,7 @@
 
         .chat-opt-btn {
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             border: 1.5px solid #006992;
             border-radius: 20px;
             padding: 5px 14px;
@@ -1469,9 +1472,9 @@
         }
 
         .chat-opt-btn.amber {
-            border-color: #ECA400;
-            background: #ECA400;
-            color: #001D4A;
+            border-color: #3D7A9E;
+            background: #3D7A9E;
+            color: #0C1F35;
         }
 
         .chat-opt-btn.amber:hover {
@@ -1527,7 +1530,7 @@
             right: 2rem;
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, #ECA400, #d4940a);
+            background: linear-gradient(135deg, #3D7A9E, #d4940a);
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -1556,7 +1559,7 @@
         .back-to-top svg {
             width: 20px;
             height: 20px;
-            stroke: #001D4A;
+            stroke: #0C1F35;
             fill: none;
             stroke-width: 2.5;
             stroke-linecap: round;
@@ -1583,14 +1586,14 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, #001D4A 0%, rgba(0, 29, 74, 0.85) 30%, rgba(0, 29, 74, 0.75) 100%);
+            background: linear-gradient(180deg, #0C1F35 0%, rgba(0, 29, 74, 0.85) 30%, rgba(0, 29, 74, 0.75) 100%);
         }
 
         .footer-top {
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
             gap: 2.5rem;
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto 1.5rem;
             padding: 3rem clamp(1.5rem, 5vw, 4rem) 1.5rem;
             position: relative;
@@ -1606,7 +1609,6 @@
         .footer-brand .footer-logo img {
             width: 160px;
             height: auto;
-            filter: brightness(0) invert(1);
         }
 
         .footer-brand p {
@@ -1626,12 +1628,12 @@
             transition: color 0.3s;
         }
 
-        .contact-line:hover { color: #ECA400; }
+        .contact-line:hover { color: #3D7A9E; }
 
         .contact-line svg {
             width: 15px;
             height: 15px;
-            stroke: #ECA400;
+            stroke: #3D7A9E;
             fill: none;
             stroke-width: 1.5;
             flex-shrink: 0;
@@ -1652,7 +1654,7 @@
             bottom: 0; left: 0;
             width: 24px;
             height: 2px;
-            background: #ECA400;
+            background: #3D7A9E;
         }
 
         .footer-links-list {
@@ -1670,7 +1672,7 @@
         }
 
         .footer-links-list a:hover {
-            color: #ECA400;
+            color: #3D7A9E;
             padding-left: 4px;
         }
 
@@ -1678,7 +1680,7 @@
             text-align: center;
             padding: 1rem clamp(1.5rem, 5vw, 4rem);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            max-width: 1140px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -1777,7 +1779,7 @@
         }
 
         .highlight-box {
-            border-left: 4px solid var(--amber, #ECA400) !important;
+            border-left: 4px solid var(--amber, #3D7A9E) !important;
             background: linear-gradient(135deg, rgba(236, 164, 0, 0.04), rgba(0, 105, 146, 0.03)) !important;
             border-radius: 0 12px 12px 0 !important;
             padding: 1.5rem !important;
@@ -1805,7 +1807,7 @@
             bottom: calc(100% + 8px);
             right: 0;
             background: #fff;
-            color: #001D4A;
+            color: #0C1F35;
             font-size: 0.78rem;
             font-weight: 600;
             padding: 0.5rem 1rem;
@@ -1849,15 +1851,14 @@
 <body>
     <div class="tube-nav" id="tubeNav">
         <div class="tube-nav-inner">
-            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4L4 18H9V34H31V18H36L20 4Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <rect x="12" y="22" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                </svg>
-            </a>
+            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home"><img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" class="logo-default"><img src="/assets/images/logo-horizontal-white.png" alt="Blue Brick" class="logo-scrolled"></a>
             <a href="/#services" class="tube-nav-link">
                 <span class="nav-label">Services</span>
                 <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            </a>
+            <a href="/pricing.html" class="tube-nav-link">
+                <span class="nav-label">Pricing</span>
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
             </a>
             <a href="/cities.html" class="tube-nav-link">
                 <span class="nav-label">Areas</span>
@@ -2043,18 +2044,10 @@
                     <p>Ready to book your move cleaning? Call us at <a href="tel:+17813305604" style="color: var(--cerulean); font-weight: 700;">(781) 330-5604</a> or <a href="/#quote" style="color: var(--cerulean); font-weight: 700;">request a free estimate online</a>. Same-day and next-day availability for Lexington.</p>
                 </div>
 
-            </article>
-        
-
-                <figure class="reveal">
+            <figure class="reveal" style="text-align:center;">
                     <img src="../assets/images/Luxury apt images/pexels-artbovich-8082229.jpg" alt="Professional cleaning service in Lexington by Blue Brick" class="blog-image" loading="lazy">
                     <figcaption>Premium cleaning results by Blue Brick</figcaption>
                 </figure>
-
-</section>
-
-        
-        <div style="max-width:780px;margin:0 auto;padding:0 clamp(1.5rem, 4vw, 3rem);">
 
                 <div class="quote-calc-embed">
                     <div class="quote-calc-header">
@@ -2064,89 +2057,9 @@
                             <p>See pricing for your home or office in seconds</p>
                         </div>
                     </div>
-                    <a href="/tools/quote-calculator.html" class="quote-calc-btn" target="_blank">Open Quote Calculator →</a>
-                </div>
 
-        </div>
-
-<!-- ==========================================
-             CTA SECTION
-             ========================================== -->
-        <section class="cta-section reveal-scale">
-            <h2>Get Lexington's Most Trusted <em>Move Cleaning</em> Team</h2>
-            <p>Security deposit recovery. Move-in ready results. Professional service from start to finish.</p>
-            <div class="cta-buttons">
-                <a href="/#quote" class="cta-btn-primary">Get Your Free Estimate</a>
-                <a href="tel:+17813305604" class="cta-btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Call (781) 330-5604
-                </a>
-            </div>
+            </article>
         </section>
-
-        <!-- ==========================================
-             RELATED POSTS
-             ========================================== -->
-        <section class="related-section">
-            <div class="section-header reveal-blur">
-                <span class="section-tag">Related Posts</span>
-                <h2>Move-In/Move-Out Cleaning <em>Near You</em></h2>
-            </div>
-
-            <div class="related-grid">
-                <a href="/blog/move-in-move-out-cleaning-boston.html" class="related-card reveal" style="transition-delay: 0.05s">
-                    <div class="card-tag">Boston</div>
-                    <h3>Move-In/Move-Out Cleaning in Boston</h3>
-                    <p>Professional move cleaning services for Boston apartments and homes.</p>
-                    <span class="read-more">Read Now &rarr;</span>
-                </a>
-
-                <a href="/blog/move-in-move-out-cleaning-east-boston.html" class="related-card reveal" style="transition-delay: 0.15s">
-                    <div class="card-tag">East Boston</div>
-                    <h3>Move-In/Move-Out Cleaning in East Boston</h3>
-                    <p>Professional move cleaning services for East Boston apartments and homes.</p>
-                    <span class="read-more">Read Now &rarr;</span>
-                </a>
-
-                <a href="/blog/move-in-move-out-cleaning-south-boston.html" class="related-card reveal" style="transition-delay: 0.25s">
-                    <div class="card-tag">South Boston</div>
-                    <h3>Move-In/Move-Out Cleaning in South Boston</h3>
-                    <p>Professional move cleaning services for South Boston apartments and homes.</p>
-                    <span class="read-more">Read Now &rarr;</span>
-                </a>
-
-                <a href="/blog/move-in-move-out-cleaning-newton.html" class="related-card reveal" style="transition-delay: 0.35s">
-                    <div class="card-tag">Newton</div>
-                    <h3>Move-In/Move-Out Cleaning in Newton</h3>
-                    <p>Professional move cleaning services for Newton apartments and homes.</p>
-                    <span class="read-more">Read Now &rarr;</span>
-                </a>
-
-                <a href="/blog/post-construction-cleaning-lexington.html" class="related-card reveal" style="transition-delay: 0.45s">
-                    <div class="card-tag">Post-Construction</div>
-                    <h3>Post-Construction Cleaning in Lexington</h3>
-                    <p>Expert construction cleanup and renovation cleaning across Lexington.</p>
-                    <span class="read-more">Read Now &rarr;</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    
-
-    <!-- Expandable Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-panel">
-            <div class="chat-panel-header">
-                <h3>BLUE BRICK CONCIERGE</h3>
-                <p>We typically reply in minutes</p>
-            </div>
-            <div class="chat-panel-body" id="chatBody">
-                <div class="chat-msg">
-                    <div class="chat-msg-avatar">BB</div>
-                    <div class="chat-msg-bubble">Hi there! Looking for a cleaning quote? I can help you get started.</div>
-                </div>
-            </div>
             <div class="chat-panel-footer">
                 <div class="chat-input-wrap">
                     <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
@@ -2190,7 +2103,7 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="../assets/images/IMG_9670.png" alt="Blue Brick — Luxury & Commercial Cleaning">
+                    <img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick — Luxury & Commercial Cleaning">
                 </div>
                 <p>Boston's trusted deep cleaning and luxury property care.</p>
                 <a href="sms:+17813305604" class="contact-line" aria-label="Text us">
@@ -2207,6 +2120,7 @@
                 <h4>Quick Links</h4>
                 <nav class="footer-links-list" aria-label="Quick links">
                     <a href="/">Home</a>
+                    <a href="/pricing.html">Pricing</a>
                     <a href="/cities.html">Service Areas</a>
                     <a href="/blog/">Blog</a>
                     <a href="/tools/quote-calculator.html">Quote Calculator</a>
@@ -2437,7 +2351,7 @@
                     { label: 'Text Me', amber: true, action: chatFlowAskPhone },
                     { label: 'Email Me', amber: true, action: chatFlowAskEmail },
                     { label: 'Use Quote Calculator', action: function() {
-                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#ECA400;font-weight:700\'>Open Quote Calculator →</a>");
+                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#3D7A9E;font-weight:700\'>Open Quote Calculator →</a>");
                         setTimeout(chatFlowAnythingElse, 1500);
                     }}
                 ]);

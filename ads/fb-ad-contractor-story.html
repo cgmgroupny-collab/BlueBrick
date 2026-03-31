@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Blue Brick — Contractor Storytelling Ad</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #0C1F35;
+    position: relative;
+  }
+
+  /* Background image with dark overlay */
+  .bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/images/services images/commercial properties.jpg') center/cover;
+    filter: brightness(0.25);
+    z-index: 0;
+  }
+
+  /* Subtle texture overlay */
+  .texture {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.015) 2px,
+      rgba(255,255,255,0.015) 4px
+    );
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 65px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .tag {
+    background: #ECA400;
+    color: #0C1F35;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+  }
+
+  /* Quote marks */
+  .quote-mark {
+    font-family: Georgia, serif;
+    font-size: 120px;
+    color: #ECA400;
+    line-height: 0.8;
+    opacity: 0.7;
+    margin-bottom: -10px;
+  }
+
+  /* Story text */
+  .story {
+    font-family: 'Manrope', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 920px;
+  }
+
+  .story em {
+    color: #ECA400;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Attribution */
+  .attribution {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 50px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Divider */
+  .divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #ECA400, #3D7A9E);
+    margin-bottom: 40px;
+    border-radius: 2px;
+  }
+
+  /* Bottom section */
+  .bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .bottom-left {
+    flex: 1;
+  }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .headline span {
+    color: #ECA400;
+  }
+
+  .subtext {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: #ECA400;
+    padding: 22px 40px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 280px;
+  }
+
+  .cta-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: #0C1F35;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .cta-phone {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0C1F35;
+    letter-spacing: 0.02em;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(12, 31, 53, 0.9);
+    padding: 14px 65px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    z-index: 3;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-item .dot {
+    width: 6px;
+    height: 6px;
+    background: #ECA400;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="texture"></div>
+
+  <div class="content">
+    <!-- Header -->
+    <div class="header">
+      <img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" class="logo">
+      <div class="tag">Post-Construction</div>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote-mark">&ldquo;</div>
+    <p class="story">
+      My GC stopped mid-walkthrough and said,
+      <em>&lsquo;This doesn&rsquo;t even look like the same building. Who did this?&rsquo;</em>
+    </p>
+    <p class="attribution">— Property developer, Newton MA</p>
+
+    <div class="divider"></div>
+
+    <!-- Bottom CTA area -->
+    <div class="bottom">
+      <div class="bottom-left">
+        <h2 class="headline">Boston&rsquo;s #1 <span>Post-Construction</span><br>Cleanup Crew</h2>
+        <p class="subtext">From new builds to full renovations &mdash;<br>pristine results, every time.</p>
+      </div>
+      <div class="cta-box">
+        <div class="cta-label">Free Walkthrough</div>
+        <div class="cta-phone">781-330-5604</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <span class="trust-item"><span class="dot"></span> Insured & Bonded</span>
+    <span class="trust-item"><span class="dot"></span> 5-Star Rated</span>
+    <span class="trust-item"><span class="dot"></span> 100+ Projects Completed</span>
+    <span class="trust-item"><span class="dot"></span> Greater Boston</span>
+  </div>
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════
+  FACEBOOK POST CAPTION
+═══════════════════════════════════════════
+
+"My GC stopped mid-walkthrough and said, 'This doesn't even look like the same building.'"
+
+That's the reaction we get — every single time.
+
+At Blue Brick, we don't just clean construction sites. We transform them into move-in ready properties that impress everyone who walks through the door.
+
+✅ Post-construction cleanup
+✅ Renovation debris removal
+✅ New build final clean
+✅ Fully insured & bonded
+
+📞 Free walkthrough: 781-330-5604
+📧 bluebrickmass@gmail.com
+
+#PostConstructionCleaning #BostonCleaning #ConstructionCleanup #CommercialCleaning #BlueBrick #BostonContractors #NewtonMA #GreaterBoston #PropertyDevelopment #BuilderCleanup
+-->

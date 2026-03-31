@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Facebook Campaign Deployment Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #27476E;
+    --prussian: #001D4A;
+    --dark: #0C1F35;
+    --accent: #4d8df7;
+    --amber: #ECA400;
+    --cerulean: #006992;
+    --green: #22c55e;
+    --red: #ef4444;
+    --bg: #080d16;
+    --card-bg: #0f1923;
+    --card-border: rgba(77, 141, 247, 0.12);
+    --text: #e2e8f0;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dim: rgba(255,255,255,0.35);
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  .page-header {
+    background: linear-gradient(135deg, var(--prussian) 0%, var(--dark) 50%, #0a1628 100%);
+    border-bottom: 1px solid var(--card-border);
+    padding: 48px 0 40px;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+
+  .brand-name span { color: var(--accent); }
+
+  .header-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .page-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .page-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ===== STICKY NAV ===== */
+  .nav-bar {
+    background: var(--dark);
+    border-bottom: 1px solid var(--card-border);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-pills {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 0;
+  }
+
+  .nav-pills::-webkit-scrollbar { display: none; }
+
+  .nav-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid transparent;
+  }
+
+  .nav-pill:hover {
+    color: #fff;
+    background: rgba(77, 141, 247, 0.1);
+    border-color: rgba(77, 141, 247, 0.2);
+  }
+
+  /* ===== CONTENT ===== */
+  .content {
+    padding: 48px 0 80px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 1px;
+    opacity: 0.6;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .card p, .card li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .card p + p { margin-top: 12px; }
+
+  .card ul, .card ol {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  .card li { margin-bottom: 6px; }
+
+  .card li strong { color: var(--text); }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid rgba(77, 141, 247, 0.3);
+    border-radius: 4px;
+    margin-top: 2px;
+  }
+
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+
+  .data-table thead th {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .data-table tbody td {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .data-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .data-table tbody tr:last-child td { border-bottom: none; }
+
+  .data-table .highlight-row td {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+
+  .tag-blue { background: rgba(77,141,247,0.15); color: var(--accent); }
+  .tag-amber { background: rgba(236,164,0,0.15); color: var(--amber); }
+  .tag-green { background: rgba(34,197,94,0.15); color: var(--green); }
+  .tag-red { background: rgba(239,68,68,0.15); color: var(--red); }
+
+  /* Alert/tip boxes */
+  .tip-box {
+    background: rgba(77,141,247,0.06);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .tip-box strong { color: var(--accent); }
+
+  .warn-box {
+    background: rgba(236,164,0,0.06);
+    border-left: 3px solid var(--amber);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .warn-box strong { color: var(--amber); }
+
+  /* Step indicators */
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .step-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .step-card .step-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .step-card .step-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .step-card .step-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Funnel visualization */
+  .funnel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 24px 0;
+  }
+
+  .funnel-stage {
+    text-align: center;
+    flex: 1;
+    padding: 20px 16px;
+    position: relative;
+  }
+
+  .funnel-stage::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid var(--accent);
+    opacity: 0.3;
+  }
+
+  .funnel-stage:last-child::after { display: none; }
+
+  .funnel-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .funnel-stage:nth-child(1) .funnel-label { color: var(--accent); }
+  .funnel-stage:nth-child(2) .funnel-label { color: var(--amber); }
+  .funnel-stage:nth-child(3) .funnel-label { color: var(--green); }
+
+  .funnel-desc {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .funnel-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+
+  .funnel-stage:nth-child(1) .funnel-bar { background: var(--accent); }
+  .funnel-stage:nth-child(2) .funnel-bar { background: var(--amber); }
+  .funnel-stage:nth-child(3) .funnel-bar { background: var(--green); }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Code blocks */
+  .code-block {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    overflow-x: auto;
+    margin: 12px 0;
+    white-space: pre;
+  }
+
+  .code-block .comment { color: rgba(255,255,255,0.3); }
+  .code-block .keyword { color: var(--accent); }
+  .code-block .string { color: var(--green); }
+  .code-block .value { color: var(--amber); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .page-title { font-size: 36px; }
+    .header-top { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    .step-grid { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .funnel { flex-direction: column; }
+    .funnel-stage::after { display: none; }
+    .container { padding: 0 20px; }
+    .card { padding: 20px; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; color: #1a1a2e; }
+    .nav-bar { display: none; }
+    .page-header { background: #fff; border-bottom: 2px solid var(--dark); }
+    .brand-name, .page-title, .section-title, .card-title { color: var(--dark); }
+    .page-title em { color: var(--navy); }
+    .card { border: 1px solid #ddd; break-inside: avoid; background: #fafafa; }
+    .section-num { color: var(--navy); }
+    .card p, .card li, .checklist li { color: #333; }
+    .tip-box, .warn-box { border-left-width: 4px; }
+    .tip-box { background: #f0f5ff; }
+    .warn-box { background: #fffbeb; }
+    .check-box { border-color: #999; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <div class="header-top">
+      <div class="brand-name"><img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" style="height:50px;width:auto;"></div>
+      <div class="header-meta">
+        Internal Deployment Guide<br>
+        Updated March 2026
+      </div>
+    </div>
+    <h1 class="page-title">FACEBOOK CAMPAIGN<br><em>DEPLOYMENT GUIDE</em></h1>
+    <p class="page-subtitle">Step-by-step playbook for deploying, managing, and optimizing Blue Brick's Facebook ad campaigns. From account setup to retargeting and KPI tracking.</p>
+  </div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="nav-bar">
+  <div class="container">
+    <div class="nav-pills">
+      <a class="nav-pill" href="#setup">Account Setup</a>
+      <a class="nav-pill" href="#structure">Campaign Structure</a>
+      <a class="nav-pill" href="#audience">Audience Targeting</a>
+      <a class="nav-pill" href="#budget">Budget Tiers</a>
+      <a class="nav-pill" href="#testing">A/B Testing</a>
+      <a class="nav-pill" href="#pixel">Pixel Setup</a>
+      <a class="nav-pill" href="#retargeting">Retargeting</a>
+      <a class="nav-pill" href="#kpis">KPI Tracking</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== CONTENT ===== -->
+<main class="content">
+  <div class="container">
+
+    <!-- ===== 1. ACCOUNT SETUP ===== -->
+    <section class="section" id="setup">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">ACCOUNT SETUP CHECKLIST</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">PRE-LAUNCH REQUIREMENTS</div>
+        <ul class="checklist">
+          <li><span class="check-box"></span> <span><strong>Facebook Business Page</strong> -- Verify Blue Brick Luxury & Commercial Cleaning page is active, has logo, cover photo, contact info, and "Cleaning Service" category.</span></li>
+          <li><span class="check-box"></span> <span><strong>Meta Business Suite</strong> -- Create or access Business Suite at business.facebook.com. Add the Blue Brick page as an asset.</span></li>
+          <li><span class="check-box"></span> <span><strong>Ad Account</strong> -- Create a dedicated ad account in Business Suite > Settings > Ad Accounts. Set currency to USD, timezone to Eastern.</span></li>
+          <li><span class="check-box"></span> <span><strong>Payment Method</strong> -- Add a credit/debit card or link a bank account. Set a daily spending limit as a safety net (recommended: $100/day to start).</span></li>
+          <li><span class="check-box"></span> <span><strong>Meta Pixel</strong> -- Install the Meta Pixel on bluebrickmass.com (see Section 6 for detailed instructions).</span></li>
+          <li><span class="check-box"></span> <span><strong>Conversions API</strong> -- Set up server-side tracking via Conversions API for more accurate attribution.</span></li>
+          <li><span class="check-box"></span> <span><strong>Custom Conversions</strong> -- Create 3 custom conversion events: form_submit (lead form completed), phone_click (tel: link clicked), sms_click (sms: link clicked).</span></li>
+          <li><span class="check-box"></span> <span><strong>Domain Verification</strong> -- Verify bluebrickmass.com in Business Suite > Brand Safety > Domains.</span></li>
+          <li><span class="check-box"></span> <span><strong>Ad Creative Assets</strong> -- Upload all 10 AI-generated images to the Media Library in Ads Manager. Name them clearly (e.g., "01-Office-Bait-Switch").</span></li>
+          <li><span class="check-box"></span> <span><strong>Instagram Connection</strong> -- Connect the Blue Brick Instagram account (if applicable) for cross-platform placements.</span></li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <strong>Pro Tip:</strong> Before going live, run the Meta Pixel Helper Chrome extension on bluebrickmass.com to verify the pixel is firing correctly on page load, form submission, and button clicks.
+      </div>
+    </section>
+
+    <!-- ===== 2. CAMPAIGN STRUCTURE ===== -->
+    <section class="section" id="structure">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">CAMPAIGN STRUCTURE</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">FULL-FUNNEL ARCHITECTURE</div>
+        <p>Blue Brick's Facebook campaign follows a three-stage funnel. Each stage has a distinct objective, audience, and creative strategy.</p>
+
+        <div class="funnel">
+          <div class="funnel-stage">
+            <div class="funnel-bar"></div>
+            <div class="funnel-label">AWARENESS</div>
+            <div class="funnel-desc">Cold audiences<br>Brand introduction<br>Scroll-stopping creative</div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-bar"></div>
+            <div class="funnel-label">CONSIDERATION</div>
+            <div class="funnel-desc">Warm audiences<br>Value demonstration<br>Trust-building content</div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-bar"></div>
+            <div class="funnel-label">CONVERSION</div>
+            <div class="funnel-desc">Hot audiences<br>Direct-response offers<br>Retargeting &amp; urgency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">CAMPAIGN 1: CONTRACTOR ACQUISITION</div>
+          <p><span class="tag tag-blue">Cold</span> <span class="tag tag-amber">$20-30/day</span></p>
+          <p><strong>Objective:</strong> Lead Generation</p>
+          <p><strong>Audience:</strong> General contractors, renovation companies, property developers</p>
+          <p><strong>Ads to run:</strong></p>
+          <ul>
+            <li>Ad 1 -- Bait &amp; Switch Review</li>
+            <li>Ad 3 -- Us vs Them Comparison</li>
+            <li>Ad 4 -- Manifesto Letter</li>
+            <li>Ad 7 -- Reddit PSA</li>
+          </ul>
+          <p><strong>Goal:</strong> Cost per lead under $12</p>
+        </div>
+        <div class="card">
+          <div class="card-title">CAMPAIGN 2: REALTORS & PROPERTY MANAGERS</div>
+          <p><span class="tag tag-blue">Cold</span> <span class="tag tag-amber">$15-20/day</span></p>
+          <p><strong>Objective:</strong> Lead Generation</p>
+          <p><strong>Audience:</strong> Realtors, property managers, Airbnb hosts</p>
+          <p><strong>Ads to run:</strong></p>
+          <ul>
+            <li>Ad 6 -- Social Comment Screenshot</li>
+            <li>Ad 8 -- Instagram Story Realtor</li>
+            <li>Ad 10 -- Free Walkthrough Offer</li>
+          </ul>
+          <p><strong>Goal:</strong> Cost per lead under $15</p>
+        </div>
+      </div>
+
+      <div class="two-col" style="margin-top: 16px;">
+        <div class="card">
+          <div class="card-title">CAMPAIGN 3: BUSINESS OWNERS</div>
+          <p><span class="tag tag-blue">Cold</span> <span class="tag tag-amber">$10-15/day</span></p>
+          <p><strong>Objective:</strong> Lead Generation</p>
+          <p><strong>Audience:</strong> Small business owners, office managers, restaurant owners</p>
+          <p><strong>Ads to run:</strong></p>
+          <ul>
+            <li>Ad 2 -- Before/After Transformation</li>
+            <li>Ad 5 -- Post-It Note Product</li>
+            <li>Ad 9 -- Curiosity Gap</li>
+          </ul>
+          <p><strong>Goal:</strong> Cost per lead under $18</p>
+        </div>
+        <div class="card">
+          <div class="card-title">CAMPAIGN 4: RETARGETING</div>
+          <p><span class="tag tag-green">Warm/Hot</span> <span class="tag tag-amber">$10/day</span></p>
+          <p><strong>Objective:</strong> Conversions</p>
+          <p><strong>Audience:</strong> Website visitors, video viewers 75%+, form abandoners</p>
+          <p><strong>Launch:</strong> After 2 weeks of cold campaigns</p>
+          <p><strong>Ads to run:</strong></p>
+          <ul>
+            <li>Ad 4 -- Manifesto (trust)</li>
+            <li>Ad 10 -- Free Walkthrough (offer)</li>
+          </ul>
+          <p><strong>Goal:</strong> Cost per lead under $8</p>
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <strong>Important:</strong> Never run more than 3-4 ads per ad set. Meta's algorithm needs enough data per ad to optimize. Too many ads = diluted spend and slower learning.
+      </div>
+    </section>
+
+    <!-- ===== 3. AUDIENCE TARGETING ===== -->
+    <section class="section" id="audience">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">AUDIENCE TARGETING — BOSTON METRO</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">GEOGRAPHIC TARGETING</div>
+        <p><strong>Primary radius:</strong> 25 miles around Boston, MA (covers Newton, Waltham, Brighton, Allston, East Boston, South Boston, Cambridge, Somerville, Brookline, Quincy)</p>
+        <p><strong>Targeting type:</strong> "People living in this location" (not "recently in" -- avoids tourists and commuters)</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Audience Segment</th><th>Age</th><th>Gender</th><th>Key Interests</th><th>Behaviors</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Contractors</td>
+              <td>28-60</td>
+              <td>All</td>
+              <td>General contractor, Home renovation, Construction, Remodeling</td>
+              <td>Small business owners</td>
+            </tr>
+            <tr>
+              <td>Realtors</td>
+              <td>25-55</td>
+              <td>All</td>
+              <td>Real estate, Realtor, Zillow, Property management</td>
+              <td>Real estate (industry)</td>
+            </tr>
+            <tr>
+              <td>Property Managers</td>
+              <td>30-60</td>
+              <td>All</td>
+              <td>Property management, Landlord, Airbnb host</td>
+              <td>Business page admins</td>
+            </tr>
+            <tr>
+              <td>Business Owners</td>
+              <td>30-60</td>
+              <td>All</td>
+              <td>Small business, Office management, Restaurant owner</td>
+              <td>Small business owners, Business page admins</td>
+            </tr>
+            <tr>
+              <td>Renters (move-out)</td>
+              <td>22-40</td>
+              <td>All</td>
+              <td>Apartment living, Boston apartments, Moving</td>
+              <td>Likely to move (life event)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">EXCLUSIONS (CRITICAL)</div>
+        <ul>
+          <li><strong>Exclude existing customers</strong> -- Upload a customer email/phone list as a Custom Audience and exclude from all cold campaigns.</li>
+          <li><strong>Exclude converters</strong> -- Exclude anyone who completed form_submit in the last 30 days from cold campaigns (they should see retargeting only).</li>
+          <li><strong>Exclude competitors</strong> -- If possible, exclude job titles like "Cleaning business owner", "Janitorial services" to avoid wasting spend on competitors scouting your ads.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">LOOKALIKE AUDIENCES (PHASE 2)</div>
+        <p>After collecting 100+ leads, create Lookalike Audiences:</p>
+        <ul>
+          <li><strong>1% Lookalike</strong> from form_submit custom audience (highest quality, smallest reach)</li>
+          <li><strong>3% Lookalike</strong> from website visitors (broader reach for scaling)</li>
+          <li><strong>5% Lookalike</strong> from page engagers (broadest, use for brand awareness campaigns)</li>
+        </ul>
+        <p>Layer the Lookalike with the geographic restriction (25mi Boston) for best results.</p>
+      </div>
+
+      <div class="tip-box">
+        <strong>Boston-Specific Insight:</strong> Target "Sept 1 moving" audiences starting August 1st. Boston has the nation's largest synchronized move-in/move-out date. This is a massive seasonal opportunity for move-out cleaning ads.
+      </div>
+    </section>
+
+    <!-- ===== 4. BUDGET RECOMMENDATIONS ===== -->
+    <section class="section" id="budget">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">BUDGET RECOMMENDATIONS</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">THREE BUDGET TIERS</div>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Tier</th><th>Daily Budget</th><th>Monthly Cost</th><th>Campaigns Active</th><th>Expected Leads/Month</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-green">Starter</span></td>
+              <td>$10-15/day</td>
+              <td>$300-450</td>
+              <td>Campaign 1 only (Contractors)</td>
+              <td>20-30 leads</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-amber">Growth</span></td>
+              <td>$25-35/day</td>
+              <td>$750-1,050</td>
+              <td>Campaigns 1 + 2</td>
+              <td>50-70 leads</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-blue">Scale</span></td>
+              <td>$45-75/day</td>
+              <td>$1,350-2,250</td>
+              <td>All 4 campaigns</td>
+              <td>90-150 leads</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">STARTER STRATEGY ($10-15/DAY)</div>
+          <p>Best for: Testing the waters, limited budget, proving ROI before scaling.</p>
+          <ul>
+            <li>Run <strong>Campaign 1</strong> only (Contractor Acquisition)</li>
+            <li>Use only <strong>Ad 3</strong> (Us vs Them) and <strong>Ad 4</strong> (Manifesto)</li>
+            <li>These two cover rational (comparison) and emotional (trust) angles</li>
+            <li>Run for 14 days minimum before judging performance</li>
+            <li>If CPL is under $15, consider adding Campaign 2</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">SCALING RULES</div>
+          <p>When to increase budget:</p>
+          <ul>
+            <li><strong>Increase by 20%</strong> when CPL is consistently below target for 5+ days</li>
+            <li><strong>Never increase more than 20%/day</strong> -- larger jumps reset the learning phase</li>
+            <li><strong>Kill an ad</strong> if it has spent 2x the target CPL with zero conversions</li>
+            <li><strong>Pause a campaign</strong> if CPL exceeds 3x target for 7+ days</li>
+            <li><strong>Add a new campaign</strong> only after existing campaigns are profitable</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">MONTHLY BUDGET BREAKDOWN (SCALE TIER)</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Campaign</th><th>Daily</th><th>Monthly</th><th>% of Budget</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Contractor Acquisition</td><td>$20-30</td><td>$600-900</td><td>40%</td></tr>
+            <tr><td>Realtors &amp; Property Managers</td><td>$15-20</td><td>$450-600</td><td>27%</td></tr>
+            <tr><td>Business Owners</td><td>$10-15</td><td>$300-450</td><td>20%</td></tr>
+            <tr><td>Retargeting</td><td>$10</td><td>$300</td><td>13%</td></tr>
+            <tr class="highlight-row"><td>Total</td><td>$55-75</td><td>$1,650-2,250</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== 5. A/B TESTING ===== -->
+    <section class="section" id="testing">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">A/B TESTING STRATEGY</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">TESTING FRAMEWORK</div>
+        <p>Meta's algorithm needs enough data to find a winner. Follow these rules to avoid wasting budget on inconclusive tests.</p>
+
+        <div class="step-grid">
+          <div class="step-card">
+            <span class="step-icon">1</span>
+            <div class="step-label">TEST ONE VARIABLE</div>
+            <div class="step-desc">Only change one element per test: creative, headline, audience, OR placement. Never test multiple variables simultaneously.</div>
+          </div>
+          <div class="step-card">
+            <span class="step-icon">2</span>
+            <div class="step-label">WAIT 5-7 DAYS</div>
+            <div class="step-desc">Let each ad run for a full week before making decisions. Meta needs ~50 conversion events to exit the learning phase.</div>
+          </div>
+          <div class="step-card">
+            <span class="step-icon">3</span>
+            <div class="step-label">KILL THE LOSER</div>
+            <div class="step-desc">After 7 days, pause the underperforming ad. Reallocate its budget to the winner. Launch a new challenger.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">TESTING PRIORITY ORDER</div>
+        <p>Test in this order for maximum ROI impact:</p>
+        <ol>
+          <li><strong>Creative (Image)</strong> -- The biggest lever. Test the AI-generated images against each other. The scroll-stopping image determines 80% of ad performance.</li>
+          <li><strong>Primary Text</strong> -- Test short-form (under 125 chars) vs. long-form (storytelling) versions of the same ad.</li>
+          <li><strong>Headline</strong> -- Test benefit-driven ("Get Your Deposit Back") vs. curiosity-driven ("Why Contractors Keep Getting Callbacks") headlines.</li>
+          <li><strong>Audience</strong> -- Test interest-based targeting vs. Lookalike audiences once you have enough conversion data.</li>
+          <li><strong>Placement</strong> -- Test Advantage+ (automatic) vs. manual placements (Feed only, Stories only).</li>
+          <li><strong>CTA Button</strong> -- Test "Get Quote" vs. "Learn More" vs. "Send Message" to see which drives the most qualified leads.</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-title">WEEK-BY-WEEK TESTING CALENDAR</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Week</th><th>Action</th><th>What to Test</th><th>Decision Point</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Week 1-2</td><td>Launch</td><td>2 ads per campaign, Advantage+ placements</td><td>Gather baseline data. No changes.</td></tr>
+            <tr><td>Week 3</td><td>First cut</td><td>Pause lowest-performing ad in each campaign</td><td>Kill ads with CPL > 2x target</td></tr>
+            <tr><td>Week 4</td><td>New challenger</td><td>Add 1 new ad per campaign to test against winner</td><td>Maintain 2 ads per ad set</td></tr>
+            <tr><td>Week 5-6</td><td>Audience test</td><td>Duplicate winning ad set, test new audience segment</td><td>Compare CPL across audiences</td></tr>
+            <tr><td>Week 7-8</td><td>Scale</td><td>Increase budget 20% on winners. Launch retargeting.</td><td>If CPL holds, keep scaling</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <strong>Common Mistake:</strong> Changing ads during the "Learning Phase" (first 50 conversions). Every edit resets the learning phase. Let the algorithm learn before optimizing.
+      </div>
+    </section>
+
+    <!-- ===== 6. PIXEL SETUP ===== -->
+    <section class="section" id="pixel">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">META PIXEL SETUP</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">STEP 1: CREATE THE PIXEL</div>
+        <ol>
+          <li>Go to <strong>Meta Business Suite > Events Manager</strong></li>
+          <li>Click <strong>"Connect Data Sources"</strong> > Web > Meta Pixel</li>
+          <li>Name it: <strong>"Blue Brick Website Pixel"</strong></li>
+          <li>Enter website URL: <strong>bluebrickmass.com</strong></li>
+          <li>Copy the Pixel ID (you'll need this for installation)</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-title">STEP 2: INSTALL BASE CODE</div>
+        <p>Add this code to the <code>&lt;head&gt;</code> section of every page on bluebrickmass.com (index.html, cities.html, all blog posts):</p>
+        <div class="code-block"><span class="comment">&lt;!-- Meta Pixel Code --&gt;</span>
+&lt;script&gt;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=<span class="string">'2.0'</span>;
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,<span class="string">'script'</span>,
+  <span class="string">'https://connect.facebook.net/en_US/fbevents.js'</span>);
+  fbq(<span class="string">'init'</span>, <span class="value">'YOUR_PIXEL_ID_HERE'</span>);
+  fbq(<span class="string">'track'</span>, <span class="string">'PageView'</span>);
+&lt;/script&gt;
+&lt;noscript&gt;&lt;img height=<span class="string">"1"</span> width=<span class="string">"1"</span> style=<span class="string">"display:none"</span>
+  src=<span class="string">"https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"</span>
+/&gt;&lt;/noscript&gt;
+<span class="comment">&lt;!-- End Meta Pixel Code --&gt;</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">STEP 3: TRACK CUSTOM EVENTS</div>
+        <p>Add these event triggers to capture the key conversion actions on bluebrickmass.com:</p>
+
+        <div class="code-block"><span class="comment">// Fire when the lead form is submitted (in the form's submit handler)</span>
+fbq(<span class="string">'track'</span>, <span class="string">'Lead'</span>, {
+  content_name: <span class="string">'Contact Form Submission'</span>,
+  content_category: <span class="string">'Lead Generation'</span>
+});
+
+<span class="comment">// Fire when someone clicks the phone number</span>
+document.querySelectorAll(<span class="string">'a[href^="tel:"]'</span>).forEach(link => {
+  link.addEventListener(<span class="string">'click'</span>, () => {
+    fbq(<span class="string">'track'</span>, <span class="string">'Contact'</span>, {
+      content_name: <span class="string">'Phone Click'</span>
+    });
+  });
+});
+
+<span class="comment">// Fire when someone clicks the SMS/text link</span>
+document.querySelectorAll(<span class="string">'a[href^="sms:"]'</span>).forEach(link => {
+  link.addEventListener(<span class="string">'click'</span>, () => {
+    fbq(<span class="string">'track'</span>, <span class="string">'Contact'</span>, {
+      content_name: <span class="string">'SMS Click'</span>
+    });
+  });
+});</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">STEP 4: VERIFY INSTALLATION</div>
+        <ul class="checklist">
+          <li><span class="check-box"></span> <span>Install <strong>Meta Pixel Helper</strong> Chrome extension</span></li>
+          <li><span class="check-box"></span> <span>Visit bluebrickmass.com -- Pixel Helper should show a green "PageView" event</span></li>
+          <li><span class="check-box"></span> <span>Submit a test form -- verify "Lead" event fires in Events Manager</span></li>
+          <li><span class="check-box"></span> <span>Click the phone number -- verify "Contact" event fires</span></li>
+          <li><span class="check-box"></span> <span>Check Events Manager > Test Events tab for real-time event stream</span></li>
+          <li><span class="check-box"></span> <span>Run the Diagnostics tab in Events Manager to catch any warnings</span></li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <strong>Conversions API (CAPI):</strong> For maximum tracking accuracy (especially with iOS 14.5+ privacy changes), also set up server-side Conversions API. If using a form service like Web3Forms, check if they offer a native CAPI integration -- this is the easiest path.
+      </div>
+    </section>
+
+    <!-- ===== 7. RETARGETING ===== -->
+    <section class="section" id="retargeting">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">RETARGETING SETUP</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">WHEN TO LAUNCH RETARGETING</div>
+        <p>Wait at least <strong>14 days</strong> after cold campaigns launch. You need enough pixel data to build meaningful retargeting audiences. Minimum: 500 website visitors or 1,000 video viewers.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">CUSTOM AUDIENCES TO CREATE</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Audience Name</th><th>Source</th><th>Window</th><th>Priority</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Website Visitors</td>
+              <td>Meta Pixel -- All website visitors</td>
+              <td>Last 30 days</td>
+              <td><span class="tag tag-red">High</span></td>
+            </tr>
+            <tr>
+              <td>Form Abandoners</td>
+              <td>Pixel -- Visited site but did NOT trigger Lead event</td>
+              <td>Last 14 days</td>
+              <td><span class="tag tag-red">High</span></td>
+            </tr>
+            <tr>
+              <td>Video Viewers 75%+</td>
+              <td>Video engagement -- watched 75%+ of any video ad</td>
+              <td>Last 14 days</td>
+              <td><span class="tag tag-amber">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Page Engagers</td>
+              <td>Anyone who liked, commented, shared, or clicked a Blue Brick post/ad</td>
+              <td>Last 30 days</td>
+              <td><span class="tag tag-amber">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Instagram Engagers</td>
+              <td>Anyone who interacted with Blue Brick's Instagram profile</td>
+              <td>Last 30 days</td>
+              <td><span class="tag tag-blue">Low</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">RETARGETING AD STRATEGY</div>
+        <p>Retargeting audiences are warm -- they already know Blue Brick. Use trust + offer creative:</p>
+        <ul>
+          <li><strong>Ad 4 (Manifesto Letter)</strong> -- Builds trust and authority. "We're not the cheapest" position resonates with people who've already shown interest.</li>
+          <li><strong>Ad 10 (Free Walkthrough Offer)</strong> -- Direct-response CTA. Low-friction offer for people who are considering but haven't committed.</li>
+        </ul>
+        <p style="margin-top: 12px;">Rotate these two ads. Don't run both simultaneously in the same ad set. Let Meta auto-optimize between them.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">EXCLUSIONS FOR RETARGETING</div>
+        <ul>
+          <li><strong>Exclude existing customers</strong> (uploaded customer list)</li>
+          <li><strong>Exclude converters</strong> (people who already submitted the form in the last 30 days)</li>
+          <li>This ensures retargeting budget is only spent on people who visited but did NOT convert</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <strong>Advanced Move:</strong> Create a "Hot Leads" retargeting audience of people who visited the site 3+ times in the last 7 days. These are your highest-intent prospects. Even $3-5/day on this micro-audience can generate the best CPL of any campaign.
+      </div>
+    </section>
+
+    <!-- ===== 8. KPI TRACKING ===== -->
+    <section class="section" id="kpis">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2 class="section-title">REPORTING & KPI TRACKING</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-title">PRIMARY KPIs</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>KPI</th><th>Target</th><th>How to Track</th><th>Review Frequency</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cost Per Lead (CPL)</td>
+              <td>Under $15</td>
+              <td>Ads Manager > Cost per Result (Lead event)</td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Click-Through Rate (CTR)</td>
+              <td>Above 1.5%</td>
+              <td>Ads Manager > CTR (link click-through rate)</td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Form Conversion Rate</td>
+              <td>Above 10%</td>
+              <td>Landing page visits vs. Lead events</td>
+              <td>Weekly</td>
+            </tr>
+            <tr>
+              <td>Cost Per Walkthrough</td>
+              <td>Under $40</td>
+              <td>Total spend / walkthroughs booked (manual tracking)</td>
+              <td>Weekly</td>
+            </tr>
+            <tr>
+              <td>Return on Ad Spend (ROAS)</td>
+              <td>3x+</td>
+              <td>Revenue from ad-sourced leads / total ad spend</td>
+              <td>Monthly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">SECONDARY KPIs</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>KPI</th><th>Target</th><th>Why It Matters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cost Per Click (CPC)</td>
+              <td>Under $3</td>
+              <td>Indicates ad relevance and creative quality</td>
+            </tr>
+            <tr>
+              <td>Frequency</td>
+              <td>Under 3.0</td>
+              <td>Above 3 means audience is seeing ads too often (ad fatigue)</td>
+            </tr>
+            <tr>
+              <td>Relevance Score</td>
+              <td>Above 7/10</td>
+              <td>Meta's quality indicator. Below 5 = refresh creative</td>
+            </tr>
+            <tr>
+              <td>Thumb Stop Rate</td>
+              <td>Above 25%</td>
+              <td>Video views / impressions. Measures scroll-stopping power</td>
+            </tr>
+            <tr>
+              <td>Landing Page Views</td>
+              <td>80%+ of link clicks</td>
+              <td>If significantly lower, page is loading too slowly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">WEEKLY REPORTING TEMPLATE</div>
+        <p>Every Monday, pull these numbers from Ads Manager and track in a spreadsheet:</p>
+        <ol>
+          <li><strong>Total spend</strong> (by campaign)</li>
+          <li><strong>Total leads</strong> (form submissions + phone clicks)</li>
+          <li><strong>CPL</strong> (by campaign and by individual ad)</li>
+          <li><strong>CTR</strong> (by ad -- identifies creative fatigue)</li>
+          <li><strong>Frequency</strong> (by ad set -- identifies audience saturation)</li>
+          <li><strong>Walkthroughs booked</strong> (manual input from lead tracking)</li>
+          <li><strong>Revenue from ad leads</strong> (manual input, lag 2-4 weeks)</li>
+          <li><strong>Notes</strong> (what changed, what was paused, what was launched)</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-title">RED FLAGS -- WHEN TO ACT</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Signal</th><th>Meaning</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-red">CPL > $25</span></td>
+              <td>Targeting or creative isn't resonating</td>
+              <td>Refresh creative first. If CPL stays high after new creative, narrow audience.</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-red">CTR < 0.8%</span></td>
+              <td>Ad isn't stopping the scroll</td>
+              <td>Replace the image. The visual is the #1 factor in CTR.</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-red">Frequency > 4</span></td>
+              <td>Audience is oversaturated</td>
+              <td>Expand audience, add new interests, or launch a Lookalike.</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-amber">High clicks, low conversions</span></td>
+              <td>Landing page problem</td>
+              <td>Check page speed (under 3 sec). Test form simplicity. Ensure mobile-friendly.</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-amber">Good leads, no bookings</span></td>
+              <td>Follow-up problem</td>
+              <td>Review response time (target: under 5 min). Script follow-up texts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box">
+        <strong>Lead Response Time:</strong> Studies show leads contacted within 5 minutes are 21x more likely to convert than leads contacted after 30 minutes. Use the Blue Brick SMS auto-responder to instantly acknowledge every lead that comes in. Speed is everything.
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background: var(--dark); border-top: 1px solid var(--card-border); padding: 32px 0;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div class="brand-name" style="margin-bottom: 4px;"><img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" style="height:35px;width:auto;"></div>
+      <div style="font-size: 11px; color: var(--text-dim);">Internal Deployment Guide | Not for distribution</div>
+    </div>
+    <div style="text-align: right; font-size: 12px; color: var(--text-muted); line-height: 1.7;">
+      781-330-5604 | bluebrickmass@gmail.com<br>
+      <span style="font-size: 10px; color: var(--text-dim);">bluebrickmass.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

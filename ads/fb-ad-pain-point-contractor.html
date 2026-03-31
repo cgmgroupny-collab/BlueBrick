@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Blue Brick — Contractor Pain Point Ad</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #0C1F35;
+    position: relative;
+  }
+
+  /* Dark textured background */
+  .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(61, 122, 158, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(236, 164, 0, 0.05) 0%, transparent 50%),
+      #0C1F35;
+    z-index: 0;
+  }
+
+  /* Grid pattern */
+  .grid {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 65px;
+    text-align: center;
+  }
+
+  /* Logo */
+  .logo {
+    height: 55px;
+    margin-bottom: 50px;
+  }
+
+  /* Main question */
+  .question {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 68px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    max-width: 850px;
+  }
+
+  .question span {
+    color: #ECA400;
+  }
+
+  /* Pain line */
+  .pain-line {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 50px;
+    font-style: italic;
+  }
+
+  /* Divider */
+  .divider {
+    width: 80px;
+    height: 3px;
+    background: #ECA400;
+    margin-bottom: 50px;
+    border-radius: 2px;
+  }
+
+  /* Cost breakdown */
+  .cost-section {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 780px;
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cost-row:last-child {
+    border-bottom: none;
+  }
+
+  .cost-label {
+    font-size: 18px;
+    color: rgba(255,255,255,0.45);
+    text-align: left;
+  }
+
+  .cost-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+  }
+
+  .cost-value.bad {
+    color: #ef4444;
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.4);
+  }
+
+  .cost-value.good {
+    color: #ECA400;
+  }
+
+  /* Versus */
+  .vs-badge {
+    background: rgba(236, 164, 0, 0.12);
+    border: 1px solid rgba(236, 164, 0, 0.25);
+    border-radius: 6px;
+    padding: 4px 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #ECA400;
+    letter-spacing: 0.1em;
+    margin: 12px 0;
+    display: inline-block;
+  }
+
+  /* Solution text */
+  .solution {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 45px;
+  }
+
+  .solution strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* CTA */
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .cta-btn {
+    background: #ECA400;
+    color: #0C1F35;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    padding: 18px 44px;
+    border-radius: 8px;
+  }
+
+  .cta-or {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .cta-phone {
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 10, 18, 0.9);
+    padding: 14px 65px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    z-index: 3;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-item .dot {
+    width: 5px;
+    height: 5px;
+    background: #ECA400;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" class="logo">
+
+    <h1 class="question">Still Sending Your Crew<br>Back To <span>Clean Up?</span></h1>
+    <p class="pain-line">That's costing you more than you think.</p>
+
+    <div class="divider"></div>
+
+    <!-- Cost comparison -->
+    <div class="cost-section">
+      <div class="cost-row">
+        <span class="cost-label">Your crew's time (2 guys x 8 hrs x $35/hr)</span>
+        <span class="cost-value bad">$560+</span>
+      </div>
+      <div class="cost-row">
+        <span class="cost-label">+ Delays on your next job</span>
+        <span class="cost-value bad">$$$</span>
+      </div>
+      <div class="cost-row">
+        <span class="cost-label">+ Missed details = callback</span>
+        <span class="cost-value bad">Reputation</span>
+      </div>
+      <div style="text-align:center; padding: 8px 0;">
+        <span class="vs-badge">VS.</span>
+      </div>
+      <div class="cost-row">
+        <span class="cost-label">Blue Brick professional post-construction clean</span>
+        <span class="cost-value good">Done Right. First Time.</span>
+      </div>
+    </div>
+
+    <p class="solution"><strong>Free up your crew. Protect your reputation.</strong><br>We handle the cleanup so you can start the next job.</p>
+
+    <div class="cta-row">
+      <div class="cta-btn">Get Free Quote</div>
+      <span class="cta-or">or call</span>
+      <div class="cta-phone">781-330-5604</div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <span class="trust-item"><span class="dot"></span> Insured & Bonded</span>
+    <span class="trust-item"><span class="dot"></span> 5-Star Rated</span>
+    <span class="trust-item"><span class="dot"></span> 100+ Projects</span>
+    <span class="trust-item"><span class="dot"></span> After-Hours Available</span>
+  </div>
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════
+  FACEBOOK POST CAPTION
+═══════════════════════════════════════════
+
+Still sending your crew back to clean up after the build? 🛑
+
+Let's do the math:
+❌ 2 guys x 8 hours x $35/hr = $560+
+❌ Plus delays on your next job
+❌ Plus missed details = callbacks and angry clients
+
+Or... you let the professionals handle it.
+
+At Blue Brick, post-construction cleanup is ALL we do. Your crew moves to the next job. We make this one spotless.
+
+✅ Dust-free, move-in ready results
+✅ Windows, floors, fixtures — detailed
+✅ Fully insured & bonded
+✅ After-hours & weekend availability
+
+Stop losing money on cleanup. Start winning more jobs.
+
+📞 Free quote: 781-330-5604
+📧 bluebrickmass@gmail.com
+
+#Contractors #BostonBuilders #PostConstructionCleaning #ConstructionCleanup #BlueBrick #GClife #BostonConstruction #GreaterBoston #SubcontractorLife
+-->

@@ -28,12 +28,28 @@ Boston · East Boston · South Boston · Newton · Waltham · Brighton · Allsto
 
 ## Visual Identity
 
+### Logo System
+The brand uses a 3D isometric brick icon with "BLUE BRICK" text and "LUXURY & COMMERCIAL CLEANING" tagline. Available in:
+
+| File | Variant | Use On |
+|------|---------|--------|
+| `logo-horizontal-white.png` | Blue/dark text, horizontal | Light/white backgrounds |
+| `logo-horizontal-dark.png` | White text, horizontal | Dark backgrounds |
+| `logo-stacked-white.png` | Blue/dark text, stacked | Light/white backgrounds |
+| `logo-stacked-dark.png` | White text, stacked | Dark backgrounds |
+| `logo-profile.png` | BB brick icon only | Social media, avatars |
+| `favicon-16.png`, `favicon-32.png`, `favicon-180.png` | Favicon variants | Browser tab, bookmarks |
+| `email-templates/blue-brick-logo.png` | Blue/dark text, horizontal | Email headers (white bg) |
+
+**Rule:** White font logo on dark backgrounds. Dark/blue font logo on light backgrounds.
+
 ### Colors
 | Name          | Hex     | Usage                  |
 |---------------|---------|------------------------|
-| Prussian Blue | #001D4A | Primary / backgrounds  |
-| Yale Blue     | #27476E | Secondary              |
-| Cerulean      | #006992 | Accent blue            |
+| Prussian Blue | #0C1F35 | Primary / backgrounds  |
+| Yale Blue     | #1A3A5C | Secondary              |
+| Cerulean      | #3D7A9E | Accent blue            |
+| Steel Light   | #5A9BBD | Logo accent            |
 | Amber         | #ECA400 | CTA / highlight        |
 | Cream         | #EAF8BF | Light backgrounds      |
 

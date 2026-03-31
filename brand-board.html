@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Brick — Brand Board</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           RESET & BASE
+           ========================================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --midnight-navy: #0C1F35;
+            --deep-navy: #1A3A5C;
+            --steel-blue: #3D7A9E;
+            --slate-gray: #6B7280;
+            --light-gray: #F0F2F5;
+            --white: #FFFFFF;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            color: var(--slate-gray);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           PAGE WRAPPER
+           ========================================= */
+        .brand-board {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        .bb-header {
+            background: var(--midnight-navy);
+            padding: 56px 0 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bb-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--deep-navy), var(--steel-blue), var(--deep-navy));
+        }
+
+        .bb-header .brand-board {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bb-header__logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+
+        .bb-header__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .bb-header__subtitle {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--steel-blue);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .bb-header__meta {
+            margin-top: 20px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.04em;
+        }
+
+        /* =========================================
+           DOCUMENT LABEL
+           ========================================= */
+        .doc-label {
+            text-align: center;
+            padding: 32px 0 0;
+        }
+
+        .doc-label__text {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--steel-blue);
+            border: 1.5px solid var(--steel-blue);
+            padding: 6px 20px;
+        }
+
+        /* =========================================
+           SECTIONS
+           ========================================= */
+        .bb-section {
+            padding: 56px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .bb-section:last-child {
+            border-bottom: none;
+        }
+
+        .bb-section__label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--steel-blue);
+            margin-bottom: 8px;
+        }
+
+        .bb-section__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--midnight-navy);
+            margin-bottom: 32px;
+        }
+
+        .bb-section__desc {
+            font-size: 0.95rem;
+            color: var(--slate-gray);
+            max-width: 640px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           COLOR PALETTE
+           ========================================= */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .color-card {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .color-card:hover {
+            box-shadow: 0 4px 20px rgba(12, 31, 53, 0.1);
+        }
+
+        .color-card__swatch {
+            height: 120px;
+            position: relative;
+        }
+
+        .color-card__swatch--border {
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .color-card__info {
+            padding: 16px 20px;
+            background: var(--white);
+        }
+
+        .color-card__name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--midnight-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+
+        .color-card__hex {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--slate-gray);
+            margin-bottom: 6px;
+        }
+
+        .color-card__usage {
+            font-size: 0.8rem;
+            color: #9CA3AF;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           TYPOGRAPHY
+           ========================================= */
+        .type-specimens {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .type-specimen {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            align-items: start;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .type-specimen:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .type-specimen__meta {
+            flex-shrink: 0;
+        }
+
+        .type-specimen__family {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--steel-blue);
+            margin-bottom: 4px;
+        }
+
+        .type-specimen__role {
+            font-size: 0.8rem;
+            color: #9CA3AF;
+        }
+
+        .type-specimen__samples {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .type-sample {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .type-sample__weight {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.7rem;
+            color: #9CA3AF;
+            min-width: 80px;
+            text-align: right;
+            flex-shrink: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .type-sample--montserrat-bold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--midnight-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .type-sample--montserrat-extrabold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--midnight-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .type-sample--montserrat-semibold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--midnight-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .type-sample--manrope-regular {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--slate-gray);
+        }
+
+        .type-sample--manrope-semibold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--slate-gray);
+        }
+
+        .type-sample--bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            font-size: 2.2rem;
+            color: var(--midnight-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        /* =========================================
+           LOGO VARIATIONS
+           ========================================= */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .logo-card {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .logo-card--wide {
+            grid-column: span 2;
+        }
+
+        .logo-card__preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 32px;
+            min-height: 200px;
+        }
+
+        .logo-card__preview--light {
+            background: var(--white);
+        }
+
+        .logo-card__preview--dark {
+            background: var(--midnight-navy);
+        }
+
+        .logo-card__preview--gray {
+            background: var(--light-gray);
+        }
+
+        .logo-card__preview img {
+            max-width: 100%;
+            max-height: 140px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .logo-card__preview--small img {
+            max-height: 64px;
+        }
+
+        .logo-card__label {
+            padding: 14px 20px;
+            border-top: 1px solid #E5E7EB;
+            background: var(--white);
+        }
+
+        .logo-card__name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--midnight-navy);
+            margin-bottom: 2px;
+        }
+
+        .logo-card__file {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.75rem;
+            color: #9CA3AF;
+        }
+
+        /* =========================================
+           LOGO USAGE RULES
+           ========================================= */
+        .usage-rules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .usage-rule {
+            padding: 28px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            border-left: 3px solid var(--steel-blue);
+        }
+
+        .usage-rule__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--midnight-navy);
+            margin-bottom: 10px;
+        }
+
+        .usage-rule__text {
+            font-size: 0.88rem;
+            color: var(--slate-gray);
+            line-height: 1.65;
+        }
+
+        /* =========================================
+           BRAND VOICE
+           ========================================= */
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .voice-card {
+            padding: 32px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .voice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--steel-blue);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .voice-card__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--midnight-navy);
+            margin-bottom: 10px;
+        }
+
+        .voice-card__text {
+            font-size: 0.88rem;
+            color: var(--slate-gray);
+            line-height: 1.65;
+        }
+
+        .voice-donts {
+            background: var(--midnight-navy);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .voice-donts__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--steel-blue);
+            margin-bottom: 16px;
+        }
+
+        .voice-donts__list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 32px;
+        }
+
+        .voice-donts__item {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .voice-donts__item::before {
+            content: '\2014';
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .bb-footer {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .bb-footer__line {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #9CA3AF;
+        }
+
+        .bb-footer__line + .bb-footer__line {
+            margin-top: 4px;
+        }
+
+        /* =========================================
+           PRINT STYLES
+           ========================================= */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            html {
+                font-size: 14px;
+            }
+
+            body {
+                background: white;
+            }
+
+            .brand-board {
+                max-width: 100%;
+                padding: 0 24px;
+            }
+
+            .bb-header {
+                padding: 40px 0 36px;
+                break-after: avoid;
+            }
+
+            .bb-section {
+                padding: 36px 0;
+                break-inside: avoid;
+            }
+
+            .color-card,
+            .logo-card,
+            .voice-card {
+                break-inside: avoid;
+            }
+
+            .color-card:hover {
+                box-shadow: none;
+            }
+
+            .bb-footer {
+                padding: 32px 0;
+            }
+
+            /* Force background colors for swatches */
+            .color-card__swatch,
+            .logo-card__preview--dark,
+            .voice-donts,
+            .voice-card,
+            .usage-rule {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 768px) {
+            .brand-board {
+                padding: 0 24px;
+            }
+
+            .bb-header__title {
+                font-size: 1.6rem;
+            }
+
+            .color-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .type-specimen {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-card--wide {
+                grid-column: span 1;
+            }
+
+            .usage-rules {
+                grid-template-columns: 1fr;
+            }
+
+            .voice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .voice-donts__list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="bb-header">
+        <div class="brand-board">
+            <img src="assets/images/logo-stacked-dark.png" alt="Blue Brick Logo" class="bb-header__logo">
+            <h1 class="bb-header__title">Brand Board</h1>
+            <p class="bb-header__subtitle">Blue Brick Luxury &amp; Commercial Cleaning</p>
+            <p class="bb-header__meta">781-330-5604 &nbsp;&bull;&nbsp; bluebrickmass@gmail.com &nbsp;&bull;&nbsp; Greater Boston Area</p>
+        </div>
+    </header>
+
+    <div class="doc-label">
+        <span class="doc-label__text">Internal Brand Guide &mdash; v6 Rebrand</span>
+    </div>
+
+    <main class="brand-board">
+
+        <!-- ============================================
+             1. COLOR PALETTE
+             ============================================ -->
+        <section class="bb-section">
+            <p class="bb-section__label">01</p>
+            <h2 class="bb-section__title">Color Palette</h2>
+            <p class="bb-section__desc">
+                The Blue Brick palette is anchored by deep, authoritative navies that communicate trust and professionalism. Steel Blue provides a refined accent, while neutrals ensure readability and clean layouts.
+            </p>
+
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-card__swatch" style="background-color: #0C1F35;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">Midnight Navy</div>
+                        <div class="color-card__hex">#0C1F35</div>
+                        <div class="color-card__usage">Primary dark. Headers, hero backgrounds, footer. The dominant brand color.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-card__swatch" style="background-color: #1A3A5C;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">Deep Navy</div>
+                        <div class="color-card__hex">#1A3A5C</div>
+                        <div class="color-card__usage">Secondary. Cards, overlays, gradients. Adds depth against primary.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-card__swatch" style="background-color: #3D7A9E;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">Steel Blue</div>
+                        <div class="color-card__hex">#3D7A9E</div>
+                        <div class="color-card__usage">Accent. Links, highlights, the top face of the brick icon. Use sparingly for emphasis.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-card__swatch" style="background-color: #6B7280;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">Slate Gray</div>
+                        <div class="color-card__hex">#6B7280</div>
+                        <div class="color-card__usage">Body text. Paragraphs, descriptions, secondary copy.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-card__swatch color-card__swatch--border" style="background-color: #F0F2F5;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">Light Gray</div>
+                        <div class="color-card__hex">#F0F2F5</div>
+                        <div class="color-card__usage">Backgrounds. Section alternation, cards, subtle containers.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-card__swatch color-card__swatch--border" style="background-color: #FFFFFF;"></div>
+                    <div class="color-card__info">
+                        <div class="color-card__name">White</div>
+                        <div class="color-card__hex">#FFFFFF</div>
+                        <div class="color-card__usage">Page background. Clean space, content areas, logo clearance.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             2. TYPOGRAPHY
+             ============================================ -->
+        <section class="bb-section">
+            <p class="bb-section__label">02</p>
+            <h2 class="bb-section__title">Typography</h2>
+            <p class="bb-section__desc">
+                Three typefaces work in hierarchy. Montserrat commands attention in headlines. Manrope provides clean readability for body copy. Bebas Neue is reserved for large-format display text and legacy uses.
+            </p>
+
+            <div class="type-specimens">
+                <!-- Montserrat -->
+                <div class="type-specimen">
+                    <div class="type-specimen__meta">
+                        <div class="type-specimen__family">Montserrat</div>
+                        <div class="type-specimen__role">Headlines &amp; UI</div>
+                    </div>
+                    <div class="type-specimen__samples">
+                        <div class="type-sample">
+                            <span class="type-sample__weight">800 Extra</span>
+                            <span class="type-sample--montserrat-extrabold">BOSTON'S PREMIER CLEANING</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="type-sample__weight">700 Bold</span>
+                            <span class="type-sample--montserrat-bold">LUXURY RESIDENTIAL SERVICE</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="type-sample__weight">600 Semi</span>
+                            <span class="type-sample--montserrat-semibold">POST-CONSTRUCTION CLEANUP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manrope -->
+                <div class="type-specimen">
+                    <div class="type-specimen__meta">
+                        <div class="type-specimen__family">Manrope</div>
+                        <div class="type-specimen__role">Body &amp; Paragraphs</div>
+                    </div>
+                    <div class="type-specimen__samples">
+                        <div class="type-sample">
+                            <span class="type-sample__weight">400 Reg</span>
+                            <span class="type-sample--manrope-regular">Professional cleaning for Boston's finest properties. Insured, reliable, and detail-oriented service you can trust.</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="type-sample__weight">600 Semi</span>
+                            <span class="type-sample--manrope-semibold">Professional cleaning for Boston's finest properties. Insured, reliable, and detail-oriented service you can trust.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bebas Neue -->
+                <div class="type-specimen">
+                    <div class="type-specimen__meta">
+                        <div class="type-specimen__family">Bebas Neue</div>
+                        <div class="type-specimen__role">Display / Legacy</div>
+                    </div>
+                    <div class="type-specimen__samples">
+                        <div class="type-sample">
+                            <span class="type-sample__weight">400 Reg</span>
+                            <span class="type-sample--bebas">BLUE BRICK LUXURY CLEANING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             3. LOGO VARIATIONS
+             ============================================ -->
+        <section class="bb-section">
+            <p class="bb-section__label">03</p>
+            <h2 class="bb-section__title">Logo Variations</h2>
+            <p class="bb-section__desc">
+                The logo system includes stacked and horizontal lockups for different layout contexts, plus a profile icon for social media and small-format use.
+            </p>
+
+            <div class="logo-grid">
+                <!-- Primary Stacked — White BG -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--light">
+                        <img src="assets/images/logo-stacked-white.png" alt="Blue Brick logo, stacked, white background">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Primary Stacked</div>
+                        <div class="logo-card__file">logo-stacked-white.png &mdash; Light backgrounds</div>
+                    </div>
+                </div>
+
+                <!-- Stacked — Dark BG -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--dark">
+                        <img src="assets/images/logo-stacked-dark.png" alt="Blue Brick logo, stacked, dark background">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Stacked — Dark</div>
+                        <div class="logo-card__file">logo-stacked-dark.png &mdash; Dark backgrounds</div>
+                    </div>
+                </div>
+
+                <!-- Horizontal — White BG -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--light">
+                        <img src="assets/images/logo-horizontal-white.png" alt="Blue Brick logo, horizontal, white background">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Horizontal Lockup</div>
+                        <div class="logo-card__file">logo-horizontal-white.png &mdash; Light backgrounds</div>
+                    </div>
+                </div>
+
+                <!-- Horizontal — Dark BG -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--dark">
+                        <img src="assets/images/logo-horizontal-dark.png" alt="Blue Brick logo, horizontal, dark background">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Horizontal — Dark</div>
+                        <div class="logo-card__file">logo-horizontal-dark.png &mdash; Dark backgrounds</div>
+                    </div>
+                </div>
+
+                <!-- Profile Icon -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--gray logo-card__preview--small">
+                        <img src="assets/images/logo-profile.png" alt="Blue Brick profile icon">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Profile Icon</div>
+                        <div class="logo-card__file">logo-profile.png &mdash; Social media, avatars</div>
+                    </div>
+                </div>
+
+                <!-- Favicon -->
+                <div class="logo-card">
+                    <div class="logo-card__preview logo-card__preview--gray logo-card__preview--small">
+                        <img src="assets/images/favicon-32.png" alt="Blue Brick favicon" style="image-rendering: pixelated; max-height: 32px;">
+                    </div>
+                    <div class="logo-card__label">
+                        <div class="logo-card__name">Favicon</div>
+                        <div class="logo-card__file">favicon-32.png &mdash; Browser tab, bookmarks</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             4. LOGO USAGE RULES
+             ============================================ -->
+        <section class="bb-section">
+            <p class="bb-section__label">04</p>
+            <h2 class="bb-section__title">Logo Usage</h2>
+            <p class="bb-section__desc">
+                Consistent logo application protects brand recognition. Follow these rules across all media and materials.
+            </p>
+
+            <div class="usage-rules">
+                <div class="usage-rule">
+                    <div class="usage-rule__title">Minimum Size</div>
+                    <div class="usage-rule__text">
+                        The stacked logo should never appear smaller than <strong>80px wide</strong> on screen or <strong>25mm wide</strong> in print. The horizontal lockup minimum is <strong>120px wide</strong> on screen or <strong>40mm</strong> in print. The profile icon can render down to <strong>32px</strong>.
+                    </div>
+                </div>
+
+                <div class="usage-rule">
+                    <div class="usage-rule__title">Clear Space</div>
+                    <div class="usage-rule__text">
+                        Maintain a minimum clear space equal to the <strong>height of the brick icon</strong> on all four sides of the logo. No text, graphics, or visual elements may encroach into this zone.
+                    </div>
+                </div>
+
+                <div class="usage-rule">
+                    <div class="usage-rule__title">Background Rules</div>
+                    <div class="usage-rule__text">
+                        Use the <strong>white-background</strong> versions on light surfaces (#F0F2F5 or lighter). Use the <strong>dark-background</strong> versions on Midnight Navy, Deep Navy, or any surface darker than 50% gray. Never place the logo on busy photography without a solid or semi-transparent overlay.
+                    </div>
+                </div>
+
+                <div class="usage-rule">
+                    <div class="usage-rule__title">Prohibited Use</div>
+                    <div class="usage-rule__text">
+                        Do not rotate, skew, stretch, or distort the logo. Do not change the logo colors. Do not add drop shadows, outlines, gradients, or effects. Do not rearrange the lockup elements. Do not recreate the logo in alternative typefaces.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             5. BRAND VOICE
+             ============================================ -->
+        <section class="bb-section">
+            <p class="bb-section__label">05</p>
+            <h2 class="bb-section__title">Brand Voice</h2>
+            <p class="bb-section__desc">
+                Blue Brick communicates with the confidence of a company that does the work and lets results speak. Every piece of copy should feel direct, capable, and premium.
+            </p>
+
+            <div class="voice-grid">
+                <div class="voice-card">
+                    <div class="voice-card__title">Professional</div>
+                    <div class="voice-card__text">
+                        Speak with authority. Use precise language. No slang, no casual abbreviations. Address property managers and homeowners as equals who expect competence.
+                    </div>
+                </div>
+
+                <div class="voice-card">
+                    <div class="voice-card__title">Trustworthy</div>
+                    <div class="voice-card__text">
+                        Lead with facts and results. Reference insurance, experience, and track record. Be specific about what we deliver. Underpromise, overdeliver.
+                    </div>
+                </div>
+
+                <div class="voice-card">
+                    <div class="voice-card__title">Premium</div>
+                    <div class="voice-card__text">
+                        Position every service as high-end. We clean Boston's finest properties, not "houses." Use language that reflects the caliber of our clientele and work.
+                    </div>
+                </div>
+
+                <div class="voice-card">
+                    <div class="voice-card__title">Masculine</div>
+                    <div class="voice-card__text">
+                        Strong, direct, no-nonsense. Construction cleanup is hard, physical work. The tone should reflect the weight and rigor behind the service, not soften it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="voice-donts">
+                <div class="voice-donts__title">What We Don't Do</div>
+                <ul class="voice-donts__list">
+                    <li class="voice-donts__item">No sparkle or glitter imagery</li>
+                    <li class="voice-donts__item">No playful or cutesy language</li>
+                    <li class="voice-donts__item">No feminine visual elements</li>
+                    <li class="voice-donts__item">No filler words or fluff copy</li>
+                    <li class="voice-donts__item">No stock-photo-style enthusiasm</li>
+                    <li class="voice-donts__item">No exclamation marks in headlines</li>
+                    <li class="voice-donts__item">No pastel or soft color deviations</li>
+                    <li class="voice-donts__item">No rounded, bubbly design elements</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bb-footer">
+        <p class="bb-footer__line">Blue Brick Luxury &amp; Commercial Cleaning</p>
+        <p class="bb-footer__line">Boston's Premier Property Cleaning &nbsp;&bull;&nbsp; v6 Rebrand &nbsp;&bull;&nbsp; 2026</p>
+    </footer>
+
+</body>
+</html>

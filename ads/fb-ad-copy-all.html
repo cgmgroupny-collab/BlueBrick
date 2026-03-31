@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Facebook Ad Copy (All 10 Variations)</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #27476E;
+    --prussian: #001D4A;
+    --dark: #0C1F35;
+    --accent: #4d8df7;
+    --amber: #ECA400;
+    --cerulean: #006992;
+    --bg: #080d16;
+    --card-bg: #0f1923;
+    --card-border: rgba(77, 141, 247, 0.12);
+    --text: #e2e8f0;
+    --text-muted: rgba(255,255,255,0.5);
+    --text-dim: rgba(255,255,255,0.35);
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  .page-header {
+    background: linear-gradient(135deg, var(--prussian) 0%, var(--dark) 50%, #0a1628 100%);
+    border-bottom: 1px solid var(--card-border);
+    padding: 48px 0 40px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+
+  .brand-name span { color: var(--accent); }
+
+  .header-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .page-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .page-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 680px;
+    line-height: 1.7;
+  }
+
+  /* ===== NAV PILLS ===== */
+  .nav-bar {
+    background: var(--dark);
+    border-bottom: 1px solid var(--card-border);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-pills {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 0;
+  }
+
+  .nav-pills::-webkit-scrollbar { display: none; }
+
+  .nav-pill {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid transparent;
+  }
+
+  .nav-pill:hover {
+    color: #fff;
+    background: rgba(77, 141, 247, 0.1);
+    border-color: rgba(77, 141, 247, 0.2);
+  }
+
+  .nav-pill .pill-num {
+    display: inline-block;
+    background: rgba(77, 141, 247, 0.2);
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+
+  /* ===== AD CARDS ===== */
+  .ads-grid {
+    padding: 40px 0 80px;
+  }
+
+  .ad-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .ad-card:hover {
+    border-color: rgba(77, 141, 247, 0.25);
+  }
+
+  /* Card header */
+  .ad-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--card-border);
+    background: linear-gradient(135deg, rgba(39, 71, 110, 0.15) 0%, transparent 100%);
+  }
+
+  .ad-num-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ad-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .ad-angle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  .ad-image-ref {
+    font-size: 11px;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.04);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  /* Card body */
+  .ad-card-body {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Short-form copy */
+  .short-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .copy-block {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .copy-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .char-count {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    text-transform: none;
+  }
+
+  .copy-text {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .copy-block.headline-block {
+    border-left-color: var(--amber);
+  }
+
+  .copy-block.headline-block .copy-label { color: var(--amber); }
+
+  .copy-block.desc-block {
+    border-left-color: var(--cerulean);
+  }
+
+  .copy-block.desc-block .copy-label { color: var(--cerulean); }
+
+  /* Long-form copy */
+  .long-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .long-form-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--text-dim);
+  }
+
+  .long-form-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    white-space: pre-line;
+  }
+
+  /* Card footer */
+  .ad-card-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .footer-item {
+    padding: 16px 24px;
+    border-right: 1px solid var(--card-border);
+  }
+
+  .footer-item:last-child { border-right: none; }
+
+  .footer-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+
+  .footer-value {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .cta-tag {
+    display: inline-block;
+    background: rgba(236, 164, 0, 0.15);
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .page-title { font-size: 36px; }
+    .ad-card-body { grid-template-columns: 1fr; }
+    .ad-card-footer { grid-template-columns: 1fr; }
+    .footer-item { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .footer-item:last-child { border-bottom: none; }
+    .header-top { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    .ad-card-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .container { padding: 0 20px; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; color: #1a1a2e; }
+    .nav-bar { display: none; }
+    .page-header { background: #fff; border-bottom: 2px solid var(--dark); }
+    .brand-name, .page-title, .ad-angle, .copy-text { color: var(--dark); }
+    .page-title em { color: var(--navy); }
+    .ad-card { border: 1px solid #ddd; break-inside: avoid; }
+    .ad-card-header { background: #f5f7fa; }
+    .ad-number { color: var(--navy); }
+    .copy-label { color: var(--navy); }
+    .long-form-text { color: #333; }
+    .footer-value { color: #333; }
+    .page-subtitle { color: #555; }
+    .header-meta { color: #555; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <div class="header-top">
+      <div class="brand-name"><img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" style="height:50px;width:auto;"></div>
+      <div class="header-meta">
+        781-330-5604 | bluebrickmass@gmail.com<br>
+        Greater Boston Area | Licensed &amp; Insured
+      </div>
+    </div>
+    <h1 class="page-title">FACEBOOK AD COPY<br><em>ALL 10 VARIATIONS</em></h1>
+    <p class="page-subtitle">Compelling ad copy for 10 AI-generated ad images. Each variation includes short-form (primary text, headline, description), long-form feed post, targeting notes, and CTA recommendation.</p>
+  </div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="nav-bar">
+  <div class="container">
+    <div class="nav-pills">
+      <a class="nav-pill" href="#ad1"><span class="pill-num">1</span>Office Cleaning</a>
+      <a class="nav-pill" href="#ad2"><span class="pill-num">2</span>Medical Facility</a>
+      <a class="nav-pill" href="#ad3"><span class="pill-num">3</span>Restaurant Deep Clean</a>
+      <a class="nav-pill" href="#ad4"><span class="pill-num">4</span>Post-Construction</a>
+      <a class="nav-pill" href="#ad5"><span class="pill-num">5</span>Move-In/Move-Out</a>
+      <a class="nav-pill" href="#ad6"><span class="pill-num">6</span>Eco-Friendly</a>
+      <a class="nav-pill" href="#ad7"><span class="pill-num">7</span>Emergency/Same-Day</a>
+      <a class="nav-pill" href="#ad8"><span class="pill-num">8</span>Property Management</a>
+      <a class="nav-pill" href="#ad9"><span class="pill-num">9</span>Retail Space</a>
+      <a class="nav-pill" href="#ad10"><span class="pill-num">10</span>Warehouse/Industrial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== ADS GRID ===== -->
+<main class="ads-grid">
+  <div class="container">
+
+    <!-- ===== AD 1: Office Cleaning Special Offer ===== -->
+    <article class="ad-card" id="ad1">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">01</span>
+          <span class="ad-angle">OFFICE CLEANING SPECIAL OFFER</span>
+        </div>
+        <span class="ad-image-ref">Image: 01-negative-marketing-bait-switch.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Your office cleaning crew missed the vents again? First clean FREE when you switch to Blue Brick. Boston offices only.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">First Office Clean FREE</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Switch &amp; save. Boston area.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">We get it. You've tried 3 different office cleaning companies this year and they all start strong... then stop showing up.
+
+Dusty vents. Sticky breakroom counters. Bathrooms your team avoids after 2pm.
+
+Here's our offer: Your first office clean is FREE. No strings. No contract. Just results.
+
+If you're not blown away, we walk. No invoice. No awkward follow-up.
+
+But here's what usually happens: you call us the next week.
+
+We clean offices across Greater Boston with commercial-grade equipment, trained crews, and a 100% satisfaction guarantee.
+
+781-330-5604 | bluebrickmass.com</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Office managers, small business owners, coworking space operators in Boston metro. Interests: office management, commercial real estate, small business.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Get Offer</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Feed. Mid-week (Tue-Thu) when office frustrations peak.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 2: Medical Facility Cleaning ===== -->
+    <article class="ad-card" id="ad2">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">02</span>
+          <span class="ad-angle">MEDICAL FACILITY CLEANING</span>
+        </div>
+        <span class="ad-image-ref">Image: 02-before-after-ugc.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Your patients notice what you don't. Medical-grade cleaning for clinics and dental offices. OSHA-compliant. Boston area.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Medical-Grade Clean. Every Visit.</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Clinics trust Blue Brick.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">A patient walks into your waiting room and sees a smudged window. A dusty vent cover. A baseboard with last month's scuff mark still on it.
+
+They don't say anything. But they notice. And it shapes how they feel about your care.
+
+Blue Brick provides medical-grade cleaning for:
+- Dental offices
+- Urgent care clinics
+- Dermatology &amp; cosmetic practices
+- Physical therapy centers
+- Veterinary clinics
+
+We use hospital-grade disinfectants, follow OSHA cleaning protocols, and work after-hours so your practice is pristine before your first patient walks in.
+
+Licensed. Insured. Background-checked crews.
+
+Schedule a walkthrough: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Dentists, chiropractors, clinic administrators, practice managers. Interests: healthcare administration, medical office, OSHA compliance. Age 30-60.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Learn More</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, LinkedIn (if cross-posting). Target healthcare professionals in 25mi radius of Boston.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 3: Restaurant / Kitchen Deep Clean ===== -->
+    <article class="ad-card" id="ad3">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">03</span>
+          <span class="ad-angle">RESTAURANT / KITCHEN DEEP CLEAN</span>
+        </div>
+        <span class="ad-image-ref">Image: 03-us-vs-them.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Health inspector coming? We deep clean kitchens, hoods, and dining areas so you pass every time. Greater Boston restaurants.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Pass Your Next Inspection. Guaranteed.</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Kitchen deep cleans. Boston.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">Your kitchen staff does their best. But there's a difference between "clean enough to serve" and "clean enough to pass inspection with flying colors."
+
+Blue Brick restaurant deep cleaning covers:
+- Commercial hood &amp; exhaust degreasing
+- Floor-to-ceiling tile scrubbing
+- Walk-in cooler &amp; freezer sanitization
+- Dining area detail (booths, under tables, baseboards)
+- Grease trap area cleanup
+- Restroom deep sanitization
+
+We work overnight so you open spotless without losing a single service.
+
+Restaurants across Greater Boston trust us before inspections, after renovations, and for quarterly deep cleans.
+
+Don't wait for the violation. Call now: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Restaurant owners, bar managers, food service directors, franchise operators. Interests: restaurant management, food service, culinary. Behaviors: business page admins (food &amp; beverage).</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Get Quote</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Stories. Run before typical inspection seasons (spring, fall) for maximum relevance.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 4: Post-Construction Cleanup ===== -->
+    <article class="ad-card" id="ad4">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">04</span>
+          <span class="ad-angle">POST-CONSTRUCTION CLEANUP</span>
+        </div>
+        <span class="ad-image-ref">Image: 04-manifesto-letter.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Your crew finishes the build. We finish the clean. 100+ post-construction projects in Boston. Zero callbacks. Get a quote.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">100+ Projects. Zero Callbacks.</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Post-construction pros. Boston.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">We're not the cheapest post-construction cleaning crew in Boston. We know that.
+
+But here's what the cheap guys cost you:
+- Dust in the HVAC your client finds a week later
+- Smudges on every window the buyer touches
+- Callbacks that make you look unprofessional
+- Your crew losing a full day doing "broom cleans"
+
+Blue Brick has cleaned 100+ post-construction projects across Greater Boston. New builds, full renovations, commercial fit-outs, luxury condos.
+
+We use commercial-grade HEPA vacuums, detail every fixture, every floor, every window. We work nights and weekends so your timeline doesn't slip.
+
+And we've never had a single callback.
+
+That's not a cleaning crew. That's a reputation.
+
+Free walkthrough: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">General contractors, renovation companies, builders, project managers. Interests: construction, remodeling, home renovation. Job titles: GC, Builder, Construction Manager.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Get Quote</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Feed, Reels. Pair with Manifesto image for maximum authority positioning.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 5: Move-In / Move-Out Cleaning ===== -->
+    <article class="ad-card" id="ad5">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">05</span>
+          <span class="ad-angle">MOVE-IN / MOVE-OUT CLEANING</span>
+        </div>
+        <span class="ad-image-ref">Image: 05-post-it-note-ugly.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Moving out Sept 1st? Get your deposit back. Blue Brick move-out cleaning starts at $325. Book this week, save 10%.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Get Your Full Deposit Back</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Move-out cleans from $325.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">September 1st is coming fast. If you're moving out of your Boston apartment, your landlord is about to inspect every corner of that unit.
+
+Every scuff on the wall. Every grease stain behind the stove. Every ring in the tub.
+
+Blue Brick move-in/move-out cleaning covers:
+- Full kitchen deep clean (inside oven, fridge, cabinets)
+- Bathroom sanitization (tile, grout, fixtures)
+- All floors mopped, vacuumed, detailed
+- Baseboards, light switches, outlet covers
+- Inside closets and storage areas
+- Window sills and tracks
+
+We've helped hundreds of Boston renters get their full security deposit back. And we take before &amp; after photos so you have proof.
+
+Starting at $325 for a studio. Book this week and save 10%.
+
+Text or call: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Renters age 22-40, college students, young professionals in Boston/Cambridge/Somerville. Interests: apartment living, Boston real estate. Time: run Aug 1-Sept 15 for Sept 1 turnover season.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Book Now</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Stories. Geographic: Boston, Cambridge, Somerville, Allston, Brighton (heavy rental turnover areas).</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 6: Green / Eco-Friendly Cleaning ===== -->
+    <article class="ad-card" id="ad6">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">06</span>
+          <span class="ad-angle">GREEN / ECO-FRIENDLY CLEANING</span>
+        </div>
+        <span class="ad-image-ref">Image: 06-social-comment-screenshot.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Clean building. Clean conscience. We use plant-based, non-toxic products that actually work. Boston commercial cleaning.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Eco-Friendly. Industrial-Strength.</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Green cleaning that works.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">"We switched to eco-friendly cleaning and the results are actually better than what we had before." -- Every client who's made the switch.
+
+Most commercial cleaning companies still use harsh chemicals that leave residue, trigger allergies, and make your space smell like a hospital hallway.
+
+Blue Brick uses plant-based, non-toxic products that are:
+- Safe for employees with sensitivities
+- Better for indoor air quality
+- EPA Safer Choice certified
+- Just as effective as conventional chemicals
+
+No compromise. Your office, clinic, or retail space gets the same deep clean -- without the chemical footprint.
+
+We serve offices, medical facilities, retail spaces, and commercial properties across Greater Boston.
+
+Going green doesn't mean going soft. It means going smarter.
+
+Free walkthrough: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Sustainability-minded business owners, wellness clinics, yoga studios, organic restaurants, coworking spaces. Interests: sustainability, green business, environmental awareness. Age 28-50.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Learn More</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Feed. Cambridge/Somerville/Brookline skew well for eco-conscious audiences.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 7: Emergency / Same-Day Cleaning ===== -->
+    <article class="ad-card" id="ad7">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">07</span>
+          <span class="ad-angle">EMERGENCY / SAME-DAY CLEANING</span>
+        </div>
+        <span class="ad-image-ref">Image: 07-reddit-ugc-overlay.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Client walkthrough in 4 hours? We've got you. Same-day emergency cleaning for contractors and property managers. Boston.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Same-Day Emergency Cleaning</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">We show up when others can't.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">It's 9 AM. Your client just moved up the walkthrough to 2 PM. The site is still covered in drywall dust, the floors have paint drips, and your crew already left for the next job.
+
+Sound familiar?
+
+Blue Brick offers same-day emergency cleaning for exactly this situation. Here's how it works:
+
+1. You call or text us: 781-330-5604
+2. We assess via photos or a quick FaceTime
+3. Our crew arrives within 2-4 hours
+4. Your space is walkthrough-ready before the client shows up
+
+No panic. No cutting corners. Just professional results on an impossible timeline.
+
+We've done this for dozens of contractors and property managers across Boston. When your reputation is on the line, we don't miss.
+
+Emergency &amp; same-day rates apply. Worth every penny.
+
+Save our number: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">General contractors, realtors, property managers, Airbnb hosts. Behaviors: small business owners. Target during business hours (M-F 7am-12pm) when emergencies happen.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Call Now</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Stories. Schedule delivery for weekday mornings when last-minute cleaning emergencies occur.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 8: Property Management Partnerships ===== -->
+    <article class="ad-card" id="ad8">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">08</span>
+          <span class="ad-angle">PROPERTY MANAGEMENT PARTNERSHIPS</span>
+        </div>
+        <span class="ad-image-ref">Image: 08-instagram-story-realtor.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Managing 10+ units? Stop juggling cleaning crews. One partner. One call. Every turnover handled. Greater Boston PMs only.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Your Cleaning Partner for Every Unit</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Volume rates for PMs. Boston.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">If you manage 10, 50, or 200 units across Greater Boston, you already know the #1 headache: finding a cleaning crew that actually shows up, does the job right, and doesn't ghost you after the first month.
+
+Blue Brick is built for property management partnerships:
+
+- Dedicated account manager for your portfolio
+- Priority scheduling for turnovers &amp; emergencies
+- Volume pricing that scales with your units
+- Key/lockbox access -- no babysitting needed
+- Before &amp; after photo documentation on every job
+- Bilingual crew (English &amp; Spanish)
+
+We currently serve property managers across Boston, Newton, Waltham, Brighton, and South Boston.
+
+Our partnership clients get preferred rates, priority booking, and a direct line to our crew -- not a call center.
+
+Let's build something that lasts. Free portfolio walkthrough to get started.
+
+781-330-5604 | bluebrickmass@gmail.com</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Property managers, landlords, real estate investors, Airbnb hosts with 5+ listings. Interests: property management, real estate investing, landlord. Job titles: Property Manager, Building Manager.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Send Message</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Feed. Especially effective 30 days before Sept 1 and June 1 turnover seasons in Boston.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 9: Retail Space Maintenance ===== -->
+    <article class="ad-card" id="ad9">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">09</span>
+          <span class="ad-angle">RETAIL SPACE MAINTENANCE</span>
+        </div>
+        <span class="ad-image-ref">Image: 09-curiosity-gap-scroll-stopper.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Dirty store = lost sales. Customers notice scuffed floors and dusty shelves before they notice your product. We fix that.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Your Store's Clean Is Your Brand</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Retail cleaning. Boston area.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">A customer walks into your store. Before they look at a single product, they've already judged three things: the floor, the smell, and the bathroom.
+
+If any of those fail, you've lost them. Not to a competitor -- to a feeling.
+
+Blue Brick retail cleaning keeps your store spotless so your brand speaks for itself:
+
+- Daily/weekly/monthly maintenance plans
+- Floor care (hardwood, tile, polished concrete)
+- Window &amp; glass storefront cleaning
+- Restroom deep sanitization
+- Fitting room &amp; display area detailing
+- After-hours service so you never lose selling time
+
+We work with boutiques, salons, gyms, and retail chains across Greater Boston.
+
+Your product is premium. Your space should match.
+
+Schedule a walkthrough: 781-330-5604</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Retail store owners, boutique managers, salon owners, gym operators, franchise owners. Interests: retail management, small business, visual merchandising. Shopping districts: Newbury St, Harvard Sq, Seaport.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Get Quote</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed, Instagram Feed. Geo-target commercial districts in Boston metro for highest-intent audience.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== AD 10: Warehouse / Industrial Cleaning ===== -->
+    <article class="ad-card" id="ad10">
+      <div class="ad-card-header">
+        <div class="ad-num-badge">
+          <span class="ad-number">10</span>
+          <span class="ad-angle">WAREHOUSE / INDUSTRIAL CLEANING</span>
+        </div>
+        <span class="ad-image-ref">Image: 10-free-walkthrough-offer.png</span>
+      </div>
+      <div class="ad-card-body">
+        <div class="short-form">
+          <div class="copy-block">
+            <div class="copy-label">Primary Text <span class="char-count">(125 chars max)</span></div>
+            <div class="copy-text">Warehouses, distribution centers, and industrial spaces. Heavy-duty cleaning for heavy-duty work. Serving Greater Boston.</div>
+          </div>
+          <div class="copy-block headline-block">
+            <div class="copy-label">Headline <span class="char-count">(40 chars max)</span></div>
+            <div class="copy-text">Industrial Clean. Industrial Results.</div>
+          </div>
+          <div class="copy-block desc-block">
+            <div class="copy-label">Description <span class="char-count">(30 chars max)</span></div>
+            <div class="copy-text">Heavy-duty pros. Free quote.</div>
+          </div>
+        </div>
+        <div class="long-form">
+          <div class="long-form-label">Long-Form Feed Post</div>
+          <div class="long-form-text">Your warehouse isn't a showroom. But it still needs to be clean, safe, and compliant.
+
+Dust buildup on racking. Oil stains on concrete. Debris in loading docks. Break rooms that haven't seen a real clean in months.
+
+Blue Brick industrial cleaning handles the spaces other companies won't touch:
+
+- Warehouse floor scrubbing &amp; degreasing
+- Loading dock power washing
+- Racking &amp; shelving dust removal
+- Break room &amp; restroom deep clean
+- Office area maintenance within facilities
+- Post-lease cleanout for industrial spaces
+
+We bring commercial-grade equipment and crews experienced with large-format spaces. 5,000 sq ft or 50,000 sq ft -- same attention to detail.
+
+Serving warehouses, distribution centers, and industrial parks across Greater Boston and the Route 128 corridor.
+
+Free property walkthrough: 781-330-5604
+bluebrickmass@gmail.com</div>
+        </div>
+      </div>
+      <div class="ad-card-footer">
+        <div class="footer-item">
+          <div class="footer-label">Target Audience</div>
+          <div class="footer-value">Warehouse managers, logistics directors, industrial property owners, facility managers. Interests: warehousing, logistics, supply chain. Geo-target: Route 128 corridor, South Shore industrial parks.</div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">CTA Button</div>
+          <div class="footer-value"><span class="cta-tag">Get Quote</span></div>
+        </div>
+        <div class="footer-item">
+          <div class="footer-label">Best Placement</div>
+          <div class="footer-value">Facebook Feed only (this audience skews older, less Instagram). Target M-F during business hours.</div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background: var(--dark); border-top: 1px solid var(--card-border); padding: 32px 0;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div class="brand-name" style="margin-bottom: 4px;"><img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" style="height:35px;width:auto;"></div>
+      <div style="font-size: 11px; color: var(--text-dim);">Luxury &amp; Commercial Cleaning | Greater Boston Area</div>
+    </div>
+    <div style="text-align: right; font-size: 12px; color: var(--text-muted); line-height: 1.7;">
+      781-330-5604 | bluebrickmass@gmail.com<br>
+      <span style="font-size: 10px; color: var(--text-dim);">Licensed &amp; Insured | Se Habla Espa&ntilde;ol</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

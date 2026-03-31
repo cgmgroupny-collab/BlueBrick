@@ -1,0 +1,353 @@
+
+BLUE BRICK — IMAGE PROMPTS (TECHNICAL MVP VERSION)
+==================================================
+
+GLOBAL SETTINGS
+resolution: ultra realistic 4k
+style: architectural + commercial photography
+camera: full frame DSLR simulation
+lighting: natural daylight or commercial interior lighting
+imperfection_ratio: 6–12% realistic imperfections
+texture_detail: high micro surface detail
+noise: minimal natural sensor grain
+color_grade: neutral professional real estate tone
+composition: marketing friendly with negative space for text
+
+
+PROPERTY MANAGERS
+-----------------
+
+IMAGE: pm-hero | size: 520x220
+Prompt:
+Ultra realistic real estate photography of a Boston apartment after professional turnover cleaning. Polished hardwood floors reflecting window light, empty modern kitchen visible in background, white walls freshly cleaned, sunlight entering through tall urban apartment windows, minimal staging, dust-free environment.
+
+Camera:
+Canon EOS R5, 24mm lens, f/5.6, ISO 200
+
+Lighting:
+Natural daylight window lighting with soft bounce reflections.
+
+Imperfections:
+~8% realism imperfections: micro scratches on hardwood, subtle wall paint texture, mild reflection variation.
+
+
+IMAGE: pm-before | size: 245x120
+Prompt:
+Realistic Boston apartment unit before cleaning. Scuffed hardwood floors, dusty baseboards, minor countertop stains, light dirt buildup around edges, slightly dim interior lighting, move‑out condition but not trashed.
+
+Camera:
+Sony A7III, 35mm lens, f/4
+
+Imperfections:
+~12% realism imperfections: dust particles, floor scuffs, countertop marks, uneven lighting.
+
+
+IMAGE: pm-after | size: 245x120
+Prompt:
+Same Boston apartment after professional cleaning. Floors polished, countertops spotless, bright natural window light, surfaces dust free, move‑in ready appearance.
+
+Camera:
+Canon EOS R5, 35mm lens, f/5.6
+
+Imperfections:
+~6% realism imperfections: subtle floor reflections, natural wood grain variation.
+
+
+CONTRACTORS
+-----------
+
+IMAGE: ct-hero | size: 520x200
+Prompt:
+Ultra realistic photo of post-construction cleanup in a newly renovated luxury kitchen. Professional cleaner in navy polo removing drywall dust from quartz countertop, modern cabinets freshly installed, construction debris being cleared from floor, protective film being peeled from appliances.
+
+Camera:
+Canon EOS R5, 24mm lens, f/5.6, ISO 400
+
+Lighting:
+Mixed natural window light and overhead recessed LED lighting.
+
+Imperfections:
+~8% realism imperfections: fine dust particles in air, construction texture on nearby surfaces, natural fabric wrinkles on polo.
+
+
+IMAGE: ct-dust | size: 160x100
+Prompt:
+Extreme close-up of gloved hand wiping construction dust from white HVAC ceiling vent with blue microfiber cloth. Clean white vent grate, fine dust visible being removed, meticulous detail work.
+
+Camera:
+Canon 100mm macro lens, f/4, ISO 200
+
+Imperfections:
+~7% realism imperfections: dust particles, micro cloth fibers, vent grate texture.
+
+
+IMAGE: ct-glass | size: 160x100
+Prompt:
+Close-up of a professional window cleaner achieving streak-free finish on large construction-site window. Crystal clear glass with sunlight streaming through, squeegee leaving perfect clean line, water droplets on edge.
+
+Camera:
+Sony A7III, 50mm lens, f/3.5
+
+Imperfections:
+~6% realism imperfections: water droplet scatter, natural light flare, glass edge reflections.
+
+
+IMAGE: ct-floors | size: 160x100
+Prompt:
+Close-up of freshly machine-scrubbed tile floors in a renovated space. Wet gleam reflecting overhead lights, grout lines bright white after cleaning, post-construction floor restoration detail.
+
+Camera:
+Nikon D850, 35mm lens, f/5
+
+Imperfections:
+~9% realism imperfections: subtle water streaks, natural tile color variation, grout texture.
+
+
+REALTORS
+--------
+
+IMAGE: re-hero | size: 520x240
+Prompt:
+Ultra realistic real estate photography of a beautifully staged luxury living room ready for open house. Polished hardwood floors, designer furniture arrangement, fresh flowers on coffee table, natural sunlight through tall Boston brownstone windows, neutral warm tones, aspirational but believable.
+
+Camera:
+Canon EOS R5, 16mm wide angle, f/6.3, ISO 200
+
+Lighting:
+Natural daylight with supplemental bounce reflectors for shadow fill.
+
+Imperfections:
+~6% realism imperfections: subtle fabric texture on sofa, natural wood floor grain variation, soft window glare.
+
+
+IMAGE: re-listing | size: 245x130
+Prompt:
+Spotless kitchen in a staged home for sale. Granite countertops gleaming, stainless steel appliances sparkling, pendant lights overhead, fresh fruit bowl on island, everything polished for listing photos.
+
+Camera:
+Sony A7RIV, 24mm lens, f/5.6
+
+Imperfections:
+~7% realism imperfections: granite pattern variation, subtle appliance reflections, natural pendant light glow.
+
+
+IMAGE: re-moveout | size: 245x130
+Prompt:
+Clean empty apartment unit ready for new tenant. Fresh white walls, pristine hardwood floors reflecting window light, clean windows letting in bright daylight, no furniture, perfectly clean blank canvas, move-in ready condition.
+
+Camera:
+Canon EOS R5, 24mm lens, f/5.6
+
+Imperfections:
+~6% realism imperfections: natural wood grain, subtle wall paint texture, window light gradation.
+
+
+RESTAURANTS
+-----------
+
+IMAGE: rs-hero | size: 600x220
+Prompt:
+Wide angle commercial kitchen photography of a spotless restaurant kitchen. Stainless steel counters polished, commercial hood degreased, tile floor freshly cleaned, prep stations organized, health inspection ready environment.
+
+Camera:
+Nikon D850, 16mm wide lens, f/6.3
+
+Lighting:
+Overhead commercial fluorescent lighting with balanced exposure.
+
+Imperfections:
+~7% realism imperfections: fine scratches on stainless steel, minor water reflections, micro tile texture.
+
+
+IMAGE: rs-hood | size: 245x100
+Prompt:
+Close‑up macro photography of a professionally cleaned commercial kitchen exhaust hood. Stainless steel degreased surface reflecting light, grease trap area spotless.
+
+Camera:
+100mm macro lens, f/4
+
+Imperfections:
+~8% realism imperfections: fine steel scratches, tiny reflection distortions.
+
+
+IMAGE: rs-dining | size: 245x100
+Prompt:
+Clean restaurant dining room ready for dinner service. Polished dark wood tables, clean upholstered booth seating, spotless tile floors, warm ambient pendant lighting, upscale casual atmosphere, no people.
+
+Camera:
+Canon EOS R5, 35mm lens, f/4, ISO 400
+
+Imperfections:
+~7% realism imperfections: wood grain texture, subtle fabric weave on upholstery, natural light falloff.
+
+
+IMAGE: rs-floors | size: 245x100
+Prompt:
+Restaurant kitchen floor after professional strip and polish. Wet reflective tile surface, grout lines clean and white, overhead lights reflecting dramatically.
+
+Camera:
+Sony A7RIV, 28mm lens, f/5
+
+Imperfections:
+~9% realism imperfections: slight water streaks, tile texture variation.
+
+
+IMAGE: rs-restroom | size: 245x100
+Prompt:
+Spotless commercial restaurant restroom. Clean white subway tile walls, sparkling chrome fixtures, streak-free mirrors, stocked paper towel dispenser, bright overhead lighting, brand new appearance.
+
+Camera:
+Sony A7III, 24mm lens, f/5.6
+
+Imperfections:
+~6% realism imperfections: tile grout texture, chrome reflection distortion, natural lighting gradation.
+
+
+DAYCARES
+--------
+
+IMAGE: dc-hero | size: 520x200
+Prompt:
+Ultra realistic photography of a bright clean daycare playroom. Colorful toys neatly organized on wooden shelves, sanitized rubber play mats on floor, child-sized wooden tables freshly wiped, natural sunlight through large windows, cheerful safe environment, no children present.
+
+Camera:
+Canon EOS R5, 24mm lens, f/5.6, ISO 200
+
+Lighting:
+Bright natural daylight with warm interior ambient fill.
+
+Imperfections:
+~7% realism imperfections: toy color variation, natural wood shelf texture, subtle play mat wear patterns.
+
+
+IMAGE: dc-sanitize | size: 245x120
+Prompt:
+Close-up of blue-gloved hand wiping a stainless steel door handle with disinfectant cloth in a childcare facility. Light switch visible nearby, professional sanitization in progress, clinical but warm environment.
+
+Camera:
+Canon 85mm lens, f/3.5, ISO 400
+
+Imperfections:
+~8% realism imperfections: glove texture, cloth fibers, handle surface micro scratches, disinfectant moisture.
+
+
+IMAGE: dc-restroom | size: 245x120
+Prompt:
+Clean child-friendly daycare restroom. Low child-height porcelain sinks, colorful tile accents, sanitized surfaces, bright overhead lighting, step stools, everything sparkling clean and safe for small children.
+
+Camera:
+Sony A7III, 24mm lens, f/5.6
+
+Imperfections:
+~6% realism imperfections: tile grout texture, porcelain surface reflections, natural color variation.
+
+
+AIRBNB HOSTS
+------------
+
+IMAGE: ab-hero | size: 600x230
+Prompt:
+Luxury Airbnb bedroom prepared for guest arrival. Crisp white duvet with hotel corners, stacked pillows, folded white towels at bed foot, fresh flowers on nightstand, modern Boston apartment interior.
+
+Camera:
+Canon R6, 50mm lens, f/2.8 shallow depth of field
+
+Lighting:
+Soft warm ambient lighting.
+
+Imperfections:
+~6% realism imperfections: fabric wrinkles, natural textile texture.
+
+
+IMAGE: ab-linen | size: 80x80 (circular crop)
+Prompt:
+Overhead flat-lay of crisp white folded hotel-quality linens and towels neatly stacked on neutral linen background. Minimalist composition, soft diffused natural lighting, elegant hospitality aesthetic. Square format.
+
+Camera:
+Canon EOS R5, 50mm overhead, f/4, ISO 200
+
+Imperfections:
+~5% realism imperfections: natural fabric fold lines, subtle cotton texture variation.
+
+
+IMAGE: ab-kitchen | size: 80x80 (circular crop)
+Prompt:
+Overhead shot of a spotless compact Airbnb kitchen countertop. Clean stainless sink, organized dish rack, wiped marble counter, bright minimal modern aesthetic. Square format.
+
+Camera:
+Sony A7III, 35mm overhead, f/4
+
+Imperfections:
+~6% realism imperfections: marble vein pattern, sink reflection, natural counter texture.
+
+
+IMAGE: ab-restock | size: 80x80 (circular crop)
+Prompt:
+Overhead flat-lay of neatly arranged Airbnb welcome amenities on a wooden tray. Mini toiletry bottles, coffee pods, small welcome card, folded hand towel, hotel-style guest setup. Square format.
+
+Camera:
+Canon EOS R5, 50mm overhead, f/4
+
+Imperfections:
+~5% realism imperfections: wood tray grain, label print texture, natural shadow variation.
+
+
+IMAGE: ab-review | size: 520x80
+Prompt:
+Clean minimal graphic design of a 5-star guest review card. Light gray background, five gold stars in a row, quote text reading "The place was SPOTLESS. Cleanest Airbnb we have ever stayed in." Small circular guest avatar placeholder on left. Subtle card shadow. Professional marketing mockup aesthetic.
+
+Camera:
+N/A — graphic design render
+
+Imperfections:
+None — clean digital design.
+
+
+INTERIOR DESIGNERS
+------------------
+
+IMAGE: id-hero | size: 520x240
+Prompt:
+Ultra realistic architectural photography of a luxury modern living space after renovation and professional cleaning. Polished marble floors, designer furniture, floor-to-ceiling windows with urban city view, dust-free surfaces, immaculate magazine-quality interior, no people. High-end residential architecture.
+
+Camera:
+Canon EOS R5, 16mm tilt-shift, f/8, ISO 200
+
+Lighting:
+Natural window light with architectural interior balance.
+
+Imperfections:
+~6% realism imperfections: marble vein variation, fabric texture, natural window light gradation, subtle floor reflections.
+
+
+IMAGE: id-grout | size: 165x100
+Prompt:
+Extreme macro close-up of freshly cleaned white tile grout lines. Bright white grout between neutral gray porcelain tiles, all construction adhesive residue removed, precision professional cleaning result.
+
+Camera:
+Canon 100mm macro, f/4, ISO 200
+
+Imperfections:
+~7% realism imperfections: natural grout texture variation, tile edge micro chips, subtle color variation between tiles.
+
+
+IMAGE: id-fixture | size: 165x100
+Prompt:
+Close-up of a polished chrome waterfall bathroom faucet gleaming under vanity lighting. Spotless white marble countertop beneath, post-renovation detail cleaning result, luxury bathroom hardware detail.
+
+Camera:
+Canon 85mm lens, f/3.5
+
+Imperfections:
+~6% realism imperfections: chrome reflection distortion, marble vein pattern, micro water droplet at spout tip.
+
+
+IMAGE: id-window | size: 165x100
+Prompt:
+Crystal clear floor-to-ceiling window in a luxury high-rise apartment with urban skyline view. Zero streaks, no dust, no fingerprints, sunlight streaming through perfectly clean glass, sheer curtain pulled to one side.
+
+Camera:
+Sony A7RIV, 24mm lens, f/5.6
+
+Imperfections:
+~5% realism imperfections: natural light flare, subtle curtain fabric texture, window frame shadow.

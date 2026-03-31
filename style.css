@@ -1557,20 +1557,16 @@ footer::after {
     align-items: center;
     padding: 0.4rem 1rem 0.4rem 0.75rem;
     text-decoration: none !important;
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.95) !important;
-    transition: color 0.3s;
 }
 
-.tube-nav-logo span { color: var(--steel-light); }
-
-.tube-nav.scrolled .tube-nav-logo {
-    color: #001D4A !important;
+.tube-nav-logo img {
+    height: 30px;
+    width: auto;
 }
 
-.tube-nav.scrolled .tube-nav-logo span { color: var(--steel); }
+.tube-nav-logo .logo-scrolled { display: none; }
+.tube-nav.scrolled .tube-nav-logo .logo-default { display: none; }
+.tube-nav.scrolled .tube-nav-logo .logo-scrolled { display: block; }
 
 .tube-nav-link .nav-icon { display: none; }
 .tube-nav-link .nav-label { display: inline; }
@@ -1596,13 +1592,14 @@ footer::after {
     border-bottom: 1px solid rgba(61, 122, 158, 0.2);
 }
 .mobile-header .mh-brand {
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    font-size: 22px;
-    letter-spacing: 3px;
-    color: #fff;
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
-.mobile-header .mh-brand span { color: var(--steel); }
+.mobile-header .mh-brand img {
+    height: 28px;
+    width: auto;
+}
 .mobile-header .mh-hamburger {
     width: 44px;
     height: 44px;

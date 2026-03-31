@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Blue Brick — Free Walkthrough Offer Ad</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #0C1F35;
+    position: relative;
+  }
+
+  /* Background */
+  .bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/images/Luxury apt images/pexels-artbovich-6077368.jpg') center/cover;
+    filter: brightness(0.2) saturate(0.4);
+    z-index: 0;
+  }
+
+  /* Gradient overlay */
+  .gradient-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 31, 53, 0.7) 0%,
+      rgba(12, 31, 53, 0.4) 30%,
+      rgba(12, 31, 53, 0.6) 60%,
+      rgba(12, 31, 53, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 65px 85px;
+  }
+
+  /* Top bar */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
+
+  .logo {
+    height: 55px;
+  }
+
+  .urgency-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(236, 164, 0, 0.15);
+    border: 1px solid rgba(236, 164, 0, 0.35);
+    border-radius: 30px;
+    padding: 10px 24px;
+  }
+
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: #ECA400;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .urgency-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ECA400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ECA400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1.0;
+    margin-bottom: 20px;
+  }
+
+  .headline span {
+    color: #ECA400;
+  }
+
+  .subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 750px;
+    margin-bottom: 45px;
+  }
+
+  /* Offer box */
+  .offer-box {
+    background: rgba(236, 164, 0, 0.08);
+    border: 2px solid rgba(236, 164, 0, 0.3);
+    border-radius: 12px;
+    padding: 30px 40px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .offer-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    background: #ECA400;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+  }
+
+  .offer-details h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .offer-details p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  /* Features grid */
+  .features {
+    display: flex;
+    gap: 30px;
+    margin-bottom: auto;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature .icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(61, 122, 158, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #3D7A9E;
+  }
+
+  .feature span {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* CTA row */
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: auto;
+  }
+
+  .cta-btn {
+    background: #ECA400;
+    color: #0C1F35;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.06em;
+    padding: 20px 50px;
+    border-radius: 8px;
+  }
+
+  .cta-phone {
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-phone-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 10, 18, 0.95);
+    padding: 14px 65px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    z-index: 3;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-item .dot {
+    width: 5px;
+    height: 5px;
+    background: #ECA400;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="gradient-overlay"></div>
+
+  <div class="content">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <img src="../assets/images/logo-stacked-dark.png" alt="Blue Brick" class="logo">
+      <div class="urgency-badge">
+        <div class="pulse-dot"></div>
+        <span class="urgency-text">Limited Spots Available</span>
+      </div>
+    </div>
+
+    <!-- Eyebrow -->
+    <p class="eyebrow">Boston Property Managers</p>
+
+    <!-- Headline -->
+    <h1 class="headline">Your Next Tenant<br>Deserves <span>Better</span></h1>
+    <p class="subtitle">We handle the deep clean between tenants so your property is spotless, show-ready, and turnover-fast.</p>
+
+    <!-- Offer box -->
+    <div class="offer-box">
+      <div class="offer-icon">&#128197;</div>
+      <div class="offer-details">
+        <h3>Free Facility Walkthrough + Custom Quote</h3>
+        <p>We'll assess your property, identify problem areas, and deliver a no-obligation cleaning plan within 24 hours.</p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature">
+        <span class="icon">&#10003;</span>
+        <span>Move-In/Move-Out</span>
+      </div>
+      <div class="feature">
+        <span class="icon">&#10003;</span>
+        <span>Deep Cleaning</span>
+      </div>
+      <div class="feature">
+        <span class="icon">&#10003;</span>
+        <span>Post-Renovation</span>
+      </div>
+      <div class="feature">
+        <span class="icon">&#10003;</span>
+        <span>Commercial</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-row">
+      <div class="cta-btn">Book Free Walkthrough</div>
+      <div>
+        <div class="cta-phone-label">Call or Text</div>
+        <div class="cta-phone">781-330-5604</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <span class="trust-item"><span class="dot"></span> Insured & Bonded</span>
+    <span class="trust-item"><span class="dot"></span> 5-Star Rated</span>
+    <span class="trust-item"><span class="dot"></span> 100+ Projects</span>
+    <span class="trust-item"><span class="dot"></span> Same-Week Availability</span>
+  </div>
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════
+  FACEBOOK POST CAPTION
+═══════════════════════════════════════════
+
+Boston Property Managers — your next tenant deserves better. 🏠
+
+Between tenants? Between renovations? We'll make it spotless.
+
+We're offering FREE facility walkthroughs this month. We'll tour your property, identify every problem area, and deliver a custom cleaning plan within 24 hours.
+
+Here's what we handle:
+✅ Move-in / move-out deep cleaning
+✅ Post-renovation cleanup
+✅ Commercial property turnover
+✅ Window, floor & fixture detailing
+
+No obligation. No pressure. Just a clean property and happy tenants.
+
+📞 Book your free walkthrough: 781-330-5604
+📧 bluebrickmass@gmail.com
+
+#PropertyManagement #BostonRealEstate #TurnoverCleaning #DeepCleaning #BlueBrick #BostonPropertyManager #MoveInReady #CommercialCleaning #GreaterBoston
+-->
