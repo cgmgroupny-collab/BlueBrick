@@ -1,1204 +1,670 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Brick — Post-Construction & Luxury Cleaning | Boston's #1 Construction Cleanup Service</title>
-    <meta name="description" content="Boston's premier post-construction cleaning company. Blue Brick delivers expert construction cleanup, luxury residential cleaning, and commercial property restoration across Greater Boston. Dust-free, move-in ready results guaranteed.">
-    <meta name="keywords" content="post construction cleaning Boston, construction cleanup Newton, new build cleaning South Boston, luxury cleaning after renovation, commercial post-construction Waltham, renovation cleanup Brighton, construction dust removal Allston, post-renovation cleaning Boston, new construction cleaning service, builder clean Boston MA">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Blue Brick Luxury and Commercial Cleaning">
-    <link rel="canonical" href="https://bluebrickmass.com/">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Blue Brick Cleaning — Boston's Trusted Commercial & Residential Cleaners</title>
+<meta name="description" content="Boston's detail-obsessed cleaning crew. Post-construction, recurring office, move-in/out, and residential deep cleans. Insured. 5-star. Book in 60 seconds." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://bluebrickmass.com/" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="180x180" href="/assets/images/favicon-180.png" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5WPDVY4X2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z5WPDVY4X2');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --prussian:#0C1F35;
+  --cerulean:#3D7A9E;
+  --yale:#1A3A5C;
+  --cream:#EAF8BF;
+  --ink:#0B1624;
+  --paper:#FAFAF7;
+  --line:#E7E4DB;
+  --muted:#6B7280;
+  --success:#2A9D6F;
+  --shadow:0 30px 80px -30px rgba(12,31,53,.25);
+  --radius:20px;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.01em;line-height:.88;font-weight:400}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--cerulean)}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Blue Brick — Post-Construction & Luxury Cleaning | Boston">
-    <meta property="og:description" content="Expert post-construction cleanup and luxury cleaning for Boston's finest properties. From new builds to renovations — dust-free, move-in ready results.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bluebrickmass.com/">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Blue Brick Cleaning">
-    <meta property="fb:profile_id" content="61579372974026">
-    <meta property="og:image" content="https://bluebrickmass.com/assets/images/logo-stacked-white.png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180.png">
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);background:rgba(255,255,255,.72);border-bottom:1px solid rgba(12,31,53,.06);transition:transform .3s ease}
+.nav.hidden{transform:translateY(-100%)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo img{height:36px;width:auto}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink);opacity:.75;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:var(--prussian);color:#fff;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,background .2s}
+.nav-cta:hover{background:var(--yale);transform:translateY(-1px)}
+@media (max-width:860px){.nav-links{display:none}}
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blue Brick — Post-Construction & Luxury Cleaning | Boston">
-    <meta name="twitter:description" content="Expert post-construction cleanup and luxury cleaning for Boston's finest properties.">
-    <meta name="twitter:image" content="https://bluebrickmass.com/assets/images/logo-stacked-white.png">
+/* HERO */
+.hero{position:relative;min-height:100vh;padding:120px 0 80px;overflow:hidden;isolation:isolate;background:var(--paper)}
+.hero-video{position:absolute;inset:0;z-index:-3;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover;filter:brightness(.7) contrast(1.05) saturate(.85);transform:translateZ(0);will-change:transform}
+.hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,.95) 100%)}
+.hero-blob{position:absolute;z-index:-2;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--cream),transparent 60%);top:-120px;right:-180px;filter:blur(40px);opacity:.85;will-change:transform}
+.hero-blob-2{position:absolute;z-index:-2;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(61,122,158,.18),transparent 70%);bottom:-100px;left:-100px;filter:blur(30px);will-change:transform}
+.hero-inner{position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(12,31,53,.06);padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--prussian);margin-bottom:32px}
+.hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.hero h1{font-size:clamp(56px,11vw,180px);color:var(--prussian);margin-bottom:28px;font-family:'Bebas Neue',sans-serif;line-height:.86;letter-spacing:-.005em}
+.hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--cerulean);letter-spacing:0;display:inline-block;transform:translateY(4px)}
+.hero-sub{font-size:clamp(18px,2.2vw,22px);color:#374151;max-width:540px;margin-bottom:40px;line-height:1.45;font-weight:400}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:48px}
+.btn-primary{background:var(--prussian);color:#fff;padding:20px 32px;border-radius:100px;font-size:15px;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:12px;box-shadow:0 20px 50px -12px rgba(12,31,53,.4);transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary:hover{background:var(--yale);transform:translateY(-2px);box-shadow:0 24px 60px -10px rgba(12,31,53,.5)}
+.btn-primary .arrow{transition:transform .3s}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-ghost{padding:20px 28px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid rgba(12,31,53,.2);color:var(--prussian);transition:background .2s,border-color .2s}
+.btn-ghost:hover{background:rgba(12,31,53,.04);border-color:var(--prussian)}
+.hero-trust{display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(12,31,53,.08);max-width:680px}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:#374151;font-weight:500}
+.trust-item .stars{color:#F59E0B;letter-spacing:1px}
+.trust-divider{width:1px;height:20px;background:rgba(12,31,53,.15)}
+@media (max-width:560px){.trust-divider{display:none}}
+.hero-side{position:absolute;right:max(24px,calc((100vw - var(--max))/2));bottom:80px;z-index:2;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.hero-side-num{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:.9;color:var(--prussian)}
+.hero-side-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);max-width:180px;text-align:right}
+@media (max-width:1100px){.hero-side{display:none}}
 
-    <!-- Social Profiles -->
-    <link rel="me" href="https://www.instagram.com/bluebrick.realestateservices/">
-    <link rel="me" href="https://www.facebook.com/profile.php?id=61579372974026">
-    <link rel="me" href="https://www.linkedin.com/in/gerardo-cazares-17b590354/">
-    <link rel="me" href="https://www.youtube.com/@GERARDOC-s2g">
+/* TICKER */
+.ticker{position:fixed;bottom:24px;left:24px;z-index:60;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 50px -15px rgba(12,31,53,.25);max-width:320px;transform:translateY(120%);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .3s}
+.ticker.show{transform:translateY(0);opacity:1}
+.ticker-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--cerulean),var(--prussian));color:#fff;display:grid;place-items:center;flex-shrink:0;font-size:18px}
+.ticker-text{font-size:13px;line-height:1.4;color:var(--ink)}
+.ticker-text strong{display:block;font-weight:600;margin-bottom:2px}
+.ticker-text span{color:var(--muted);font-size:11px}
+@media (max-width:600px){.ticker{left:12px;right:12px;max-width:none;bottom:76px}}
 
-    <!-- Structured Data: LocalBusiness -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://bluebrickmass.com/#organization",
-        "name": "Blue Brick Luxury & Commercial Cleaning",
-        "description": "Boston's premier post-construction cleaning and luxury residential cleaning service. Insured, reliable deep cleaning across 15 Greater Boston cities.",
-        "url": "https://bluebrickmass.com",
-        "telephone": "+1-781-330-5604",
-        "email": "bluebrickmass@gmail.com",
-        "image": "https://bluebrickmass.com/assets/images/logo-stacked-white.png",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://bluebrickmass.com/assets/images/logo-stacked-white.png"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Waltham",
-            "addressRegion": "MA",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 42.3765,
-            "longitude": -71.2356
-        },
-        "areaServed": [
-            {"@type": "City", "name": "Boston"},
-            {"@type": "City", "name": "East Boston"},
-            {"@type": "City", "name": "South Boston"},
-            {"@type": "City", "name": "Newton"},
-            {"@type": "City", "name": "Waltham"},
-            {"@type": "City", "name": "Brighton"},
-            {"@type": "City", "name": "Allston"},
-            {"@type": "City", "name": "Cambridge"},
-            {"@type": "City", "name": "Brookline"},
-            {"@type": "City", "name": "Somerville"},
-            {"@type": "City", "name": "Watertown"},
-            {"@type": "City", "name": "Lexington"},
-            {"@type": "City", "name": "Needham"},
-            {"@type": "City", "name": "Wellesley"},
-            {"@type": "City", "name": "Weston"}
-        ],
-        "serviceType": ["Residential Cleaning", "Small Job Cleaning", "Post-Construction Cleaning", "Luxury Residential Cleaning", "Commercial Cleaning", "Renovation Cleanup", "New Build Cleaning", "Deep Cleaning", "Move-In/Move-Out Cleaning"],
-        "openingHoursSpecification": [
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "19:00"}
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "47",
-            "bestRating": "5"
-        },
-        "sameAs": [
-            "https://www.instagram.com/bluebrickmass/",
-            "https://www.facebook.com/profile.php?id=61574434777498",
-            "https://www.linkedin.com/company/blue-brick-cleaning/",
-            "https://www.youtube.com/@GERARDOC-s2g",
-            "https://nextdoor.com/pages/blue-brick-luxury-commercial-cleaning-waltham-ma/"
-        ]
-    }
-    </script>
+/* SECTIONS */
+section{padding:120px 0}
+@media (max-width:760px){section{padding:80px 0}}
+.sec-head{max-width:780px;margin-bottom:64px}
+.sec-head h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.5vw,96px);line-height:.92;color:var(--prussian);margin:16px 0 20px}
+.sec-head h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--cerulean)}
+.sec-head p{font-size:18px;color:#4B5563;max-width:560px}
 
-    <!-- Structured Data: WebSite -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Blue Brick Luxury & Commercial Cleaning",
-        "url": "https://bluebrickmass.com",
-        "publisher": {"@id": "https://bluebrickmass.com/#organization"}
-    }
-    </script>
+/* MARQUEE */
+.marquee{padding:40px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.marquee-track{display:flex;gap:80px;animation:scroll 40s linear infinite;align-items:center;white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee-item{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#94A3B8;letter-spacing:.04em;display:flex;align-items:center;gap:16px;flex-shrink:0}
+.marquee-item::after{content:"◆";color:var(--cerulean);opacity:.4;font-size:14px;margin-left:80px}
 
+/* PRICING */
+.pricing{background:#fff;position:relative}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media (max-width:960px){.pricing-grid{grid-template-columns:1fr;gap:20px}}
+.price-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px 32px;position:relative;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.price-card.featured{background:var(--prussian);color:#fff;border:none;box-shadow:0 40px 100px -20px rgba(12,31,53,.5)}
+.price-card.featured:hover{transform:translateY(-10px)}
+.price-badge{position:absolute;top:-12px;left:32px;background:var(--cream);color:var(--prussian);padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.price-label{font-size:14px;font-weight:600;color:var(--cerulean);margin-bottom:8px;letter-spacing:.02em}
+.price-card.featured .price-label{color:var(--cream)}
+.price-amount{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;color:var(--prussian);margin-bottom:4px;display:flex;align-items:baseline;gap:8px}
+.price-card.featured .price-amount{color:#fff}
+.price-amount .unit{font-family:'Manrope',sans-serif;font-size:18px;font-weight:500;color:var(--muted)}
+.price-card.featured .price-amount .unit{color:rgba(234,248,191,.7)}
+.price-desc{font-size:15px;color:#4B5563;margin-bottom:28px;line-height:1.5}
+.price-card.featured .price-desc{color:rgba(255,255,255,.75)}
+.price-feats{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px;flex:1}
+.price-feats li{display:flex;gap:12px;font-size:14.5px;line-height:1.4}
+.price-feats li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--cream);flex-shrink:0;margin-top:2px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230C1F35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:12px;background-position:center;background-repeat:no-repeat}
+.price-card.featured .price-feats li::before{background-color:var(--cerulean);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>")}
+.price-cta{width:100%;padding:16px;border-radius:14px;background:var(--prussian);color:#fff;font-weight:600;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s}
+.price-cta:hover{background:var(--yale);transform:translateY(-1px)}
+.price-card.featured .price-cta{background:var(--cream);color:var(--prussian)}
+.price-card.featured .price-cta:hover{background:#fff}
+.price-pay{display:flex;gap:8px;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);letter-spacing:.04em}
+.price-card.featured .price-pay{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6)}
+.pay-icon{height:20px;padding:0 8px;border-radius:4px;background:rgba(12,31,53,.06);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.04em}
+.price-card.featured .pay-icon{background:rgba(255,255,255,.1)}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+/* BEFORE/AFTER */
+.ba{background:var(--paper)}
+.ba-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.ba-item{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:20px;background:#000;cursor:ew-resize;user-select:none}
+.ba-item:nth-child(1){grid-column:span 3;grid-row:span 2;aspect-ratio:4/5}
+.ba-item:nth-child(2){grid-column:span 3;aspect-ratio:3/2}
+.ba-item:nth-child(3){grid-column:span 2;aspect-ratio:1/1}
+.ba-item:nth-child(4){grid-column:span 2}
+.ba-item:nth-child(5){grid-column:span 2}
+@media (max-width:860px){.ba-grid{grid-template-columns:1fr}.ba-item{grid-column:1!important;grid-row:auto!important;aspect-ratio:4/3!important}}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after{clip-path:polygon(0 0,50% 0,50% 100%,0 100%)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.3);pointer-events:none}
+.ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.3);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230C1F35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'/><polyline points='9 18 15 12 9 6'/></svg>");background-position:center;background-repeat:no-repeat}
+.ba-label{position:absolute;top:16px;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(10px);pointer-events:none}
+.ba-label.before{left:16px;background:rgba(12,31,53,.7);color:#fff}
+.ba-label.after{right:16px;background:rgba(255,255,255,.85);color:var(--prussian)}
+.ba-caption{position:absolute;bottom:16px;left:16px;right:16px;color:#fff;font-size:14px;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,.5);pointer-events:none}
 
-    <link rel="preload" as="image" type="image/webp" href="assets/images/city-images/boston condo.webp" fetchpriority="high">
+/* SERVICES */
+.services{background:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media (max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+.svc-card{padding:36px 32px 32px;border-radius:24px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d}
+.svc-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--cream) 0%,transparent 50%);opacity:0;transition:opacity .3s}
+.svc-card:hover::before{opacity:.6}
+.svc-icon{width:56px;height:56px;border-radius:14px;background:var(--prussian);color:var(--cream);display:grid;place-items:center;margin-bottom:24px;position:relative;z-index:1;transition:transform .3s}
+.svc-card:hover .svc-icon{transform:rotate(-8deg) scale(1.05)}
+.svc-icon svg{width:24px;height:24px}
+.svc-card h3{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--prussian);margin-bottom:10px;position:relative;z-index:1;line-height:1}
+.svc-card p{font-size:14.5px;color:#4B5563;margin-bottom:20px;position:relative;z-index:1;line-height:1.5}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid var(--line);position:relative;z-index:1}
+.svc-price{font-size:13px;color:var(--muted);font-weight:500}
+.svc-price strong{color:var(--prussian);font-weight:700}
+.svc-link{font-size:13px;font-weight:700;color:var(--prussian);letter-spacing:.02em;display:flex;align-items:center;gap:6px;transition:gap .2s}
+.svc-link:hover{gap:10px}
 
-    <link rel="stylesheet" href="style.css">
+/* REVIEWS */
+.reviews{background:var(--paper);overflow:hidden}
+.rev-track{display:flex;gap:20px;animation:revScroll 60s linear infinite;width:max-content;padding:0 24px}
+.rev-track:hover{animation-play-state:paused}
+@keyframes revScroll{to{transform:translateX(-50%)}}
+.rev-card{width:380px;flex-shrink:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+.rev-google-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.rev-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--cerulean),var(--prussian));color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.rev-meta strong{display:block;font-size:14px;font-weight:600;color:var(--ink)}
+.rev-meta span{font-size:12px;color:var(--muted)}
+.rev-stars{color:#F59E0B;letter-spacing:2px;margin-bottom:10px;font-size:14px}
+.rev-body{font-size:14.5px;color:#374151;line-height:1.55}
+.rev-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.rev-google-logo{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#4285F4}
+.rev-card.imsg{background:#f2f2f7;border:none;padding:22px}
+.rev-imsg-head{font-size:12px;color:#8e8e93;text-align:center;margin-bottom:12px;font-weight:500}
+.rev-bubble{background:#007aff;color:#fff;padding:14px 18px;border-radius:22px;font-size:15px;line-height:1.4;margin-left:40px;position:relative;border-bottom-right-radius:6px}
+.rev-bubble + .rev-bubble{margin-top:4px}
+.rev-imsg-name{font-size:11px;color:#8e8e93;text-align:right;margin-top:8px;font-weight:500}
 
+/* FAQ */
+.faq{background:#fff}
+.faq-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+@media (max-width:960px){.faq-grid{grid-template-columns:1fr;gap:40px}}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:17px;font-weight:600;color:var(--prussian)}
+.faq-q::after{content:"";width:28px;height:28px;border-radius:50%;background:var(--paper);flex-shrink:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230C1F35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");background-size:14px;background-position:center;background-repeat:no-repeat;transition:transform .3s,background .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);background-color:var(--cream)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.faq-a-inner{padding:0 0 28px;font-size:15px;color:#4B5563;line-height:1.65;max-width:540px}
+.faq-item.open .faq-a{max-height:400px}
+
+/* CTA BAND */
+.cta-band{background:var(--prussian);color:#fff;padding:100px 0;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(61,122,158,.4),transparent 60%);pointer-events:none}
+.cta-band-inner{position:relative;z-index:1;text-align:center;max-width:840px;margin:0 auto}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,7vw,110px);line-height:.9;margin-bottom:24px}
+.cta-band h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--cream)}
+.cta-band p{font-size:18px;color:rgba(255,255,255,.75);margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-band .btn-primary{background:var(--cream);color:var(--prussian);box-shadow:0 20px 50px -12px rgba(234,248,191,.4)}
+.cta-band .btn-primary:hover{background:#fff}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:80px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr;gap:40px}}
+.foot-brand img{height:40px;margin-bottom:20px;filter:brightness(0) invert(1);opacity:.9}
+.foot-brand p{font-size:14px;line-height:1.6;max-width:280px}
+.foot-col h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px;font-weight:600}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:14px;transition:color .2s}
+.foot-col a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* MOBILE STICKY */
+.mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:#fff;border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:none;box-shadow:0 -10px 30px -10px rgba(12,31,53,.15)}
+.mobile-cta a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--prussian);color:#fff;padding:16px;border-radius:14px;font-size:15px;font-weight:600}
+@media (max-width:760px){.mobile-cta{display:block}footer{padding-bottom:100px}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track,.rev-track{animation:none}}
+</style>
 </head>
 <body>
-    <!-- Mobile Header — Text logo + Hamburger -->
-    <div class="mobile-header">
-        <a href="/" class="mh-brand"><img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" style="height:28px;width:auto;"></a>
-        <button class="mh-hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open');document.querySelector('.mobile-menu-overlay').classList.add('open');" aria-label="Open menu">
-            <span></span>
-        </button>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Blue Brick Cleaning"><img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" /></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#work">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
     </div>
-    <div class="mobile-menu-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('open');this.classList.remove('open');"></div>
-    <div class="mobile-menu">
-        <button class="mm-close" onclick="document.querySelector('.mobile-menu').classList.remove('open');document.querySelector('.mobile-menu-overlay').classList.remove('open');" aria-label="Close menu">&times;</button>
-        <a href="/#services">Services</a>
-        <a href="/cities.html">Service Areas</a>
-        <a href="/blog/">Blog</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="#estimate-form" class="mm-cta" onclick="document.querySelector('.mobile-menu').classList.remove('open');document.querySelector('.mobile-menu-overlay').classList.remove('open');">Free Estimate</a>
-        <a href="tel:+17813305604" class="mm-phone">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            (781) 330-5604
-        </a>
+    <a href="/book/" class="nav-cta">Book Now <span aria-hidden="true">→</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://videos.pexels.com/video-files/4108807/4108807-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-blob" data-parallax="0.3"></div>
+  <div class="hero-blob-2" data-parallax="0.15"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-eyebrow"><span class="dot"></span> Booking this week in Greater Boston</div>
+    <h1 class="reveal">Boston's<br>detail-obsessed<br><em>cleaning crew.</em></h1>
+    <p class="hero-sub reveal">Commercial, post-construction, and residential deep cleans handled by a licensed, insured team. No hidden fees. No missed spots. Ever.</p>
+    <div class="hero-cta-row reveal">
+      <a href="/book/" class="btn-primary">Book in 60 Seconds <span class="arrow">→</span></a>
+      <a href="#pricing" class="btn-ghost">See pricing</a>
     </div>
-
-    <div class="tube-nav" id="tubeNav">
-        <div class="tube-nav-inner">
-            <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home"><img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" class="logo-default"><img src="/assets/images/logo-horizontal-white.png" alt="Blue Brick" class="logo-scrolled"></a>
-            <a href="/#services" class="tube-nav-link">
-                <span class="nav-label">Services</span>
-                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-            </a>
-            <a href="/cities.html" class="tube-nav-link">
-                <span class="nav-label">Areas</span>
-                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            </a>
-            <a href="/blog/" class="tube-nav-link">
-                <span class="nav-label">Blog</span>
-                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-            </a>
-            <a href="sms:+17813305604" class="tube-nav-link">
-                <span class="nav-label">Text Us</span>
-                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-            </a>
-            <a href="/#estimate-form" class="tube-nav-link tube-nav-cta">
-                <span class="nav-label">Free Estimate</span>
-                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
-            </a>
-        </div>
+    <div class="hero-trust reveal">
+      <div class="trust-item"><span class="stars">★★★★★</span> 5.0 Google</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">Fully insured · $2M liability</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">200+ Boston cleanups</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">Eco-safe products</div>
     </div>
-
-
-    <main>
-        <!-- ==========================================
-             HERO — POST-CONSTRUCTION CLEANING
-             ========================================== -->
-        <section class="hero" id="quote" aria-label="Boston's premier post-construction cleaning service">
-            <div class="hero-bg">
-                <picture>
-                    <source srcset="assets/images/city-images/boston condo.webp" type="image/webp">
-                    <img src="assets/images/city-images/boston condo.png" alt="Luxury Boston high-rise condo interior with city skyline" loading="eager" width="1024" height="1024">
-                </picture>
-                <div class="hero-overlay"></div>
-            </div>
-
-            <div class="hero-content">
-                <div class="hero-logo" style="margin-bottom: 1.5rem; animation: fadeIn 0.6s both;">
-                    <img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick — Luxury & Commercial Cleaning" style="width: clamp(200px, 30vw, 320px); height: auto;">
-                </div>
-
-                <div class="hero-badge">Now Booking Construction Cleanups</div>
-
-                <h1>Post-Construction<br>Cleaning <em>Experts</em><br>in Boston</h1>
-
-                <p class="hero-sub">From new builds to full renovations — we transform construction sites into pristine, move-in ready properties. Trusted by Boston's top contractors and property developers.</p>
-
-                <div class="trust-row" role="list" aria-label="Trust indicators">
-                    <div class="trust-item" role="listitem">
-                        <div class="trust-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="trust-label"><strong>Insured & Bonded</strong>Full Coverage</div>
-                    </div>
-                    <div class="trust-item" role="listitem">
-                        <div class="trust-icon">
-                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        </div>
-                        <div class="trust-label"><strong>100% Satisfaction</strong>Guaranteed</div>
-                    </div>
-                    <div class="trust-item" role="listitem">
-                        <div class="trust-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                        <div class="trust-label"><strong>5-Star Rated</strong>Premium Service</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-wrapper" id="estimate-form">
-                <form class="lead-form" id="leadForm" action="https://api.web3forms.com/submit" method="POST" aria-label="Request a free post-construction cleaning estimate">
-                    <input type="hidden" name="access_key" value="5a56c460-a20c-41d4-8cca-6664191b627a">
-                    <input type="hidden" name="subject" value="New Cleaning Estimate Request — Blue Brick">
-                    <input type="hidden" name="from_name" value="Blue Brick Website">
-                    <input type="hidden" name="redirect" value="https://bluebrickmass.com/?submitted=true">
-                    <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-                    <h2 class="form-title">Get Your Free Cleanup Estimate</h2>
-                    <p class="form-subtitle">Most quotes delivered within 2 hours.</p>
-
-                    <div class="form-progress">
-                        <div class="progress-line"><div class="progress-line-fill" id="progressFill"></div></div>
-                        <div class="progress-step active" data-step="1">
-                            <div class="step-dot">1</div>
-                            <div class="step-label">Contact</div>
-                        </div>
-                        <div class="progress-step" data-step="2">
-                            <div class="step-dot">2</div>
-                            <div class="step-label">Property</div>
-                        </div>
-                        <div class="progress-step" data-step="3">
-                            <div class="step-dot">3</div>
-                            <div class="step-label">Details</div>
-                        </div>
-                    </div>
-
-                    <!-- Step 1: Contact -->
-                    <div class="form-step active" data-step="1">
-                        <div class="form-group">
-                            <input type="text" id="fullName" name="name" placeholder=" " required autocomplete="name">
-                            <label for="fullName">Full Name</label>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" pattern="[0-9\-\(\)\s\+]*">
-                                <label for="phone">Phone</label>
-                            </div>
-                        </div>
-                        <div class="form-nav">
-                            <button type="button" class="btn-next" onclick="nextStep(1)">Continue</button>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Property -->
-                    <div class="form-step" data-step="2">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <select id="serviceType" name="service_type" required>
-                                    <option value="" disabled selected hidden></option>
-                                    <option value="residential">Residential Cleaning</option>
-                                    <option value="small_job">Small Job / One-Time Clean</option>
-                                    <option value="post_construction">Post-Construction Cleanup</option>
-                                    <option value="renovation_cleanup">Renovation Cleanup</option>
-                                    <option value="new_build">New Build Final Clean</option>
-                                    <option value="luxury_residential">Luxury Residential</option>
-                                    <option value="commercial">Commercial Property</option>
-                                    <option value="move_in_out">Move-In / Move-Out</option>
-                                </select>
-                                <label for="serviceType">Service Needed</label>
-                            </div>
-                            <div class="form-group">
-                                <select id="propertyType" name="property_type" required>
-                                    <option value="" disabled selected hidden></option>
-                                    <option value="apartment_condo">Apartment / Condo</option>
-                                    <option value="single_family">Single Family Home</option>
-                                    <option value="townhouse">Townhouse</option>
-                                    <option value="commercial_office">Commercial Office</option>
-                                    <option value="retail">Retail Space</option>
-                                    <option value="multi_unit">Multi-Unit Building</option>
-                                </select>
-                                <label for="propertyType">Property Type</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="zipcode" name="zipcode" placeholder=" " required autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" inputmode="numeric">
-                            <label for="zipcode">Zip Code</label>
-                        </div>
-                        <div class="form-nav">
-                            <button type="button" class="btn-prev" onclick="prevStep(2)">Back</button>
-                            <button type="button" class="btn-next" onclick="nextStep(2)">Continue</button>
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Details -->
-                    <div class="form-step" data-step="3">
-                        <div class="form-group">
-                            <select id="location" name="location" required>
-                                <option value="" disabled selected hidden></option>
-                                <option value="boston">Boston</option>
-                                <option value="east_boston">East Boston</option>
-                                <option value="south_boston">South Boston</option>
-                                <option value="newton">Newton</option>
-                                <option value="waltham">Waltham</option>
-                                <option value="brighton">Brighton</option>
-                                <option value="allston">Allston</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label for="location">Location / Neighborhood</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="3" placeholder=" "></textarea>
-                            <label for="message">Project details — scope, timeline, special needs (optional)</label>
-                        </div>
-                        <div class="form-nav">
-                            <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
-                            <button type="submit" class="submit-btn">Get My Free Estimate</button>
-                        </div>
-                    </div>
-
-                    <p class="form-note">No obligation. No spam. Just a custom quote for your project.</p>
-                </form>
-
-                <div class="form-success" id="formSuccess">
-                    <div class="check-circle">
-                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <h3>Estimate Request Received</h3>
-                    <p>Our team will reach out within 2 hours to discuss your project and provide a detailed quote.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             SERVICES — POST-CONSTRUCTION FOCUS
-             ========================================== -->
-        <section class="services" id="services" aria-label="Post-construction and luxury cleaning services in Boston">
-            <div class="section-header reveal-blur">
-                <span class="section-tag">Our Expertise</span>
-                <h2>Post-Construction Cleaning<br><em>Done Right</em>, Every Time</h2>
-                <p>We specialize in transforming active construction sites into immaculate, client-ready properties. Every nail, every dust particle, every surface — handled with precision.</p>
-            </div>
-
-            <div class="services-grid">
-                <article class="service-card reveal-left" style="transition-delay: 0.1s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/Luxury apt images/pexels-artbovich-8082229.webp" type="image/webp">
-                            <img src="assets/images/Luxury apt images/pexels-artbovich-8082229.jpg" alt="Post-construction cleanup in progress" loading="lazy" width="1920" height="1281">
-                        </picture>
-                    </div>
-                    <h3>Post-Construction Cleanup</h3>
-                    <p>Complete dust removal, debris cleanup, surface polishing, and deep sanitization after new builds and major renovations. Move-in ready results on schedule.</p>
-                </article>
-
-                <article class="service-card reveal-right" style="transition-delay: 0.15s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/services images/renovation restoration clean.webp" type="image/webp">
-                            <img src="assets/images/services images/renovation restoration clean.jpg" alt="Kitchen renovation restoration cleaning" loading="lazy" width="1920" height="1281">
-                        </picture>
-                    </div>
-                    <h3>Renovation Restoration</h3>
-                    <p>Kitchen remodel? Full gut rehab? We handle the fine-detail cleaning — removing construction dust from HVAC systems, light fixtures, cabinetry, and every hidden crevice.</p>
-                </article>
-
-                <article class="service-card reveal-left" style="transition-delay: 0.2s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/services images/luxury residential .webp" type="image/webp">
-                            <img src="assets/images/services images/luxury residential .jpg" alt="Luxury residential home cleaning" loading="lazy" width="1920" height="1281">
-                        </picture>
-                    </div>
-                    <h3>Luxury Residential</h3>
-                    <p>Tailored cleaning programs for Boston's finest homes — from Back Bay brownstones to Newton estates. White-glove service that treats every surface with meticulous care.</p>
-                </article>
-
-                <article class="service-card reveal-right" style="transition-delay: 0.25s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/services images/commercial properties.webp" type="image/webp">
-                            <img src="assets/images/services images/commercial properties.jpg" alt="Commercial office cleaning Boston" loading="lazy" width="1920" height="1165">
-                        </picture>
-                    </div>
-                    <h3>Commercial Properties</h3>
-                    <p>Pristine offices, retail environments, and commercial spaces across Greater Boston. First impressions drive business — we make sure yours is immaculate.</p>
-                </article>
-
-                <article class="service-card reveal-left" style="transition-delay: 0.3s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/services images/New Build Final Clean.webp" type="image/webp">
-                            <img src="assets/images/services images/New Build Final Clean.jpg" alt="New build final cleaning service" loading="lazy" width="1920" height="1280">
-                        </picture>
-                    </div>
-                    <h3>New Build Final Clean</h3>
-                    <p>The critical last step before handover. Builder-grade to client-grade results — window tracks, grout lines, appliance interiors, and every surface polished to perfection.</p>
-                </article>
-
-                <article class="service-card reveal-right" style="transition-delay: 0.35s">
-                    <div class="service-img">
-                        <picture>
-                            <source srcset="assets/images/services images/move in move out clean.webp" type="image/webp">
-                            <img src="assets/images/services images/move in move out clean.jpg" alt="Move-in move-out cleaning service" loading="lazy" width="1920" height="1280">
-                        </picture>
-                    </div>
-                    <h3>Move-In / Move-Out</h3>
-                    <p>Comprehensive deep cleaning for property transitions. Whether you're welcoming new tenants in South Boston or preparing a Waltham listing — every detail handled.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             TRUST STATS
-             ========================================== -->
-        <section class="trust-section" aria-label="Company statistics">
-            <div class="trust-bar" role="list">
-                <div class="trust-stat reveal-scale" role="listitem" style="transition-delay: 0.1s">
-                    <div class="number" data-count="500">0</div>
-                    <div class="label">Properties Served</div>
-                </div>
-                <div class="trust-stat reveal-scale" role="listitem" style="transition-delay: 0.3s">
-                    <div class="number">7+</div>
-                    <div class="label">Areas Covered</div>
-                </div>
-                <div class="trust-stat reveal-scale" role="listitem" style="transition-delay: 0.5s">
-                    <div class="number">24h</div>
-                    <div class="label">Response Time</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             GALLERY — LUXURY PROPERTIES
-             ========================================== -->
-        <section class="gallery" id="gallery" aria-label="Luxury property cleaning portfolio">
-            <div class="section-header reveal-blur">
-                <span class="section-tag">Our Work</span>
-                <h2>From Construction Site to <em>Showroom Ready</em></h2>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item reveal-scale" style="transition-delay: 0.05s">
-                    <picture>
-                        <source srcset="assets/images/city-images/newton home.webp" type="image/webp">
-                        <img src="assets/images/city-images/newton home.png" alt="Luxury Newton home living room with coffered ceiling and fireplace" loading="lazy" width="1024" height="1024">
-                    </picture>
-                    <div class="gallery-caption">
-                        <h4>Newton</h4>
-                        <p>Luxury home deep clean</p>
-                    </div>
-                </div>
-                <div class="gallery-item reveal-rotate" style="transition-delay: 0.15s">
-                    <picture>
-                        <source srcset="assets/images/city-images/south boston kichen.webp" type="image/webp">
-                        <img src="assets/images/city-images/south boston kichen.png" alt="Modern renovated South Boston kitchen with marble island" loading="lazy" width="1024" height="1024">
-                    </picture>
-                    <div class="gallery-caption">
-                        <h4>South Boston</h4>
-                        <p>Kitchen renovation cleanup</p>
-                    </div>
-                </div>
-                <div class="gallery-item reveal-rotate" style="transition-delay: 0.25s">
-                    <picture>
-                        <source srcset="assets/images/city-images/boston condo.webp" type="image/webp">
-                        <img src="assets/images/city-images/boston condo.png" alt="Boston high-rise condo with skyline views after cleaning" loading="lazy" width="1024" height="1024">
-                    </picture>
-                    <div class="gallery-caption">
-                        <h4>Boston</h4>
-                        <p>High-rise condo full clean</p>
-                    </div>
-                </div>
-                <div class="gallery-item reveal-rotate" style="transition-delay: 0.35s">
-                    <picture>
-                        <source srcset="assets/images/city-images/brighton apartment.webp" type="image/webp">
-                        <img src="assets/images/city-images/brighton apartment.png" alt="Clean Brighton apartment with kitchen and living area" loading="lazy" width="1024" height="1024">
-                    </picture>
-                    <div class="gallery-caption">
-                        <h4>Brighton</h4>
-                        <p>Apartment turnover clean</p>
-                    </div>
-                </div>
-                <div class="gallery-item reveal-rotate" style="transition-delay: 0.45s">
-                    <picture>
-                        <source srcset="assets/images/city-images/alston finished apartment.webp" type="image/webp">
-                        <img src="assets/images/city-images/alston finished apartment.png" alt="Finished Allston apartment with exposed brick" loading="lazy" width="1024" height="1024">
-                    </picture>
-                    <div class="gallery-caption">
-                        <h4>Allston</h4>
-                        <p>Finished apartment detail clean</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             CTA SECTION
-             ========================================== -->
-        <section class="cta-section reveal-scale">
-            <h2>Ready for a <em>Spotless</em> Handover?</h2>
-            <p>Get Boston's most trusted post-construction cleaning team on your next project.</p>
-            <div class="cta-buttons">
-                <a href="#estimate-form" class="cta-btn-primary">Get Your Free Estimate</a>
-                <a href="tel:+17813305604" class="cta-btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Call (781) 330-5604
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer role="contentinfo">
-        <div class="footer-bg"></div>
-
-        <!-- Email Subscriber CTA -->
-        <div class="footer-cta">
-            <div class="footer-cta-inner">
-                <h3>Win a Free Cleaning Every Month</h3>
-                <p>Subscribe and get entered to win a complimentary home cleaning — one lucky winner each month.</p>
-                <form class="subscribe-form" id="subscribeForm" onsubmit="return handleSubscribe(event)">
-                    <div class="subscribe-input-wrap">
-                        <input type="email" id="subEmail" placeholder="Enter your email" required autocomplete="email">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </div>
-                    <p class="subscribe-note">No spam, ever. Unsubscribe anytime.</p>
-                </form>
-                <p class="subscribe-success" id="subscribeSuccess" style="display:none;">You're in! Check your inbox for confirmation.</p>
-            </div>
-        </div>
-
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick — Luxury & Commercial Cleaning">
-                </div>
-                <p>Boston's trusted deep cleaning and luxury property care.</p>
-                <a href="sms:+17813305604" class="contact-line" aria-label="Text us">
-                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    (781) 330-5604
-                </a>
-                <a href="mailto:bluebrickmass@gmail.com" class="contact-line" aria-label="Email us">
-                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    bluebrickmass@gmail.com
-                </a>
-            </div>
-
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <nav class="footer-links-list" aria-label="Quick links">
-                    <a href="/">Home</a>
-                    <a href="/cities.html">Service Areas</a>
-                    <a href="/blog/">Blog</a>
-                    <a href="/tools/quote-calculator.html">Quote Calculator</a>
-                    <a href="/#estimate-form">Free Estimate</a>
-                    <a href="sms:+17813305604">Text Us</a>
-                </nav>
-            </div>
-
-            <div class="footer-col">
-                <h4>Services</h4>
-                <nav class="footer-links-list" aria-label="Cleaning services">
-                    <a href="/blog/deep-cleaning-boston.html">Deep Cleaning</a>
-                    <a href="/blog/post-construction-cleaning-boston.html">Post-Construction</a>
-                    <a href="/blog/move-in-move-out-cleaning-boston.html">Move-In / Move-Out</a>
-                    <a href="/#estimate-form">Luxury Residential</a>
-                    <a href="/#estimate-form">Commercial Cleaning</a>
-                    <a href="/blog/spring-cleaning-boston.html">Spring Cleaning</a>
-                </nav>
-            </div>
-
-            <div class="footer-col">
-                <h4>Top Areas</h4>
-                <nav class="footer-links-list" aria-label="Service areas">
-                    <a href="/blog/deep-cleaning-boston.html">Boston</a>
-                    <a href="/blog/deep-cleaning-cambridge.html">Cambridge</a>
-                    <a href="/blog/deep-cleaning-newton.html">Newton</a>
-                    <a href="/blog/deep-cleaning-waltham.html">Waltham</a>
-                    <a href="/blog/deep-cleaning-brookline.html">Brookline</a>
-                    <a href="/blog/deep-cleaning-somerville.html">Somerville</a>
-                    <a href="/cities.html">All 15 Cities →</a>
-                </nav>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- ==========================================
-         JAVASCRIPT
-         ========================================== -->
-    <script>
-        const header = document.getElementById('header');
-
-        // ── Scroll Reveal (all variants) ──
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .reveal-rotate');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // ── Animated Counters ──
-        const counters = document.querySelectorAll('[data-count]');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-count'));
-                    animateCounter(entry.target, target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        counters.forEach(el => counterObserver.observe(el));
-
-        function animateCounter(el, target) {
-            const duration = 2000;
-            const start = performance.now();
-            function update(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(eased * target).toLocaleString() + '+';
-                if (progress < 1) requestAnimationFrame(update);
-            }
-            requestAnimationFrame(update);
-        }
-
-        // ── Multi-Step Form ──
-        let currentStep = 1;
-        const totalSteps = 3;
-
-        function updateProgress() {
-            const steps = document.querySelectorAll('.progress-step');
-            const fill = document.getElementById('progressFill');
-            steps.forEach((step, i) => {
-                const stepNum = i + 1;
-                step.classList.remove('active', 'completed');
-                if (stepNum === currentStep) step.classList.add('active');
-                if (stepNum < currentStep) step.classList.add('completed');
-            });
-            fill.style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
-        }
-
-        function showStep(step) {
-            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-            const target = document.querySelector(`.form-step[data-step="${step}"]`);
-            if (target) {
-                target.classList.add('active');
-                target.style.animation = 'none';
-                target.offsetHeight;
-                target.style.animation = 'fadeUp 0.4s ease';
-            }
-        }
-
-        function nextStep(from) {
-            const currentFields = document.querySelectorAll(`.form-step[data-step="${from}"] [required]`);
-            let valid = true;
-            currentFields.forEach(field => {
-                if (!field.value.trim()) {
-                    valid = false;
-                    field.style.borderColor = '#ef4444';
-                    field.addEventListener('input', function handler() {
-                        field.style.borderColor = '';
-                        field.removeEventListener('input', handler);
-                    }, { once: true });
-                }
-            });
-            if (!valid) return;
-            currentStep = from + 1;
-            showStep(currentStep);
-            updateProgress();
-        }
-
-        function prevStep(from) {
-            currentStep = from - 1;
-            showStep(currentStep);
-            updateProgress();
-        }
-
-        // ── Select floating labels ──
-        document.querySelectorAll('select').forEach(select => {
-            select.addEventListener('change', function() {
-                if (this.value) {
-                    this.setAttribute('value', this.value);
-                    this.style.color = 'var(--prussian)';
-                }
-            });
-        });
-
-        // ── Phone formatting ──
-        const phoneInput = document.getElementById('phone');
-        phoneInput.addEventListener('input', function(e) {
-            let val = e.target.value.replace(/\D/g, '');
-            if (val.length > 0) {
-                if (val.length <= 3) val = '(' + val;
-                else if (val.length <= 6) val = '(' + val.substring(0, 3) + ') ' + val.substring(3);
-                else val = '(' + val.substring(0, 3) + ') ' + val.substring(3, 6) + '-' + val.substring(6, 10);
-            }
-            e.target.value = val;
-        });
-
-        // ── Form submission via Web3Forms ──
-        const form = document.getElementById('leadForm');
-        const formSuccess = document.getElementById('formSuccess');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = form.querySelector('.submit-btn');
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            const formData = new FormData(form);
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    form.style.display = 'none';
-                    formSuccess.classList.add('active');
-                    // Instant Telegram notification for new lead
-                    try {
-                        fetch('/api/chat', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                message: formData.get('name') + ' — ' + (formData.get('phone') || formData.get('email')),
-                                step: 'quote_done',
-                                page: window.location.pathname,
-                                timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
-                                data: {
-                                    service: formData.get('service_type'),
-                                    size: formData.get('property_type'),
-                                    contact: formData.get('phone') || formData.get('email'),
-                                    contactMethod: 'form'
-                                }
-                            })
-                        }).catch(function() {});
-                    } catch(e) {}
-                } else {
-                    btn.textContent = 'Something went wrong. Try again.';
-                    btn.disabled = false;
-                }
-            })
-            .catch(() => {
-                btn.textContent = 'Network error. Try again.';
-                btn.disabled = false;
-            });
-        });
-
-        // ── Smooth scroll ──
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-    </script>
-
-
-    <!-- Expandable Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-panel">
-            <div class="chat-panel-header">
-                <button class="chat-panel-close" onclick="document.getElementById('chatWidget').classList.remove('open')" aria-label="Close chat">&times;</button>
-                <h3>BLUE BRICK CONCIERGE</h3>
-                <p>We typically reply in minutes</p>
-            </div>
-            <div class="chat-panel-body" id="chatBody">
-                <div class="chat-msg">
-                    <div class="chat-msg-avatar">BB</div>
-                    <div class="chat-msg-bubble">Hi there! Looking for a cleaning quote? I can help you get started.</div>
-                </div>
-            </div>
-            <div class="chat-panel-footer">
-                <div class="chat-input-wrap">
-                    <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
-                    <button class="chat-send-btn" id="chatSendBtn" aria-label="Send">
-                        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    </button>
-                </div>
-                <div class="chat-quick-actions">
-                    <button class="chat-quick-btn" data-msg="I need a quote">Get a Quote</button>
-                    <button class="chat-quick-btn" data-msg="What services do you offer?">Services</button>
-                    <button class="chat-quick-btn" data-msg="What areas do you cover?">Service Areas</button>
-                </div>
-            </div>
-        </div>
-        <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
-            <svg class="icon-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <div class="chat-prompt" id="chatPrompt"></div>
-    </div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-
-    <script>
-        // -- Tubelight Navbar --
-        var tubeNav = document.getElementById('tubeNav');
-        if (tubeNav) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    tubeNav.classList.add('scrolled');
-                } else {
-                    tubeNav.classList.remove('scrolled');
-                }
-            });
-
-            var currentPath = window.location.pathname;
-            tubeNav.querySelectorAll('.tube-nav-link:not(.tube-nav-cta)').forEach(function(link) {
-                link.classList.remove('active');
-                var href = link.getAttribute('href');
-                if (href === '/blog/' && currentPath.includes('/blog/')) {
-                    link.classList.add('active');
-                } else if (href === '/cities.html' && currentPath.includes('cities')) {
-                    link.classList.add('active');
-                } else if (href === '/' && (currentPath === '/' || currentPath === '/index.html')) {
-                    // Home page - no active state needed for services link
-                } else if (href === currentPath) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // -- Back to Top button --
-        var backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 600) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            });
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-
-        // -- Expandable Chat Widget --
-        var chatWidget2 = document.getElementById('chatWidget');
-        var chatToggle2 = document.getElementById('chatToggle');
-        var chatInput2 = document.getElementById('chatInput');
-        var chatSendBtn2 = document.getElementById('chatSendBtn');
-        var chatBody2 = document.getElementById('chatBody');
-
-        if (chatToggle2 && chatWidget2) {
-            chatToggle2.addEventListener('click', function(e) {
-                e.stopPropagation();
-                chatWidget2.classList.toggle('open');
-                if (chatWidget2.classList.contains('open') && chatInput2) {
-                    setTimeout(function() { chatInput2.focus(); }, 300);
-                }
-            });
-
-            // -- Chat bot conversation flow --
-            var chatStep = 'start';
-            var chatData = {};
-
-            function chatAddMsg(text, isSent) {
-                var msg = document.createElement('div');
-                msg.className = 'chat-msg' + (isSent ? ' sent' : '');
-                msg.innerHTML = '<div class="chat-msg-avatar">' + (isSent ? 'You' : 'BB') + '</div><div class="chat-msg-bubble">' + text + '</div>';
-                chatBody2.appendChild(msg);
-                chatBody2.scrollTop = chatBody2.scrollHeight;
-            }
-
-            function chatAddOptions(options) {
-                var wrap = document.createElement('div');
-                wrap.className = 'chat-options';
-                options.forEach(function(opt) {
-                    var btn = document.createElement('button');
-                    btn.className = 'chat-opt-btn' + (opt.amber ? ' amber' : '');
-                    btn.textContent = opt.label;
-                    btn.addEventListener('click', function(e) { e.stopPropagation();
-                        // Remove all option buttons
-                        var allOpts = chatBody2.querySelectorAll('.chat-options');
-                        allOpts.forEach(function(o) { o.remove(); });
-                        chatAddMsg(opt.label, true);
-                        // Notify backend
-                        chatNotify(opt.label);
-                        setTimeout(function() { opt.action(); }, 400);
-                    });
-                    wrap.appendChild(btn);
-                });
-                chatBody2.appendChild(wrap);
-                chatBody2.scrollTop = chatBody2.scrollHeight;
-            }
-
-            function chatAddLoading() {
-                var loader = document.createElement('div');
-                loader.className = 'chat-msg';
-                loader.id = 'chatLoader';
-                loader.innerHTML = '<div class="chat-msg-avatar">BB</div><div class="chat-loading"><span></span><span></span><span></span></div>';
-                chatBody2.appendChild(loader);
-                chatBody2.scrollTop = chatBody2.scrollHeight;
-            }
-
-            function chatRemoveLoading() {
-                var loader = document.getElementById('chatLoader');
-                if (loader) loader.remove();
-            }
-
-            function chatNotify(text) {
-                try {
-                    fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            message: text,
-                            page: window.location.pathname,
-                            timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
-                            step: chatStep,
-                            data: chatData
-                        })
-                    }).catch(function() {});
-                } catch(e) {}
-            }
-
-            function chatShowMainMenu() {
-                chatStep = 'main_menu';
-                chatAddMsg("How can I help you today?");
-                chatAddOptions([
-                    { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
-                    { label: 'Our Services', action: chatFlowServices },
-                    { label: 'Service Areas', action: chatFlowAreas },
-                    { label: 'Book a Cleaning', amber: true, action: chatFlowBook },
-                    { label: 'Talk to Someone', action: chatFlowHuman }
-                ]);
-            }
-
-            // ── QUOTE FLOW ──
-            function chatFlowQuoteStart() {
-                chatStep = 'quote_type';
-                chatAddMsg("What type of cleaning do you need?");
-                chatAddOptions([
-                    { label: 'Deep Cleaning', action: function() { chatData.service = 'Deep Cleaning'; chatFlowQuoteSize(); }},
-                    { label: 'Post-Construction', action: function() { chatData.service = 'Post-Construction'; chatFlowQuoteSize(); }},
-                    { label: 'Move-In / Move-Out', action: function() { chatData.service = 'Move-In / Move-Out'; chatFlowQuoteSize(); }},
-                    { label: 'Recurring Cleaning', action: function() { chatData.service = 'Recurring Cleaning'; chatFlowQuoteSize(); }},
-                    { label: 'Commercial / Office', action: function() { chatData.service = 'Commercial / Office'; chatFlowQuoteSize(); }},
-                    { label: 'Other', action: function() { chatData.service = 'Other'; chatFlowQuoteSize(); }}
-                ]);
-            }
-
-            function chatFlowQuoteSize() {
-                chatStep = 'quote_size';
-                chatAddMsg("What\'s the approximate size?");
-                chatAddOptions([
-                    { label: 'Studio / 1 BR', action: function() { chatData.size = 'Studio/1BR'; chatFlowQuoteContact(); }},
-                    { label: '2-3 Bedrooms', action: function() { chatData.size = '2-3BR'; chatFlowQuoteContact(); }},
-                    { label: '4+ Bedrooms', action: function() { chatData.size = '4+BR'; chatFlowQuoteContact(); }},
-                    { label: 'Office / Commercial', action: function() { chatData.size = 'Commercial'; chatFlowQuoteContact(); }},
-                    { label: 'Not Sure', action: function() { chatData.size = 'Unknown'; chatFlowQuoteContact(); }}
-                ]);
-            }
-
-            function chatFlowQuoteContact() {
-                chatStep = 'quote_contact';
-                chatAddMsg("Got it — <strong>" + chatData.service + "</strong> for a <strong>" + chatData.size + "</strong> space. How should we send your quote?");
-                chatAddOptions([
-                    { label: 'Text Me', amber: true, action: chatFlowAskPhone },
-                    { label: 'Email Me', amber: true, action: chatFlowAskEmail },
-                    { label: 'Use Quote Calculator', action: function() {
-                        chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#3D7A9E;font-weight:700\'>Open Quote Calculator →</a>");
-                        setTimeout(chatFlowAnythingElse, 1500);
-                    }}
-                ]);
-            }
-
-            function chatFlowAskPhone() {
-                chatStep = 'collect_phone';
-                chatAddMsg("What\'s your phone number? We\'ll text you a quote within 2 hours.");
-                chatData.contactMethod = 'phone';
-            }
-
-            function chatFlowAskEmail() {
-                chatStep = 'collect_email';
-                chatAddMsg("What\'s your email? We\'ll send your quote within 2 hours.");
-                chatData.contactMethod = 'email';
-            }
-
-            function chatFlowCollectContact(text) {
-                chatData.contact = text;
-                chatStep = 'quote_done';
-                chatAddMsg("Thanks! We\'ll reach out shortly with your <strong>" + chatData.service + "</strong> quote. Expect to hear from us within 2 hours.");
-                setTimeout(chatFlowAnythingElse, 2000);
-            }
-
-            // ── SERVICES FLOW ──
-            function chatFlowServices() {
-                chatStep = 'services';
-                chatAddMsg("Here\'s what we offer:");
-                chatAddOptions([
-                    { label: 'Deep Cleaning', action: function() { chatAddMsg("Top-to-bottom deep cleaning for homes — kitchens, bathrooms, baseboards, appliances, everything."); setTimeout(chatFlowAnythingElse, 1500); }},
-                    { label: 'Post-Construction', action: function() { chatAddMsg("Dust, debris & residue removal after renovations. We make new builds move-in ready."); setTimeout(chatFlowAnythingElse, 1500); }},
-                    { label: 'Move-In / Move-Out', action: function() { chatAddMsg("Get your full deposit back or start fresh in your new place. Every surface cleaned."); setTimeout(chatFlowAnythingElse, 1500); }},
-                    { label: 'Commercial Cleaning', action: function() { chatAddMsg("Office, retail & commercial spaces. Flexible scheduling, consistent results."); setTimeout(chatFlowAnythingElse, 1500); }},
-                    { label: 'Spring Cleaning', action: function() { chatAddMsg("Seasonal refresh — windows, deep scrub, organize. Start the season right."); setTimeout(chatFlowAnythingElse, 1500); }},
-                    { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart }
-                ]);
-            }
-
-            // ── AREAS FLOW ──
-            function chatFlowAreas() {
-                chatStep = 'areas';
-                chatAddMsg("We serve <strong>15 cities</strong> across Greater Boston: Boston, Cambridge, Newton, Waltham, Brookline, Somerville, Brighton, Watertown, Allston, East Boston, South Boston, Lexington, Needham, Wellesley & Weston.");
-                chatAddOptions([
-                    { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
-                    { label: 'View All Areas', action: function() { window.open('/cities.html', '_blank'); }},
-                    { label: 'Back to Menu', action: chatShowMainMenu }
-                ]);
-            }
-
-            // ── BOOK FLOW ──
-            function chatFlowBook() {
-                chatStep = 'book';
-                chatAddMsg("Let\'s get you booked! First, what service do you need?");
-                chatAddOptions([
-                    { label: 'Deep Cleaning', action: function() { chatData.service = 'Deep Cleaning'; chatFlowBookContact(); }},
-                    { label: 'Post-Construction', action: function() { chatData.service = 'Post-Construction'; chatFlowBookContact(); }},
-                    { label: 'Move-In / Move-Out', action: function() { chatData.service = 'Move-In / Move-Out'; chatFlowBookContact(); }},
-                    { label: 'Other', action: function() { chatData.service = 'Other'; chatFlowBookContact(); }}
-                ]);
-            }
-
-            function chatFlowBookContact() {
-                chatStep = 'book_contact';
-                chatAddMsg("Great choice! How should we reach you to schedule?");
-                chatAddOptions([
-                    { label: 'Text Me', amber: true, action: chatFlowAskPhone },
-                    { label: 'Email Me', amber: true, action: chatFlowAskEmail }
-                ]);
-            }
-
-            // ── TALK TO HUMAN ──
-            function chatFlowHuman() {
-                chatStep = 'human';
-                chatAddMsg("We\'d love to help personally! Fastest way to reach us:");
-                chatAddOptions([
-                    { label: 'Text (781) 330-5604', amber: true, action: function() { window.open('sms:+17813305604', '_self'); }},
-                    { label: 'Email Us', action: function() { window.open('mailto:bluebrickmass@gmail.com', '_self'); }},
-                    { label: 'Back to Menu', action: chatShowMainMenu }
-                ]);
-            }
-
-            // ── ANYTHING ELSE ──
-            function chatFlowAnythingElse() {
-                chatAddMsg("Anything else I can help with?");
-                chatAddOptions([
-                    { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
-                    { label: 'Our Services', action: chatFlowServices },
-                    { label: 'Talk to Someone', action: chatFlowHuman },
-                    { label: "I'm Good!", action: function() { chatAddMsg("Thanks for chatting! We\'re here anytime you need us. 👋"); }}
-                ]);
-            }
-
-            // ── HANDLE FREE TEXT INPUT ──
-            function chatHandleSend() {
-                var text = chatInput2.value.trim();
-                if (!text) return;
-                chatAddMsg(text, true);
-                chatInput2.value = '';
-
-                // Notify backend
-                chatNotify(text);
-
-                // If we're collecting contact info, capture it
-                if (chatStep === 'collect_phone' || chatStep === 'collect_email') {
-                    chatAddLoading();
-                    setTimeout(function() {
-                        chatRemoveLoading();
-                        chatFlowCollectContact(text);
-                    }, 600);
-                    return;
-                }
-
-                // Otherwise, smart reply based on keywords
-                chatAddLoading();
-                setTimeout(function() {
-                    chatRemoveLoading();
-                    var t = text.toLowerCase();
-                    if (t.indexOf('quote') > -1 || t.indexOf('estimate') > -1 || t.indexOf('cost') > -1 || t.indexOf('price') > -1 || t.indexOf('how much') > -1) {
-                        chatFlowQuoteStart();
-                    } else if (t.indexOf('service') > -1 || t.indexOf('offer') > -1 || t.indexOf('clean') > -1) {
-                        chatFlowServices();
-                    } else if (t.indexOf('area') > -1 || t.indexOf('city') > -1 || t.indexOf('where') > -1) {
-                        chatFlowAreas();
-                    } else if (t.indexOf('book') > -1 || t.indexOf('schedule') > -1) {
-                        chatFlowBook();
-                    } else if (t.indexOf('talk') > -1 || t.indexOf('human') > -1 || t.indexOf('person') > -1 || t.indexOf('call') > -1) {
-                        chatFlowHuman();
-                    } else {
-                        chatAddMsg("Thanks for your message! Let me help you find what you need.");
-                        chatAddOptions([
-                            { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
-                            { label: 'Our Services', action: chatFlowServices },
-                            { label: 'Service Areas', action: chatFlowAreas },
-                            { label: 'Talk to Someone', action: chatFlowHuman }
-                        ]);
-                    }
-                }, 600);
-            }
-
-            chatSendBtn2.addEventListener('click', chatHandleSend);
-            chatInput2.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') { e.preventDefault(); chatHandleSend(); }
-            });
-
-            // Quick action buttons trigger main flows
-            document.querySelectorAll('.chat-quick-btn').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    var msg = btn.getAttribute('data-msg');
-                    chatAddMsg(msg, true);
-                    chatNotify(msg);
-                    // Remove all option buttons first
-                    var allOpts = chatBody2.querySelectorAll('.chat-options');
-                    allOpts.forEach(function(o) { o.remove(); });
-                    if (msg.indexOf('quote') > -1 || msg.indexOf('Quote') > -1) chatFlowQuoteStart();
-                    else if (msg.indexOf('service') > -1 || msg.indexOf('Service') > -1) chatFlowServices();
-                    else if (msg.indexOf('area') > -1 || msg.indexOf('Area') > -1) chatFlowAreas();
-                    else chatShowMainMenu();
-                });
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!chatWidget2.contains(e.target) && chatWidget2.classList.contains('open')) {
-                    chatWidget2.classList.remove('open');
-                }
-            });
-        }
-    
-        // -- Rotating chat prompts --
-        var chatPromptEl = document.getElementById('chatPrompt');
-        if (chatPromptEl) {
-            var chatPrompts = [
-                'Need a cleaning quote? \u2728',
-                'Get an instant estimate!',
-                'Ask us anything \u{1F44B}',
-                'What can we clean for you?',
-                'Text or chat with us!'
-            ];
-            var promptIdx = 0;
-            function rotateChatPrompt() {
-                chatPromptEl.textContent = chatPrompts[promptIdx];
-                promptIdx = (promptIdx + 1) % chatPrompts.length;
-            }
-            rotateChatPrompt();
-            setInterval(rotateChatPrompt, 12000);
-        }
-
-    </script>
-
-<!-- Sticky Mobile CTA -->
-<div class="mobile-sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1F35;padding:10px 16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
-  <div style="display:flex;gap:10px;max-width:600px;margin:0 auto;">
-    <a href="tel:+17813305604" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:14px;background:#3D7A9E;border-radius:8px;color:#fff;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;text-decoration:none;letter-spacing:0.5px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      Call
-    </a>
-    <a href="#estimate-form" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:14px;background:transparent;border:2px solid #3D7A9E;border-radius:8px;color:#3D7A9E;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;text-decoration:none;letter-spacing:0.5px;">
-      Book Free Walkthrough
-    </a>
+  </div>
+
+  <div class="hero-side">
+    <div class="hero-side-num">200+</div>
+    <div class="hero-side-label">properties cleaned across Greater Boston</div>
+  </div>
+</header>
+
+<div class="ticker" id="ticker" role="status" aria-live="polite">
+  <div class="ticker-icon">✦</div>
+  <div class="ticker-text">
+    <strong id="tickerTitle">Just booked</strong>
+    <span id="tickerTime">moments ago</span>
   </div>
 </div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">Back Bay</div><div class="marquee-item">Newton</div><div class="marquee-item">Brookline</div><div class="marquee-item">Cambridge</div><div class="marquee-item">Somerville</div><div class="marquee-item">Beacon Hill</div><div class="marquee-item">Jamaica Plain</div><div class="marquee-item">South End</div><div class="marquee-item">Allston</div><div class="marquee-item">Charlestown</div>
+    <div class="marquee-item">Back Bay</div><div class="marquee-item">Newton</div><div class="marquee-item">Brookline</div><div class="marquee-item">Cambridge</div><div class="marquee-item">Somerville</div><div class="marquee-item">Beacon Hill</div><div class="marquee-item">Jamaica Plain</div><div class="marquee-item">South End</div><div class="marquee-item">Allston</div><div class="marquee-item">Charlestown</div>
+  </div>
+</div>
+
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Transparent pricing</div>
+      <h2>Three ways<br>to <em>work with us.</em></h2>
+      <p>Real numbers. No bait-and-switch quotes. Pick the plan that fits — or get a custom contract for your portfolio.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card reveal">
+        <div class="price-label">One-Time Cleaning</div>
+        <div class="price-amount">$189<span class="unit">starting</span></div>
+        <p class="price-desc">Perfect for move-outs, post-construction, and deep cleans. Same crew shows up — no middlemen.</p>
+        <ul class="price-feats">
+          <li>Full kitchen + bath deep scrub</li>
+          <li>Inside oven, fridge, cabinets (add-on)</li>
+          <li>Baseboards, vents, and switch plates</li>
+          <li>72-hour satisfaction re-clean</li>
+        </ul>
+        <a href="/book/?plan=onetime" class="price-cta">Book a one-time clean →</a>
+        <div class="price-pay"><span class="pay-icon">Pay</span><span class="pay-icon">G Pay</span><span class="pay-icon">Card</span><span style="margin-left:auto">Secure · Stripe</span></div>
+      </article>
+
+      <article class="price-card featured reveal">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-label">Monthly Recurring</div>
+        <div class="price-amount">$129<span class="unit">/visit</span></div>
+        <p class="price-desc">Save 30% vs. one-time rate. Bi-weekly visits, locked-in pricing, same cleaner every time.</p>
+        <ul class="price-feats">
+          <li>Priority scheduling + 2-hr arrival window</li>
+          <li>Same dedicated cleaner each visit</li>
+          <li>Free add-on monthly (oven, fridge, windows)</li>
+          <li>Pause or cancel anytime, no fees</li>
+          <li>Rate locked for 12 months</li>
+        </ul>
+        <a href="/book/?plan=recurring" class="price-cta">Start my subscription →</a>
+        <div class="price-pay"><span class="pay-icon">Pay</span><span class="pay-icon">G Pay</span><span class="pay-icon">Card</span><span style="margin-left:auto">Auto-billed monthly</span></div>
+      </article>
+
+      <article class="price-card reveal">
+        <div class="price-label">Commercial Contract</div>
+        <div class="price-amount">Custom<span class="unit">quote</span></div>
+        <p class="price-desc">For property managers and GCs with 5+ properties, offices over 5,000 sq ft, or nightly janitorial.</p>
+        <ul class="price-feats">
+          <li>Dedicated account manager</li>
+          <li>Net-30 invoicing + COI on file</li>
+          <li>Night / weekend / on-call coverage</li>
+          <li>Multi-site volume discount</li>
+        </ul>
+        <a href="/book/?plan=commercial" class="price-cta">Request a quote →</a>
+        <div class="price-pay"><span class="pay-icon">ACH</span><span class="pay-icon">Card</span><span class="pay-icon">Check</span><span style="margin-left:auto">Net-30 available</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="ba">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Real results · Drag to compare</div>
+      <h2>Before.<br><em>After.</em> Honest.</h2>
+      <p>Every photo below is from a real Boston-area job. Drag the slider — the "after" isn't touched up, it's just what a Blue Brick crew leaves behind.</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-item" data-ba>
+        <img class="ba-img" src="https://images.unsplash.com/photo-1556910096-6f5e72db6803?w=1200&q=80&auto=format&fit=crop" alt="Kitchen before cleaning" />
+        <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80&auto=format&fit=crop" alt="Kitchen after Blue Brick deep clean" />
+        <div class="ba-handle"></div><div class="ba-label before">Before</div><div class="ba-label after">After</div>
+        <div class="ba-caption">Residential Kitchen — Newton</div>
+      </div>
+      <div class="ba-item" data-ba>
+        <img class="ba-img" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80&auto=format&fit=crop" alt="Bathroom before" />
+        <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80&auto=format&fit=crop" alt="Bathroom after" />
+        <div class="ba-handle"></div><div class="ba-label before">Before</div><div class="ba-label after">After</div>
+        <div class="ba-caption">Primary Bath — Brookline</div>
+      </div>
+      <div class="ba-item" data-ba>
+        <img class="ba-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop" alt="Office before" />
+        <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80&auto=format&fit=crop" alt="Office after" />
+        <div class="ba-handle"></div><div class="ba-label before">Before</div><div class="ba-label after">After</div>
+        <div class="ba-caption">Office Turnover — Cambridge</div>
+      </div>
+      <div class="ba-item" data-ba>
+        <img class="ba-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80&auto=format&fit=crop" alt="Post-construction before" />
+        <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop" alt="Post-construction after" />
+        <div class="ba-handle"></div><div class="ba-label before">Before</div><div class="ba-label after">After</div>
+        <div class="ba-caption">Post-Construction — Back Bay</div>
+      </div>
+      <div class="ba-item" data-ba>
+        <img class="ba-img" src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1200&q=80&auto=format&fit=crop" alt="Living room before" />
+        <img class="ba-img ba-after" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80&auto=format&fit=crop" alt="Living room after" />
+        <div class="ba-handle"></div><div class="ba-label before">Before</div><div class="ba-label after">After</div>
+        <div class="ba-caption">Residential Deep Clean — Somerville</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Six lanes.<br>One <em>standard.</em></h2>
+      <p>Whether it's a 200-unit turnover or your first Airbnb — same checklist, same team, same obsession.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M3 22V8l9-6 9 6v14"/><path d="M8 22v-8h8v8"/></svg></div>
+        <h3>Post-Construction</h3>
+        <p>Dust, debris, and construction film — handled by a crew with HEPA vacs and scaffolding experience.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$0.22/sq ft</strong></div><a class="svc-link" href="/book/?plan=postconstruction">Book <span>→</span></a></div>
+      </article>
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Bin Cleaning</h3>
+        <p>Curbside trash & recycling bin sanitation. Pressure washed, deodorized, and returned bone-dry.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$19/bin</strong></div><a class="svc-link" href="/book/?plan=bin">Book <span>→</span></a></div>
+      </article>
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>Office Recurring</h3>
+        <p>Nightly or weekly office cleans. Desks, kitchens, conference rooms, restrooms — on a locked schedule.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$0.09/sq ft</strong></div><a class="svc-link" href="/book/?plan=office">Book <span>→</span></a></div>
+      </article>
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 10l5 4 5-4"/></svg></div>
+        <h3>Move-In / Move-Out</h3>
+        <p>Security-deposit-grade cleans for tenants, realtors, and landlords. Flat rate, top-to-bottom.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$249 flat</strong></div><a class="svc-link" href="/book/?plan=moveout">Book <span>→</span></a></div>
+      </article>
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21V12h6v9"/></svg></div>
+        <h3>Airbnb Turnover</h3>
+        <p>Same-day turns with linen service, restock, and photo audit before guests arrive. Plug into your calendar.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$89/turn</strong></div><a class="svc-link" href="/book/?plan=airbnb">Book <span>→</span></a></div>
+      </article>
+      <article class="svc-card reveal" data-tilt>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 8-9 8s-9-4-9-8 4-8 9-8 9 4 9 8z"/><path d="M12 4v16"/></svg></div>
+        <h3>Residential Deep Clean</h3>
+        <p>Every surface, every baseboard, every forgotten corner. The clean you book when the in-laws visit.</p>
+        <div class="svc-foot"><div class="svc-price">Starting at <strong>$189</strong></div><a class="svc-link" href="/book/?plan=deep">Book <span>→</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">5.0 Google · 80+ reviews</div>
+      <h2>What Boston<br>is <em>saying.</em></h2>
+      <p>Real messages. Real receipts. The cleaning industry has a trust problem — we fixed ours with transparency.</p>
+    </div>
+  </div>
+
+  <div class="rev-track">
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">ME</div><div class="rev-meta"><strong>Meredith Evans</strong><span>Newton · 2 weeks ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">Moved out of a condo I rented for six years. The landlord did a full walkthrough and said it looked cleaner than the day I moved in. Got my entire deposit back. Booking these guys next month for my new place.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Today 4:12 PM</div>
+      <div class="rev-bubble">Just walked into the office, it's spotless. The conference room glass — how did you get it streak-free?? Our last company never managed it.</div>
+      <div class="rev-bubble">Locking you in for the rest of Q2. Thank you.</div>
+      <div class="rev-imsg-name">— David K., Cambridge</div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">JO</div><div class="rev-meta"><strong>Jonathan O'Brien</strong><span>Brookline · 1 month ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">GC on a full gut reno in Brookline. Called Blue Brick for the post-construction clean because our usual crew flaked. They came same-week, handled the drywall dust in the HVAC grilles I didn't even notice, and the owner walked it with me. Will use them on every flip going forward.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Yesterday 7:48 AM</div>
+      <div class="rev-bubble">First Airbnb turn went great. Guest left a 5-star review this morning and specifically called out "hotel-level cleanliness"</div>
+      <div class="rev-bubble">Can we add the Back Bay unit too?</div>
+      <div class="rev-imsg-name">— Priya S., Back Bay Host</div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">KC</div><div class="rev-meta"><strong>Kayla Chen</strong><span>Somerville · 3 weeks ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">Signed up for the monthly plan after a disastrous experience with another company who kept sending a new person every time. Blue Brick sends the same cleaner (Marisol is amazing btw) and she already knows our quirks. Worth every penny.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Saturday 2:15 PM</div>
+      <div class="rev-bubble">Ok the oven looks brand new. My husband literally didn't believe it was the same oven</div>
+      <div class="rev-imsg-name">— Alison R., Jamaica Plain</div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">MR</div><div class="rev-meta"><strong>Marcus Russo</strong><span>South End · 1 week ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">Property manager here, 42-unit building in the South End. Blue Brick handles common areas and all move-out turns. Responsive, insured, invoices are clean. I've worked with six janitorial companies in twelve years and these guys are the only ones I'd actually recommend.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Tuesday 11:03 AM</div>
+      <div class="rev-bubble">Hey just wanted to say thanks for squeezing us in before the open house. Got an offer $40k over asking. Realtor thinks the photos made the difference.</div>
+      <div class="rev-imsg-name">— Tom H., Beacon Hill</div>
+    </article>
+    <!-- duplicate loop -->
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">ME</div><div class="rev-meta"><strong>Meredith Evans</strong><span>Newton · 2 weeks ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">Moved out of a condo I rented for six years. The landlord said it looked cleaner than day one. Got my entire deposit back.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Today 4:12 PM</div>
+      <div class="rev-bubble">The conference room glass — how did you get it streak-free??</div>
+      <div class="rev-imsg-name">— David K., Cambridge</div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-google-head"><div class="rev-avatar">JO</div><div class="rev-meta"><strong>Jonathan O'Brien</strong><span>Brookline · 1 month ago</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-body">They handled the drywall dust in the HVAC grilles I didn't even notice. Will use them on every flip.</p>
+      <div class="rev-foot"><span class="rev-google-logo">G · Google Review</span><span>Verified</span></div>
+    </article>
+    <article class="rev-card imsg">
+      <div class="rev-imsg-head">Yesterday 7:48 AM</div>
+      <div class="rev-bubble">Hotel-level cleanliness. Can we add the Back Bay unit too?</div>
+      <div class="rev-imsg-name">— Priya S., Back Bay</div>
+    </article>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="reveal">
+        <div class="eyebrow">Questions</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,80px);line-height:.92;color:var(--prussian);margin:16px 0 20px;">Everything<br>we hear <em class="serif" style="color:var(--cerulean)">most.</em></h2>
+        <p style="font-size:17px;color:#4B5563;max-width:360px">Didn't see your question? Text us at <a href="sms:+17813305604" style="color:var(--prussian);font-weight:600;text-decoration:underline">(781) 330-5604</a> — real human, usually replies within 15 min.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item"><button class="faq-q">Are you actually insured? Can I see the COI?<span></span></button><div class="faq-a"><div class="faq-a-inner">Yes — $2M general liability + workers' comp, issued by The Hartford. We email the Certificate of Insurance directly to property managers and GCs before the first job, no questions asked.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What's actually included in a deep clean?<span></span></button><div class="faq-a"><div class="faq-a-inner">Every surface top to bottom: baseboards, vents, light switches, door frames, inside cabinets (empty), appliance exteriors, full kitchen and bathroom detail scrub, floors hand-washed in corners, mirrors streak-free. You get a 42-point checklist after each visit.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Are your products safe for pets and kids?<span></span></button><div class="faq-a"><div class="faq-a-inner">By default yes. We use fragrance-free, EPA Safer Choice certified products. If you prefer something specific (Branch Basics, Seventh Gen, etc.) tell us at booking and we'll bring it. We also offer a vinegar-only option for chemical-sensitive homes.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What if I'm not happy with the clean?<span></span></button><div class="faq-a"><div class="faq-a-inner">Call or text us within 72 hours and we come back and re-clean any area — no charge, no argument. This has happened 4 times in 200+ jobs and we handled it every time.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Can I cancel my subscription anytime?<span></span></button><div class="faq-a"><div class="faq-a-inner">Yes. No fees, no contracts, no "we need 30 days notice" trickery. One text to your account manager and we're done. Pause anytime for travel too.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do I need to be home during the clean?<span></span></button><div class="faq-a"><div class="faq-a-inner">Nope. Most of our recurring clients give us a lockbox code or smart-lock access. Our crew is background-checked and bonded. You get a photo confirmation when we start and when we finish.</div></div></div>
+        <div class="faq-item"><button class="faq-q">How far in advance do I need to book?<span></span></button><div class="faq-a"><div class="faq-a-inner">Usually 48 hours for one-time cleans, and we often have same-week openings. Post-construction and move-outs on Friday/Saturday book up a week out. Recurring subscribers get priority slots.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do you work with property managers or contractors?<span></span></button><div class="faq-a"><div class="faq-a-inner">Heavily. We have Net-30 invoicing, dedicated account managers, COI delivery, and volume pricing for portfolios over 5 units. Book a commercial quote and we'll schedule a 15-min call.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-band-inner reveal">
+    <div class="eyebrow" style="color:var(--cream)">Ready when you are</div>
+    <h2>Your place,<br><em>spotless</em> by Friday.</h2>
+    <p>Pick a service, pick a date, we handle the rest. Most first-time clients book in under 60 seconds.</p>
+    <a href="/book/" class="btn-primary">Book in 60 Seconds <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" />
+        <p>Boston's detail-obsessed cleaning crew. Commercial, post-construction, and residential — done right the first time.</p>
+      </div>
+      <div class="foot-col"><h4>Services</h4><ul>
+        <li><a href="#services">Post-Construction</a></li>
+        <li><a href="#services">Office Recurring</a></li>
+        <li><a href="#services">Airbnb Turnover</a></li>
+        <li><a href="#services">Move-In / Move-Out</a></li>
+        <li><a href="#services">Residential Deep Clean</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>Company</h4><ul>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/dashboard/">Customer Dashboard</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>Contact</h4><ul>
+        <li><a href="tel:+17813305604">(781) 330-5604</a></li>
+        <li><a href="mailto:bluebrickmass@gmail.com">bluebrickmass@gmail.com</a></li>
+        <li>Greater Boston · MA</li>
+        <li>Mon–Sat · 7am–7pm</li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Blue Brick Luxury & Commercial Cleaning · All rights reserved</div>
+      <div>Licensed · Insured · Bonded · MA</div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a href="/book/">Book Now from $129 <span>→</span></a></div>
+
 <script>
-(function(){
-  var cta = document.querySelector('.mobile-sticky-cta');
-  if (window.innerWidth <= 768) cta.style.display = 'block';
-  window.addEventListener('resize', function(){ cta.style.display = window.innerWidth <= 768 ? 'block' : 'none'; });
-})();
+/* REVEAL */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* NAV HIDE */
+let lastY=0;const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>200&&y>lastY)nav.classList.add('hidden');else nav.classList.remove('hidden');lastY=y},{passive:true});
+
+/* PARALLAX */
+const paras=document.querySelectorAll('[data-parallax]');
+window.addEventListener('scroll',()=>{const y=window.scrollY;paras.forEach(el=>{const s=parseFloat(el.dataset.parallax)||.2;el.style.transform=`translate3d(0,${y*s}px,0)`});const vid=document.querySelector('.hero-video video');if(vid)vid.style.transform=`translate3d(0,${y*.12}px,0) scale(1.05)`},{passive:true});
+
+/* TICKER */
+const bookings=[
+ {name:'Sarah',town:'Newton',svc:'Post-Construction Cleaning'},
+ {name:'David',town:'Cambridge',svc:'Office Recurring Plan'},
+ {name:'Priya',town:'Back Bay',svc:'Airbnb Turnover'},
+ {name:'Marcus',town:'South End',svc:'Move-Out Deep Clean'},
+ {name:'Jonathan',town:'Brookline',svc:'Residential Deep Clean'},
+ {name:'Kayla',town:'Somerville',svc:'Monthly Subscription'},
+ {name:'Alison',town:'Jamaica Plain',svc:'Oven & Fridge Add-On'},
+ {name:'Tom',town:'Beacon Hill',svc:'Pre-Listing Clean'},
+ {name:'Rachel',town:'Allston',svc:'Move-In Clean'},
+ {name:'Chris',town:'Charlestown',svc:'Bin Sanitation Service'},
+ {name:'Nina',town:'Watertown',svc:'Bi-Weekly Residential'},
+ {name:'Miguel',town:'Medford',svc:'Post-Renovation Cleanup'}
+];
+const ticker=document.getElementById('ticker');
+const tTitle=document.getElementById('tickerTitle');
+const tTime=document.getElementById('tickerTime');
+let paused=false;
+ticker.addEventListener('mouseenter',()=>paused=true);
+ticker.addEventListener('mouseleave',()=>paused=false);
+function pickBooking(){const b=bookings[Math.floor(Math.random()*bookings.length)];const m=Math.floor(Math.random()*8)+1;tTitle.textContent=`${b.name} from ${b.town} just booked`;tTime.textContent=`${b.svc} · ${m} min ago`}
+function showTicker(){if(paused){setTimeout(showTicker,2000);return}pickBooking();ticker.classList.add('show');setTimeout(()=>{ticker.classList.remove('show');setTimeout(showTicker,1800)},4200)}
+setTimeout(showTicker,4000);
+
+/* BEFORE/AFTER */
+document.querySelectorAll('[data-ba]').forEach(item=>{
+  const after=item.querySelector('.ba-after');const handle=item.querySelector('.ba-handle');let active=false;
+  const set=(p)=>{p=Math.max(0,Math.min(100,p));after.style.clipPath=`polygon(0 0, ${p}% 0, ${p}% 100%, 0 100%)`;handle.style.left=p+'%'};
+  const pct=(x)=>{const r=item.getBoundingClientRect();return ((x-r.left)/r.width)*100};
+  const down=(e)=>{active=true;const x=e.touches?e.touches[0].clientX:e.clientX;set(pct(x))};
+  const move=(e)=>{if(!active)return;const x=e.touches?e.touches[0].clientX:e.clientX;set(pct(x));if(e.cancelable)e.preventDefault()};
+  const up=()=>{active=false};
+  item.addEventListener('mousedown',down);item.addEventListener('touchstart',down,{passive:true});
+  window.addEventListener('mousemove',move);window.addEventListener('touchmove',move,{passive:false});
+  window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
+  set(50);
+});
+
+/* TILT */
+document.querySelectorAll('[data-tilt]').forEach(card=>{
+  card.addEventListener('mousemove',(e)=>{const r=card.getBoundingClientRect();const x=((e.clientX-r.left)/r.width)-.5;const y=((e.clientY-r.top)/r.height)-.5;card.style.transform=`perspective(900px) rotateX(${-y*6}deg) rotateY(${x*6}deg) translateY(-4px)`});
+  card.addEventListener('mouseleave',()=>{card.style.transform=''});
+});
+
+/* FAQ */
+document.querySelectorAll('.faq-item').forEach(it=>{it.querySelector('.faq-q').addEventListener('click',()=>{it.classList.toggle('open')})});
 </script>
 
 </body>
