@@ -21,3 +21,4 @@ token.json
 # Large binary
 *.vsix
 .vercel
+.env*.local

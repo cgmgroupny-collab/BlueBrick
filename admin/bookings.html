@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Brick — Bookings Command</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --prussian:#0C1F35;      /* brief brand */
+  --cerulean:#3D7A9E;
+  --cream:#EAF8BF;
+  --navy:#001D4A;          /* legacy lcc token */
+  --gold:#ECA400;--gold-light:#FFF7E0;
+  --green:#059669;--green-light:#ECFDF5;
+  --red:#DC2626;--red-light:#FEF2F2;
+  --blue:#2563EB;--blue-light:#EFF6FF;
+  --orange:#D97706;--orange-light:#FFFBEB;
+  --purple:#7C3AED;--purple-light:#F5F3FF;
+  --bg:#FFFFFF;--bg2:#F8F9FB;--bg3:#F1F3F6;
+  --border:#E5E7EB;--border-dark:#D1D5DB;
+  --text:#111827;--text2:#4B5563;--text3:#9CA3AF;
+  --radius:6px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg2);color:var(--text);-webkit-font-smoothing:antialiased}
+.header{background:var(--prussian);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:12px}
+.header-logo{width:32px;height:32px;background:var(--cream);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:18px;color:var(--prussian);font-weight:700}
+.header h1{font-family:'Instrument Serif',serif;font-size:17px;font-weight:400;color:#fff}
+.header-stats{display:flex;gap:20px}
+.header-stat{text-align:center}
+.header-stat .v{font-size:16px;font-weight:700;color:#fff;font-family:'JetBrains Mono',monospace}
+.header-stat .l{font-size:8px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.55)}
+.nav{background:var(--bg);border-bottom:1px solid var(--border);padding:0 28px;display:flex;gap:0}
+.nav-tab{padding:12px 20px;cursor:pointer;font-size:12px;font-weight:500;color:var(--text3);border-bottom:2px solid transparent;letter-spacing:.3px}
+.nav-tab.active{color:var(--prussian);border-bottom-color:var(--prussian);font-weight:600}
+.nav-tab a{color:inherit;text-decoration:none}
+.main{padding:22px 28px;max-width:1440px;margin:0 auto}
+
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:22px}
+.stat{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px}
+.stat .v{font-size:26px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1;color:var(--prussian)}
+.stat .l{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-top:6px}
+.stat .s{font-size:11px;color:var(--green);margin-top:6px;font-family:'JetBrains Mono',monospace}
+.stat .s.neg{color:var(--red)}
+.stat.hi{background:linear-gradient(135deg,var(--prussian) 0%,#133054 100%);border-color:var(--prussian)}
+.stat.hi .v,.stat.hi .l{color:#fff}
+.stat.hi .s{color:var(--cream)}
+
+.section{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:20px;overflow:hidden}
+.section-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.section-head h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--prussian)}
+.section-head .sub{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace}
+.section-body{padding:18px}
+
+/* Calendar */
+.cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-day{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:10px;min-height:110px}
+.cal-day.today{border-color:var(--prussian);background:#F3F7FB}
+.cal-day .cd-head{display:flex;justify-content:space-between;margin-bottom:6px}
+.cal-day .cd-d{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);text-transform:uppercase}
+.cal-day .cd-n{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--prussian)}
+.cal-visit{font-size:10px;background:var(--cream);color:var(--prussian);padding:4px 6px;border-radius:4px;margin-bottom:4px;cursor:pointer;border-left:3px solid var(--cerulean);font-weight:500}
+.cal-visit.done{background:var(--green-light);color:var(--green);border-left-color:var(--green);text-decoration:line-through;opacity:.75}
+.cal-visit:hover{filter:brightness(.97)}
+
+/* Tables */
+.tbl-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--bg2);padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--bg2);font-size:12px;vertical-align:middle}
+tr:hover td{background:var(--bg2)}
+td .num{font-family:'JetBrains Mono',monospace}
+td.addr{color:var(--text2);max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.b-active{background:var(--green-light);color:var(--green)}
+.b-confirmed{background:var(--blue-light);color:var(--blue)}
+.b-completed{background:var(--bg3);color:var(--text2)}
+.b-cancelled{background:var(--red-light);color:var(--red)}
+.b-trialing{background:var(--gold-light);color:#92400E}
+.pill{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600;background:var(--bg3);color:var(--text2);margin-right:3px}
+.pill.sub{background:var(--cream);color:var(--prussian)}
+.pill.one{background:var(--blue-light);color:var(--blue)}
+
+.row-actions{display:flex;gap:4px;flex-wrap:wrap}
+.ra{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;color:var(--text2);font-family:'DM Sans',sans-serif}
+.ra:hover{border-color:var(--prussian);color:var(--prussian)}
+.ra.danger:hover{border-color:var(--red);color:var(--red)}
+
+/* Bar chart */
+.chart{display:flex;align-items:flex-end;gap:8px;height:160px;padding:10px 4px;border-bottom:1px solid var(--border)}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}
+.bar{width:100%;max-width:32px;background:linear-gradient(180deg,var(--cerulean),var(--prussian));border-radius:3px 3px 0 0;min-height:2px;transition:opacity .2s;position:relative}
+.bar-col:hover .bar{opacity:.8}
+.bar-col .lbl{font-size:9px;color:var(--text3);font-family:'JetBrains Mono',monospace}
+.bar-col .val{font-size:10px;color:var(--prussian);font-family:'JetBrains Mono',monospace;font-weight:600}
+
+.legend{display:flex;gap:16px;margin-top:12px;font-size:10px;color:var(--text3)}
+.legend .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+
+.empty{padding:40px 20px;text-align:center;color:var(--text3);font-size:13px}
+
+/* Two-col */
+.two-col{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+@media (max-width:1000px){.two-col{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">B</div>
+    <h1>Blue Brick — Bookings Command</h1>
+  </div>
+  <div class="header-stats">
+    <div class="header-stat"><div class="v" id="hdr-mrr">—</div><div class="l">MRR</div></div>
+    <div class="header-stat"><div class="v" id="hdr-subs">—</div><div class="l">Active Subs</div></div>
+    <div class="header-stat"><div class="v" id="hdr-onetime">—</div><div class="l">One-Times 30d</div></div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-tab"><a href="/lead-command-center.html">Leads</a></div>
+  <div class="nav-tab active">Bookings</div>
+  <div class="nav-tab"><a href="/dashboard/">Customer View</a></div>
+</div>
+
+<div class="main">
+  <!-- KPI row -->
+  <div class="stats-row">
+    <div class="stat hi">
+      <div class="v" id="kpi-mrr">$0</div>
+      <div class="l">Monthly Recurring Revenue</div>
+      <div class="s" id="kpi-mrr-s">—</div>
+    </div>
+    <div class="stat">
+      <div class="v" id="kpi-subs">0</div>
+      <div class="l">Active Subscriptions</div>
+      <div class="s" id="kpi-churn-s">—</div>
+    </div>
+    <div class="stat">
+      <div class="v" id="kpi-churn">0</div>
+      <div class="l">Churned This Month</div>
+      <div class="s neg" id="kpi-churn-loss">—</div>
+    </div>
+    <div class="stat">
+      <div class="v" id="kpi-addon">$0</div>
+      <div class="l">Add-on Revenue (30d)</div>
+      <div class="s" id="kpi-addon-s">—</div>
+    </div>
+    <div class="stat">
+      <div class="v" id="kpi-pending">0</div>
+      <div class="l">Upcoming Visits (7d)</div>
+      <div class="s">next: <span id="kpi-next">—</span></div>
+    </div>
+  </div>
+
+  <!-- Upcoming week calendar -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Upcoming Visits — This Week</h2>
+      <div class="sub" id="cal-range">—</div>
+    </div>
+    <div class="section-body">
+      <div class="cal-week" id="cal-week"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- One-time pending -->
+    <div class="section">
+      <div class="section-head">
+        <h2>One-Time Visits — Paid &amp; Pending</h2>
+        <div class="sub"><span id="ot-count">0</span> pending</div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>Date</th><th>Customer</th><th>Address</th><th>Amount</th><th>Actions</th>
+          </tr></thead>
+          <tbody id="ot-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add-on revenue chart -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Add-on Revenue — Last 30 Days</h2>
+        <div class="sub">by product</div>
+      </div>
+      <div class="section-body">
+        <div class="chart" id="addon-chart"></div>
+        <div class="legend" id="addon-legend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent bookings feed -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Recent Bookings — Last 20</h2>
+      <div class="sub"><span id="rec-count">0</span> total</div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Created</th>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Add-ons</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Visit</th>
+          <th>Actions</th>
+        </tr></thead>
+        <tbody id="rec-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Utilities --------------------------------------------------------------
+const fmtUSD = c => "$" + (Math.round((c||0)/100)).toLocaleString();
+const fmtUSD2 = c => "$" + ((c||0)/100).toFixed(2);
+const parseDate = s => s ? new Date(s) : null;
+const dayStart = d => { const x=new Date(d); x.setHours(0,0,0,0); return x; };
+const addDays = (d,n) => { const x=new Date(d); x.setDate(x.getDate()+n); return x; };
+const fmtDow = d => d.toLocaleDateString("en-US",{weekday:"short"});
+const fmtDay = d => d.getDate();
+const fmtDate = d => d.toLocaleDateString("en-US",{month:"short",day:"numeric"});
+const today = dayStart(new Date());
+
+const ADDON_PRICES = { window:4900, oven:3900, laundry:2900, bin:3500 };
+const ADDON_NAMES  = { window:"Window", oven:"Deep Oven", laundry:"Laundry Rm", bin:"Bin Clean" };
+const ADDON_COLORS = { window:"#3D7A9E", oven:"#ECA400", laundry:"#7C3AED", bin:"#059669" };
+
+const SERVICE_NAMES = { onetime:"One-Time", monthly:"Monthly Recurring", commercial:"Commercial" };
+
+// ---- Load data --------------------------------------------------------------
+async function load() {
+  try {
+    const r = await fetch("/data/bookings.json", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP "+r.status);
+    return await r.json();
+  } catch (e) {
+    console.error("Failed to load bookings.json:", e);
+    return [];
+  }
+}
+
+function render(data) {
+  // ---- KPIs
+  const active = data.filter(b => b.mode==="subscription" && b.status==="active");
+  const cancelledThisMonth = data.filter(b => {
+    if (b.status!=="cancelled" || !b.cancelled_at) return false;
+    const d = new Date(b.cancelled_at);
+    return d.getMonth()===today.getMonth() && d.getFullYear()===today.getFullYear();
+  });
+  const mrr = active.reduce((s,b)=> s + (b.amount_total||0), 0);
+
+  const since30 = addDays(today,-30);
+  const addonRev = { window:0, oven:0, laundry:0, bin:0 };
+  let addonTotal = 0;
+  data.forEach(b => {
+    const created = parseDate(b.created_at);
+    if (!created || created < since30) return;
+    (b.addons||[]).forEach(a => {
+      if (ADDON_PRICES[a] != null) {
+        addonRev[a] += ADDON_PRICES[a];
+        addonTotal += ADDON_PRICES[a];
+      }
+    });
+  });
+
+  const upcoming = data
+    .filter(b => b.visit_date && parseDate(b.visit_date) >= today && b.status!=="cancelled")
+    .sort((a,b)=> parseDate(a.visit_date) - parseDate(b.visit_date));
+  const next7 = upcoming.filter(b => parseDate(b.visit_date) <= addDays(today,7));
+
+  document.getElementById("hdr-mrr").textContent = fmtUSD(mrr);
+  document.getElementById("hdr-subs").textContent = active.length;
+  document.getElementById("hdr-onetime").textContent =
+    data.filter(b => b.mode==="payment" && parseDate(b.created_at) >= since30).length;
+
+  document.getElementById("kpi-mrr").textContent = fmtUSD(mrr);
+  document.getElementById("kpi-mrr-s").textContent = active.length + " active subs";
+  document.getElementById("kpi-subs").textContent = active.length;
+  document.getElementById("kpi-churn-s").textContent =
+    (cancelledThisMonth.length ? "-"+cancelledThisMonth.length+" this month" : "stable");
+  document.getElementById("kpi-churn").textContent = cancelledThisMonth.length;
+  const lostMrr = cancelledThisMonth.reduce((s,b)=> s + (b.amount_total||0), 0);
+  document.getElementById("kpi-churn-loss").textContent =
+    lostMrr ? "−"+fmtUSD(lostMrr)+" MRR lost" : "no MRR lost";
+  document.getElementById("kpi-addon").textContent = fmtUSD(addonTotal);
+  document.getElementById("kpi-addon-s").textContent = "across 4 add-ons";
+  document.getElementById("kpi-pending").textContent = next7.length;
+  document.getElementById("kpi-next").textContent =
+    next7[0] ? fmtDate(parseDate(next7[0].visit_date)) : "—";
+
+  // ---- Calendar
+  // Start of current week (Sun).
+  const weekStart = addDays(today, -today.getDay());
+  const weekEnd = addDays(weekStart, 6);
+  document.getElementById("cal-range").textContent =
+    fmtDate(weekStart) + " – " + fmtDate(weekEnd);
+
+  const cal = document.getElementById("cal-week");
+  cal.innerHTML = "";
+  for (let i=0; i<7; i++) {
+    const day = addDays(weekStart, i);
+    const iso = day.toISOString().slice(0,10);
+    const visits = data.filter(b => b.visit_date && b.visit_date.slice(0,10)===iso && b.status!=="cancelled");
+    const isToday = day.getTime() === today.getTime();
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "cal-day" + (isToday ? " today" : "");
+    let html = `<div class="cd-head"><span class="cd-d">${fmtDow(day)}</span><span class="cd-n">${fmtDay(day)}</span></div>`;
+    visits.forEach(v => {
+      const lbl = (v.customer_name || v.customer_email || "client").split(" ")[0];
+      const done = v.status==="completed";
+      html += `<div class="cal-visit ${done?'done':''}" data-id="${v.stripe_session_id}" title="${v.service} — ${v.address||''}">${lbl} · ${SERVICE_NAMES[v.service]||v.service}</div>`;
+    });
+    if (!visits.length) html += `<div style="font-size:10px;color:var(--text3)">—</div>`;
+    dayDiv.innerHTML = html;
+    cal.appendChild(dayDiv);
+  }
+  cal.addEventListener("click", e => {
+    const v = e.target.closest(".cal-visit");
+    if (!v) return;
+    const id = v.dataset.id;
+    const pick = prompt("Visit actions:\n1) Mark complete\n2) Reschedule\n\nEnter 1 or 2:");
+    if (pick==="1") {
+      const row = data.find(b=>b.stripe_session_id===id);
+      if (row) { row.status="completed"; render(data); }
+    } else if (pick==="2") {
+      const d = prompt("New date (YYYY-MM-DD):");
+      if (d) { const row = data.find(b=>b.stripe_session_id===id); if (row) { row.visit_date=d; render(data); } }
+    }
+  }, { once:true });
+
+  // ---- One-time pending (paid, upcoming date, mode=payment)
+  const ot = data
+    .filter(b => b.mode==="payment" && b.status!=="completed" && b.visit_date && parseDate(b.visit_date) >= today)
+    .sort((a,b)=> parseDate(a.visit_date) - parseDate(b.visit_date));
+  document.getElementById("ot-count").textContent = ot.length;
+  document.getElementById("ot-body").innerHTML = ot.length ? ot.map(b => `
+    <tr>
+      <td class="num">${fmtDate(parseDate(b.visit_date))}</td>
+      <td>${b.customer_name||"—"}<div style="font-size:10px;color:var(--text3)">${b.customer_email||""}</div></td>
+      <td class="addr" title="${b.address||''}">${b.address||"—"}</td>
+      <td class="num">${fmtUSD2(b.amount_total)}</td>
+      <td class="row-actions">
+        <button class="ra" data-act="remind" data-id="${b.stripe_session_id}">Remind</button>
+        <button class="ra" data-act="complete" data-id="${b.stripe_session_id}">Done</button>
+      </td>
+    </tr>`).join("") : `<tr><td colspan="5" class="empty">No pending one-time visits.</td></tr>`;
+
+  // ---- Recent feed
+  const recent = [...data]
+    .sort((a,b)=> new Date(b.created_at) - new Date(a.created_at))
+    .slice(0,20);
+  document.getElementById("rec-count").textContent = data.length;
+  document.getElementById("rec-body").innerHTML = recent.map(b => {
+    const status = b.status || "confirmed";
+    const badgeCls = `b-${status}`;
+    const modePill = b.mode==="subscription" ? `<span class="pill sub">sub</span>` : `<span class="pill one">one-time</span>`;
+    const addons = (b.addons||[]).map(a=>`<span class="pill">${ADDON_NAMES[a]||a}</span>`).join("") || `<span style="color:var(--text3)">—</span>`;
+    return `
+      <tr>
+        <td class="num">${fmtDate(parseDate(b.created_at))}</td>
+        <td>${b.customer_name||b.customer_email||"—"}<div style="font-size:10px;color:var(--text3)">${b.zip||""}</div></td>
+        <td>${SERVICE_NAMES[b.service]||b.service||"—"} ${modePill}</td>
+        <td>${addons}</td>
+        <td class="num">${fmtUSD2(b.amount_total)}</td>
+        <td><span class="badge ${badgeCls}">${status}</span></td>
+        <td class="num">${b.visit_date ? fmtDate(parseDate(b.visit_date)) : "—"}</td>
+        <td class="row-actions">
+          <button class="ra" data-act="remind" data-id="${b.stripe_session_id}">Remind</button>
+          <button class="ra" data-act="complete" data-id="${b.stripe_session_id}">Done</button>
+          <button class="ra danger" data-act="refund" data-id="${b.stripe_session_id}">Refund</button>
+          <button class="ra" data-act="stripe" data-id="${b.stripe_customer_id||''}">Stripe</button>
+        </td>
+      </tr>`;
+  }).join("");
+
+  // ---- Add-on chart
+  const chart = document.getElementById("addon-chart");
+  const maxV = Math.max(1, ...Object.values(addonRev));
+  chart.innerHTML = Object.keys(ADDON_PRICES).map(k => {
+    const v = addonRev[k];
+    const h = Math.max(2, Math.round((v / maxV) * 140));
+    return `<div class="bar-col">
+      <div class="val">${fmtUSD(v)}</div>
+      <div class="bar" style="height:${h}px;background:${ADDON_COLORS[k]}"></div>
+      <div class="lbl">${ADDON_NAMES[k]}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("addon-legend").innerHTML =
+    `<div><span class="dot" style="background:var(--prussian)"></span>Total add-on rev: <strong>${fmtUSD(addonTotal)}</strong></div>`;
+}
+
+// ---- Row-action handler -----------------------------------------------------
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".ra");
+  if (!btn) return;
+  const act = btn.dataset.act;
+  const id = btn.dataset.id;
+  if (act==="remind") alert("Reminder queued for "+id+".\n(TODO: POST /api/send-reminder)");
+  else if (act==="complete") { btn.textContent="✓"; btn.disabled=true; }
+  else if (act==="refund") {
+    if (confirm("Refund this charge in Stripe? This is immediate.")) alert("TODO: POST /api/refund "+id);
+  }
+  else if (act==="stripe") {
+    if (!id) return alert("No Stripe customer linked yet.");
+    window.open("https://dashboard.stripe.com/customers/"+id, "_blank");
+  }
+});
+
+load().then(render);
+</script>
+</body>
+</html>

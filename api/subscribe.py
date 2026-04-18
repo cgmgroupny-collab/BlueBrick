@@ -72,9 +72,9 @@ class handler(BaseHTTPRequestHandler):
     def _cors_headers(self):
         origin = self.headers.get('Origin', '')
         allowed = [
-            'https://blue-brick.vercel.app',
-            'https://bluebrickcleaning.com',
-            'https://www.bluebrickcleaning.com',
+            'https://bluebrickmass.com',
+            'https://bluebrickmass.com',
+            'https://bluebrickmass.com',
             'http://localhost',
         ]
         if any(origin.startswith(a) for a in allowed):

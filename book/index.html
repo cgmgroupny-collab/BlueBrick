@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Book a Clean — Blue Brick</title>
+<meta name="description" content="Book your Blue Brick cleaning in 60 seconds. Apple Pay, Google Pay, and card accepted." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+<!-- Stripe.js (swap pk_test_PLACEHOLDER for real publishable key in production) -->
+<script src="https://js.stripe.com/v3/"></script>
+<style>
+:root{--prussian:#0C1F35;--cerulean:#3D7A9E;--yale:#1A3A5C;--cream:#EAF8BF;--ink:#0B1624;--paper:#FAFAF7;--line:#E7E4DB;--muted:#6B7280;--success:#2A9D6F;--error:#E11D48}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.01em;line-height:.88}
+.serif{font-family:'Instrument Serif',serif;font-style:italic}
+input,select{font:inherit}
+
+/* TOP BAR */
+.bar{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+.bar-in{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.bar-logo img{height:32px}
+.bar-back{font-size:13px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:6px}
+.bar-back:hover{color:var(--prussian)}
+
+/* LAYOUT */
+.shell{max-width:1100px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:1.4fr .9fr;gap:48px;align-items:start}
+@media (max-width:900px){.shell{grid-template-columns:1fr;padding:24px 16px 100px}}
+
+/* STEP BAR */
+.steps{display:flex;gap:8px;margin-bottom:40px}
+.step-dot{flex:1;height:4px;border-radius:4px;background:#E5E3DA;transition:background .3s}
+.step-dot.active{background:var(--prussian)}
+.step-dot.done{background:var(--cerulean)}
+
+.step-head{margin-bottom:32px}
+.step-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--cerulean);margin-bottom:12px}
+.step-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,5vw,64px);line-height:.92;color:var(--prussian);margin-bottom:8px}
+.step-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--cerulean)}
+.step-sub{color:#4B5563;font-size:16px;max-width:480px}
+
+.panel{display:none}
+.panel.active{display:block;animation:fade .35s cubic-bezier(.16,1,.3,1)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* RADIO CARDS */
+.rcards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:520px){.rcards{grid-template-columns:1fr}}
+.rcard{position:relative;padding:20px;background:#fff;border:1.5px solid var(--line);border-radius:16px;cursor:pointer;transition:border .2s,background .2s,transform .2s}
+.rcard:hover{border-color:var(--cerulean)}
+.rcard input{position:absolute;opacity:0;pointer-events:none}
+.rcard.checked{border-color:var(--prussian);background:#fff;box-shadow:0 12px 30px -12px rgba(12,31,53,.25)}
+.rcard-check{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:all .2s}
+.rcard.checked .rcard-check{background:var(--prussian);border-color:var(--prussian)}
+.rcard.checked .rcard-check::after{content:"";width:8px;height:4px;border:2px solid #fff;border-top:none;border-right:none;transform:translateY(-1px) rotate(-45deg)}
+.rcard-icon{width:40px;height:40px;border-radius:10px;background:var(--cream);color:var(--prussian);display:grid;place-items:center;margin-bottom:14px}
+.rcard-icon svg{width:20px;height:20px}
+.rcard-name{font-weight:700;font-size:16px;color:var(--prussian);margin-bottom:4px}
+.rcard-desc{font-size:13px;color:var(--muted);line-height:1.4}
+.rcard-price{margin-top:10px;font-size:13px;font-weight:600;color:var(--cerulean)}
+
+/* FREQ */
+.freq{display:grid;gap:12px}
+.freq .rcard{padding:20px 22px;display:flex;align-items:center;gap:18px}
+.freq .rcard-icon{margin:0;flex-shrink:0}
+.freq .rcard-main{flex:1}
+.freq .rcard-bonus{font-size:12px;color:var(--success);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+
+/* FORM */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:520px){.form-grid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:600;color:var(--prussian);letter-spacing:.04em;text-transform:uppercase}
+.field input,.field select{padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:15px;color:var(--ink);transition:border .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--prussian);box-shadow:0 0 0 4px rgba(12,31,53,.08)}
+.field .hint{font-size:12px;color:var(--muted)}
+
+/* NAV BTN */
+.nav-btns{display:flex;gap:12px;margin-top:32px;align-items:center}
+.btn{padding:16px 28px;border-radius:100px;font-size:14.5px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .2s;white-space:nowrap}
+.btn-next{background:var(--prussian);color:#fff}
+.btn-next:hover{background:var(--yale);transform:translateY(-1px)}
+.btn-next:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-back{color:var(--muted);font-weight:500}
+.btn-back:hover{color:var(--prussian)}
+
+/* SUMMARY */
+.summary{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;position:sticky;top:24px}
+.summary h3{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--prussian);margin-bottom:16px;line-height:1}
+.sum-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.sum-line:last-of-type{border-bottom:none}
+.sum-line .lbl{color:var(--muted)}
+.sum-line .val{font-weight:600;color:var(--ink);text-align:right;max-width:60%}
+.sum-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:16px;border-top:2px solid var(--prussian)}
+.sum-total .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.sum-total .amt{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--prussian);line-height:1}
+.sum-note{margin-top:16px;padding:12px;background:var(--paper);border-radius:10px;font-size:12px;color:var(--muted);line-height:1.5}
+.trust-row{display:flex;gap:10px;align-items:center;margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.04em;flex-wrap:wrap}
+.trust-row .pay-ic{background:rgba(12,31,53,.06);padding:4px 8px;border-radius:6px;font-weight:700;font-size:10px}
+
+/* PAY STEP */
+.pay-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+.pay-head{margin-bottom:24px}
+.pay-ways{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.pay-ways button{padding:18px;border-radius:14px;background:#000;color:#fff;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .2s}
+.pay-ways button:hover{transform:translateY(-1px)}
+.pay-ways button.gpay{background:#fff;color:#202124;border:1.5px solid var(--line)}
+.pay-div{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pay-div::before,.pay-div::after{content:"";flex:1;height:1px;background:var(--line)}
+.pay-btn-full{width:100%;padding:18px;background:var(--prussian);color:#fff;border-radius:14px;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s}
+.pay-btn-full:hover{background:var(--yale)}
+.stripe-badge{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a href="/" class="bar-logo"><img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick" /></a>
+    <a href="/" class="bar-back">← Back to site</a>
+  </div>
+</div>
+
+<div class="shell">
+  <div>
+    <div class="steps" aria-hidden="true">
+      <div class="step-dot active" data-d="1"></div>
+      <div class="step-dot" data-d="2"></div>
+      <div class="step-dot" data-d="3"></div>
+      <div class="step-dot" data-d="4"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <section class="panel active" data-panel="1">
+      <div class="step-head">
+        <div class="step-num">Step 1 of 4</div>
+        <h1 class="step-title">What are we <em>cleaning?</em></h1>
+        <p class="step-sub">Pick the service closest to what you need. You can add extras on the next step.</p>
+      </div>
+      <div class="rcards" id="services-grid">
+        <label class="rcard" data-val="deep" data-price="189" data-label="Residential Deep Clean">
+          <input type="radio" name="service" value="deep" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21V12h6v9"/></svg></div>
+          <div class="rcard-name">Residential Deep Clean</div>
+          <div class="rcard-desc">Full home, top to bottom</div>
+          <div class="rcard-price">From $189</div>
+        </label>
+        <label class="rcard" data-val="moveout" data-price="249" data-label="Move-In / Move-Out">
+          <input type="radio" name="service" value="moveout" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 10l5 4 5-4"/></svg></div>
+          <div class="rcard-name">Move-In / Move-Out</div>
+          <div class="rcard-desc">Deposit-grade turnover clean</div>
+          <div class="rcard-price">From $249 flat</div>
+        </label>
+        <label class="rcard" data-val="postconstruction" data-price="399" data-label="Post-Construction">
+          <input type="radio" name="service" value="postconstruction" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M3 22V8l9-6 9 6v14"/><path d="M8 22v-8h8v8"/></svg></div>
+          <div class="rcard-name">Post-Construction</div>
+          <div class="rcard-desc">Dust, debris, and renovation film</div>
+          <div class="rcard-price">From $399</div>
+        </label>
+        <label class="rcard" data-val="office" data-price="219" data-label="Office Recurring">
+          <input type="radio" name="service" value="office" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+          <div class="rcard-name">Office Recurring</div>
+          <div class="rcard-desc">Nightly / weekly janitorial</div>
+          <div class="rcard-price">From $219/visit</div>
+        </label>
+        <label class="rcard" data-val="airbnb" data-price="89" data-label="Airbnb Turnover">
+          <input type="radio" name="service" value="airbnb" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-7h6v7"/></svg></div>
+          <div class="rcard-name">Airbnb Turnover</div>
+          <div class="rcard-desc">Same-day turns + linens</div>
+          <div class="rcard-price">From $89/turn</div>
+        </label>
+        <label class="rcard" data-val="bin" data-price="19" data-label="Bin Cleaning">
+          <input type="radio" name="service" value="bin" />
+          <div class="rcard-check"></div>
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <div class="rcard-name">Bin Cleaning</div>
+          <div class="rcard-desc">Curbside bin sanitation</div>
+          <div class="rcard-price">From $19/bin</div>
+        </label>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-next" data-next="2" disabled>Continue →</button>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="panel" data-panel="2">
+      <div class="step-head">
+        <div class="step-num">Step 2 of 4</div>
+        <h1 class="step-title">How <em>often?</em></h1>
+        <p class="step-sub">Recurring clients save 30% and get the same cleaner every visit.</p>
+      </div>
+      <div class="freq" id="freq-grid">
+        <label class="rcard" data-val="onetime" data-mult="1" data-label="One-Time">
+          <input type="radio" name="freq" value="onetime" />
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="rcard-main">
+            <div class="rcard-name">One-Time</div>
+            <div class="rcard-desc">A single visit — no commitment</div>
+          </div>
+          <div class="rcard-check"></div>
+        </label>
+        <label class="rcard" data-val="biweekly" data-mult="0.75" data-label="Bi-Weekly">
+          <input type="radio" name="freq" value="biweekly" />
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="rcard-main">
+            <div class="rcard-name">Bi-Weekly</div>
+            <div class="rcard-desc">Every 2 weeks · same cleaner</div>
+            <div class="rcard-bonus">★ Save 25% per visit</div>
+          </div>
+          <div class="rcard-check"></div>
+        </label>
+        <label class="rcard" data-val="monthly" data-mult="0.7" data-label="Monthly Subscription">
+          <input type="radio" name="freq" value="monthly" />
+          <div class="rcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+          <div class="rcard-main">
+            <div class="rcard-name">Monthly Subscription</div>
+            <div class="rcard-desc">Auto-billed · pause anytime</div>
+            <div class="rcard-bonus">★ Save 30% + free monthly add-on</div>
+          </div>
+          <div class="rcard-check"></div>
+        </label>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-back" data-next="1">← Back</button>
+        <button class="btn btn-next" data-next="3" disabled>Continue →</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="panel" data-panel="3">
+      <div class="step-head">
+        <div class="step-num">Step 3 of 4</div>
+        <h1 class="step-title">Details &amp; <em>schedule.</em></h1>
+        <p class="step-sub">We'll confirm by text within 15 minutes.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label>First name</label><input type="text" id="f-first" required /></div>
+        <div class="field"><label>Last name</label><input type="text" id="f-last" required /></div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" required /></div>
+        <div class="field"><label>Phone</label><input type="tel" id="f-phone" placeholder="(617) 555-0142" required /></div>
+        <div class="field full"><label>Service address</label><input type="text" id="f-addr" placeholder="123 Main St, Apt 2B" required /></div>
+        <div class="field"><label>ZIP code</label><input type="text" id="f-zip" inputmode="numeric" pattern="[0-9]{5}" placeholder="02116" required /></div>
+        <div class="field"><label>Preferred date</label><input type="date" id="f-date" required /></div>
+        <div class="field"><label>Arrival window</label><select id="f-window"><option>Morning (8am–11am)</option><option>Midday (11am–2pm)</option><option>Afternoon (2pm–5pm)</option></select></div>
+        <div class="field"><label>Bedrooms</label><select id="f-beds"><option>Studio</option><option>1 bedroom</option><option selected>2 bedrooms</option><option>3 bedrooms</option><option>4+ bedrooms</option></select></div>
+        <div class="field full"><label>Notes for the crew (optional)</label><input type="text" id="f-notes" placeholder="Lockbox code, pets, entry instructions…" /></div>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-back" data-next="2">← Back</button>
+        <button class="btn btn-next" data-next="4">Review &amp; Pay →</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="panel" data-panel="4">
+      <div class="step-head">
+        <div class="step-num">Step 4 of 4</div>
+        <h1 class="step-title">Confirm &amp; <em>pay.</em></h1>
+        <p class="step-sub">We hold the card — you're only charged after the clean is done to your satisfaction.</p>
+      </div>
+
+      <div class="pay-card">
+        <div class="pay-ways">
+          <button type="button" id="apple-pay-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            Pay
+          </button>
+          <button type="button" id="gpay-btn" class="gpay">
+            <svg width="36" height="16" viewBox="0 0 42 16"><text x="0" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#5F6368">G</text><text x="9" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#4285F4">o</text><text x="17" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#FBBC04">o</text><text x="24" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#34A853">g</text><text x="31" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#EA4335">le</text><text x="0" y="13" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#5F6368" transform="translate(0,0)"></text></svg>
+            <span style="margin-left:4px;font-weight:500;color:#5F6368">Pay</span>
+          </button>
+        </div>
+        <div class="pay-div">or pay with card</div>
+        <div id="card-element" style="padding:16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:14px;text-align:center">Stripe Payment Element loads here</div>
+        <button type="button" class="pay-btn-full" id="pay-submit" style="margin-top:16px">
+          Pay &amp; Book — <span id="pay-amount">$189</span> <span>→</span>
+        </button>
+        <div class="stripe-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secured by Stripe · 256-bit encryption
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-back" data-next="3">← Back</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- SUMMARY -->
+  <aside class="summary">
+    <h3>Order summary</h3>
+    <div class="sum-line"><span class="lbl">Service</span><span class="val" id="s-svc">—</span></div>
+    <div class="sum-line"><span class="lbl">Frequency</span><span class="val" id="s-freq">—</span></div>
+    <div class="sum-line"><span class="lbl">Date</span><span class="val" id="s-date">—</span></div>
+    <div class="sum-line"><span class="lbl">Address</span><span class="val" id="s-addr">—</span></div>
+    <div class="sum-total">
+      <div>
+        <div class="lbl">Total due now</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px" id="s-note">Hold only — charged after service</div>
+      </div>
+      <div class="amt" id="s-amount">$0</div>
+    </div>
+    <div class="sum-note">Free 72-hour re-clean guarantee. Cancel or reschedule up to 24 hours before your visit with no fee.</div>
+    <div class="trust-row">
+      <span class="pay-ic">Pay</span>
+      <span class="pay-ic">G Pay</span>
+      <span class="pay-ic">Visa</span>
+      <span class="pay-ic">MC</span>
+      <span class="pay-ic">Amex</span>
+    </div>
+  </aside>
+</div>
+
+<script>
+/* STATE */
+const state={service:null,servicePrice:0,serviceLabel:'',freq:null,freqMult:1,freqLabel:'',date:'',addr:'',zip:''};
+
+/* URL PREFILL */
+const params=new URLSearchParams(location.search);
+const planMap={onetime:'deep',recurring:'deep',commercial:'office',postconstruction:'postconstruction',bin:'bin',office:'office',moveout:'moveout',airbnb:'airbnb',deep:'deep'};
+const initialPlan=planMap[params.get('plan')]||null;
+
+/* RCARD LOGIC */
+function bindCards(scope,onChange){
+  scope.querySelectorAll('.rcard').forEach(card=>{
+    card.addEventListener('click',()=>{
+      scope.querySelectorAll('.rcard').forEach(c=>c.classList.remove('checked'));
+      card.classList.add('checked');
+      const input=card.querySelector('input');input.checked=true;
+      onChange(card);
+    });
+  });
+}
+
+bindCards(document.getElementById('services-grid'),(card)=>{
+  state.service=card.dataset.val;
+  state.servicePrice=parseFloat(card.dataset.price);
+  state.serviceLabel=card.dataset.label;
+  document.querySelector('[data-next="2"]').disabled=false;
+  updateSummary();
+});
+
+bindCards(document.getElementById('freq-grid'),(card)=>{
+  state.freq=card.dataset.val;
+  state.freqMult=parseFloat(card.dataset.mult);
+  state.freqLabel=card.dataset.label;
+  document.querySelector('[data-next="3"]').disabled=false;
+  updateSummary();
+});
+
+/* Prefill service if plan in URL */
+if(initialPlan){
+  const card=document.querySelector(`#services-grid .rcard[data-val="${initialPlan}"]`);
+  if(card)card.click();
+  if(params.get('plan')==='recurring'){
+    const fc=document.querySelector('#freq-grid .rcard[data-val="monthly"]');
+    if(fc)fc.click();
+  }
+}
+
+/* STEP NAV */
+function goto(step){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector(`[data-panel="${step}"]`).classList.add('active');
+  document.querySelectorAll('.step-dot').forEach((d,i)=>{
+    d.classList.remove('active','done');
+    if(i+1<step)d.classList.add('done');
+    if(i+1===step)d.classList.add('active');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-next]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target=parseInt(btn.dataset.next);
+    if(target===4){
+      // validate step 3
+      const req=['f-first','f-last','f-email','f-phone','f-addr','f-zip','f-date'];
+      let ok=true;
+      req.forEach(id=>{const el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='var(--error)';ok=false}else{el.style.borderColor=''}});
+      if(!ok)return;
+      state.addr=document.getElementById('f-addr').value;
+      state.zip=document.getElementById('f-zip').value;
+      state.date=document.getElementById('f-date').value;
+      updateSummary();
+    }
+    goto(target);
+  });
+});
+
+/* SUMMARY */
+function total(){return Math.round(state.servicePrice*state.freqMult)}
+function updateSummary(){
+  document.getElementById('s-svc').textContent=state.serviceLabel||'—';
+  document.getElementById('s-freq').textContent=state.freqLabel||'—';
+  document.getElementById('s-date').textContent=state.date||'—';
+  document.getElementById('s-addr').textContent=state.addr?(state.addr+(state.zip?', '+state.zip:'')):'—';
+  const t=total()||0;
+  document.getElementById('s-amount').textContent='$'+t;
+  document.getElementById('pay-amount').textContent='$'+t;
+  document.getElementById('s-note').textContent=state.freq==='monthly'?'Billed monthly · cancel anytime':'Hold only — charged after service';
+}
+
+/* STRIPE PLACEHOLDER — swap pk_test_PLACEHOLDER for real publishable key */
+let stripe=null;
+try{stripe=Stripe('pk_test_PLACEHOLDER')}catch(e){console.warn('Stripe not initialized (expected in preview)')}
+
+/* PAY SUBMIT (demo flow — integrate real Checkout Session on backend) */
+document.getElementById('pay-submit').addEventListener('click',()=>{
+  const payload={...state,total:total(),contact:{
+    first:document.getElementById('f-first').value,
+    last:document.getElementById('f-last').value,
+    email:document.getElementById('f-email').value,
+    phone:document.getElementById('f-phone').value,
+    notes:document.getElementById('f-notes').value
+  }};
+  try{sessionStorage.setItem('bb_booking',JSON.stringify(payload))}catch(e){}
+  /* REAL FLOW:
+     1. POST /api/create-checkout-session with payload
+     2. Receive { id: 'cs_...' }
+     3. stripe.redirectToCheckout({ sessionId: id })
+     Payment Element auto-enables Apple Pay + Google Pay.
+  */
+  location.href='/booking-confirmed/';
+});
+document.getElementById('apple-pay-btn').addEventListener('click',()=>document.getElementById('pay-submit').click());
+document.getElementById('gpay-btn').addEventListener('click',()=>document.getElementById('pay-submit').click());
+
+/* min date = tomorrow */
+(()=>{const d=new Date();d.setDate(d.getDate()+1);document.getElementById('f-date').min=d.toISOString().split('T')[0]})();
+</script>
+
+</body>
+</html>
