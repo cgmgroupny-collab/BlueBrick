@@ -28,141 +28,1817 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root{--prussian:#0C1F35;--yale:#1A3A5C;--cerulean:#3D7A9E;--steel:#3D7A9E;--steel-light:#5A9BBD;--white:#fff;--off-white:#f9fafb;--mid-gray:#6b7280;--dark-gray:#374151;--font-display:'Bebas Neue',Impact,sans-serif;--font-body:'Manrope',system-ui,sans-serif}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:18px;-webkit-font-smoothing:antialiased}
-body{font-family:var(--font-body);color:var(--dark-gray);background:var(--white);overflow-x:hidden;line-height:1.7}
-img{max-width:100%;display:block}
-a{color:var(--cerulean);text-decoration:none;transition:color .3s}
-a:hover{color:var(--steel)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-/* NAV */
-.tube-nav{position:fixed;top:1rem;left:50%;transform:translateX(-50%);z-index:100;padding:0 1rem}
-.tube-nav-inner{display:flex;align-items:center;gap:.25rem;background:rgba(12,31,53,.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.35rem .5rem}
-.tube-nav-link{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.03em;transition:all .2s}
-.tube-nav-link:hover,.tube-nav-link.active{color:#fff;background:rgba(255,255,255,.1)}
-.tube-nav-logo img{height:26px;width:auto}
-.tube-nav-cta{background:linear-gradient(135deg,#3D7A9E,#1A3A5C)!important;color:#fff!important;font-weight:700!important}
-.tube-nav-link .nav-icon{display:none}
-@media(max-width:768px){.tube-nav{top:auto;bottom:0;width:100%;padding:0}.tube-nav-inner{border-radius:0;justify-content:center;padding:.4rem}.tube-nav-link .nav-label{display:none}.tube-nav-link .nav-icon{display:flex}.tube-nav-logo{display:none}}
-/* HERO */
-.blog-hero{position:relative;padding:130px clamp(1.5rem,5vw,4rem) 60px;background:linear-gradient(135deg,#0C1F35 0%,#1A3A5C 50%,#0d2a45 100%);overflow:hidden}
-.blog-hero::before{content:'';position:absolute;top:-40%;right:-15%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(61,122,158,.2),transparent 70%);pointer-events:none}
-.blog-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:1px;background:linear-gradient(90deg,transparent,rgba(61,122,158,.4),transparent)}
-.hero-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.breadcrumb{font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:1rem;letter-spacing:.05em}
-.breadcrumb a{color:rgba(255,255,255,.5)}
-.breadcrumb a:hover{color:rgba(255,255,255,.8)}
-.hero-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel-light);border:1px solid rgba(61,122,158,.4);border-radius:50px;padding:.35rem 1rem;margin-bottom:1.2rem}
-.blog-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;line-height:1.1;margin-bottom:.8rem;letter-spacing:.02em}
-.blog-hero h1 em{font-style:normal;color:var(--steel-light)}
-.hero-subtitle{font-size:clamp(.95rem,1.8vw,1.1rem);color:rgba(255,255,255,.65);max-width:600px;margin:0 auto 1.5rem;line-height:1.7}
-/* Hero stat badges */
+ /* ============================================
+ CSS VARIABLES — BLUE BRICK BRAND PALETTE
+ ============================================ */
+ :root {
+ --prussian: #0C1F35;
+ --yale: #1A3A5C;
+ --cerulean: #3D7A9E;
+ --steel: #3D7A9E;
+ --steel-light: #5A9BBD;
+ --steel-glow: rgba(61, 122, 158, 0.15);
+ --white: #ffffff;
+ --off-white: #f9fafb;
+ --light-gray: #f0f2f5;
+ --mid-gray: #6b7280;
+ --dark-gray: #374151;
+ --font-display: 'Bebas Neue', Impact, sans-serif;
+ --font-body: 'Manrope', system-ui, sans-serif;
+ }
+
+ /* ============================================
+ RESET & BASE
+ ============================================ */
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+ html {
+ scroll-behavior: smooth;
+ font-size: 18px;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ }
+
+ body {
+ font-family: var(--font-body);
+ font-weight: 400;
+ color: var(--dark-gray);
+ background: var(--white);
+ overflow-x: hidden;
+ line-height: 1.7;
+ }
+
+ img { max-width: 100%; display: block; }
+ a { color: var(--cerulean); text-decoration: none; transition: color 0.3s; }
+ a:hover { color: var(--steel); }
+
+ /* ============================================
+ ANIMATIONS
+ ============================================ */
+ @keyframes fadeUp {
+ from { opacity: 0; transform: translateY(40px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+
+ @keyframes fadeIn {
+ from { opacity: 0; }
+ to { opacity: 1; }
+ }
+
+ @keyframes shimmer {
+ 0% { background-position: -200% center; }
+ 100% { background-position: 200% center; }
+ }
+
+ @keyframes drawLineLeft {
+ from { width: 0; opacity: 0; }
+ to { width: 28px; opacity: 1; }
+ }
+
+ @keyframes glowPulse {
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(236, 164, 0, 0); }
+ 50% { box-shadow: 0 0 30px 8px rgba(236, 164, 0, 0.15); }
+ }
+
+ /* ── Reveal variants ── */
+ .reveal {
+ opacity: 0;
+ transform: translateY(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+ }
+
+ .reveal-left {
+ opacity: 0;
+ transform: translateX(-60px);
+ transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal-left.visible {
+ opacity: 1;
+ transform: translateX(0);
+ }
+
+ .reveal-right {
+ opacity: 0;
+ transform: translateX(60px);
+ transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal-right.visible {
+ opacity: 1;
+ transform: translateX(0);
+ }
+
+ .reveal-scale {
+ opacity: 0;
+ transform: scale(0.8);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal-scale.visible {
+ opacity: 1;
+ transform: scale(1);
+ }
+
+ .reveal-blur {
+ opacity: 0;
+ filter: blur(10px);
+ transform: translateY(20px);
+ transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+ filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal-blur.visible {
+ opacity: 1;
+ filter: blur(0);
+ transform: translateY(0);
+ }
+
+ 
+ /* ============================================
+ BLOG CONTENT IMAGES
+ ============================================ */
+ .article-container .blog-image {
+ width: 100%;
+ margin: 2rem 0;
+ border-radius: 12px;
+ box-shadow: 0 4px 20px rgba(0, 29, 74, 0.1);
+ }
+
+ .article-container figure {
+ margin: 2.5rem 0;
+ }
+
+ .article-container figcaption {
+ font-size: 0.8rem;
+ color: var(--mid-gray);
+ text-align: center;
+ margin-top: 0.5rem;
+ font-style: italic;
+ }
+
+
+ /* ============================================
+ INLINE CTA BANNERS
+ ============================================ */
+ .inline-cta {
+ background: linear-gradient(135deg, rgba(0, 29, 74, 0.04), rgba(0, 105, 146, 0.06));
+ border-left: 4px solid var(--steel);
+ border-radius: 0 12px 12px 0;
+ padding: 1.2rem 1.5rem;
+ margin: 2rem 0;
+ }
+
+ .inline-cta p {
+ margin: 0;
+ font-size: 1rem;
+ font-weight: 500;
+ color: var(--prussian);
+ }
+
+ .inline-cta a {
+ color: var(--cerulean);
+ font-weight: 700;
+ text-decoration: underline;
+ text-decoration-color: var(--steel);
+ text-underline-offset: 3px;
+ }
+
+ .inline-cta a:hover {
+ color: var(--steel);
+ }
+
+
+ /* ============================================
+ FAQ ACCORDION
+ ============================================ */
+ .faq-section {
+ margin: 2.5rem 0 1.5rem;
+ }
+
+ .faq-item {
+ border: 1px solid #e5e7eb;
+ border-radius: 10px;
+ margin-bottom: 0.75rem;
+ overflow: hidden;
+ transition: border-color 0.3s;
+ }
+
+ .faq-item:hover {
+ border-color: var(--amber, #3D7A9E);
+ }
+
+ .faq-question {
+ font-family: var(--font-body, 'Manrope', sans-serif);
+ font-size: 1rem;
+ font-weight: 600;
+ color: var(--prussian, #0C1F35);
+ padding: 1.2rem 3rem 1.2rem 1.2rem;
+ margin: 0;
+ cursor: pointer;
+ position: relative;
+ user-select: none;
+ background: #f9fafb;
+ transition: background 0.3s;
+ }
+
+ .faq-question:hover {
+ background: rgba(236, 164, 0, 0.06);
+ }
+
+ .faq-question::after {
+ content: '+';
+ position: absolute;
+ right: 1.2rem;
+ top: 50%;
+ transform: translateY(-50%);
+ font-size: 1.4rem;
+ font-weight: 300;
+ color: var(--amber, #3D7A9E);
+ transition: transform 0.3s;
+ }
+
+ .faq-item.open .faq-question::after {
+ content: '\2212';
+ }
+
+ .faq-answer {
+ font-size: 1rem;
+ color: var(--dark-gray, #374151);
+ line-height: 1.8;
+ padding: 0 1.2rem;
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.4s ease, padding 0.3s ease;
+ }
+
+ .faq-item.open .faq-answer {
+ max-height: 600px;
+ padding: 0 1.2rem 1.2rem;
+ }
+
+/* ============================================
+ QUOTE CALCULATOR EMBED
+ ============================================ */
+ .quote-calc-embed {
+ background: linear-gradient(135deg, #0C1F35 0%, #0a2a5c 60%, #0C1F35 100%);
+ border: 1px solid rgba(236, 164, 0, 0.15);
+ border-radius: 14px;
+ padding: 1.25rem 1.5rem;
+ margin: 2rem 0;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1.25rem;
+ position: relative;
+ overflow: hidden;
+ box-shadow: 0 2px 16px rgba(0, 29, 74, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+ }
+
+ .quote-calc-embed::before {
+ content: '';
+ position: absolute;
+ top: -40%;
+ right: -10%;
+ width: 200px;
+ height: 200px;
+ background: radial-gradient(circle, rgba(236, 164, 0, 0.08) 0%, transparent 70%);
+ pointer-events: none;
+ }
+
+ .quote-calc-header {
+ display: flex;
+ align-items: center;
+ gap: 0.85rem;
+ flex: 1;
+ min-width: 0;
+ }
+
+ .quote-calc-header > span {
+ font-size: 1.5rem;
+ flex-shrink: 0;
+ line-height: 1;
+ }
+
+ .quote-calc-header strong {
+ display: block;
+ color: #ffffff;
+ font-size: 1rem;
+ font-weight: 700;
+ letter-spacing: -0.01em;
+ line-height: 1.3;
+ }
+
+ .quote-calc-header p {
+ color: rgba(255, 255, 255, 0.7);
+ font-size: 0.8rem;
+ margin: 0.15rem 0 0;
+ line-height: 1.3;
+ font-weight: 400;
+ }
+
+ .quote-calc-btn {
+ display: inline-flex;
+ align-items: center;
+ background: #3D7A9E;
+ color: #0C1F35;
+ font-size: 0.82rem;
+ font-weight: 700;
+ padding: 0.55rem 1.15rem;
+ border-radius: 8px;
+ text-decoration: none;
+ white-space: nowrap;
+ flex-shrink: 0;
+ letter-spacing: 0.01em;
+ transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+ box-shadow: 0 2px 8px rgba(236, 164, 0, 0.25);
+ }
+
+ .quote-calc-btn:hover {
+ background: #f5b31a;
+ box-shadow: 0 4px 16px rgba(236, 164, 0, 0.35);
+ transform: translateY(-1px);
+ }
+
+ @media (max-width: 540px) {
+ .quote-calc-embed {
+ flex-direction: column;
+ text-align: center;
+ padding: 1.25rem;
+ gap: 1rem;
+ }
+ .quote-calc-header {
+ flex-direction: column;
+ gap: 0.5rem;
+ }
+ .quote-calc-btn {
+ width: 100%;
+ justify-content: center;
+ padding: 0.65rem 1.25rem;
+ }
+ }
+
+
+
+ /* ============================================
+ EMAIL SUBSCRIBER
+ ============================================ */
+ .footer-cta {
+ background: linear-gradient(135deg, #3D7A9E 0%, #d4940a 100%);
+ padding: 3rem 2rem;
+ text-align: center;
+ position: relative;
+ z-index: 1;
+ }
+
+ .footer-cta-inner {
+ max-width: 560px;
+ margin: 0 auto;
+ }
+
+ .footer-cta h3 {
+ font-family: var(--font-display, 'Playfair Display', serif);
+ font-size: 1.8rem;
+ color: #0C1F35;
+ margin: 0 0 0.5rem;
+ font-weight: 800;
+ }
+
+ .footer-cta-inner > p {
+ font-size: 0.95rem;
+ color: rgba(0, 29, 74, 0.7);
+ margin: 0 0 1.5rem;
+ line-height: 1.5;
+ }
+
+ .subscribe-form {
+ max-width: 480px;
+ margin: 0 auto;
+ }
+
+ .subscribe-input-wrap {
+ display: flex;
+ gap: 0;
+ border-radius: 50px;
+ overflow: hidden;
+ box-shadow: 0 4px 20px rgba(0, 29, 74, 0.2);
+ border: 2px solid #0C1F35;
+ }
+
+ .subscribe-input-wrap input[type="email"] {
+ flex: 1;
+ padding: 0.9rem 1.4rem;
+ border: none;
+ font-size: 0.95rem;
+ font-family: inherit;
+ background: #fff;
+ color: #0C1F35;
+ outline: none;
+ min-width: 0;
+ }
+
+ .subscribe-input-wrap input[type="email"]::placeholder {
+ color: #94a3b8;
+ }
+
+ .subscribe-btn {
+ background: #0C1F35;
+ color: #fff;
+ font-weight: 700;
+ font-size: 0.9rem;
+ padding: 0.9rem 1.8rem;
+ border: none;
+ cursor: pointer;
+ white-space: nowrap;
+ letter-spacing: 0.02em;
+ transition: background 0.2s;
+ font-family: inherit;
+ }
+
+ .subscribe-btn:hover {
+ background: #002a6b;
+ }
+
+ .subscribe-note {
+ font-size: 0.72rem;
+ color: rgba(0, 29, 74, 0.45) !important;
+ margin: 0.6rem 0 0 !important;
+ text-align: center;
+ }
+
+ .subscribe-success {
+ color: #0C1F35 !important;
+ font-weight: 600;
+ font-size: 0.95rem;
+ margin-top: 0.8rem !important;
+ }
+
+ /* Inline blog subscriber CTA */
+ .inline-subscribe {
+ background: linear-gradient(135deg, #3D7A9E 0%, #f4be3a 100%);
+ border-radius: 16px;
+ padding: 2rem 1.5rem;
+ margin: 2.5rem 0;
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .inline-subscribe::before {
+ content: '';
+ position: absolute;
+ top: -30%;
+ left: -10%;
+ width: 160px;
+ height: 160px;
+ background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+ pointer-events: none;
+ }
+
+ .inline-subscribe h3 {
+ font-family: var(--font-display, 'Playfair Display', serif);
+ font-size: 1.3rem;
+ color: #0C1F35;
+ margin: 0 0 0.35rem;
+ font-weight: 800;
+ }
+
+ .inline-subscribe > p {
+ font-size: 0.85rem;
+ color: rgba(0, 29, 74, 0.7);
+ margin: 0 0 1rem;
+ line-height: 1.4;
+ }
+
+ .inline-subscribe .subscribe-form {
+ max-width: 400px;
+ }
+
+ .inline-subscribe .subscribe-input-wrap {
+ border-width: 1.5px;
+ }
+
+ .inline-subscribe .subscribe-input-wrap input[type="email"] {
+ padding: 0.75rem 1.2rem;
+ font-size: 0.88rem;
+ }
+
+ .inline-subscribe .subscribe-btn {
+ padding: 0.75rem 1.4rem;
+ font-size: 0.85rem;
+ }
+
+ .inline-subscribe .subscribe-note {
+ color: rgba(0, 29, 74, 0.4) !important;
+ font-size: 0.68rem;
+ }
+
+ @media (max-width: 480px) {
+ .inline-subscribe { padding: 1.5rem 1.25rem; }
+ .inline-subscribe h3 { font-size: 1.15rem; }
+ .footer-cta h3 { font-size: 1.4rem; }
+ }
+
+ /* ============================================
+ TUBELIGHT NAVBAR
+ ============================================ */
+ .tube-nav {
+ position: fixed;
+ top: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ z-index: 1001;
+ padding-top: 1rem;
+ pointer-events: none;
+ transition: opacity 0.4s;
+ }
+
+ .tube-nav-inner {
+ display: flex;
+ align-items: center;
+ gap: 0.25rem;
+ background: rgba(0, 29, 74, 0.08);
+ border: 1px solid rgba(0, 29, 74, 0.1);
+ backdrop-filter: blur(16px);
+ -webkit-backdrop-filter: blur(16px);
+ padding: 0.3rem;
+ border-radius: 999px;
+ box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+ pointer-events: all;
+ }
+
+ .tube-nav.scrolled .tube-nav-inner {
+ background: rgba(255, 255, 255, 0.92);
+ border-color: rgba(0, 29, 74, 0.08);
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ }
+
+ .tube-nav-link {
+ position: relative;
+ font-size: 0.72rem;
+ font-weight: 600;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+ padding: 0.5rem 1.1rem;
+ border-radius: 999px;
+ color: rgba(255, 255, 255, 0.85) !important;
+ text-decoration: none !important;
+ white-space: nowrap;
+ transition: color 0.3s, background 0.3s;
+ }
+
+ .tube-nav.scrolled .tube-nav-link {
+ color: var(--prussian, #0C1F35) !important;
+ }
+
+ .tube-nav-link:hover {
+ color: #3D7A9E !important;
+ }
+
+ .tube-nav-link.active {
+ color: #3D7A9E !important;
+ background: rgba(236, 164, 0, 0.08);
+ }
+
+ /* The tubelight glow */
+ .tube-nav-link.active::before {
+ content: '';
+ position: absolute;
+ top: -2px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 28px;
+ height: 3px;
+ background: #3D7A9E;
+ border-radius: 3px 3px 0 0;
+ }
+
+ .tube-nav-link.active::after {
+ content: '';
+ position: absolute;
+ top: -6px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 40px;
+ height: 16px;
+ background: radial-gradient(ellipse, rgba(236, 164, 0, 0.25), transparent 70%);
+ filter: blur(4px);
+ pointer-events: none;
+ }
+
+ .tube-nav-cta {
+ padding: 0.5rem 1.2rem !important;
+ background: linear-gradient(135deg, #3D7A9E, #d4940a) !important;
+ color: #0C1F35 !important;
+ font-weight: 700 !important;
+ box-shadow: 0 2px 10px rgba(236, 164, 0, 0.3);
+ transition: all 0.3s !important;
+ }
+
+ .tube-nav-cta:hover {
+ transform: translateY(-1px);
+ box-shadow: 0 4px 16px rgba(236, 164, 0, 0.4) !important;
+ color: #0C1F35 !important;
+ }
+
+ .tube-nav-logo {
+ display: flex;
+ align-items: center;
+ padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+ text-decoration: none !important;
+ }
+
+ .tube-nav-logo img {
+ height: 28px;
+ width: auto;
+ }
+
+ .tube-nav-logo .logo-scrolled { display: none; }
+ .tube-nav.scrolled .tube-nav-logo .logo-default { display: none; }
+ .tube-nav.scrolled .tube-nav-logo .logo-scrolled { display: block; }
+
+ /* Mobile: icon-only nav */
+ .tube-nav-link .nav-icon { display: none; }
+ .tube-nav-link .nav-label { display: inline; }
+
+ @media (max-width: 768px) {
+ .tube-nav {
+ top: auto;
+ bottom: 0;
+ padding-top: 0;
+ padding-bottom: 0.75rem;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ }
+
+ .tube-nav-inner {
+ gap: 0.15rem;
+ padding: 0.25rem;
+ }
+
+ .tube-nav-link .nav-label { display: none; }
+ .tube-nav-link .nav-icon { display: flex; }
+ .tube-nav-link { padding: 0.55rem 0.85rem; }
+
+ .tube-nav-logo { display: none; }
+
+ .tube-nav-cta .nav-label { display: none; }
+ .tube-nav-cta .nav-icon { display: flex; }
+
+ /* Adjust other fixed elements */
+ .back-to-top { bottom: 5rem !important; }
+ }
+
+ /* ============================================
+ BLOG HERO
+ ============================================ */
+ .blog-hero {
+ position: relative;
+ padding: 140px clamp(1.5rem, 5vw, 4rem) 60px;
+ background: var(--prussian);
+ overflow: hidden;
+ }
+
+ .blog-hero::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ right: -20%;
+ width: 600px;
+ height: 600px;
+ border-radius: 50%;
+ background: radial-gradient(circle, rgba(0, 105, 146, 0.15), transparent 70%);
+ pointer-events: none;
+ }
+
+ .blog-hero::after {
+ content: '';
+ position: absolute;
+ bottom: 0; left: 50%;
+ transform: translateX(-50%);
+ width: 80%;
+ height: 1px;
+ background: linear-gradient(90deg, transparent, rgba(236, 164, 0, 0.3), transparent);
+ }
+
+ .hero-inner {
+ max-width: 820px;
+ margin: 0 auto;
+ text-align: center;
+ position: relative;
+ z-index: 1;
+ }
+
+ .breadcrumb {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ font-size: 0.72rem;
+ font-weight: 500;
+ letter-spacing: 0.08em;
+ color: rgba(255,255,255,0.45);
+ margin-bottom: 1.5rem;
+ }
+
+ .breadcrumb a {
+ color: rgba(255,255,255,0.45);
+ transition: color 0.3s;
+ }
+
+ .breadcrumb a:hover { color: var(--steel); }
+
+ .breadcrumb span { color: var(--steel); }
+
+ .hero-tag {
+ display: inline-block;
+ font-size: 0.7rem;
+ font-weight: 700;
+ letter-spacing: 0.22em;
+ text-transform: uppercase;
+ color: var(--steel);
+ margin-bottom: 1rem;
+ position: relative;
+ }
+
+ .hero-tag::before,
+ .hero-tag::after {
+ content: '';
+ position: absolute;
+ top: 50%;
+ width: 28px;
+ height: 2px;
+ background: var(--steel);
+ }
+
+ .hero-tag::before { right: calc(100% + 14px); animation: drawLineLeft 0.6s 0.3s both; }
+ .hero-tag::after { left: calc(100% + 14px); animation: drawLineLeft 0.6s 0.5s both; }
+
+ .blog-hero h1 {
+ font-family: var(--font-display);
+ font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+ font-weight: 400;
+ color: var(--white);
+ line-height: 1.12;
+ letter-spacing: 0.03em;
+ text-transform: uppercase;
+ margin-bottom: 1.2rem;
+ animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+ }
+
+ .blog-hero h1 em {
+ font-style: normal;
+ color: var(--steel);
+ }
+
+ .hero-subtitle {
+ font-size: 1.05rem;
+ color: rgba(255,255,255,0.6);
+ max-width: 560px;
+ margin: 0 auto;
+ line-height: 1.7;
+ font-weight: 300;
+ animation: fadeUp 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+ }
+
+ /* ============================================
+ ARTICLE CONTENT
+ ============================================ */
+ .article-wrapper {
+ max-width: 780px;
+ margin: 0 auto;
+ padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 2.5rem);
+ }
+
+ .article-wrapper h2 {
+ font-family: var(--font-display);
+ font-size: clamp(1.6rem, 2.5vw, 2rem);
+ font-weight: 400;
+ color: var(--prussian);
+ letter-spacing: 0.03em;
+ text-transform: uppercase;
+ margin-top: 2.5rem;
+ margin-bottom: 1rem;
+ padding-bottom: 0.5rem;
+ border-bottom: 2px solid var(--steel);
+ display: inline-block;
+ }
+
+ .article-wrapper h3 {
+ font-family: var(--font-display);
+ font-size: clamp(1.2rem, 2vw, 1.5rem);
+ font-weight: 400;
+ color: var(--yale);
+ letter-spacing: 0.02em;
+ text-transform: uppercase;
+ margin-top: 2rem;
+ margin-bottom: 0.7rem;
+ }
+
+ .article-wrapper p {
+ font-size: 1rem;
+ color: var(--dark-gray);
+ line-height: 1.8;
+ margin-bottom: 1.2rem;
+ }
+
+ .article-wrapper ul {
+ list-style: none;
+ padding-left: 0;
+ margin-bottom: 1.5rem;
+ }
+
+ .article-wrapper ul li {
+ position: relative;
+ padding-left: 1.5rem;
+ margin-bottom: 0.6rem;
+ font-size: 0.95rem;
+ color: var(--dark-gray);
+ line-height: 1.7;
+ }
+
+ .article-wrapper ul li::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ top: 0.55rem;
+ width: 8px;
+ height: 8px;
+ background: var(--steel);
+ border-radius: 2px;
+ }
+
+ .article-wrapper strong {
+ color: var(--prussian);
+ font-weight: 600;
+ }
+
+ .highlight-box {
+ background: var(--off-white);
+ border-left: 4px solid var(--cerulean);
+ padding: 1.5rem 1.8rem;
+ margin: 2rem 0;
+ border-radius: 0 6px 6px 0;
+ }
+
+ .highlight-box p {
+ margin-bottom: 0;
+ color: var(--yale);
+ font-size: 0.95rem;
+ font-weight: 500;
+ }
+
+ /* ── Checklist styling ── */
+ .checklist-box {
+ background: var(--off-white);
+ border: 1px solid #e5e7eb;
+ border-radius: 8px;
+ padding: 2rem 2.2rem;
+ margin: 2rem 0;
+ }
+
+ .checklist-box h3 {
+ margin-top: 0;
+ }
+
+ .checklist-box ul li::before {
+ background: var(--cerulean);
+ border-radius: 50%;
+ width: 7px;
+ height: 7px;
+ top: 0.6rem;
+ }
+
+ /* ============================================
+ CTA SECTION
+ ============================================ */
+ .cta-section {
+ padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+ background: var(--prussian);
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .cta-section::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ left: -20%;
+ width: 600px;
+ height: 600px;
+ border-radius: 50%;
+ background: radial-gradient(circle, rgba(0, 105, 146, 0.12), transparent 70%);
+ pointer-events: none;
+ }
+
+ .cta-inner {
+ position: relative;
+ z-index: 1;
+ max-width: 600px;
+ margin: 0 auto;
+ }
+
+ .cta-section h2 {
+ font-family: var(--font-display);
+ font-size: clamp(2rem, 3.5vw, 2.8rem);
+ color: var(--white);
+ margin-bottom: 1rem;
+ letter-spacing: 0.03em;
+ text-transform: uppercase;
+ }
+
+ .cta-section h2 em { font-style: normal; color: var(--steel); }
+
+ .cta-section p {
+ color: rgba(255,255,255,0.65);
+ font-size: 1.05rem;
+ max-width: 500px;
+ margin: 0 auto 2rem;
+ line-height: 1.7;
+ }
+
+ .cta-buttons {
+ display: flex;
+ gap: 1rem;
+ justify-content: center;
+ flex-wrap: wrap;
+ }
+
+ .cta-btn-primary {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 1rem 2.2rem;
+ background: var(--steel);
+ color: var(--prussian);
+ font-family: var(--font-body);
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ border-radius: 5px;
+ transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+ animation: glowPulse 3s ease-in-out infinite;
+ }
+
+ .cta-btn-primary:hover {
+ background: var(--steel-light);
+ color: var(--prussian);
+ transform: translateY(-3px) scale(1.02);
+ box-shadow: 0 12px 40px rgba(236, 164, 0, 0.4);
+ }
+
+ .cta-btn-secondary {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 1rem 2.2rem;
+ background: transparent;
+ color: var(--white);
+ font-family: var(--font-body);
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ border: 2px solid rgba(255,255,255,0.3);
+ border-radius: 5px;
+ transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .cta-btn-secondary:hover {
+ border-color: var(--white);
+ color: var(--white);
+ transform: translateY(-2px);
+ }
+
+ /* ============================================
+ RELATED POSTS
+ ============================================ */
+ .related-section {
+ padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+ background: var(--off-white);
+ }
+
+ .related-inner {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+
+ .section-header {
+ text-align: center;
+ margin-bottom: clamp(2rem, 4vw, 3.5rem);
+ }
+
+ .section-tag {
+ display: inline-block;
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 0.22em;
+ text-transform: uppercase;
+ color: var(--cerulean);
+ margin-bottom: 0.8rem;
+ position: relative;
+ }
+
+ .section-tag::before,
+ .section-tag::after {
+ content: '';
+ position: absolute;
+ top: 50%;
+ width: 28px;
+ height: 2px;
+ background: var(--steel);
+ }
+
+ .section-tag::before { right: calc(100% + 14px); }
+ .section-tag::after { left: calc(100% + 14px); }
+
+ .section-header h2 {
+ font-family: var(--font-display);
+ font-size: clamp(1.8rem, 3vw, 2.5rem);
+ font-weight: 400;
+ color: var(--prussian);
+ letter-spacing: 0.03em;
+ text-transform: uppercase;
+ }
+
+ .section-header h2 em {
+ font-style: normal;
+ color: var(--cerulean);
+ }
+
+ .related-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1.5rem;
+ }
+
+ .related-card {
+ background: var(--white);
+ border: 1px solid #e5e7eb;
+ border-radius: 8px;
+ padding: 1.8rem;
+ transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+ position: relative;
+ overflow: hidden;
+ }
+
+ .related-card::before {
+ content: '';
+ position: absolute;
+ bottom: 0; left: 0;
+ width: 0; height: 3px;
+ background: linear-gradient(90deg, var(--cerulean), var(--steel));
+ transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .related-card:hover {
+ border-color: rgba(0, 105, 146, 0.2);
+ transform: translateY(-6px);
+ box-shadow: 0 20px 50px rgba(0, 29, 74, 0.1);
+ }
+
+ .related-card:hover::before { width: 100%; }
+
+ .related-card .card-tag {
+ font-size: 0.65rem;
+ font-weight: 700;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ color: var(--cerulean);
+ margin-bottom: 0.6rem;
+ }
+
+ .related-card h3 {
+ font-family: var(--font-display);
+ font-size: 1.25rem;
+ font-weight: 400;
+ color: var(--prussian);
+ margin-bottom: 0.5rem;
+ line-height: 1.2;
+ }
+
+ .related-card p {
+ font-size: 0.85rem;
+ color: var(--mid-gray);
+ line-height: 1.6;
+ margin-bottom: 1rem;
+ }
+
+ .read-link {
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--steel);
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ transition: gap 0.3s;
+ }
+
+ .read-link:hover {
+ gap: 0.8rem;
+ color: var(--steel);
+ }
+
+ 
+ 
+ 
+ /* ============================================
+ EXPANDABLE CHAT WIDGET
+ ============================================ */
+ .chat-widget {
+ position: fixed;
+ bottom: 1.5rem;
+ right: 1.5rem;
+ z-index: 1000;
+ font-family: var(--font-body, 'Manrope', sans-serif);
+ }
+
+ .chat-toggle {
+ width: 56px;
+ height: 56px;
+ border-radius: 50%;
+ border: none;
+ background: linear-gradient(135deg, #006992, #004f6e);
+ color: #fff;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 20px rgba(0, 105, 146, 0.4), 0 0 0 0 rgba(0, 105, 146, 0.3);
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ position: relative;
+ z-index: 2;
+ }
+
+ .chat-toggle::after {
+ content: '';
+ position: absolute;
+ inset: -5px;
+ border-radius: 50%;
+ background: rgba(0, 105, 146, 0.2);
+ animation: chatPulse 2.5s ease-in-out infinite;
+ z-index: -1;
+ }
+
+ @keyframes chatPulse {
+ 0%, 100% { transform: scale(1); opacity: 0.4; }
+ 50% { transform: scale(1.3); opacity: 0; }
+ }
+
+ .chat-widget.open .chat-toggle::after { animation: none; opacity: 0; }
+
+ .chat-toggle:hover {
+ transform: scale(1.08);
+ box-shadow: 0 6px 28px rgba(0, 105, 146, 0.5);
+ }
+
+ .chat-toggle svg {
+ width: 24px;
+ height: 24px;
+ fill: none;
+ stroke: #fff;
+ stroke-width: 2;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ transition: transform 0.3s;
+ }
+
+ .chat-toggle .icon-close { display: none; }
+ .chat-widget.open .chat-toggle .icon-chat { display: none; }
+ .chat-widget.open .chat-toggle .icon-close { display: block; }
+
+ .chat-panel {
+ position: absolute;
+ bottom: calc(100% + 12px);
+ right: 0;
+ width: 370px;
+ max-height: 520px;
+ background: #fff;
+ border-radius: 16px;
+ box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(12px) scale(0.95);
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .chat-widget.open .chat-panel {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0) scale(1);
+ }
+
+ .chat-panel-header {
+ padding: 1.25rem 1.25rem 1rem;
+ background: linear-gradient(135deg, #0C1F35, #0a2a5c);
+ color: #fff;
+ text-align: center;
+ }
+
+ .chat-panel-header h3 {
+ font-family: var(--font-display, 'Bebas Neue', sans-serif);
+ font-size: 1.15rem;
+ font-weight: 400;
+ letter-spacing: 0.04em;
+ margin: 0 0 0.2rem;
+ }
+
+ .chat-panel-header p {
+ font-size: 0.75rem;
+ color: rgba(255, 255, 255, 0.85);
+ margin: 0;
+ }
+
+ .chat-panel-body {
+ flex: 1;
+ padding: 1rem 1rem 0.5rem;
+ overflow-y: auto;
+ display: flex;
+ flex-direction: column;
+ gap: 0.75rem;
+ max-height: 300px;
+ background: #f9fafb;
+ }
+
+ .chat-msg {
+ display: flex;
+ gap: 0.5rem;
+ align-items: flex-end;
+ animation: chatMsgIn 0.3s ease-out;
+ }
+
+ @keyframes chatMsgIn {
+ from { opacity: 0; transform: translateY(8px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+
+ .chat-msg.sent { flex-direction: row-reverse; }
+
+ .chat-msg-avatar {
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #006992, #004f6e);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 0;
+ font-size: 0.6rem;
+ color: #fff;
+ font-weight: 700;
+ }
+
+ .chat-msg.sent .chat-msg-avatar {
+ background: linear-gradient(135deg, #3D7A9E, #d4940a);
+ color: #0C1F35;
+ }
+
+ .chat-msg-bubble {
+ padding: 0.6rem 0.85rem;
+ border-radius: 12px;
+ font-size: 0.82rem;
+ line-height: 1.5;
+ max-width: 75%;
+ }
+
+ .chat-msg:not(.sent) .chat-msg-bubble {
+ background: #fff;
+ color: #374151;
+ border: 1px solid #e5e7eb;
+ border-bottom-left-radius: 4px;
+ }
+
+ .chat-msg.sent .chat-msg-bubble {
+ background: linear-gradient(135deg, #006992, #005577);
+ color: #fff;
+ border-bottom-right-radius: 4px;
+ }
+
+ .chat-loading {
+ display: flex;
+ gap: 4px;
+ padding: 0.6rem 0.85rem;
+ }
+
+ .chat-loading span {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: #9ca3af;
+ animation: chatDot 1.2s ease-in-out infinite;
+ }
+
+ .chat-loading span:nth-child(2) { animation-delay: 0.15s; }
+ .chat-loading span:nth-child(3) { animation-delay: 0.3s; }
+
+ @keyframes chatDot {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-5px); }
+ }
+
+ .chat-panel-footer {
+ padding: 0.75rem;
+ border-top: 1px solid #e5e7eb;
+ background: #fff;
+ }
+
+ .chat-input-wrap {
+ display: flex;
+ gap: 0.5rem;
+ align-items: center;
+ background: #f9fafb;
+ border: 1px solid #e5e7eb;
+ border-radius: 10px;
+ padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+ transition: border-color 0.2s;
+ }
+
+ .chat-input-wrap:focus-within {
+ border-color: #006992;
+ }
+
+ .chat-input-wrap input {
+ flex: 1;
+ border: none;
+ background: none;
+ font-size: 0.82rem;
+ font-family: inherit;
+ color: #374151;
+ outline: none;
+ }
+
+ .chat-input-wrap input::placeholder { color: #9ca3af; }
+
+ .chat-send-btn {
+ width: 32px;
+ height: 32px;
+ border-radius: 8px;
+ border: none;
+ background: linear-gradient(135deg, #006992, #005577);
+ color: #fff;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: all 0.2s;
+ flex-shrink: 0;
+ }
+
+ .chat-send-btn:hover {
+ background: linear-gradient(135deg, #007ba8, #006992);
+ transform: scale(1.05);
+ }
+
+ .chat-send-btn svg {
+ width: 16px;
+ height: 16px;
+ fill: none;
+ stroke: #fff;
+ stroke-width: 2;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ }
+
+ .chat-quick-actions {
+ display: flex;
+ gap: 0.35rem;
+ margin-top: 0.5rem;
+ flex-wrap: wrap;
+ }
+
+
+ .chat-options {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 6px;
+ margin-top: 8px;
+ padding-left: 36px;
+ }
+
+ .chat-opt-btn {
+ background: #fff;
+ color: #0C1F35;
+ border: 1.5px solid #006992;
+ border-radius: 20px;
+ padding: 5px 14px;
+ font-size: 0.72rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.15s;
+ font-family: inherit;
+ white-space: nowrap;
+ }
+
+ .chat-opt-btn:hover {
+ background: #006992;
+ color: #fff;
+ }
+
+ .chat-opt-btn.amber {
+ border-color: #3D7A9E;
+ background: #3D7A9E;
+ color: #0C1F35;
+ }
+
+ .chat-opt-btn.amber:hover {
+ background: #d4940a;
+ }
+
+ .chat-quick-btn {
+ font-size: 0.7rem;
+ padding: 0.3rem 0.65rem;
+ border-radius: 20px;
+ border: 1px solid #e5e7eb;
+ background: #fff;
+ color: #374151;
+ cursor: pointer;
+ font-family: inherit;
+ transition: all 0.2s;
+ }
+
+ .chat-quick-btn:hover {
+ border-color: #006992;
+ color: #006992;
+ background: rgba(0, 105, 146, 0.04);
+ }
+
+ @media (max-width: 480px) {
+ .chat-panel {
+ position: fixed;
+ inset: 0;
+ width: 100%;
+ max-height: 100%;
+ border-radius: 0;
+ bottom: 0;
+ right: 0;
+ }
+
+ .chat-panel-body { max-height: calc(100vh - 200px); }
+
+ .chat-widget.open .chat-toggle {
+ position: fixed;
+ top: 1rem;
+ right: 1rem;
+ bottom: auto;
+ z-index: 1001;
+ }
+ }
+
+ /* ============================================
+ FOOTER
+ ============================================ */
+ .back-to-top {
+ position: fixed;
+ bottom: 2rem;
+ right: 2rem;
+ width: 44px;
+ height: 44px;
+ background: linear-gradient(135deg, #3D7A9E, #d4940a);
+ border: none;
+ border-radius: 50%;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 16px rgba(236, 164, 0, 0.35);
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(10px);
+ transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+ z-index: 999;
+ }
+
+ .back-to-top.visible {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+ }
+
+ .back-to-top:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 6px 24px rgba(236, 164, 0, 0.5);
+ }
+
+ .back-to-top svg {
+ width: 20px;
+ height: 20px;
+ stroke: #0C1F35;
+ fill: none;
+ stroke-width: 2.5;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ }
+
+ footer {
+ padding: 0;
+ position: relative;
+ overflow: hidden;
+ color: rgba(255, 255, 255, 0.75);
+ }
+
+ .footer-bg {
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background-image: url('../assets/images/Luxury apt images/pexels-kseniachernaya-5691495.jpg');
+ background-size: cover;
+ background-position: center;
+ filter: brightness(0.15) saturate(0.6);
+ }
+
+ .footer-bg::after {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: linear-gradient(180deg, #0C1F35 0%, rgba(0, 29, 74, 0.85) 30%, rgba(0, 29, 74, 0.75) 100%);
+ }
+
+ .footer-top {
+ display: grid;
+ grid-template-columns: 1.2fr 1fr 1fr 1fr;
+ gap: 2.5rem;
+ max-width: 1000px;
+ margin: 0 auto 1.5rem;
+ padding: 3rem clamp(1.5rem, 5vw, 4rem) 1.5rem;
+ position: relative;
+ z-index: 1;
+ }
+
+ .footer-brand .footer-logo {
+ display: flex;
+ align-items: center;
+ margin-bottom: 0.8rem;
+ }
+
+ .footer-brand .footer-logo img {
+ width: 160px;
+ height: auto;
+ }
+
+ .footer-brand p {
+ font-size: 0.85rem;
+ line-height: 1.7;
+ margin-bottom: 1rem;
+ color: rgba(255, 255, 255, 0.6);
+ }
+
+ .contact-line {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ margin-bottom: 0.5rem;
+ font-size: 0.85rem;
+ color: rgba(255, 255, 255, 0.75);
+ transition: color 0.3s;
+ }
+
+ .contact-line:hover { color: #3D7A9E; }
+
+ .contact-line svg {
+ width: 15px;
+ height: 15px;
+ stroke: #3D7A9E;
+ fill: none;
+ stroke-width: 1.5;
+ flex-shrink: 0;
+ }
+
+ .footer-col h4 {
+ font-family: var(--font-display, 'Playfair Display', serif);
+ font-size: 1rem;
+ color: #ffffff;
+ margin-bottom: 0.8rem;
+ padding-bottom: 0.5rem;
+ position: relative;
+ }
+
+ .footer-col h4::after {
+ content: '';
+ position: absolute;
+ bottom: 0; left: 0;
+ width: 24px;
+ height: 2px;
+ background: #3D7A9E;
+ }
+
+ .footer-links-list {
+ display: flex;
+ flex-direction: column;
+ gap: 0.4rem;
+ }
+
+ .footer-links-list a {
+ font-size: 0.82rem;
+ font-weight: 500;
+ color: rgba(255, 255, 255, 0.6);
+ transition: all 0.3s;
+ letter-spacing: 0.02em;
+ }
+
+ .footer-links-list a:hover {
+ color: #3D7A9E;
+ padding-left: 4px;
+ }
+
+ .footer-bottom {
+ text-align: center;
+ padding: 1rem clamp(1.5rem, 5vw, 4rem);
+ border-top: 1px solid rgba(255, 255, 255, 0.08);
+ max-width: 1000px;
+ margin: 0 auto;
+ position: relative;
+ z-index: 1;
+ }
+
+ .footer-bottom p {
+ font-size: 0.72rem;
+ color: rgba(255, 255, 255, 0.35);
+ }
+
+ /* ============================================
+ RESPONSIVE
+ ============================================ */
+ @media (max-width: 1024px) {
+
+
+
+ .related-grid {
+ grid-template-columns: 1fr 1fr;
+ }
+
+ .footer-top { grid-template-columns: 1fr 1fr; }
+ .footer-brand { grid-column: span 2; }
+ .footer-col:last-child { grid-column: span 2; }
+ .footer-cta h3 { font-size: 1.3rem; }
+ }
+
+ @media (max-width: 640px) {
+ html { font-size: 16px; }
+ body { font-size: 1.05rem; line-height: 1.8; }
+
+
+ .blog-hero { padding: 140px 1.5rem 50px; }
+ .blog-hero h1 { font-size: 2.2rem; }
+ .hero-subtitle { font-size: 1rem; }
+
+ .article-wrapper { padding: 2.5rem 1.5rem; }
+ .article-wrapper h2 { font-size: 1.5rem; }
+ .article-wrapper p { font-size: 1.05rem; }
+ .article-wrapper ul li { font-size: 1rem; }
+
+ .checklist-box { padding: 1.5rem; }
+
+ .related-grid { grid-template-columns: 1fr; }
+
+ .cta-buttons { flex-direction: column; align-items: center; }
+ .cta-btn-primary, .cta-btn-secondary { width: 100%; justify-content: center; }
+
+ footer { padding: 0; }
+ .footer-top { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; text-align: center; padding: 2rem 1.5rem 1rem; }
+ .footer-brand { grid-column: span 2; text-align: center; }
+ .footer-brand p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+ .footer-col h4 { margin-bottom: 0.5rem; padding-bottom: 0.3rem; }
+ .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+ .footer-links-list { align-items: center; gap: 0.3rem; }
+ .footer-links-list a { font-size: 0.85rem; }
+ .contact-line { justify-content: center; margin-bottom: 0.3rem; font-size: 0.9rem; }
+ .footer-cta { padding: 2rem 1.5rem; }
+ .footer-cta h3 { font-size: 1.3rem; }
+ .back-to-top { bottom: 1.5rem; right: 1.5rem; width: 40px; height: 40px; }
+ }
+ 
+ /* ============================================
+ VISUAL POLISH
+ ============================================ */
+ .article-container h2,
+ .article-wrapper h2,
+ .article-section h2,
+ .article-content h2,
+ .post-content h2 {
+ font-size: 1.65rem !important;
+ margin-top: 2.5rem;
+ margin-bottom: 1rem;
+ line-height: 1.3;
+ }
+
+ .article-container h3,
+ .article-wrapper h3,
+ .article-section h3,
+ .article-content h3,
+ .post-content h3 {
+ font-size: 1.2rem !important;
+ margin-top: 1.8rem;
+ margin-bottom: 0.8rem;
+ }
+
+ .article-container .reveal + .reveal,
+ .article-wrapper .reveal + .reveal,
+ .article-section .reveal + .reveal {
+ border-top: 1px solid rgba(0, 29, 74, 0.06);
+ padding-top: 2rem;
+ }
+
+ .highlight-box {
+ border-left: 4px solid var(--amber, #3D7A9E) !important;
+ background: linear-gradient(135deg, rgba(236, 164, 0, 0.04), rgba(0, 105, 146, 0.03)) !important;
+ border-radius: 0 12px 12px 0 !important;
+ padding: 1.5rem !important;
+ }
+
+
+ /* ============================================
+ CHAT WIDGET ENHANCEMENTS
+ ============================================ */
+ .chat-toggle {
+ animation: chatGlow 3s ease-in-out infinite;
+ }
+
+ @keyframes chatGlow {
+ 0%, 100% { box-shadow: 0 4px 20px rgba(0, 105, 146, 0.4), 0 0 0 0 rgba(0, 105, 146, 0); }
+ 50% { box-shadow: 0 4px 20px rgba(0, 105, 146, 0.4), 0 0 20px 8px rgba(236, 164, 0, 0.3); }
+ }
+
+ .chat-widget.open .chat-toggle {
+ animation: none;
+ }
+
+ .chat-prompt {
+ position: absolute;
+ bottom: calc(100% + 8px);
+ right: 0;
+ background: #fff;
+ color: #0C1F35;
+ font-size: 0.78rem;
+ font-weight: 600;
+ padding: 0.5rem 1rem;
+ border-radius: 12px 12px 4px 12px;
+ box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+ white-space: nowrap;
+ pointer-events: none;
+ opacity: 0;
+ transform: translateY(4px);
+ animation: promptFade 12s ease-in-out infinite;
+ font-family: 'Manrope', system-ui, sans-serif;
+ }
+
+ .chat-prompt::after {
+ content: '';
+ position: absolute;
+ bottom: -6px;
+ right: 16px;
+ width: 12px;
+ height: 6px;
+ background: #fff;
+ clip-path: polygon(0 0, 100% 0, 100% 100%);
+ }
+
+ .chat-widget.open .chat-prompt {
+ display: none;
+ }
+
+ @keyframes promptFade {
+ 0%, 8% { opacity: 0; transform: translateY(4px); }
+ 12%, 22% { opacity: 1; transform: translateY(0); }
+ 26%, 100% { opacity: 0; transform: translateY(4px); }
+ }
+
+ @media (max-width: 480px) {
+ .chat-prompt { display: none; }
+ }
+
+ 
+/* Hero stat badges (new visual posts) */
 .hero-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
 .hero-badge{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:.55rem 1.2rem;backdrop-filter:blur(8px)}
 .hero-badge .badge-num{font-family:var(--font-display);font-size:1.4rem;color:var(--steel-light);line-height:1}
 .hero-badge .badge-label{font-size:.68rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.12em;line-height:1.3}
-/* KEY TAKEAWAYS */
-.key-takeaways{background:linear-gradient(135deg,rgba(12,31,53,.04),rgba(61,122,158,.08));border-left:5px solid var(--cerulean);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2rem 0}
-.key-takeaways h3{font-family:var(--font-display);color:var(--prussian);font-size:1.2rem;letter-spacing:.04em;margin-bottom:.8rem}
-.key-takeaways ul{list-style:none;padding:0}
-.key-takeaways ul li{padding-left:1.5rem;position:relative;margin-bottom:.5rem;font-size:.95rem;color:var(--dark-gray)}
-.key-takeaways ul li::before{content:'';position:absolute;left:0;top:.6rem;width:8px;height:8px;background:var(--cerulean);border-radius:50%}
-/* STATS GRID */
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0}
-.stat-card{background:var(--prussian);padding:1.5rem;border-radius:8px;text-align:center}
-.stat-card .s-num{font-family:var(--font-display);font-size:2.4rem;color:var(--steel-light);line-height:1}
-.stat-card .s-label{font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.12em;margin-top:.4rem}
-@media(max-width:640px){.stats-grid{grid-template-columns:1fr 1fr}}
-/* BEFORE/AFTER */
-.before-after{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0}
-.ba-box{padding:1.5rem;border-radius:8px}
-.ba-box.before{background:#fef2f2;border:1px solid #fca5a5}
-.ba-box.after{background:#f0fdf4;border:1px solid #86efac}
-.ba-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:.7rem;display:block}
-.ba-box.before .ba-label{color:#991b1b}
-.ba-box.after .ba-label{color:#065f46}
-.ba-box ul{list-style:none;padding:0}
-.ba-box ul li{font-size:.88rem;margin-bottom:.4rem;padding-left:1.1rem;position:relative;color:var(--dark-gray)}
-.ba-box.before ul li::before{content:'✗';position:absolute;left:0;color:#ef4444;font-size:.8rem}
-.ba-box.after ul li::before{content:'✓';position:absolute;left:0;color:#22c55e;font-size:.8rem}
-@media(max-width:480px){.before-after{grid-template-columns:1fr}}
-/* VISUAL CTA */
-.visual-cta{background:linear-gradient(135deg,#0C1F35,#1A3A5C);border-radius:12px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
-.visual-cta::before{content:'';position:absolute;top:-40%;right:-10%;width:280px;height:280px;background:radial-gradient(circle,rgba(61,122,158,.25),transparent 70%);border-radius:50%}
-.visual-cta h3{font-family:var(--font-display);color:#fff;font-size:1.9rem;margin-bottom:.5rem;position:relative;z-index:1}
-.visual-cta p{color:rgba(255,255,255,.65);margin-bottom:1.2rem;position:relative;z-index:1;font-size:.95rem}
-.visual-cta .v-phone{font-family:var(--font-display);font-size:1.6rem;color:var(--steel-light);letter-spacing:.04em;display:block;margin-bottom:.5rem;position:relative;z-index:1}
-.visual-cta .v-btn{display:inline-block;background:var(--cerulean);color:#fff;padding:.8rem 2rem;border-radius:6px;font-weight:700;font-size:.9rem;letter-spacing:.04em;transition:background .2s;position:relative;z-index:1}
-.visual-cta .v-btn:hover{background:var(--steel-light);color:#fff}
-/* FAQ details/summary */
-.faq-section{margin:2.5rem 0}
-.faq-section h2{font-family:var(--font-display);font-size:1.6rem;color:var(--prussian);margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase}
-details.faq-item{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:.75rem;overflow:hidden;transition:border-color .3s}
-details.faq-item:hover{border-color:rgba(61,122,158,.4)}
-details.faq-item summary{font-size:1rem;font-weight:600;color:var(--prussian);padding:1.2rem 3rem 1.2rem 1.2rem;cursor:pointer;background:#f9fafb;list-style:none;position:relative;transition:background .2s}
-details.faq-item summary::-webkit-details-marker{display:none}
-details.faq-item summary::after{content:'+';position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--cerulean)}
-details.faq-item[open] summary{background:#f0f7fc}
-details.faq-item[open] summary::after{content:'−'}
-.faq-answer{padding:1rem 1.2rem 1.2rem;color:var(--dark-gray);font-size:.95rem;line-height:1.7;border-top:1px solid #e5e7eb}
-/* ARTICLE */
-.article-wrapper{max-width:820px;margin:0 auto;padding:3.5rem clamp(1.5rem,5vw,2.5rem)}
-.article-wrapper h2{font-family:var(--font-display);font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:400;color:var(--prussian);letter-spacing:.03em;text-transform:uppercase;margin-top:2.5rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--steel);display:inline-block}
-.article-wrapper h3{font-family:var(--font-display);font-size:clamp(1.1rem,2vw,1.4rem);color:var(--yale);letter-spacing:.02em;text-transform:uppercase;margin-top:1.8rem;margin-bottom:.7rem}
-.article-wrapper p{font-size:1rem;color:var(--dark-gray);line-height:1.8;margin-bottom:1.2rem}
-.article-wrapper ul{list-style:none;padding-left:0;margin-bottom:1.5rem}
-.article-wrapper ul li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:.95rem;color:var(--dark-gray);line-height:1.7}
-.article-wrapper ul li::before{content:'';position:absolute;left:0;top:.55rem;width:8px;height:8px;background:var(--steel);border-radius:2px}
-.article-wrapper strong{color:var(--prussian);font-weight:600}
-.highlight-box{background:var(--off-white);border-left:4px solid var(--cerulean);padding:1.4rem 1.8rem;margin:2rem 0;border-radius:0 8px 8px 0}
-.highlight-box p{margin-bottom:0;color:var(--yale);font-size:.95rem;font-weight:500}
-/* CTA SECTION */
-.cta-section{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,4rem);background:var(--prussian);text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(61,122,158,.12),transparent 70%);pointer-events:none}
-.cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
-.cta-section h2{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.8rem);color:#fff;margin-bottom:1rem;letter-spacing:.03em;text-transform:uppercase}
-.cta-section h2 em{font-style:normal;color:var(--steel-light)}
-.cta-section p{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:500px;margin:0 auto 2rem;line-height:1.7}
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.cta-btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--cerulean);color:#fff;font-weight:700;padding:.9rem 2rem;border-radius:6px;font-size:.9rem;letter-spacing:.04em;transition:all .2s}
-.cta-btn-primary:hover{background:var(--steel-light);color:#fff;transform:translateY(-2px)}
-.cta-btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:rgba(255,255,255,.8);font-weight:600;padding:.9rem 2rem;border-radius:6px;font-size:.9rem;border:1px solid rgba(255,255,255,.2);transition:all .2s}
-.cta-btn-secondary:hover{border-color:rgba(255,255,255,.5);color:#fff}
-/* FOOTER */
-footer{background:var(--prussian);color:rgba(255,255,255,.65);padding:3rem clamp(1.5rem,5vw,4rem) 1.5rem}
-.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2.5rem;max-width:900px;margin:0 auto 1.5rem}
-.footer-col h4{font-family:var(--font-display);font-size:1rem;color:#fff;margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:2px solid var(--cerulean);display:inline-block}
-.footer-links-list{display:flex;flex-direction:column;gap:.4rem}
-.footer-links-list a{font-size:.82rem;color:rgba(255,255,255,.55);transition:color .3s}
-.footer-links-list a:hover{color:var(--steel-light)}
-.footer-bottom{text-align:center;padding:1rem 0;border-top:1px solid rgba(255,255,255,.08);max-width:900px;margin:0 auto}
-.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,.3)}
-@media(max-width:640px){.footer-top{grid-template-columns:1fr 1fr}.hero-badges{gap:.5rem}.hero-badge{padding:.4rem .8rem}}
-/* BACK TO TOP */
-.back-to-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:linear-gradient(135deg,#3D7A9E,#1A3A5C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(61,122,158,.4);opacity:0;visibility:hidden;transform:translateY(10px);transition:all .35s;z-index:999}
-.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
-.back-to-top svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-</style>
+@media(max-width:640px){.hero-badges{gap:.5rem}.hero-badge{padding:.4rem .8rem}}
 
+
+/* Fix breadcrumb inline overlap */
+.hero-inner .breadcrumb{display:flex;justify-content:center;width:100%}
+</style>
 </head>
 <body>
-<nav class="tube-nav" id="tubeNav" aria-label="Main navigation">
-  <div class="tube-nav-inner">
-    <a href="/" class="tube-nav-logo" aria-label="Blue Brick Home">
-      <img src="/assets/images/logo-horizontal-white.png" alt="Blue Brick Cleaning">
-    </a>
-    <a href="/#services" class="tube-nav-link"><span class="nav-label">Services</span></a>
-    <a href="/pricing.html" class="tube-nav-link"><span class="nav-label">Pricing</span></a>
-    <a href="/cities.html" class="tube-nav-link"><span class="nav-label">Areas</span></a>
-    <a href="/blog/" class="tube-nav-link active"><span class="nav-label">Blog</span></a>
-    <a href="/#quote" class="tube-nav-link tube-nav-cta"><span class="nav-label">Free Estimate</span></a>
-  </div>
-</nav>
+
+
 <main>
 <section class="blog-hero" aria-label="School and Daycare Cleaning in Boston: Safe for Kids, Every Day">
   <div class="hero-inner">
@@ -187,6 +1863,11 @@ footer{background:var(--prussian);color:rgba(255,255,255,.65);padding:3rem clamp
   <div class="reveal">
 <p>Children in daycare and school settings are sick more frequently than adults — not because of weak immune systems alone, but because they share toys, surfaces, and close quarters in ways adults rarely do. Professional cleaning of childcare facilities is not just about appearance; it is a direct factor in the health outcomes of the children you serve.</p>
 <p>Blue Brick works with licensed childcare centers, preschools, and elementary schools across Greater Boston. We understand the regulatory environment, the product restrictions, and the scheduling demands of facilities that operate from 7am to 6pm.</p>
+
+<figure class="reveal">
+  <img src="../assets/images/services images/commercial properties.jpg" alt="School Cleaning Service Boston service by Blue Brick in Greater Boston" class="blog-image" loading="lazy">
+  <figcaption>Professional cleaning service across Greater Boston — Blue Brick</figcaption>
+</figure>
 </div>
 <h2 class="reveal">What School Cleaning Covers</h2>
 <div class="reveal">
@@ -229,61 +1910,586 @@ footer{background:var(--prussian);color:rgba(255,255,255,.65);padding:3rem clamp
     <details class="faq-item"><summary>Are your products safe if a child touches a surface right after cleaning?</summary><div class="faq-answer">Yes. Our child-safe products are safe once surfaces air-dry, typically within 3–5 minutes. We mark cleaned surfaces and allow proper dry time.</div></details><details class="faq-item"><summary>Do you have experience with licensed childcare facilities in Massachusetts?</summary><div class="faq-answer">Yes. We work with DESE-licensed facilities and understand their documentation and product compliance requirements.</div></details><details class="faq-item"><summary>Can you clean during operating hours?</summary><div class="faq-answer">We recommend evening or weekend cleaning to avoid disruption and ensure product dry time before children arrive. We can discuss exceptions for larger facilities.</div></details><details class="faq-item"><summary>How do you handle toy cleaning?</summary><div class="faq-answer">We wipe hard-surface toys with our child-safe disinfectant. Soft toys are set aside per your facility's laundry protocol. We defer to your staff for sensory and specialty items.</div></details>
   </div>
 </article>
+
+  <section class="cta-section reveal-scale">
+    <div class="cta-inner">
+      <h2>Get a <em>Free Quote</em> Today</h2>
+      <p>Text us your address and details. Get a detailed quote within 2 hours — no phone tag, no pressure.</p>
+      <div class="cta-buttons">
+        <a href="sms:+17813305604" class="cta-btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text (781) 330-5604
+        </a>
+        <a href="mailto:bluebrickmass@gmail.com" class="cta-btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RELATED POSTS -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="section-header reveal-blur">
+        <span class="section-tag">More Guides</span>
+        <h2>More Cleaning Guides for <em>Greater Boston</em></h2>
+      </div>
+      <div class="related-grid">
+        <a href="/blog/deep-cleaning-boston.html" class="related-card reveal" style="text-decoration:none">
+          <div class="card-tag">Boston</div>
+          <h3>Deep Cleaning in Boston</h3>
+          <p>Everything you need to know about professional deep cleaning across Greater Boston neighborhoods.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+        <a href="/blog/post-construction-cleaning-boston.html" class="related-card reveal" style="transition-delay:.1s;text-decoration:none">
+          <div class="card-tag">Post-Construction</div>
+          <h3>Post-Construction Cleaning</h3>
+          <p>Expert construction dust and debris cleanup for Boston homes and commercial builds.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+        <a href="/blog/spring-cleaning-boston.html" class="related-card reveal" style="transition-delay:.2s;text-decoration:none">
+          <div class="card-tag">Seasonal</div>
+          <h3>Spring Cleaning in Boston</h3>
+          <p>The complete 2026 room-by-room guide to spring cleaning for Greater Boston homeowners.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+        <a href="/blog/move-out-cleaning-boston.html" class="related-card reveal" style="transition-delay:.3s;text-decoration:none">
+          <div class="card-tag">Move-Out</div>
+          <h3>Move-Out Cleaning in Boston</h3>
+          <p>Get your full deposit back with professional move-out cleaning across Boston and suburbs.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+        <a href="/blog/office-cleaning-services-boston.html" class="related-card reveal" style="transition-delay:.4s;text-decoration:none">
+          <div class="card-tag">Commercial</div>
+          <h3>Office Cleaning Services</h3>
+          <p>Professional office and commercial cleaning for Boston businesses. Licensed and insured.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+        <a href="/blog/luxury-cleaning-brookline-ma.html" class="related-card reveal" style="transition-delay:.5s;text-decoration:none">
+          <div class="card-tag">Luxury</div>
+          <h3>Luxury Cleaning in Brookline</h3>
+          <p>Premium residential cleaning for Brookline's finest homes, estates, and condominiums.</p>
+          <span class="read-link">Read Now &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<section class="cta-section">
-  <div class="cta-inner">
-    <h2>Get a <em>Cleaner Space</em> Today</h2>
-    <p>Trusted by hundreds of Boston businesses and homeowners. Licensed, insured, and 5-star rated.</p>
-    <div class="cta-buttons">
-      <a href="tel:+17813305604" class="cta-btn-primary">Call 781-330-5604</a>
-      <a href="/#quote" class="cta-btn-secondary">Free Online Estimate</a>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="footer-top">
-    <div class="footer-col">
-      <h4>Blue Brick Cleaning</h4>
-      <p style="font-size:.85rem;line-height:1.7;margin-bottom:1rem">Luxury residential &amp; commercial cleaning across Greater Boston. Licensed, insured, 5-star rated.</p>
-      <a href="tel:+17813305604" style="color:var(--steel-light);font-weight:700;font-size:.95rem">781-330-5604</a>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <div class="footer-links-list">
-        <a href="/#services">Deep Cleaning</a>
-        <a href="/#services">Commercial Cleaning</a>
-        <a href="/#services">Move-Out Cleaning</a>
-        <a href="/#services">Post-Construction</a>
-        <a href="/#services">Recurring Service</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Service Areas</h4>
-      <div class="footer-links-list">
-        <a href="/cities.html">Boston</a>
-        <a href="/cities.html">Newton &amp; Waltham</a>
-        <a href="/cities.html">Cambridge &amp; Brookline</a>
-        <a href="/cities.html">Somerville &amp; Allston</a>
-        <a href="/blog/">Blog</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
-  </div>
-</footer>
-<button class="back-to-top" id="backTop" aria-label="Back to top">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-<script>
-const reveals=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1});
-reveals.forEach(r=>io.observe(r));
-const btn=document.getElementById('backTop');
-window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>400)});
-btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-</script>
+
+ 
+
+ <!-- Expandable Chat Widget -->
+ <div class="chat-widget" id="chatWidget">
+ <div class="chat-panel">
+ <div class="chat-panel-header">
+ <h3>BLUE BRICK CONCIERGE</h3>
+ <p>We typically reply in minutes</p>
+ </div>
+ <div class="chat-panel-body" id="chatBody">
+ <div class="chat-msg">
+ <div class="chat-msg-avatar">BB</div>
+ <div class="chat-msg-bubble">Hi there! Looking for a cleaning quote? I can help you get started.</div>
+ </div>
+ </div>
+ <div class="chat-panel-footer">
+ <div class="chat-input-wrap">
+ <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+ <button class="chat-send-btn" id="chatSendBtn" aria-label="Send">
+ <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+ </button>
+ </div>
+ <div class="chat-quick-actions">
+ <button class="chat-quick-btn" data-msg="I need a quote">Get a Quote</button>
+ <button class="chat-quick-btn" data-msg="What services do you offer?">Services</button>
+ <button class="chat-quick-btn" data-msg="What areas do you cover?">Service Areas</button>
+ </div>
+ </div>
+ </div>
+ <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+ <svg class="icon-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+ <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+ </button>
+ <div class="chat-prompt" id="chatPrompt"></div>
+ </div>
+
+ <footer role="contentinfo">
+ <div class="footer-bg"></div>
+
+ <!-- Email Subscriber CTA -->
+ <div class="footer-cta">
+ <div class="footer-cta-inner">
+ <h3>Win a Free Cleaning Every Month</h3>
+ <p>Drop your email and you're automatically entered to win a free cleaning. We pick one winner each month.</p>
+ <form class="subscribe-form" id="subscribeForm" onsubmit="return handleSubscribe(event)">
+ <div class="subscribe-input-wrap">
+ <input type="email" id="subEmail" placeholder="Enter your email" required autocomplete="email">
+ <button type="submit" class="subscribe-btn">Subscribe</button>
+ </div>
+ <p class="subscribe-note">No spam, ever. Unsubscribe anytime.</p>
+ </form>
+ <p class="subscribe-success" id="subscribeSuccess" style="display:none;">You're in! Check your inbox for confirmation.</p>
+ </div>
+ </div>
+
+ <div class="footer-top">
+ <div class="footer-brand">
+ <div class="footer-logo">
+ <img src="/assets/images/logo-horizontal-dark.png" alt="Blue Brick — Luxury & Commercial Cleaning">
+ </div>
+ <p>Deep cleaning and property care across Greater Boston. Based in Waltham.</p>
+ <a href="sms:+17813305604" class="contact-line" aria-label="Text us">
+ <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+ (781) 330-5604
+ </a>
+ <a href="mailto:bluebrickmass@gmail.com" class="contact-line" aria-label="Email us">
+ <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+ bluebrickmass@gmail.com
+ </a>
+ </div>
+
+ <div class="footer-col">
+ <h4>Quick Links</h4>
+ <nav class="footer-links-list" aria-label="Quick links">
+ <a href="/">Home</a>
+ <a href="/pricing.html">Pricing</a>
+ <a href="/cities.html">Service Areas</a>
+ <a href="/blog/">Blog</a>
+ <a href="/tools/quote-calculator.html">Quote Calculator</a>
+ <a href="/#quote">Free Estimate</a>
+ <a href="sms:+17813305604">Text Us</a>
+ </nav>
+ </div>
+
+ <div class="footer-col">
+ <h4>Services</h4>
+ <nav class="footer-links-list" aria-label="Cleaning services">
+ <a href="/blog/deep-cleaning-boston.html">Deep Cleaning</a>
+ <a href="/blog/post-construction-cleaning-boston.html">Post-Construction</a>
+ <a href="/blog/move-in-move-out-cleaning-boston.html">Move-In / Move-Out</a>
+ <a href="/#quote">Luxury Residential</a>
+ <a href="/#quote">Commercial Cleaning</a>
+ <a href="/blog/spring-cleaning-boston.html">Spring Cleaning</a>
+ </nav>
+ </div>
+
+ <div class="footer-col">
+ <h4>Top Areas</h4>
+ <nav class="footer-links-list" aria-label="Service areas">
+ <a href="/blog/deep-cleaning-boston.html">Boston</a>
+ <a href="/blog/deep-cleaning-cambridge.html">Cambridge</a>
+ <a href="/blog/deep-cleaning-newton.html">Newton</a>
+ <a href="/blog/deep-cleaning-waltham.html">Waltham</a>
+ <a href="/blog/deep-cleaning-brookline.html">Brookline</a>
+ <a href="/blog/deep-cleaning-somerville.html">Somerville</a>
+ <a href="/cities.html">All 15 Cities →</a>
+ </nav>
+ </div>
+ </div>
+
+ <div class="footer-bottom">
+ <p>&copy; 2026 Blue Brick Luxury and Commercial Cleaning. All rights reserved.</p>
+ </div>
+ </footer>
+
+ <!-- ==========================================
+ JAVASCRIPT
+ ========================================== -->
+ <script>
+ // ── Scroll Reveal (all variants) ──
+ const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur');
+ const revealObserver = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ revealObserver.unobserve(entry.target);
+ }
+ });
+ }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+ revealElements.forEach(el => revealObserver.observe(el));
+ // -- Tubelight Navbar --
+ const tubeNav = document.getElementById('tubeNav');
+ if (tubeNav) {
+ window.addEventListener('scroll', () => {
+ if (window.scrollY > 100) {
+ tubeNav.classList.add('scrolled');
+ } else {
+ tubeNav.classList.remove('scrolled');
+ }
+ });
+
+ // Set active link based on current page
+ const currentPath = window.location.pathname;
+ tubeNav.querySelectorAll('.tube-nav-link:not(.tube-nav-cta)').forEach(link => {
+ link.classList.remove('active');
+ const href = link.getAttribute('href');
+ if (href === '/blog/' && currentPath.includes('/blog/')) {
+ link.classList.add('active');
+ } else if (href === currentPath) {
+ link.classList.add('active');
+ }
+ });
+ }
+
+ // ── Mobile nav toggle ──
+
+ // ── Smooth scroll for anchor links ──
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function(e) {
+ e.preventDefault();
+ const target = document.querySelector(this.getAttribute('href'));
+ if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ });
+ });
+
+ // -- Back to Top button --
+ const backToTop = document.getElementById('backToTop');
+ if (backToTop) {
+ window.addEventListener('scroll', () => {
+ if (window.scrollY > 600) {
+ backToTop.classList.add('visible');
+ } else {
+ backToTop.classList.remove('visible');
+ }
+ });
+ backToTop.addEventListener('click', () => {
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+ });
+ }
+
+
+ // -- Expandable Chat Widget --
+ var chatWidget2 = document.getElementById('chatWidget');
+ var chatToggle2 = document.getElementById('chatToggle');
+ var chatInput2 = document.getElementById('chatInput');
+ var chatSendBtn2 = document.getElementById('chatSendBtn');
+ var chatBody2 = document.getElementById('chatBody');
+
+ if (chatToggle2 && chatWidget2) {
+ chatToggle2.addEventListener('click', function(e) {
+ e.stopPropagation();
+ chatWidget2.classList.toggle('open');
+ if (chatWidget2.classList.contains('open') && chatInput2) {
+ setTimeout(function() { chatInput2.focus(); }, 300);
+ }
+ });
+
+ // -- Chat bot conversation flow --
+ var chatStep = 'start';
+ var chatData = {};
+
+ function chatAddMsg(text, isSent) {
+ var msg = document.createElement('div');
+ msg.className = 'chat-msg' + (isSent ? ' sent' : '');
+ msg.innerHTML = '<div class="chat-msg-avatar">' + (isSent ? 'You' : 'BB') + '</div><div class="chat-msg-bubble">' + text + '</div>';
+ chatBody2.appendChild(msg);
+ chatBody2.scrollTop = chatBody2.scrollHeight;
+ }
+
+ function chatAddOptions(options) {
+ var wrap = document.createElement('div');
+ wrap.className = 'chat-options';
+ options.forEach(function(opt) {
+ var btn = document.createElement('button');
+ btn.className = 'chat-opt-btn' + (opt.amber ? ' amber' : '');
+ btn.textContent = opt.label;
+ btn.addEventListener('click', function(e) { e.stopPropagation();
+ // Remove all option buttons
+ var allOpts = chatBody2.querySelectorAll('.chat-options');
+ allOpts.forEach(function(o) { o.remove(); });
+ chatAddMsg(opt.label, true);
+ // Notify backend
+ chatNotify(opt.label);
+ setTimeout(function() { opt.action(); }, 400);
+ });
+ wrap.appendChild(btn);
+ });
+ chatBody2.appendChild(wrap);
+ chatBody2.scrollTop = chatBody2.scrollHeight;
+ }
+
+ function chatAddLoading() {
+ var loader = document.createElement('div');
+ loader.className = 'chat-msg';
+ loader.id = 'chatLoader';
+ loader.innerHTML = '<div class="chat-msg-avatar">BB</div><div class="chat-loading"><span></span><span></span><span></span></div>';
+ chatBody2.appendChild(loader);
+ chatBody2.scrollTop = chatBody2.scrollHeight;
+ }
+
+ function chatRemoveLoading() {
+ var loader = document.getElementById('chatLoader');
+ if (loader) loader.remove();
+ }
+
+ function chatNotify(text) {
+ try {
+ fetch('/api/chat', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({
+ message: text,
+ page: window.location.pathname,
+ timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+ step: chatStep,
+ data: chatData
+ })
+ }).catch(function() {});
+ } catch(e) {}
+ }
+
+ function chatShowMainMenu() {
+ chatStep = 'main_menu';
+ chatAddMsg("How can I help you today?");
+ chatAddOptions([
+ { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
+ { label: 'Our Services', action: chatFlowServices },
+ { label: 'Service Areas', action: chatFlowAreas },
+ { label: 'Book a Cleaning', amber: true, action: chatFlowBook },
+ { label: 'Talk to Someone', action: chatFlowHuman }
+ ]);
+ }
+
+ // ── QUOTE FLOW ──
+ function chatFlowQuoteStart() {
+ chatStep = 'quote_type';
+ chatAddMsg("What type of cleaning do you need?");
+ chatAddOptions([
+ { label: 'Deep Cleaning', action: function() { chatData.service = 'Deep Cleaning'; chatFlowQuoteSize(); }},
+ { label: 'Post-Construction', action: function() { chatData.service = 'Post-Construction'; chatFlowQuoteSize(); }},
+ { label: 'Move-In / Move-Out', action: function() { chatData.service = 'Move-In / Move-Out'; chatFlowQuoteSize(); }},
+ { label: 'Recurring Cleaning', action: function() { chatData.service = 'Recurring Cleaning'; chatFlowQuoteSize(); }},
+ { label: 'Commercial / Office', action: function() { chatData.service = 'Commercial / Office'; chatFlowQuoteSize(); }},
+ { label: 'Other', action: function() { chatData.service = 'Other'; chatFlowQuoteSize(); }}
+ ]);
+ }
+
+ function chatFlowQuoteSize() {
+ chatStep = 'quote_size';
+ chatAddMsg("What\'s the approximate size?");
+ chatAddOptions([
+ { label: 'Studio / 1 BR', action: function() { chatData.size = 'Studio/1BR'; chatFlowQuoteContact(); }},
+ { label: '2-3 Bedrooms', action: function() { chatData.size = '2-3BR'; chatFlowQuoteContact(); }},
+ { label: '4+ Bedrooms', action: function() { chatData.size = '4+BR'; chatFlowQuoteContact(); }},
+ { label: 'Office / Commercial', action: function() { chatData.size = 'Commercial'; chatFlowQuoteContact(); }},
+ { label: 'Not Sure', action: function() { chatData.size = 'Unknown'; chatFlowQuoteContact(); }}
+ ]);
+ }
+
+ function chatFlowQuoteContact() {
+ chatStep = 'quote_contact';
+ chatAddMsg("Got it — <strong>" + chatData.service + "</strong> for a <strong>" + chatData.size + "</strong> space. How should we send your quote?");
+ chatAddOptions([
+ { label: 'Text Me', amber: true, action: chatFlowAskPhone },
+ { label: 'Email Me', amber: true, action: chatFlowAskEmail },
+ { label: 'Use Quote Calculator', action: function() {
+ chatAddMsg("<a href=\'/tools/quote-calculator.html\' target=\'_blank\' style=\'color:#3D7A9E;font-weight:700\'>Open Quote Calculator →</a>");
+ setTimeout(chatFlowAnythingElse, 1500);
+ }}
+ ]);
+ }
+
+ function chatFlowAskPhone() {
+ chatStep = 'collect_phone';
+ chatAddMsg("What\'s your phone number? We\'ll text you a quote within 2 hours.");
+ chatData.contactMethod = 'phone';
+ }
+
+ function chatFlowAskEmail() {
+ chatStep = 'collect_email';
+ chatAddMsg("What\'s your email? We\'ll send your quote within 2 hours.");
+ chatData.contactMethod = 'email';
+ }
+
+ function chatFlowCollectContact(text) {
+ chatData.contact = text;
+ chatStep = 'quote_done';
+ chatAddMsg("Thanks! We\'ll reach out shortly with your <strong>" + chatData.service + "</strong> quote. Expect to hear from us within 2 hours.");
+ setTimeout(chatFlowAnythingElse, 2000);
+ }
+
+ // ── SERVICES FLOW ──
+ function chatFlowServices() {
+ chatStep = 'services';
+ chatAddMsg("Here\'s what we offer:");
+ chatAddOptions([
+ { label: 'Deep Cleaning', action: function() { chatAddMsg("Top-to-bottom deep cleaning for homes — kitchens, bathrooms, baseboards, appliances, everything."); setTimeout(chatFlowAnythingElse, 1500); }},
+ { label: 'Post-Construction', action: function() { chatAddMsg("Dust, debris & residue removal after renovations. We make new builds move-in ready."); setTimeout(chatFlowAnythingElse, 1500); }},
+ { label: 'Move-In / Move-Out', action: function() { chatAddMsg("Get your full deposit back or start fresh in your new place. Every surface cleaned."); setTimeout(chatFlowAnythingElse, 1500); }},
+ { label: 'Commercial Cleaning', action: function() { chatAddMsg("Office, retail & commercial spaces. Flexible scheduling, consistent results."); setTimeout(chatFlowAnythingElse, 1500); }},
+ { label: 'Spring Cleaning', action: function() { chatAddMsg("Seasonal refresh — windows, deep scrub, organize. Start the season right."); setTimeout(chatFlowAnythingElse, 1500); }},
+ { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart }
+ ]);
+ }
+
+ // ── AREAS FLOW ──
+ function chatFlowAreas() {
+ chatStep = 'areas';
+ chatAddMsg("We serve <strong>15 cities</strong> across Greater Boston: Boston, Cambridge, Newton, Waltham, Brookline, Somerville, Brighton, Watertown, Allston, East Boston, South Boston, Lexington, Needham, Wellesley & Weston.");
+ chatAddOptions([
+ { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
+ { label: 'View All Areas', action: function() { window.open('/cities.html', '_blank'); }},
+ { label: 'Back to Menu', action: chatShowMainMenu }
+ ]);
+ }
+
+ // ── BOOK FLOW ──
+ function chatFlowBook() {
+ chatStep = 'book';
+ chatAddMsg("Let\'s get you booked! First, what service do you need?");
+ chatAddOptions([
+ { label: 'Deep Cleaning', action: function() { chatData.service = 'Deep Cleaning'; chatFlowBookContact(); }},
+ { label: 'Post-Construction', action: function() { chatData.service = 'Post-Construction'; chatFlowBookContact(); }},
+ { label: 'Move-In / Move-Out', action: function() { chatData.service = 'Move-In / Move-Out'; chatFlowBookContact(); }},
+ { label: 'Other', action: function() { chatData.service = 'Other'; chatFlowBookContact(); }}
+ ]);
+ }
+
+ function chatFlowBookContact() {
+ chatStep = 'book_contact';
+ chatAddMsg("Great choice! How should we reach you to schedule?");
+ chatAddOptions([
+ { label: 'Text Me', amber: true, action: chatFlowAskPhone },
+ { label: 'Email Me', amber: true, action: chatFlowAskEmail }
+ ]);
+ }
+
+ // ── TALK TO HUMAN ──
+ function chatFlowHuman() {
+ chatStep = 'human';
+ chatAddMsg("We\'d love to help personally! Fastest way to reach us:");
+ chatAddOptions([
+ { label: 'Text (781) 330-5604', amber: true, action: function() { window.open('sms:+17813305604', '_self'); }},
+ { label: 'Email Us', action: function() { window.open('mailto:bluebrickmass@gmail.com', '_self'); }},
+ { label: 'Back to Menu', action: chatShowMainMenu }
+ ]);
+ }
+
+ // ── ANYTHING ELSE ──
+ function chatFlowAnythingElse() {
+ chatAddMsg("Anything else I can help with?");
+ chatAddOptions([
+ { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
+ { label: 'Our Services', action: chatFlowServices },
+ { label: 'Talk to Someone', action: chatFlowHuman },
+ { label: "I'm Good!", action: function() { chatAddMsg("Thanks for chatting! We\'re here anytime you need us. 👋"); }}
+ ]);
+ }
+
+ // ── HANDLE FREE TEXT INPUT ──
+ function chatHandleSend() {
+ var text = chatInput2.value.trim();
+ if (!text) return;
+ chatAddMsg(text, true);
+ chatInput2.value = '';
+
+ // Notify backend
+ chatNotify(text);
+
+ // If we're collecting contact info, capture it
+ if (chatStep === 'collect_phone' || chatStep === 'collect_email') {
+ chatAddLoading();
+ setTimeout(function() {
+ chatRemoveLoading();
+ chatFlowCollectContact(text);
+ }, 600);
+ return;
+ }
+
+ // Otherwise, smart reply based on keywords
+ chatAddLoading();
+ setTimeout(function() {
+ chatRemoveLoading();
+ var t = text.toLowerCase();
+ if (t.indexOf('quote') > -1 || t.indexOf('estimate') > -1 || t.indexOf('cost') > -1 || t.indexOf('price') > -1 || t.indexOf('how much') > -1) {
+ chatFlowQuoteStart();
+ } else if (t.indexOf('service') > -1 || t.indexOf('offer') > -1 || t.indexOf('clean') > -1) {
+ chatFlowServices();
+ } else if (t.indexOf('area') > -1 || t.indexOf('city') > -1 || t.indexOf('where') > -1) {
+ chatFlowAreas();
+ } else if (t.indexOf('book') > -1 || t.indexOf('schedule') > -1) {
+ chatFlowBook();
+ } else if (t.indexOf('talk') > -1 || t.indexOf('human') > -1 || t.indexOf('person') > -1 || t.indexOf('call') > -1) {
+ chatFlowHuman();
+ } else {
+ chatAddMsg("Thanks for your message! Let me help you find what you need.");
+ chatAddOptions([
+ { label: 'Get a Quote', amber: true, action: chatFlowQuoteStart },
+ { label: 'Our Services', action: chatFlowServices },
+ { label: 'Service Areas', action: chatFlowAreas },
+ { label: 'Talk to Someone', action: chatFlowHuman }
+ ]);
+ }
+ }, 600);
+ }
+
+ chatSendBtn2.addEventListener('click', chatHandleSend);
+ chatInput2.addEventListener('keydown', function(e) {
+ if (e.key === 'Enter') { e.preventDefault(); chatHandleSend(); }
+ });
+
+ // Quick action buttons trigger main flows
+ document.querySelectorAll('.chat-quick-btn').forEach(function(btn) {
+ btn.addEventListener('click', function() {
+ var msg = btn.getAttribute('data-msg');
+ chatAddMsg(msg, true);
+ chatNotify(msg);
+ // Remove all option buttons first
+ var allOpts = chatBody2.querySelectorAll('.chat-options');
+ allOpts.forEach(function(o) { o.remove(); });
+ if (msg.indexOf('quote') > -1 || msg.indexOf('Quote') > -1) chatFlowQuoteStart();
+ else if (msg.indexOf('service') > -1 || msg.indexOf('Service') > -1) chatFlowServices();
+ else if (msg.indexOf('area') > -1 || msg.indexOf('Area') > -1) chatFlowAreas();
+ else chatShowMainMenu();
+ });
+ });
+
+ document.addEventListener('click', function(e) {
+ if (!chatWidget2.contains(e.target) && chatWidget2.classList.contains('open')) {
+ chatWidget2.classList.remove('open');
+ }
+ });
+ }
+ </script>
+
+
+ <script>
+ document.querySelectorAll('.faq-question').forEach(function(q) {
+ q.addEventListener('click', function() {
+ var item = this.closest('.faq-item');
+ var wasOpen = item.classList.contains('open');
+ // Close all
+ document.querySelectorAll('.faq-item.open').forEach(function(el) {
+ el.classList.remove('open');
+ });
+ // Toggle current
+ if (!wasOpen) item.classList.add('open');
+ });
+ });
+ 
+ // -- Rotating chat prompts --
+ var chatPromptEl = document.getElementById('chatPrompt');
+ if (chatPromptEl) {
+ var chatPrompts = [
+ 'Need a cleaning quote? \u2728',
+ 'Get an instant estimate!',
+ 'Ask us anything \u{1F44B}',
+ 'What can we clean for you?',
+ 'Text or chat with us!'
+ ];
+ var promptIdx = 0;
+ function rotateChatPrompt() {
+ chatPromptEl.textContent = chatPrompts[promptIdx];
+ promptIdx = (promptIdx + 1) % chatPrompts.length;
+ }
+ rotateChatPrompt();
+ setInterval(rotateChatPrompt, 12000);
+ }
+
+ </script>
 </body>
 </html>
